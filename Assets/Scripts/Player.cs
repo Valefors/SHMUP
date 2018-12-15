@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Personal Datas")]
+    [SerializeField]
+    private Transform _spawnShot;
+    private Transform _transform;
+    [SerializeField]
+    private GameObject _prefabShot;
+
+
+    [Header("Gameplay Datas")]
     [SerializeField]
     private float _speed;
 
-    private Transform _transform;
+
 
 
     private static string _VERTICAL_AXIS = "Vertical";
@@ -28,12 +37,14 @@ public class Player : MonoBehaviour
         {
             Vector3 lMovement = new Vector3(lXmovValue, lYmovValue,0);
             lMovement = lMovement.normalized * _speed * Time.deltaTime;
-
-
+            
             _transform.Translate(lMovement);
         }
 
-
+        if (Input.GetMouseButtonDown(0))
+        {
+            Instantiate(_prefabShot, _spawnShot.position, Quaternion.identity);
+        }
 
     }
 }
