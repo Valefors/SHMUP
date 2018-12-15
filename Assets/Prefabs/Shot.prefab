@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6327029292502557942}
+  - component: {fileID: 4131775518543858461}
   m_Layer: 0
   m_Name: Shot
   m_TagString: Untagged
@@ -62,6 +63,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4131775518543858461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2893416602070953415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7bcf194deeaf894a80f4b581ac804d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speedShot: 10
 --- !u!1 &4637482244232736918
 GameObject:
   m_ObjectHideFlags: 0
