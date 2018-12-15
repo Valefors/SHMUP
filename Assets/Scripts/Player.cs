@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
 
     private Transform _transform;
 
+    [SerializeField]
+    private Transform _spawnShot;
+
 
     private static string _VERTICAL_AXIS = "Vertical";
     private static string _HORIZONTAL_AXIS = "Horizontal";
@@ -28,12 +31,14 @@ public class Player : MonoBehaviour
         {
             Vector3 lMovement = new Vector3(lXmovValue, lYmovValue,0);
             lMovement = lMovement.normalized * _speed * Time.deltaTime;
-
-
+            
             _transform.Translate(lMovement);
         }
 
+        if (Input.GetMouseButtonDown(0))
+        {
 
+        }
 
     }
 }
