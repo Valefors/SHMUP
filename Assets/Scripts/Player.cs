@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     private float _speed;
 
 
-
+    private bool _canShoot = true;
 
     private static string _VERTICAL_AXIS = "Vertical";
     private static string _HORIZONTAL_AXIS = "Horizontal";
@@ -35,16 +35,42 @@ public class Player : MonoBehaviour
 
         if (lXmovValue != 0 || lYmovValue != 0)
         {
-            Vector3 lMovement = new Vector3(lXmovValue, lYmovValue,0);
-            lMovement = lMovement.normalized * _speed * Time.deltaTime;
-            
-            _transform.Translate(lMovement);
+            Move(lXmovValue, lYmovValue);
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            Instantiate(_prefabShot, _spawnShot.position, Quaternion.identity);
+            ManageShoot();
         }
 
     }
+
+    void Move(float lXmovValue, float lYmovValue)
+    {
+        Vector3 lMovement = new Vector3(lXmovValue, lYmovValue, 0);
+        lMovement = lMovement.normalized * _speed * Time.deltaTime;
+
+        _transform.Translate(lMovement);
+    }
+
+    void ManageShoot()
+    {
+        if (_canShoot)
+        {
+            Shoot();
+        }
+    }
+
+    void Shoot()
+    {
+        Instantiate(_prefabShot, _spawnShot.position, Quaternion.identity);
+        _canShoot = false;
+        Invoke("CanShootAgain", 0.1f);
+    }
+
+    void CanShootAgain()
+    {
+        _canShoot = true;
+    }
+
 }
