@@ -2,10 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : ModuleUser
+public class Player : MonoBehaviour
 {
+    [Header("Personal Datas")]
+    [SerializeField]
+    protected Transform _spawnShot;
+    protected Transform _transform;
+    [SerializeField]
+    protected GameObject _prefabShot;
+
+
+    [Header("Gameplay Datas")]
+    [SerializeField]
+    protected float _speed;
+    [SerializeField]
+    protected float _shotRate = 0.1f;
+
+    private bool _canShoot = true;
+
     private static string _VERTICAL_AXIS = "Vertical";
     private static string _HORIZONTAL_AXIS = "Horizontal";
+
+    // Start is called before the first frame update
+    protected void Start()
+    {
+        _transform = this.transform;
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,21 +54,35 @@ public class Player : ModuleUser
         _transform.Translate(lMovement);
     }
 
-
-
-
-    #region Abstract
-
-    protected override bool Ally()
+    #region Shoot_region
+    protected virtual void ManageShoot()
     {
-        return true;
+        if (_canShoot)
+        {
+            Shoot();
+        }
     }
 
-    protected override Vector3 ShotDirection()
+    protected virtual void Shoot()
     {
-        return Vector3.up;
+        Shot shotShot = Instantiate(_prefabShot, _spawnShot.position, Quaternion.identity).GetComponent<Shot>();
+        shotShot.SetUp(false, Vector3.up);
+        _canShoot = false;
+        Invoke("CanShootAgain", _shotRate);
     }
 
+    protected virtual void CanShootAgain()
+    {
+        _canShoot = true;
+    }
+
+    #endregion
+
+    #region GetDamage
+    public virtual void GetHit()
+    {
+        Debug.Log("Player get hit !");
+    }
     #endregion
 
 }
