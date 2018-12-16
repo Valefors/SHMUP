@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Shoot()
     {
         Shot shotShot = Instantiate(_prefabShot, _spawnShot.position, Quaternion.identity).GetComponent<Shot>();
-        shotShot.SetUp(false, Vector3.up);
+        shotShot.SetUp(true, Vector3.down);
         _canShoot = false;
         Invoke("CanShootAgain", _shotRate);
     }
