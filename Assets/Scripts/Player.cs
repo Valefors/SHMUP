@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
             Move(lXmovValue, lYmovValue);
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetAxisRaw("Fire1") != 0)
         {
             ManageShoot();
         }

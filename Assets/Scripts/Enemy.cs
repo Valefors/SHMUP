@@ -6,13 +6,17 @@ public class Enemy : MonoBehaviour
 {
     
     [Header("Personal Datas")]
-    private int pv = 1;
-    private float _shotRate = 0.2f;
     [SerializeField]
     private Transform _spawnShot;
     private Transform _transform;
     [SerializeField]
     private GameObject _prefabShot;
+    
+    [Header("Gameplay Datas")]
+    private int pv = 1;
+    [SerializeField]
+    private float _shotRate = 0.2f;
+
 
     private bool _canShoot = true;
 
