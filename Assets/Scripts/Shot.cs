@@ -13,6 +13,18 @@ public class Shot : MonoBehaviour
 
     private Transform _transform;
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collision with " + collision.gameObject.name);
+        Enemy enemyColl = collision.gameObject.GetComponent<Enemy>();
+        if (enemyColl != null)
+        {
+            enemyColl.GetHit();
+            this.Touch();
+        }
+    }
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,4 +36,15 @@ public class Shot : MonoBehaviour
     {
         _transform.Translate(_direction * _speedShot * Time.deltaTime);
     }
+
+    private void Touch()
+    {
+        Deactivate();
+    }
+
+    private void Deactivate()
+    {
+        Destroy(this.gameObject);
+    }
+
 }
