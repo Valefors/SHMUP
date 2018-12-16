@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7bcf194deeaf894a80f4b581ac804d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spriteRdr: {fileID: 2098541405370548159}
   _speedShot: 10
   _direction: {x: 0, y: 1, z: 0}
 --- !u!58 &3317359503794441711
@@ -88,7 +89,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
