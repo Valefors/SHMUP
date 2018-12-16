@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6327029292502557942}
   - component: {fileID: 4131775518543858461}
+  - component: {fileID: 3317359503794441711}
   m_Layer: 0
   m_Name: Shot
   m_TagString: Untagged
@@ -56,7 +57,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2893416602070953415}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3689616184141322330}
@@ -75,7 +76,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7bcf194deeaf894a80f4b581ac804d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spriteRdr: {fileID: 2098541405370548159}
   _speedShot: 10
+  _direction: {x: 0, y: 1, z: 0}
+--- !u!58 &3317359503794441711
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2893416602070953415}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.18
 --- !u!1 &4637482244232736918
 GameObject:
   m_ObjectHideFlags: 0
