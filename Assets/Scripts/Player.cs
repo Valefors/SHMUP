@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
     [Header("Gameplay Datas")]
     [SerializeField]
     private float _speed;
+    [SerializeField]
+    private float _shotRate = 0.1f;
+
 
 
     private bool _canShoot = true;
@@ -63,9 +66,10 @@ public class Player : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(_prefabShot, _spawnShot.position, Quaternion.identity);
+        Shot shotShot = Instantiate(_prefabShot, _spawnShot.position, Quaternion.identity).GetComponent<Shot>();
+        shotShot.SetUp(false, Vector3.up);
         _canShoot = false;
-        Invoke("CanShootAgain", 0.1f);
+        Invoke("CanShootAgain", _shotRate);
     }
 
     void CanShootAgain()
@@ -73,4 +77,15 @@ public class Player : MonoBehaviour
         _canShoot = true;
     }
 
+
+
+    #region GetDamage
+    public void GetHit()
+    {
+        Debug.Log("I'm getting hit ! Outch !");
+        //pv--;
+        //Death();
+    }
+
+    #endregion
 }
