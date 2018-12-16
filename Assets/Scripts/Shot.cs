@@ -5,7 +5,11 @@ using UnityEngine;
 public class Shot : MonoBehaviour
 {
     [SerializeField]
-    private float _speedShot;
+    private float _speedShot = 1f;
+
+    [SerializeField]
+    private Vector3 _direction = Vector3.up;
+
 
     private Transform _transform;
 
@@ -18,6 +22,6 @@ public class Shot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _transform.Translate(Vector3.right * _speedShot * Time.deltaTime);
+        _transform.Translate(_direction * _speedShot * Time.deltaTime);
     }
 }

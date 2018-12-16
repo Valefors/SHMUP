@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedShot: 10
+  _direction: {x: 0, y: 1, z: 0}
 --- !u!1 &4637482244232736918
 GameObject:
   m_ObjectHideFlags: 0
