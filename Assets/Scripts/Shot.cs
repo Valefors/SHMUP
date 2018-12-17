@@ -40,7 +40,7 @@ public class Shot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _transform = this.transform;
+        _transform = GetComponent<Transform>();
     }
 
     // Update is called once per frame
