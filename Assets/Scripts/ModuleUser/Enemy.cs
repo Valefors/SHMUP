@@ -16,9 +16,10 @@ public class Enemy : MonoBehaviour
     [Header("Gameplay Datas")]
     [SerializeField]
     protected float _speed;
-    private int _pv = 1;//PV ? List module plutôt ?
-    [SerializeField]
-    protected float _shotRate = 0.1f;
+    private int _pv = 1;
+    //Shot rate currently on module
+    /*[SerializeField]
+    protected float _shotRate = 0.1f;*/
 
     [SerializeField]
     private List<Module> _modulesList = new List<Module>();

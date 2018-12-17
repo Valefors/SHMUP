@@ -51,7 +51,6 @@ MonoBehaviour:
   _prefabShot: {fileID: 2893416602070953415, guid: 66cfab03dcf6aea409f8a11c45bf769e,
     type: 3}
   _speed: 0
-  _shotRate: 1.2
   _modulesList:
   - {fileID: 7678596920835758781}
 --- !u!58 &870433802817662690
@@ -133,7 +132,7 @@ GameObject:
   - component: {fileID: 212611181595673757}
   - component: {fileID: 6897146487267404503}
   m_Layer: 0
-  m_Name: CarreBlanc
+  m_Name: RedQuare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +190,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5a45bc45a6abf2941b10ed067821cfd8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9622642, g: 0.19517623, b: 0.19517623, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -271,6 +270,11 @@ PrefabInstance:
     - target: {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc,
         type: 3}
       propertyPath: isEnemy
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc,
+        type: 3}
+      propertyPath: _shotRate
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
