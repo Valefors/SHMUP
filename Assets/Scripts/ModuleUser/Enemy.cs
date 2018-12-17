@@ -20,8 +20,6 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected float _shotRate = 0.1f;
 
-    private bool _canShoot = true;
-
     [SerializeField]
     private List<Module> _modulesList = new List<Module>();
     private int _listLenght = 0;
@@ -44,6 +42,7 @@ public class Enemy : MonoBehaviour
 
     private void Death()
     {
+        //Instantiate ? A drop will be more visible
         //TO DO FACTORY
         Module lModule = Instantiate(_modulesList[0], _transform.position, _transform.rotation);
         lModule.SetModeVoid();

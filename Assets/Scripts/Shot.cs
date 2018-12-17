@@ -50,16 +50,18 @@ public class Shot : MonoBehaviour
     }
 
     //__TO DO : To change PROVISOIRE
-    public void SetUp(bool isEnemy, Vector3 direction)
+    public void SetUp(bool isEnemy, Quaternion rotation)
     {
-        SetUp(isEnemy, direction, _speedShot);
+        SetUp(isEnemy, rotation, _speedShot);
     }
 
-    public void SetUp(bool isEnemy, Vector3 direction, float speed)
+    public void SetUp(bool isEnemy, Quaternion rotation, float speed)
     {
         this._isEnemy = isEnemy;
-        this._direction = direction;
+        this.transform.rotation = rotation;
         this._speedShot = speed;
+
+        this._direction = Vector3.up;
 
         ChangeColor();
     }

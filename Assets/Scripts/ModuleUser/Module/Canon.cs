@@ -35,7 +35,7 @@ public class Canon : Module
     protected virtual void Shoot()
     {
         Shot shotShot = Instantiate(_prefabShot, _transform.position, Quaternion.identity).GetComponent<Shot>();
-        shotShot.SetUp(isEnemy, Vector3.up, _speedShot);
+        shotShot.SetUp(isEnemy, this.transform.rotation, _speedShot);
         _canShoot = false;
         Invoke("CanShootAgain", _shotRate);
     }
