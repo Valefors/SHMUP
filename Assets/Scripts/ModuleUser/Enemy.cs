@@ -22,34 +22,15 @@ public class Enemy : MonoBehaviour
 
     private bool _canShoot = true;
 
-    private void Update()
-    {
-        ManageShoot();
-    }
+    [SerializeField]
+    private List<Module> _modulesList = new List<Module>();
+    private int _listLenght = 0;
 
-    #region Shoot_region
-    protected virtual void ManageShoot()
+    private void OnEnable()
     {
-        if (_canShoot)
-        {
-            Shoot();
-        }
+        _listLenght = _modulesList.Count;
+        _transform = this.transform;
     }
-
-    protected virtual void Shoot()
-    {
-        Shot shotShot = Instantiate(_prefabShot, _spawnShot.position, Quaternion.identity).GetComponent<Shot>();
-        shotShot.SetUp(true, Vector3.down);
-        _canShoot = false;
-        Invoke("CanShootAgain", _shotRate);
-    }
-
-    protected virtual void CanShootAgain()
-    {
-        _canShoot = true;
-    }
-
-    #endregion
 
     #region GetDamage
     public virtual void GetHit()
@@ -63,6 +44,10 @@ public class Enemy : MonoBehaviour
 
     private void Death()
     {
+        //TO DO FACTORY
+        Module lModule = Instantiate(_modulesList[0], _transform.position, _transform.rotation);
+        lModule.SetModeVoid();
+
         Destroy(this.gameObject);
     }
 

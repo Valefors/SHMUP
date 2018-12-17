@@ -11,6 +11,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     protected GameObject _prefabShot;
 
+    private bool _canShoot = true;
+
+    private static string _VERTICAL_AXIS = "Vertical";
+    private static string _HORIZONTAL_AXIS = "Horizontal";
 
     [Header("Gameplay Datas")]
     [SerializeField]
@@ -18,15 +22,15 @@ public class Player : MonoBehaviour
     [SerializeField]
     protected float _shotRate = 0.1f;
 
-    private bool _canShoot = true;
-
-    private static string _VERTICAL_AXIS = "Vertical";
-    private static string _HORIZONTAL_AXIS = "Horizontal";
+    [SerializeField]
+    private List<Module> _modulesList = new List<Module>();
+    private int _listLenght = 0;
 
     // Start is called before the first frame update
     protected void Start()
     {
         _transform = this.transform;
+        _listLenght = _modulesList.Count;
     }
 
     // Update is called once per frame
@@ -35,6 +39,8 @@ public class Player : MonoBehaviour
         float lXmovValue = Input.GetAxis(_HORIZONTAL_AXIS);
         float lYmovValue = Input.GetAxis(_VERTICAL_AXIS);
 
+        SetModuleVoidMode();
+
         if (lXmovValue != 0 || lYmovValue != 0)
         {
             Move(lXmovValue, lYmovValue);
@@ -42,7 +48,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetAxisRaw("Fire1") != 0)
         {
-            ManageShoot();
+            SetModuleActionMode();
         }
     }
 
@@ -54,8 +60,25 @@ public class Player : MonoBehaviour
         _transform.Translate(lMovement);
     }
 
+    void SetModuleVoidMode()
+    {
+        for (int i = 0; i < _listLenght; i++)
+        {
+            _modulesList[i].SetModeVoid();
+        }
+    }
+
+    void SetModuleActionMode()
+    {
+        for (int i = 0; i < _listLenght; i++)
+        {
+            _modulesList[i].SetModeNormal();
+        }
+    }
+
     #region Shoot_region
-    protected virtual void ManageShoot()
+
+    /*protected virtual void ManageShoot()
     {
         if (_canShoot)
         {
@@ -74,15 +97,30 @@ public class Player : MonoBehaviour
     protected virtual void CanShootAgain()
     {
         _canShoot = true;
-    }
+    }*/
 
     #endregion
 
     #region GetDamage
+    //TO-DO: INVERSER, PLAYER DOIT CHECKER LUI LES COLLISIONS ET PAS LES BULLETS
     public virtual void GetHit()
     {
         Debug.Log("Player get hit !");
     }
+
     #endregion
 
+    private void OnTriggerEnter2D(Collider2D pCol)
+    {
+        if (pCol.GetComponent<Module>())
+        {
+            Module lModule = pCol.GetComponent<Module>();
+            if (lModule.GetComponent<Canon>() != null) lModule.GetComponent<Canon>().isEnemy = false;
+            lModule.transform.parent = _transform;
+
+            _modulesList.Add(lModule);
+            
+            _listLenght++;
+        }
+    }
 }
