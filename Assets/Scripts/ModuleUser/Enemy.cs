@@ -42,10 +42,15 @@ public class Enemy : MonoBehaviour
 
     private void Death()
     {
-        //Instantiate ? A drop will be more visible
+        //Just a try
         //TO DO FACTORY
-        Module lModule = Instantiate(_modulesList[0], _transform.position, _transform.rotation);
-        lModule.SetModeVoid();
+        if(_listLenght != 0)
+        {
+            Module lModule = _modulesList[0];
+            lModule.transform.SetParent(null); //put it in a container of all "free" module who will go down , maybe ?
+            lModule.SetModeVoid();
+            //TO DO : a launch fonction to launch them in a direction
+        }
 
         Destroy(this.gameObject);
     }
