@@ -35,4 +35,11 @@ public abstract class Module : MonoBehaviour
         if (moduleAction != null) moduleAction();
     }
 
+    public virtual void SetDeathMode()
+    {
+        moduleAction = DoActionVoid;
+        transform.SetParent(null);
+        Destroy(this.gameObject);
+    }
+
 }

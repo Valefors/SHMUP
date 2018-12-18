@@ -105,7 +105,17 @@ public class Player : MonoBehaviour
     //TO-DO: INVERSER, PLAYER DOIT CHECKER LUI LES COLLISIONS ET PAS LES BULLETS
     public virtual void GetHit()
     {
-        Debug.Log("Player get hit !");
+        if(_listLenght != 1)
+        {
+            Module lModuleToDestroy = _modulesList[_listLenght-1];
+            _modulesList.RemoveAt(_listLenght - 1);
+            _listLenght--;
+            lModuleToDestroy.SetDeathMode();
+        }
+        else
+        {
+            Debug.Log("This is a gameOver");
+        }
     }
 
     #endregion
