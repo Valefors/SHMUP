@@ -20,6 +20,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     protected float _speed;
     [SerializeField]
+    private AnimationCurve _speedWeightCurve;
+    private float _weight = 0f;
+
+    [SerializeField]
     protected float _shotRate = 0.1f;
 
     [SerializeField]
@@ -31,6 +35,8 @@ public class Player : MonoBehaviour
     {
         _transform = this.transform;
         _listLenght = _modulesList.Count;
+
+        UpdateWeight();
     }
 
     // Update is called once per frame
@@ -55,7 +61,8 @@ public class Player : MonoBehaviour
     void Move(float lXmovValue, float lYmovValue)
     {
         Vector3 lMovement = new Vector3(lXmovValue, lYmovValue, 0);
-        lMovement = lMovement.normalized * _speed * Time.deltaTime;
+        float lSpeed = _speedWeightCurve.Evaluate(_weight) * _speed;
+        lMovement = lMovement.normalized * lSpeed * Time.deltaTime;
 
         _transform.Translate(lMovement);
     }
@@ -107,10 +114,7 @@ public class Player : MonoBehaviour
     {
         if(_listLenght != 1)
         {
-            Module lModuleToDestroy = _modulesList[_listLenght-1];
-            _modulesList.RemoveAt(_listLenght - 1);
-            _listLenght--;
-            lModuleToDestroy.SetDeathMode();
+            RemoveLastModule();
         }
         else
         {
@@ -124,13 +128,40 @@ public class Player : MonoBehaviour
     {
         if (pCol.GetComponent<Module>())
         {
-            Module lModule = pCol.GetComponent<Module>();
-            if (lModule.GetComponent<Canon>() != null) lModule.GetComponent<Canon>().isEnemy = false;
-            lModule.transform.parent = _transform;
-
-            _modulesList.Add(lModule);
-            
-            _listLenght++;
+            AddModule(pCol.GetComponent<Module>());
         }
     }
+
+    private void AddModule(Module module)
+    {
+        if (module.GetComponent<Canon>() != null) module.GetComponent<Canon>().isEnemy = false;
+
+        module.transform.parent = _transform;
+
+        _modulesList.Add(module);
+        _listLenght++;
+
+        UpdateWeight();
+    }
+
+    private void RemoveLastModule()
+    {
+        Module lModuleToDestroy = _modulesList[_listLenght - 1];
+        _modulesList.RemoveAt(_listLenght - 1);
+        _listLenght--;
+        lModuleToDestroy.SetDeathMode();
+
+        UpdateWeight();
+    }
+
+    private void UpdateWeight()
+    {
+        float lNewWeight = 0;
+        foreach (Module lModule in _modulesList)
+        {
+            lNewWeight += lModule._weight;
+        }
+        _weight = lNewWeight;
+    }
+
 }
