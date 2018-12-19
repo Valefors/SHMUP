@@ -799,5 +799,40 @@ PrefabInstance:
       propertyPath: _shotRate
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 480005102199634977, guid: 78bd0d931007e5944807d00305ab7e57,
+        type: 3}
+      propertyPath: _speedWeightCurve.m_Curve.Array.data[2].outSlope
+      value: -0.0025815975
+      objectReference: {fileID: 0}
+    - target: {fileID: 480005102199634977, guid: 78bd0d931007e5944807d00305ab7e57,
+        type: 3}
+      propertyPath: _speedWeightCurve.m_Curve.Array.data[2].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480005102199634977, guid: 78bd0d931007e5944807d00305ab7e57,
+        type: 3}
+      propertyPath: _speedWeightCurve.m_Curve.Array.data[2].inSlope
+      value: -0.0025815975
+      objectReference: {fileID: 0}
+    - target: {fileID: 480005102199634977, guid: 78bd0d931007e5944807d00305ab7e57,
+        type: 3}
+      propertyPath: _speedWeightCurve.m_Curve.Array.data[2].inWeight
+      value: 0.068998404
+      objectReference: {fileID: 0}
+    - target: {fileID: 480005102199634977, guid: 78bd0d931007e5944807d00305ab7e57,
+        type: 3}
+      propertyPath: _speedWeightCurve.m_Curve.Array.data[1].tangentMode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 480005102199634977, guid: 78bd0d931007e5944807d00305ab7e57,
+        type: 3}
+      propertyPath: _speedWeightCurve.m_Curve.Array.data[1].outSlope
+      value: -0.1966643
+      objectReference: {fileID: 0}
+    - target: {fileID: 480005102199634977, guid: 78bd0d931007e5944807d00305ab7e57,
+        type: 3}
+      propertyPath: _speedWeightCurve.m_Curve.Array.data[1].outWeight
+      value: 0.03532373
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78bd0d931007e5944807d00305ab7e57, type: 3}
