@@ -4,6 +4,10 @@ using UnityEngine;
 
 public abstract class Module : MonoBehaviour
 {
+    //Data
+    [SerializeField]
+    public float _weight = 1f;
+
     //Fonction de l'état du cube
     public delegate void DelAction();
     DelAction moduleAction;
