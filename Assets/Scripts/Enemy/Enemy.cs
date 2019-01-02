@@ -6,12 +6,9 @@ public class Enemy : MonoBehaviour
 {
 
     [Header("Personal Datas")]
-    [SerializeField]
-    protected Transform _spawnShot;
     protected Transform _transform;
-    [SerializeField]
-    protected GameObject _prefabShot;
-
+    PathFollower _pF;
+    Rigidbody2D _rb;
 
     [Header("Gameplay Datas")]
     [SerializeField]
@@ -22,13 +19,35 @@ public class Enemy : MonoBehaviour
     protected float _shotRate = 0.1f;*/
 
     [SerializeField]
-    private List<Module> _modulesList = new List<Module>();
+    private Module[] _modulesList;
     private int _listLenght = 0;
 
     private void OnEnable()
     {
-        _listLenght = _modulesList.Count;
+        FillModuleArray();
+
+        _listLenght = _modulesList.Length;
         _transform = this.transform;
+
+        _rb = GetComponent<Rigidbody2D>();
+        _pF = GetComponentInChildren<PathFollower>();
+        if (_pF == null) Debug.LogError("PATH FOLLOWER MISSING IN " + transform.name);
+    }
+
+    void FillModuleArray()
+    {
+        _modulesList = GetComponentsInChildren<Module>();
+    }
+
+    void Move()
+    {
+        if (_transform.position != _pF.nodesPosition[_pF.currentNode])
+        {
+            Vector3 pos = Vector3.MoveTowards(_transform.position, _pF.nodesPosition[_pF.currentNode], _speed * Time.deltaTime);
+            _rb.MovePosition(pos);
+        }
+
+        else _pF.currentNode = (_pF.currentNode + 1) % _pF.nodesPosition.Count;
     }
 
     #region GetDamage
@@ -56,6 +75,8 @@ public class Enemy : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-
-
+    private void Update()
+    {
+        Move();
+    }
 }
