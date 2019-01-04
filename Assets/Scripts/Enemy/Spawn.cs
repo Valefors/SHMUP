@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    const int ANGLE_ROTATION = 45;
+    [SerializeField] int ANGLE_ROTATION = 45;
     bool _isTaken = false;
 
     GameObject _module;
@@ -13,12 +13,12 @@ public class Spawn : MonoBehaviour
     
     public void RotateLeft()
     {
-        if(_isTaken) _module.transform.Rotate(0, 0, -45);
+        if(_isTaken) _module.transform.Rotate(0, 0, -ANGLE_ROTATION);
     }
 
     public void RotateRight()
     {
-        if (_isTaken) _module.transform.Rotate(0, 0, 45);
+        if (_isTaken) _module.transform.Rotate(0, 0, ANGLE_ROTATION);
     }
 
     public void AddModule1()
@@ -26,6 +26,14 @@ public class Spawn : MonoBehaviour
         if (_isTaken) return;
 
         _module = Instantiate(_modulesList[0], transform.position, transform.rotation, transform.parent.parent);
+        _isTaken = true;
+    }
+
+    public void AddModule2()
+    {
+        if (_isTaken) return;
+
+        _module = Instantiate(_modulesList[1], transform.position, transform.rotation, transform.parent.parent);
         _isTaken = true;
     }
 

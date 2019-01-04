@@ -18,7 +18,7 @@ public class Canon : Module
 
     [Header("Personal Datas")]
     private Transform _transform;
-    private bool _canShoot = true;
+    protected bool _canShoot = true;
 
 
     // Start is called before the first frame update
@@ -39,7 +39,7 @@ public class Canon : Module
         _canShoot = false;
         Invoke("CanShootAgain", _shotRate);
     }
-
+    
     protected virtual void CanShootAgain()
     {
         _canShoot = true;
