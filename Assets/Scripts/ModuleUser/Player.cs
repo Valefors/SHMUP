@@ -14,6 +14,18 @@ public class Player : MonoBehaviour
     [SerializeField]
     protected float _speed;
     [SerializeField]
+    private AnimationCurve _accelerationCurve;
+    [SerializeField]
+    private AnimationCurve _decelerationCurve;
+    [SerializeField]
+    protected float _accSpeed = 1;
+    [SerializeField]
+    protected float _decSpeed = 1;
+    [Range(0,1)]
+    private float _accDecLerpValue;
+    private Vector3 _lastMovement = Vector3.zero;
+
+    [SerializeField]
     private AnimationCurve _speedWeightCurve;
     private float _weight = 0f;
 
@@ -36,14 +48,18 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float lXmovValue = Input.GetAxis(_HORIZONTAL_AXIS);
-        float lYmovValue = Input.GetAxis(_VERTICAL_AXIS);
+        float lXmovValue = Input.GetAxisRaw(_HORIZONTAL_AXIS);
+        float lYmovValue = Input.GetAxisRaw(_VERTICAL_AXIS);
 
         SetModuleVoidMode();
 
         if (lXmovValue != 0 || lYmovValue != 0)
         {
             Move(lXmovValue, lYmovValue);
+        }
+        else if(_accDecLerpValue != 0)
+        {
+            SlowDown();
         }
 
         if (Input.GetAxisRaw("Fire1") != 0)
@@ -54,9 +70,29 @@ public class Player : MonoBehaviour
 
     void Move(float lXmovValue, float lYmovValue)
     {
+        if(_accDecLerpValue != 1)
+        {
+            _accDecLerpValue += Time.deltaTime * _accSpeed;
+            _accDecLerpValue = Mathf.Clamp01(_accDecLerpValue);
+        }
         Vector3 lMovement = new Vector3(lXmovValue, lYmovValue, 0);
         float lSpeed = _speedWeightCurve.Evaluate(_weight) * _speed;
         lMovement = lMovement.normalized * lSpeed * Time.deltaTime;
+
+        _lastMovement = lMovement;
+
+        lMovement *= _accelerationCurve.Evaluate(_accDecLerpValue);
+
+        _transform.Translate(lMovement);
+    }
+
+    void SlowDown()
+    {
+        _accDecLerpValue -= Time.deltaTime * _decSpeed;
+        _accDecLerpValue = Mathf.Clamp01(_accDecLerpValue);
+
+        Vector3 lMovement = _lastMovement;
+        lMovement *= _decelerationCurve.Evaluate(_accDecLerpValue);
 
         _transform.Translate(lMovement);
     }
