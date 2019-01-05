@@ -14,7 +14,7 @@ public abstract class Module : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        SetModeNormal();
+        SetModeVoid();
     }
 
     public virtual void SetModeVoid()

@@ -5,13 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Personal Datas")]
-    [SerializeField]
-    protected Transform _spawnShot;
     protected Transform _transform;
-    [SerializeField]
-    protected GameObject _prefabShot;
-
-    private bool _canShoot = true;
 
     private static string _VERTICAL_AXIS = "Vertical";
     private static string _HORIZONTAL_AXIS = "Horizontal";

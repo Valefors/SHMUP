@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SafeZone : MonoBehaviour
 {
-    static float MAX_X = 10f;
-    static float MAX_Y = 7f;
-    static float MIN_X = -10f;
-    static float MIN_Y = -5f;
+    static float MAX_X = 15f;
+    static float MAX_Y = 15f;
+    static float MIN_X = -15f;
+    static float MIN_Y = -15f;
 
     public static bool IsOffField(Vector2 pPos)
     {

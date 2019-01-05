@@ -61,6 +61,8 @@ public class Shot : MonoBehaviour
 
     public void SetUp(bool pIsEnemy, Quaternion pRotation, float pSpeed, int pHitValue)
     {
+        if(_transform == null) _transform = GetComponent<Transform>(); //Weird error
+
         _isEnemy = pIsEnemy;
         _transform.rotation = pRotation;
         _speedShot = pSpeed;

@@ -32,7 +32,7 @@ public class Canon : Module
     protected virtual void Shoot()
     {
         Shot shotShot = Instantiate(_prefabShot, _transform.position, Quaternion.identity).GetComponent<Shot>();
-        shotShot.SetUp(isEnemy, this.transform.rotation, _speedShot, _hitValue);
+        shotShot.SetUp(isEnemy, _transform.rotation, _speedShot, _hitValue);
         _canShoot = false;
         Invoke("CanShootAgain", _shotRate);
     }

@@ -25,22 +25,33 @@ public class Enemy : MonoBehaviour
     private void OnEnable()
     {
         FillModuleArray();
+        SetModuleActionMode();
 
-        _listLenght = _modulesList.Length;
         _transform = this.transform;
 
         _rb = GetComponent<Rigidbody2D>();
         _pF = GetComponentInChildren<PathFollower>();
-        if (_pF == null) Debug.LogError("PATH FOLLOWER MISSING IN " + transform.name);
+        if (_pF == null) Debug.Log("PATH FOLLOWER MISSING IN " + transform.name);
     }
 
     void FillModuleArray()
     {
         _modulesList = GetComponentsInChildren<Module>();
+        _listLenght = _modulesList.Length;
+    }
+
+    void SetModuleActionMode()
+    {
+        for (int i = 0; i < _listLenght; i++)
+        {
+            _modulesList[i].SetModeNormal();
+        }
     }
 
     void Move()
     {
+        if (_pF == null) return;
+
         if (_transform.position != _pF.nodesPosition[_pF.currentNode])
         {
             Vector3 pos = Vector3.MoveTowards(_transform.position, _pF.nodesPosition[_pF.currentNode], _speed * Time.deltaTime);
