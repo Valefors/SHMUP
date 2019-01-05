@@ -141,8 +141,11 @@ public class Player : MonoBehaviour
     private void AddModule(Module module)
     {
         if (module.GetComponent<Canon>() != null) module.GetComponent<Canon>().isEnemy = false;
-
+        
         module.transform.parent = _transform;
+
+        Vector3 directionToLookAt = module.transform.position - _transform.position;
+        module.transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToLookAt);
 
         _modulesList.Add(module);
         _listLenght++;
