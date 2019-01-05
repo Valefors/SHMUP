@@ -35,6 +35,11 @@ public class Test_SpawnEditor : Editor
             spawn.AddModule2();
         }
 
+        if (GUILayout.Button("Add Module 3"))
+        {
+            spawn.AddModule3();
+        }
+
         if (GUILayout.Button("Remove Module"))
         {
             spawn.RemoveModule();

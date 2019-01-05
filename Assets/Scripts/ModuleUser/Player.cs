@@ -109,7 +109,6 @@ public class Player : MonoBehaviour
     #endregion
 
     #region GetDamage
-    //TO-DO: INVERSER, PLAYER DOIT CHECKER LUI LES COLLISIONS ET PAS LES BULLETS
     public virtual void GetHit()
     {
         if(_listLenght != 1)

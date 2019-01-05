@@ -47,6 +47,7 @@ MonoBehaviour:
   _modulesList:
   - {fileID: 0}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
+  - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &193285147
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,6 +138,7 @@ MonoBehaviour:
   _modulesList:
   - {fileID: 0}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
+  - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &348423918
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +272,7 @@ MonoBehaviour:
   _modulesList:
   - {fileID: 0}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
+  - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &474813844
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +363,7 @@ MonoBehaviour:
   _modulesList:
   - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
+  - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &550194234
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +454,7 @@ MonoBehaviour:
   _modulesList:
   - {fileID: 0}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
+  - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &632264593
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +588,7 @@ MonoBehaviour:
   _modulesList:
   - {fileID: 0}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
+  - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &1121621083
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,6 +636,7 @@ MonoBehaviour:
   _modulesList:
   - {fileID: 0}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
+  - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &1432401125
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,6 +739,7 @@ MonoBehaviour:
   _modulesList:
   - {fileID: 0}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
+  - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &1822156569
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,7 +972,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0

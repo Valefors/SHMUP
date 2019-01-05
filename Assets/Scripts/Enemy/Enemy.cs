@@ -51,9 +51,9 @@ public class Enemy : MonoBehaviour
     }
 
     #region GetDamage
-    public virtual void GetHit()
+    public virtual void GetHit(int pHitValue)
     {
-        _pv--;
+        _pv = _pv - pHitValue;
         if (_pv <= 0)
             Death();
     }

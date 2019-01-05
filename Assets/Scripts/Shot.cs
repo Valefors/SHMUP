@@ -14,18 +14,16 @@ public class Shot : MonoBehaviour
     [SerializeField]
     private Vector3 _direction = Vector3.up;
 
-
+    int _hitValue = 1;
 
     private Transform _transform;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("Collision with " + collision.gameObject.name);
-
         Enemy enemyColl = collision.gameObject.GetComponent<Enemy>();
         if (enemyColl != null && !_isEnemy)
         {
-            enemyColl.GetHit();
+            enemyColl.GetHit(_hitValue);
             this.Touch();
         }
 
@@ -46,22 +44,29 @@ public class Shot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (SafeZone.IsOffField(_transform.position))
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         _transform.Translate(_direction * _speedShot * Time.deltaTime);
     }
 
     //__TO DO : To change PROVISOIRE
-    public void SetUp(bool isEnemy, Quaternion rotation)
+    /*public void SetUp(bool isEnemy, Quaternion rotation)
     {
         SetUp(isEnemy, rotation, _speedShot);
-    }
+    }*/
 
-    public void SetUp(bool isEnemy, Quaternion rotation, float speed)
+    public void SetUp(bool pIsEnemy, Quaternion pRotation, float pSpeed, int pHitValue)
     {
-        this._isEnemy = isEnemy;
-        this.transform.rotation = rotation;
-        this._speedShot = speed;
+        _isEnemy = pIsEnemy;
+        _transform.rotation = pRotation;
+        _speedShot = pSpeed;
+        _hitValue = pHitValue;
 
-        this._direction = Vector3.up;
+        _direction = Vector3.up;
 
         ChangeColor();
     }

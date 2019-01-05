@@ -37,6 +37,14 @@ public class Spawn : MonoBehaviour
         _isTaken = true;
     }
 
+    public void AddModule3()
+    {
+        if (_isTaken) return;
+
+        _module = Instantiate(_modulesList[2], transform.position, transform.rotation, transform.parent.parent);
+        _isTaken = true;
+    }
+
     public void RemoveModule()
     {
         DestroyImmediate(_module);
