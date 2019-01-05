@@ -83,35 +83,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    #region Shoot_region
-
-    /*protected virtual void ManageShoot()
-    {
-        if (_canShoot)
-        {
-            Shoot();
-        }
-    }
-
-    protected virtual void Shoot()
-    {
-        Shot shotShot = Instantiate(_prefabShot, _spawnShot.position, Quaternion.identity).GetComponent<Shot>();
-        shotShot.SetUp(false, Vector3.up);
-        _canShoot = false;
-        Invoke("CanShootAgain", _shotRate);
-    }
-
-    protected virtual void CanShootAgain()
-    {
-        _canShoot = true;
-    }*/
-
-    #endregion
-
     #region GetDamage
     public virtual void GetHit()
     {
-        if(_listLenght != 1)
+        Shaker.instance.Shake();
+
+        if (_listLenght != 1)
         {
             RemoveLastModule();
         }

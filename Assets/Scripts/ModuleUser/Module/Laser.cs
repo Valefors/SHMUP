@@ -10,7 +10,6 @@ public class Laser : Module
 
     [SerializeField] protected LaserShot _laserShot;
 
-
     public bool isEnemy = true;
 
     [Header("Personal Datas")]
