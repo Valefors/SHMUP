@@ -132,9 +132,11 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D pCol)
     {
-        if (pCol.GetComponent<Module>())
+        Module moduleCollided = pCol.GetComponent<Module>();
+        if (moduleCollided != null)
         {
-            AddModule(pCol.GetComponent<Module>());
+            //if(moduleCollided.) //need to know if there parent are still enemy (or even friend)
+            AddModule(moduleCollided);
         }
     }
 
