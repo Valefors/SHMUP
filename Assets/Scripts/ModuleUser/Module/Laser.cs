@@ -5,8 +5,7 @@ using UnityEngine;
 public class Laser : Module
 {
     [Header("Gameplay Datas")]
-    [SerializeField] protected float _speedShot = 2f;
-    [SerializeField] float _fireRate = 3f;
+    [SerializeField] float _shotRate = 3f;
 
     [SerializeField] protected LaserShot _laserShot;
 
@@ -31,13 +30,13 @@ public class Laser : Module
     {
         _laserShot.ActiveMode();
         _canShoot = false;
-        Invoke("Disable", _fireRate);
+        Invoke("Disable", _shotRate);
     }
 
     protected virtual void Disable()
     {
         _laserShot.DesactiveMode();
-        Invoke("CanShootAgain", _fireRate);
+        Invoke("CanShootAgain", _shotRate);
     }
 
     protected virtual void CanShootAgain()

@@ -5,7 +5,6 @@ using UnityEngine;
 public class LaserShot : MonoBehaviour
 {
     [Header("Gameplay Datas")]
-    [SerializeField] private float _speedShot = 1f;
     [SerializeField] int _hitValue = 1;
     private bool _isEnemy = true;
     bool _isActive = false;

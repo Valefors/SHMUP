@@ -11,12 +11,9 @@ public class Enemy : MonoBehaviour
     Rigidbody2D _rb;
 
     [Header("Gameplay Datas")]
-    [SerializeField]
-    protected float _speed;
+    [SerializeField] protected float _speed;
+    [SerializeField] protected bool _moveLoop = false;
     private int _pv = 1;
-    //Shot rate currently on module
-    /*[SerializeField]
-    protected float _shotRate = 0.1f;*/
 
     [SerializeField]
     private Module[] _modulesList;
@@ -58,7 +55,13 @@ public class Enemy : MonoBehaviour
             _rb.MovePosition(pos);
         }
 
-        else _pF.currentNode = (_pF.currentNode + 1) % _pF.nodesPosition.Count;
+        else
+        {
+            /*print(_pF.currentNode);
+            print(_pF.nodesPosition.Count - 1);*/
+            if (_pF.currentNode + 1 == _pF.nodesPosition.Count && !_moveLoop) return;
+            _pF.currentNode = (_pF.currentNode + 1) % _pF.nodesPosition.Count;     
+        }
     }
 
     #region GetDamage
