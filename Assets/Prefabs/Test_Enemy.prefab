@@ -563,6 +563,7 @@ MonoBehaviour:
   _moveLoop: 1
   _modulesList:
   - {fileID: 0}
+  _dropLoot: 0.5
 --- !u!50 &1385458111042732298
 Rigidbody2D:
   serializedVersion: 4

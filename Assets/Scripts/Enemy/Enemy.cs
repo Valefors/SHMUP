@@ -15,9 +15,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected bool _moveLoop = false;
     private int _pv = 1;
 
-    [SerializeField]
-    private Module[] _modulesList;
+    [SerializeField] private Module[] _modulesList;
     private int _listLenght = 0;
+
+    [SerializeField] [Range(0,1)] protected float _dropLoot = 0.5f;
 
     private void OnEnable()
     {
@@ -76,18 +77,26 @@ public class Enemy : MonoBehaviour
 
     private void Death()
     {
+        float randomValue = Random.Range(0f,1f);
+        if(randomValue < _dropLoot)
+            DropItem();
+        Destroy(this.gameObject);
+    }
+
+    void DropItem()
+    {
         //Just a try
         //TO DO FACTORY
-        if(_listLenght != 0)
+        if (_listLenght != 0)
         {
-            Module lModule = _modulesList[0];
+            int randomIndex = Random.Range(0, _modulesList.Length);
+            
+            Module lModule = _modulesList[randomIndex];
             lModule.transform.SetParent(null); //put it in a container of all "free" module who will go down , maybe ?
             lModule.SetModeVoid();
             lModule.free = true;
             //TO DO : a launch fonction to launch them in a direction
         }
-
-        Destroy(this.gameObject);
     }
 
     private void Update()
