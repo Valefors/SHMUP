@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ANGLE_ROTATION: 45
   _modulesList:
-  - {fileID: 0}
+  - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
   - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &282867638
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ANGLE_ROTATION: 45
   _modulesList:
-  - {fileID: 0}
+  - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
   - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &428054200
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ANGLE_ROTATION: 45
   _modulesList:
-  - {fileID: 0}
+  - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
   - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &487589763
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ANGLE_ROTATION: 45
   _modulesList:
-  - {fileID: 0}
+  - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
   - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &879046906
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ANGLE_ROTATION: 45
   _modulesList:
-  - {fileID: 0}
+  - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
   - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &1121621083
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ANGLE_ROTATION: 45
   _modulesList:
-  - {fileID: 0}
+  - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
   - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &1432401125
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ANGLE_ROTATION: 45
   _modulesList:
-  - {fileID: 0}
+  - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
   - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &1883725661
