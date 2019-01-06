@@ -125,8 +125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1827671439824f458bbc114202c45cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weight: 1
+  free: 0
   _shotRate: 0.25
   _speedShot: 10
+  _hitValue: 1
   _prefabShot: {fileID: 2893416602070953415, guid: 66cfab03dcf6aea409f8a11c45bf769e,
     type: 3}
   isEnemy: 0
@@ -156,7 +159,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.4}

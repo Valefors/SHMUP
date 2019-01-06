@@ -8,6 +8,8 @@ public abstract class Module : MonoBehaviour
     [SerializeField]
     public float _weight = 1f;
 
+    public bool free = false;
+
     //Fonction de l'état du cube
     public delegate void DelAction();
     DelAction moduleAction;

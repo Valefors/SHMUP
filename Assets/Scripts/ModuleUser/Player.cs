@@ -14,16 +14,28 @@ public class Player : MonoBehaviour
     [SerializeField]
     protected float _speed;
     [SerializeField]
-    private AnimationCurve _accelerationCurve;
+    private AnimationCurve _horizontalAccelerationCurve;
     [SerializeField]
-    private AnimationCurve _decelerationCurve;
+    private AnimationCurve _horizontalDecelerationCurve;
     [SerializeField]
-    protected float _accSpeed = 1;
+    protected float _horizontalAccSpeed = 1;
     [SerializeField]
-    protected float _decSpeed = 1;
-    [Range(0,1)]
-    private float _accDecLerpValue;
-    private Vector3 _lastMovement = Vector3.zero;
+    protected float _horizontalDecSpeed = 1;
+    [Range(0, 1)]
+    private float _horizontalAccDecLerpValue;
+    private Vector3 _horizontalLastMovement = Vector3.zero;
+
+    [SerializeField]
+    private AnimationCurve _verticalAccelerationCurve;
+    [SerializeField]
+    private AnimationCurve _verticalDecelerationCurve;
+    [SerializeField]
+    protected float _verticalAccSpeed = 1;
+    [SerializeField]
+    protected float _verticalDecSpeed = 1;
+    [Range(0, 1)]
+    private float _verticalAccDecLerpValue;
+    private Vector3 _verticalLastMovement = Vector3.zero;
 
     [SerializeField]
     private AnimationCurve _speedWeightCurve;
@@ -48,19 +60,19 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float lXmovValue = Input.GetAxisRaw(_HORIZONTAL_AXIS);
-        float lYmovValue = Input.GetAxisRaw(_VERTICAL_AXIS);
-
         SetModuleVoidMode();
 
-        if (lXmovValue != 0 || lYmovValue != 0)
-        {
-            Move(lXmovValue, lYmovValue);
-        }
-        else if(_accDecLerpValue != 0)
-        {
-            SlowDown();
-        }
+        float lXmovValue = Input.GetAxisRaw(_HORIZONTAL_AXIS);
+        if (lXmovValue != 0)
+            HorizontalMove(lXmovValue);
+        else if (_horizontalAccDecLerpValue != 0)
+            HorizontalSlowDown();
+
+        float lYmovValue = Input.GetAxisRaw(_VERTICAL_AXIS);
+        if (lYmovValue != 0)
+            VerticalMove(lYmovValue);
+        else if (_verticalAccDecLerpValue != 0)
+            VerticalSlowDown();
 
         if (Input.GetAxisRaw("Fire1") != 0)
         {
@@ -68,31 +80,60 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Move(float lXmovValue, float lYmovValue)
+    void HorizontalMove(float lXmovValue)
     {
-        if(_accDecLerpValue != 1)
+        if (_horizontalAccDecLerpValue != 1)
         {
-            _accDecLerpValue += Time.deltaTime * _accSpeed;
-            _accDecLerpValue = Mathf.Clamp01(_accDecLerpValue);
+            _horizontalAccDecLerpValue += Time.deltaTime * _horizontalAccSpeed;
+            _horizontalAccDecLerpValue = Mathf.Clamp01(_horizontalAccDecLerpValue);
         }
-        Vector3 lMovement = new Vector3(lXmovValue, lYmovValue, 0);
+        Vector3 lMovement = new Vector3(lXmovValue, 0, 0);
         float lSpeed = _speedWeightCurve.Evaluate(_weight) * _speed;
         lMovement = lMovement.normalized * lSpeed * Time.deltaTime;
 
-        _lastMovement = lMovement;
+        _horizontalLastMovement = lMovement;
 
-        lMovement *= _accelerationCurve.Evaluate(_accDecLerpValue);
+        lMovement *= _horizontalAccelerationCurve.Evaluate(_horizontalAccDecLerpValue);
 
         _transform.Translate(lMovement);
     }
 
-    void SlowDown()
+    void VerticalMove(float lYmovValue)
     {
-        _accDecLerpValue -= Time.deltaTime * _decSpeed;
-        _accDecLerpValue = Mathf.Clamp01(_accDecLerpValue);
+        if (_verticalAccDecLerpValue != 1)
+        {
+            _verticalAccDecLerpValue += Time.deltaTime * _verticalAccSpeed;
+            _verticalAccDecLerpValue = Mathf.Clamp01(_verticalAccDecLerpValue);
+        }
+        Vector3 lMovement = new Vector3(0, lYmovValue, 0);
+        float lSpeed = _speedWeightCurve.Evaluate(_weight) * _speed;
+        lMovement = lMovement.normalized * lSpeed * Time.deltaTime;
 
-        Vector3 lMovement = _lastMovement;
-        lMovement *= _decelerationCurve.Evaluate(_accDecLerpValue);
+        _verticalLastMovement = lMovement;
+
+        lMovement *= _verticalAccelerationCurve.Evaluate(_verticalAccDecLerpValue);
+
+        _transform.Translate(lMovement);
+    }
+
+    void HorizontalSlowDown()
+    {
+        _horizontalAccDecLerpValue -= Time.deltaTime * _horizontalDecSpeed;
+        _horizontalAccDecLerpValue = Mathf.Clamp01(_horizontalAccDecLerpValue);
+
+        Vector3 lMovement = _horizontalLastMovement;
+        lMovement *= _horizontalDecelerationCurve.Evaluate(_horizontalAccDecLerpValue);
+
+        _transform.Translate(lMovement);
+    }
+
+    void VerticalSlowDown()
+    {
+        _verticalAccDecLerpValue -= Time.deltaTime * _verticalDecSpeed;
+        _verticalAccDecLerpValue = Mathf.Clamp01(_verticalAccDecLerpValue);
+
+        Vector3 lMovement = _verticalLastMovement;
+        lMovement *= _verticalDecelerationCurve.Evaluate(_verticalAccDecLerpValue);
 
         _transform.Translate(lMovement);
     }
@@ -132,9 +173,11 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D pCol)
     {
-        if (pCol.GetComponent<Module>())
+        Module moduleCollided = pCol.GetComponent<Module>();
+        if (moduleCollided != null)
         {
-            AddModule(pCol.GetComponent<Module>());
+            if (moduleCollided.free) //need to know if there parent are still enemy (or even friend)
+                AddModule(moduleCollided);
         }
     }
 
@@ -144,7 +187,12 @@ public class Player : MonoBehaviour
 
         module.transform.parent = _transform;
 
+        Vector3 directionToLookAt = module.transform.position - _transform.position;
+        module.transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToLookAt);
+        module.free = false;
+
         _modulesList.Add(module);
+
         _listLenght++;
 
         UpdateWeight();
