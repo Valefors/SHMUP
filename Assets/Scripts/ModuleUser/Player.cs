@@ -135,8 +135,8 @@ public class Player : MonoBehaviour
         Module moduleCollided = pCol.GetComponent<Module>();
         if (moduleCollided != null)
         {
-            //if(moduleCollided.) //need to know if there parent are still enemy (or even friend)
-            AddModule(moduleCollided);
+            if(moduleCollided.free) //need to know if there parent are still enemy (or even friend)
+                AddModule(moduleCollided);
         }
     }
 
@@ -148,8 +148,10 @@ public class Player : MonoBehaviour
 
         Vector3 directionToLookAt = module.transform.position - _transform.position;
         module.transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToLookAt);
+        module.free = false;
 
         _modulesList.Add(module);
+
         _listLenght++;
 
         UpdateWeight();

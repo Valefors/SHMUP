@@ -80,6 +80,7 @@ public class Enemy : MonoBehaviour
             Module lModule = _modulesList[0];
             lModule.transform.SetParent(null); //put it in a container of all "free" module who will go down , maybe ?
             lModule.SetModeVoid();
+            lModule.free = true;
             //TO DO : a launch fonction to launch them in a direction
         }
 
