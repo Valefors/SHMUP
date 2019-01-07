@@ -12,44 +12,37 @@ public class Player : MonoBehaviour
 
     [Header("Gameplay Datas")]
     [SerializeField]
-    protected float _speed;
-    [SerializeField]
-    private AnimationCurve _horizontalAccelerationCurve;
-    [SerializeField]
-    private AnimationCurve _horizontalDecelerationCurve;
-    [SerializeField]
-    protected float _horizontalAccSpeed = 1;
-    [SerializeField]
-    protected float _horizontalDecSpeed = 1;
-    [Range(0, 1)]
-    private float _horizontalAccDecLerpValue;
-    private Vector3 _horizontalLastMovement = Vector3.zero;
-
-    [SerializeField]
-    private AnimationCurve _verticalAccelerationCurve;
-    [SerializeField]
-    private AnimationCurve _verticalDecelerationCurve;
-    [SerializeField]
-    protected float _verticalAccSpeed = 1;
-    [SerializeField]
-    protected float _verticalDecSpeed = 1;
-    [Range(0, 1)]
-    private float _verticalAccDecLerpValue;
-    private Vector3 _verticalLastMovement = Vector3.zero;
-
-    [SerializeField]
-    private AnimationCurve _speedWeightCurve;
-    private float _weight = 0f;
-
-    [SerializeField]
     protected float _shotRate = 0.1f;
 
     [SerializeField]
     private List<Module> _modulesList = new List<Module>();
     private int _listLenght = 0;
 
+    [Header("Movement Part")]
+    [SerializeField]
+    private float _speed;
+    [SerializeField]
+    private AnimationCurve _speedWeightCurve;
+    private float _weight = 0f;
+
+    [HideInInspector] [SerializeField] private AnimationCurve _horizontalAccelerationCurve;
+    [HideInInspector] [SerializeField] private AnimationCurve _horizontalDecelerationCurve;
+    [HideInInspector] [SerializeField] private float _horizontalAccSpeed = 1;
+    [HideInInspector] [SerializeField] private float _horizontalDecSpeed = 1;
+    [Range(0, 1)]
+    private float _horizontalAccDecLerpValue;
+    private Vector3 _horizontalLastMovement = Vector3.zero;
+
+    [HideInInspector] [SerializeField] private AnimationCurve _verticalAccelerationCurve;
+    [HideInInspector] [SerializeField] private AnimationCurve _verticalDecelerationCurve;
+    [HideInInspector] [SerializeField] private float _verticalAccSpeed = 1;
+    [HideInInspector] [SerializeField] private float _verticalDecSpeed = 1;
+    [Range(0, 1)]
+    private float _verticalAccDecLerpValue;
+    private Vector3 _verticalLastMovement = Vector3.zero;
+
     // Start is called before the first frame update
-    protected void Start()
+    private void Start()
     {
         _transform = this.transform;
         _listLenght = _modulesList.Count;
