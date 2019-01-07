@@ -181,6 +181,8 @@ public class Player : MonoBehaviour
         module.transform.parent = _transform;
 
         Vector3 directionToLookAt = module.transform.position - _transform.position;
+        //TO DO : need to make a clear feedback
+        //something to make the module really go from start direction to this one
         module.transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToLookAt);
         module.free = false;
 
