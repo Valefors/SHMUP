@@ -628,9 +628,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 7
   _moveLoop: 1
+  _pv: 2
   _modulesList:
   - {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
-  _dropLoot: 0.3
+  _dropLoot: 0.5
 --- !u!50 &1095384826
 Rigidbody2D:
   serializedVersion: 4
