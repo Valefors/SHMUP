@@ -132,7 +132,7 @@ MonoBehaviour:
   _hitValue: 1
   _prefabShot: {fileID: 2893416602070953415, guid: 66cfab03dcf6aea409f8a11c45bf769e,
     type: 3}
-  isEnemy: 0
+  isEnemy: 1
 --- !u!58 &4999846654520275573
 CircleCollider2D:
   m_ObjectHideFlags: 0

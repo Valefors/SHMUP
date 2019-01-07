@@ -53,6 +53,7 @@ MonoBehaviour:
   _speed: 0
   _modulesList:
   - {fileID: 7678596920835758781}
+  _dropLoot: 0.5
 --- !u!58 &870433802817662690
 CircleCollider2D:
   m_ObjectHideFlags: 0
