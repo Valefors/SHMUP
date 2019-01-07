@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     [Header("Gameplay Datas")]
     [SerializeField] protected float _speed;
     [SerializeField] protected bool _moveLoop = false;
-    private int _pv = 1;
+    [SerializeField] int _pv = 1;
 
     [SerializeField] private Module[] _modulesList;
     private int _listLenght = 0;
