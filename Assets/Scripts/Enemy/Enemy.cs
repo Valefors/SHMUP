@@ -22,14 +22,17 @@ public class Enemy : MonoBehaviour
 
     private void OnEnable()
     {
-        FillModuleArray();
-        SetModuleActionMode();
-
         _transform = this.transform;
 
         _rb = GetComponent<Rigidbody2D>();
         _pF = GetComponentInChildren<PathFollower>();
         if (_pF == null) Debug.Log("PATH FOLLOWER MISSING IN " + transform.name);
+    }
+
+    private void Start()
+    {
+        FillModuleArray();
+        SetModuleActionMode();
     }
 
     void FillModuleArray()
@@ -58,8 +61,6 @@ public class Enemy : MonoBehaviour
 
         else
         {
-            /*print(_pF.currentNode);
-            print(_pF.nodesPosition.Count - 1);*/
             if (_pF.currentNode + 1 == _pF.nodesPosition.Count && !_moveLoop) return;
             _pF.currentNode = (_pF.currentNode + 1) % _pF.nodesPosition.Count;     
         }
