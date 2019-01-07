@@ -8,6 +8,9 @@ public abstract class Module : MonoBehaviour
     [SerializeField]
     public float _weight = 1f;
 
+    [SerializeField]
+    private float _freeRotationSpeed = 0.7f;
+
     public bool free = false;
 
     //Fonction de l'état du cube
@@ -33,8 +36,19 @@ public abstract class Module : MonoBehaviour
     {
         moduleAction = DoActionNormal;
     }
-
+    
     public abstract void DoActionNormal();
+
+    public virtual void SetModeFree()
+    {
+        moduleAction = DoActionFree;
+    }
+
+    public virtual void DoActionFree()
+    {
+        //TO DO : Go down at the speed of the scrolling + disapear after a certain point
+        transform.Rotate(Vector3.forward * _freeRotationSpeed);
+    }
 
     protected void Update()
     {
