@@ -51,7 +51,7 @@ MonoBehaviour:
   _shotRate: 0.1
   _modulesList:
   - {fileID: 4579411173744339998}
-  _speed: 10
+  _speed: 8
   _speedWeightCurve:
     serializedVersion: 2
     m_Curve:
@@ -142,8 +142,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _horizontalAccSpeed: 4
-  _horizontalDecSpeed: 4
+  _horizontalAccSpeed: 3.5
+  _horizontalDecSpeed: 3.5
   _verticalAccelerationCurve:
     serializedVersion: 2
     m_Curve:
@@ -201,8 +201,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _verticalAccSpeed: 4
-  _verticalDecSpeed: 4
+  _verticalAccSpeed: 3.5
+  _verticalDecSpeed: 3.5
 --- !u!58 &4861562116063373004
 CircleCollider2D:
   m_ObjectHideFlags: 0

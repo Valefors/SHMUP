@@ -316,8 +316,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
+  _freeRotationSpeed: 0.7
   free: 0
-  _shotRate: 0.25
+  _shotRate: 0.5
   _speedShot: 10
   _hitValue: 1
   _prefabShot: {fileID: 2893416602070953415, guid: 66cfab03dcf6aea409f8a11c45bf769e,
@@ -631,7 +632,7 @@ MonoBehaviour:
   _pv: 2
   _modulesList:
   - {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
-  _dropLoot: 0.5
+  _dropLoot: 0.3
 --- !u!50 &1095384826
 Rigidbody2D:
   serializedVersion: 4
