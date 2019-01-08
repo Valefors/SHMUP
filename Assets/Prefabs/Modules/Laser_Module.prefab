@@ -64,7 +64,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.4}
+  m_Offset: {x: 0, y: 0.3}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -75,7 +75,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.4}
+  m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
 --- !u!114 &6946465965571379230
 MonoBehaviour:
@@ -90,8 +90,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
-  _speedShot: 2
-  _fireRate: 3
+  _freeRotationSpeed: 0.7
+  free: 0
+  _shotRate: 3
   _laserShot: {fileID: 1098324737}
   isEnemy: 1
 --- !u!1 &727252101
@@ -183,7 +184,6 @@ GameObject:
   m_Component:
   - component: {fileID: 972251613}
   - component: {fileID: 972251614}
-  - component: {fileID: 972251615}
   m_Layer: 0
   m_Name: LaserVisual
   m_TagString: Untagged
@@ -253,32 +253,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &972251615
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972251612}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.48, y: 20.48}
-    newSize: {x: 20.48, y: 20.48}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 20.48, y: 20.48}
-  m_EdgeRadius: 0
 --- !u!1 &987661481
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1098324736}
   - component: {fileID: 1098324737}
+  - component: {fileID: 541457458616469152}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -354,9 +329,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46dda2c1ac6262c49bee6e3dd2b4ef17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedShot: 1
   _hitValue: 1
   _spriteRdr: {fileID: 972251614}
+--- !u!61 &541457458616469152
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098324735}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 10.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 20.48, y: 20.48}
+    newSize: {x: 20.48, y: 20.48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.45, y: 20.5}
+  m_EdgeRadius: 0
 --- !u!1 &1918834198
 GameObject:
   m_ObjectHideFlags: 0
