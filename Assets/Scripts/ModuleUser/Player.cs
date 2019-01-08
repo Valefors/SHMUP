@@ -158,6 +158,7 @@ public class Player : MonoBehaviour
         }
         else
         {
+            EventManager.TriggerEvent(EventManager.GAME_OVER_EVENT);
             Debug.Log("This is a gameOver");
         }
     }
