@@ -35,6 +35,7 @@ public class LaserShot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print("touch");
         if (!_isActive) return;
 
         Enemy enemyColl = collision.gameObject.GetComponent<Enemy>();
