@@ -64,6 +64,10 @@ public class Enemy : MonoBehaviour
             if (_pF.currentNode + 1 == _pF.nodesPosition.Count && !_moveLoop) return;
             _pF.currentNode = (_pF.currentNode + 1) % _pF.nodesPosition.Count;     
         }
+
+        // TEST LD AXEL
+        Quaternion saved = _pF.nodesRotation[_pF.currentNode];
+        _transform.rotation = Quaternion.Lerp(_transform.rotation, saved, 0.05f);
     }
 
     #region GetDamage
