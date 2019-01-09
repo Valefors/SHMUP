@@ -66,7 +66,8 @@ public class Enemy : MonoBehaviour
         }
 
         // TEST LD AXEL
-        _transform.rotation = Quaternion.Lerp(_transform.rotation, _pF.nodesRotation[_pF.currentNode], 0.05f);
+        Quaternion saved = _pF.nodesRotation[_pF.currentNode];
+        _transform.rotation = Quaternion.Lerp(_transform.rotation, saved, 0.05f);
     }
 
     #region GetDamage
