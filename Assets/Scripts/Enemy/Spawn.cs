@@ -26,9 +26,6 @@ public class Spawn : MonoBehaviour
     {
         if (_isTaken) return;
 
-       // _module = Instantiate(_modulesList[0], transform.position, transform.rotation, transform.parent.parent);
-       // TEST PREFAB
-
         _module = PrefabUtility.InstantiatePrefab(_modulesList[0] as GameObject) as GameObject;
 
         _module.transform.parent = transform;
@@ -44,8 +41,6 @@ public class Spawn : MonoBehaviour
     {
         if (_isTaken) return;
 
-        //_module = Instantiate(_modulesList[1], transform.position, transform.rotation, transform.parent.parent);
-
         _module = PrefabUtility.InstantiatePrefab(_modulesList[1] as GameObject) as GameObject;
         _module.transform.position = transform.position;
         _module.transform.rotation = transform.rotation;
@@ -57,8 +52,6 @@ public class Spawn : MonoBehaviour
     public void AddModule3()
     {
         if (_isTaken) return;
-
-        //_module = Instantiate(_modulesList[2], transform.position, transform.rotation, transform.parent.parent);
 
         _module = PrefabUtility.InstantiatePrefab(_modulesList[2] as GameObject) as GameObject;
         _module.transform.position = transform.position;

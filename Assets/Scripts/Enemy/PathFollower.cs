@@ -6,8 +6,7 @@ public class PathFollower : MonoBehaviour
 {
     Node[] _pathNode;
     public List<Vector3> nodesPosition = new List<Vector3>();
-
-    public List<Quaternion> nodesRotation = new List<Quaternion>(); // TEST POUR LE LD AXEL
+    public List<Quaternion> nodesRotation = new List<Quaternion>();
 
     public int currentNode;
 
@@ -27,7 +26,7 @@ public class PathFollower : MonoBehaviour
         {
             nodesPosition.Add(_pathNode[i].transform.position);
             savedRotation = _pathNode[i].transform.rotation;
-            nodesRotation.Add(savedRotation); // TEST LD AXEL
+            nodesRotation.Add(savedRotation);
             _pathNode[i].gameObject.SetActive(false);
         }
     }

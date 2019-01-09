@@ -66,12 +66,7 @@ public class Enemy : MonoBehaviour
         }
 
         // TEST LD AXEL
-        Quaternion saved;
-        saved = new Quaternion();
-        saved = _pF.nodesRotation[_pF.currentNode];
-        saved.x = _transform.rotation.x;
-        saved.y = _transform.rotation.y;
-        saved.z = _pF.nodesRotation[_pF.currentNode].z;
+        Quaternion saved = _pF.nodesRotation[_pF.currentNode];
         _transform.rotation = Quaternion.Lerp(_transform.rotation, saved, 0.05f);
     }
 
