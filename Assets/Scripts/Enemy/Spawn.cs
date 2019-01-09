@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
+#if UNITY_EDITOR
     [SerializeField] int ANGLE_ROTATION = 45;
     bool _isTaken = false;
 
@@ -66,4 +67,5 @@ public class Spawn : MonoBehaviour
         DestroyImmediate(_module);
         _isTaken = false;
     }
+#endif
 }
