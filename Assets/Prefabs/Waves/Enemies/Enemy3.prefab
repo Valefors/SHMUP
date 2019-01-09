@@ -163,6 +163,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
         type: 3}
+    - target: {fileID: 3787835602005470519, guid: ef197c4c7a78a7845931ef1edd4f1338,
+        type: 3}
+      propertyPath: _dropLoot
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1360472381378681068, guid: ef197c4c7a78a7845931ef1edd4f1338,
         type: 3}
       propertyPath: m_LocalScale.x
