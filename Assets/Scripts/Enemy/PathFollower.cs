@@ -22,10 +22,12 @@ public class PathFollower : MonoBehaviour
 
     public void FileArray()
     {
+        Quaternion savedRotation;
         for (int i = 0; i < _pathNode.Length; i++)
         {
             nodesPosition.Add(_pathNode[i].transform.position);
-            nodesRotation.Add(_pathNode[i].transform.rotation); // TEST LD AXEL
+            savedRotation = _pathNode[i].transform.rotation;
+            nodesRotation.Add(savedRotation); // TEST LD AXEL
             _pathNode[i].gameObject.SetActive(false);
         }
     }

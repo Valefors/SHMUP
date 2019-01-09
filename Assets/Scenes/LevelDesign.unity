@@ -5715,13 +5715,13 @@ PrefabInstance:
     - target: {fileID: 4138422076352134039, guid: 913b85f70a3fe1947a4146ffe18656df,
         type: 3}
       propertyPath: _wavesArray.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4138422076352134039, guid: 913b85f70a3fe1947a4146ffe18656df,
         type: 3}
       propertyPath: _wavesArray.Array.data[0]
       value: 
-      objectReference: {fileID: 8592036277446792675, guid: 734cf304998dad04c81ed8b86d86ad0e,
+      objectReference: {fileID: 956891858293724824, guid: 34b4b225a89a991448d7931c76d29121,
         type: 3}
     - target: {fileID: 4138422076352134039, guid: 913b85f70a3fe1947a4146ffe18656df,
         type: 3}
@@ -8338,7 +8338,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _wavesArray.Array.data[0]
       value: 
-      objectReference: {fileID: 305768159312125755, guid: 2e7edf765830ef74385fa1fd57f520b0,
+      objectReference: {fileID: 3455670871171691866, guid: 0d985f6dd08dc0743adf722e1ad74e3e,
         type: 3}
     - target: {fileID: 4138422076352134039, guid: 913b85f70a3fe1947a4146ffe18656df,
         type: 3}
@@ -9142,19 +9142,19 @@ PrefabInstance:
     - target: {fileID: 4138422076352134039, guid: 913b85f70a3fe1947a4146ffe18656df,
         type: 3}
       propertyPath: _wavesArray.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4138422076352134039, guid: 913b85f70a3fe1947a4146ffe18656df,
         type: 3}
       propertyPath: _wavesArray.Array.data[0]
       value: 
-      objectReference: {fileID: 6637024293713305657, guid: 0d985f6dd08dc0743adf722e1ad74e3e,
+      objectReference: {fileID: 956891858293724824, guid: 34b4b225a89a991448d7931c76d29121,
         type: 3}
     - target: {fileID: 4138422076352134039, guid: 913b85f70a3fe1947a4146ffe18656df,
         type: 3}
       propertyPath: _wavesArray.Array.data[1]
       value: 
-      objectReference: {fileID: 9133426437110312430, guid: 34b4b225a89a991448d7931c76d29121,
+      objectReference: {fileID: 8592036277446792675, guid: 734cf304998dad04c81ed8b86d86ad0e,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 913b85f70a3fe1947a4146ffe18656df, type: 3}
