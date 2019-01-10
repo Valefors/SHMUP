@@ -21,7 +21,7 @@ Material:
     m_TexEnvs:
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 5419c1fe4f1c70348826df1d5577f015, type: 3}
-        m_Scale: {x: 3, y: 400}
+        m_Scale: {x: 2, y: 400}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
@@ -45,7 +45,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: f6e0ad12d78f5a64ebf764e7902856c6, type: 3}
-        m_Scale: {x: 3, y: 400}
+        m_Scale: {x: 2, y: 400}
         m_Offset: {x: 0, y: 0}
     - _Metallic:
         m_Texture: {fileID: 2800000, guid: ce28525b5be95bb498cdd6aa981c54ee, type: 3}
@@ -69,21 +69,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SecondTex:
         m_Texture: {fileID: 2800000, guid: d662fb3709a2d7b43ae19cc6e6485f2d, type: 3}
-        m_Scale: {x: 3, y: 900}
+        m_Scale: {x: 2, y: 400}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _Emission: 0.14
     - _GlossMapScale: 1
-    - _Glossiness: 0.87
+    - _Glossiness: 0.4
     - _GlossyReflections: 1
     - _MaxDistance: 0.05
     - _Metallic: 0
     - _Mitigation: 1
     - _Mode: 0
-    - _MoveX: 0.8
+    - _MoveX: 6.7
     - _MoveY: -5.7
     - _OcclusionStrength: 1
     - _Parallax: 0.02

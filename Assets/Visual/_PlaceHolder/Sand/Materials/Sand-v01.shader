@@ -3,6 +3,7 @@
     Properties
     {
 		_Color("Color", Color) = (1,1,1,1)
+		_Emission("Emission", Range(0,2)) = 0.5
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
 		[Normal]
 		_BumpMap("Bumpmap", 2D) = "bump" {}
@@ -38,6 +39,8 @@
         sampler2D _MainTex;
 		sampler2D _BumpMap;
 		sampler2D _Metallic;
+
+		float _Emission;
 
 		sampler2D _HeightMap;
 		sampler2D _SecondTex;
@@ -101,6 +104,8 @@
 			o.Metallic = spec.rgb;
 			o.Smoothness = spec.a * _Glossiness;
 			o.Alpha = c.a;
+
+			//o.Emission = (tex2D(_SecondTex, IN.uv_MainTex)) * _Emission * (tex2D(_HeightMap, IN.uv_MainTex).rgb);
         }
         ENDCG
     }
