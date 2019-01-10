@@ -21,10 +21,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void OnEnable()
+    private void Awake()
     {
-        if(_manager == null) _manager = this;
+        if (_manager == null) _manager = this;
+
+        else if (_manager != this) Destroy(gameObject);
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
         EventManager.StartListening(EventManager.PAUSE_EVENT, Pause);
     }
 

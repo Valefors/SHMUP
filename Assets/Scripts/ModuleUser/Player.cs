@@ -153,7 +153,7 @@ public class Player : MonoBehaviour
     public virtual void GetHit()
     {
         Shaker.instance.Shake();
-
+         
         if (_listLenght != 1)
         {
             RemoveLastModule();
