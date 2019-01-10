@@ -20,6 +20,8 @@ public class Shot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (GameManager.manager.isPause) return;
+
         Enemy enemyColl = collision.gameObject.GetComponent<Enemy>();
         if (enemyColl != null && !_isEnemy)
         {
@@ -44,6 +46,8 @@ public class Shot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.manager.isPause) return;
+
         if (SafeZone.IsOffField(_transform.position))
         {
             Destroy(gameObject);
@@ -52,12 +56,6 @@ public class Shot : MonoBehaviour
 
         _transform.Translate(_direction * _speedShot * Time.deltaTime);
     }
-
-    //__TO DO : To change PROVISOIRE
-    /*public void SetUp(bool isEnemy, Quaternion rotation)
-    {
-        SetUp(isEnemy, rotation, _speedShot);
-    }*/
 
     public void SetUp(bool pIsEnemy, Quaternion pRotation, float pSpeed, int pHitValue)
     {

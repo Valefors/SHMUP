@@ -106,6 +106,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.manager.isPause) return;
         Move();
     }
 }

@@ -64,6 +64,8 @@ public abstract class Module : MonoBehaviour
 
     protected void Update()
     {
+        if (GameManager.manager.isPause) return;
+
         if (moduleAction != null) moduleAction();
     }
 

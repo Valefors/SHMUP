@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] int _levelToLoad = 1;
+    [HideInInspector] public bool isPause {
+        get {
+            return _isPause;
+        }
+    }
+
+    private bool _isPause = false;
 
     private static GameManager _manager;
     public static GameManager manager {
@@ -15,9 +22,10 @@ public class GameManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        
+        if(_manager == null) _manager = this;
+        EventManager.StartListening(EventManager.PAUSE_EVENT, Pause);
     }
 
     public void Play()
@@ -26,19 +34,24 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(_levelToLoad);
     }
 
-    /*private void Pause()
+    private void Pause()
     {
-        EventManager.TriggerEvent(EventManager.PAUSE_EVENT);
-    }*/
+        _isPause = true;
+    }
 
     public void Resume()
     {
-        print("here");
+        _isPause = false;
         EventManager.TriggerEvent(EventManager.RESUME_EVENT);
     }
 
     public void Quit()
     {
         Application.Quit();
+    }
+
+    void OnDisable()
+    {
+        EventManager.StopListening(EventManager.PAUSE_EVENT, Pause);
     }
 }
