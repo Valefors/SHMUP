@@ -543,6 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelToLoad: 1
+  isLD: 0
 --- !u!1 &1041362189 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4845700855136331162, guid: 0d2e85290db0bf0428d2229a49caafe3,
