@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
-  _freeSpeedFactor: 1
+  _freeSpeedFactor: 0.4
   _freeRotationSpeed: 0.7
   free: 0
 --- !u!1 &4522602327406355993
