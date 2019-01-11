@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private List<Module> _modulesList = new List<Module>();
     private int _listLenght = 0;
+    private bool _isInvicible = false;
 
     [Header("Movement Part")]
     [SerializeField]
@@ -24,6 +25,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     private AnimationCurve _speedWeightCurve;
     private float _weight = 0f;
+
+    [Header("Invulnerability")]
+    [SerializeField] SpriteRenderer _invulnerabilitySprite;
+    [SerializeField] int _invulnerabilityDelay;
 
     [HideInInspector] [SerializeField] private AnimationCurve _horizontalAccelerationCurve;
     [HideInInspector] [SerializeField] private AnimationCurve _horizontalDecelerationCurve;
@@ -53,6 +58,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.G)) GetInvicibility(true);
+
         if (GameManager.manager.isPause) return;
 
         SetModuleVoidMode();
@@ -152,17 +159,33 @@ public class Player : MonoBehaviour
     #region GetDamage
     public virtual void GetHit()
     {
+        if (_isInvicible) return;
+
         Shaker.instance.Shake();
          
         if (_listLenght != 1)
         {
             RemoveLastModule();
+            GetInvicibility();
         }
         else
         {
             if(!GameManager.manager.isLD) EventManager.TriggerEvent(EventManager.GAME_OVER_EVENT);
             Debug.Log("This is a gameOver");
         }
+    }
+
+    void GetInvicibility(bool pIsGod = false)
+    {
+        _isInvicible = true;
+        _invulnerabilitySprite.gameObject.SetActive(true);
+        if(!pIsGod) Invoke("GetNormal", _invulnerabilityDelay);
+    }
+
+    void GetNormal()
+    {
+        _isInvicible = false;
+        _invulnerabilitySprite.gameObject.SetActive(false);
     }
 
     #endregion
