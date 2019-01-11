@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
+  _freeSpeedFactor: 0.3
   _freeRotationSpeed: 0.7
   free: 0
   _shotRate: 1
