@@ -38,7 +38,8 @@ public class LaserShot : MonoBehaviour
         if (!_isActive) return;
 
         Enemy enemyColl = collision.gameObject.GetComponent<Enemy>();
-        if (enemyColl != null && !_isEnemy)
+
+        if (enemyColl != null)
         {
             enemyColl.GetHit(_hitValue);
         }
