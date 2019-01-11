@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     [HideInInspector] [SerializeField] private AnimationCurve _horizontalDecelerationCurve;
     [HideInInspector] [SerializeField] private float _horizontalAccSpeed = 1;
     [HideInInspector] [SerializeField] private float _horizontalDecSpeed = 1;
-    [Range(0, 1)]
+    [Range(-1, 1)]
     private float _horizontalAccDecLerpValue;
     private Vector3 _horizontalLastMovement = Vector3.zero;
 
@@ -37,9 +37,14 @@ public class Player : MonoBehaviour
     [HideInInspector] [SerializeField] private AnimationCurve _verticalDecelerationCurve;
     [HideInInspector] [SerializeField] private float _verticalAccSpeed = 1;
     [HideInInspector] [SerializeField] private float _verticalDecSpeed = 1;
-    [Range(0, 1)]
+    [Range(-1, 1)]
     private float _verticalAccDecLerpValue;
     private Vector3 _verticalLastMovement = Vector3.zero;
+    
+    [SerializeField]
+    private AnimationCurve _swingCurve;
+    [SerializeField]
+    private float _swingDegree;
 
     // Start is called before the first frame update
     private void Start()
@@ -57,6 +62,18 @@ public class Player : MonoBehaviour
 
         SetModuleVoidMode();
 
+        Move();
+
+        if (Input.GetAxisRaw("Fire1") != 0)
+        {
+            SetModuleActionMode();
+        }
+    }
+
+    #region Movement
+
+    void Move()
+    {
         float lXmovValue = Input.GetAxisRaw(_HORIZONTAL_AXIS);
         if (lXmovValue != 0)
             HorizontalMove(lXmovValue);
@@ -68,70 +85,85 @@ public class Player : MonoBehaviour
             VerticalMove(lYmovValue);
         else if (_verticalAccDecLerpValue != 0)
             VerticalSlowDown();
-
-        if (Input.GetAxisRaw("Fire1") != 0)
-        {
-            SetModuleActionMode();
-        }
     }
 
     void HorizontalMove(float lXmovValue)
     {
-        if (_horizontalAccDecLerpValue != 1)
-        {
-            _horizontalAccDecLerpValue += Time.deltaTime * _horizontalAccSpeed;
-            _horizontalAccDecLerpValue = Mathf.Clamp01(_horizontalAccDecLerpValue);
-        }
-        Vector3 lMovement = new Vector3(lXmovValue, 0, 0);
-        float lSpeed = _speedWeightCurve.Evaluate(_weight) * _speed;
-        lMovement = lMovement.normalized * lSpeed * Time.deltaTime;
+        _horizontalAccDecLerpValue += Time.deltaTime * _horizontalAccSpeed * Mathf.Sign(lXmovValue);
+        _horizontalAccDecLerpValue = Mathf.Clamp(_horizontalAccDecLerpValue, -1, 1);
 
+        Vector3 lMovement = new Vector3(Mathf.Abs(lXmovValue), 0, 0);
+        float lSpeed = _speedWeightCurve.Evaluate(_weight) * _speed;
+        lMovement = lMovement.normalized * lSpeed * Time.deltaTime * Mathf.Sign(_horizontalAccDecLerpValue);
+        
         _horizontalLastMovement = lMovement;
 
-        lMovement *= _horizontalAccelerationCurve.Evaluate(_horizontalAccDecLerpValue);
+        lMovement *= _horizontalAccelerationCurve.Evaluate(Mathf.Abs(_horizontalAccDecLerpValue));
+        print(lMovement.x + "This ois here: " + _horizontalLastMovement.x + " and lerp = " + _horizontalAccelerationCurve.Evaluate(Mathf.Abs(_horizontalAccDecLerpValue)) + " lerp = " + _horizontalAccDecLerpValue + " (calculus = " + lMovement.normalized * lSpeed + ", " + Time.deltaTime + " , " + Mathf.Sign(_horizontalAccDecLerpValue));
 
-        _transform.Translate(lMovement);
+        _transform.Translate(lMovement, Space.World);
+        ChangeRotation();
     }
-
+    
     void VerticalMove(float lYmovValue)
     {
-        if (_verticalAccDecLerpValue != 1)
-        {
-            _verticalAccDecLerpValue += Time.deltaTime * _verticalAccSpeed;
-            _verticalAccDecLerpValue = Mathf.Clamp01(_verticalAccDecLerpValue);
-        }
-        Vector3 lMovement = new Vector3(0, lYmovValue, 0);
+        _verticalAccDecLerpValue += Time.deltaTime * _verticalAccSpeed * Mathf.Sign(lYmovValue);
+        _verticalAccDecLerpValue = Mathf.Clamp(_verticalAccDecLerpValue, -1, 1);
+
+        Vector3 lMovement = new Vector3(0, Mathf.Abs(lYmovValue), 0);
         float lSpeed = _speedWeightCurve.Evaluate(_weight) * _speed;
-        lMovement = lMovement.normalized * lSpeed * Time.deltaTime;
+        lMovement = lMovement.normalized * lSpeed * Time.deltaTime * Mathf.Sign(_verticalAccDecLerpValue);
 
         _verticalLastMovement = lMovement;
 
-        lMovement *= _verticalAccelerationCurve.Evaluate(_verticalAccDecLerpValue);
+        lMovement *= _verticalAccelerationCurve.Evaluate(Mathf.Abs(_verticalAccDecLerpValue));
 
-        _transform.Translate(lMovement);
+        _transform.Translate(lMovement, Space.World);
     }
 
     void HorizontalSlowDown()
     {
-        _horizontalAccDecLerpValue -= Time.deltaTime * _horizontalDecSpeed;
-        _horizontalAccDecLerpValue = Mathf.Clamp01(_horizontalAccDecLerpValue);
+        float pastLerp = _horizontalAccDecLerpValue;
+        _horizontalAccDecLerpValue -= Time.deltaTime * _horizontalDecSpeed * Mathf.Sign(_horizontalAccDecLerpValue);
+        if(Mathf.Sign(pastLerp) != Mathf.Sign(_horizontalAccDecLerpValue))
+        {
+            _horizontalAccDecLerpValue = 0;
+        }
 
         Vector3 lMovement = _horizontalLastMovement;
-        lMovement *= _horizontalDecelerationCurve.Evaluate(_horizontalAccDecLerpValue);
+        lMovement *= _horizontalDecelerationCurve.Evaluate(Mathf.Abs(_horizontalAccDecLerpValue));
+        print("SLOW = " + lMovement.x + " lastMovement = " + _horizontalLastMovement.x + " and lerp = " + _horizontalDecelerationCurve.Evaluate(Mathf.Abs(_horizontalAccDecLerpValue)) + " lerp = " + _horizontalAccDecLerpValue);
 
-        _transform.Translate(lMovement);
+        _transform.Translate(lMovement, Space.World);
+        ChangeRotation();
     }
 
     void VerticalSlowDown()
     {
-        _verticalAccDecLerpValue -= Time.deltaTime * _verticalDecSpeed;
-        _verticalAccDecLerpValue = Mathf.Clamp01(_verticalAccDecLerpValue);
+        float pastLerp = _verticalAccDecLerpValue;
+        _verticalAccDecLerpValue -= Time.deltaTime * _verticalDecSpeed * Mathf.Sign(_verticalAccDecLerpValue);
+        if (Mathf.Sign(pastLerp) != Mathf.Sign(_verticalAccDecLerpValue))
+        {
+            _verticalAccDecLerpValue = 0;
+        }
 
         Vector3 lMovement = _verticalLastMovement;
-        lMovement *= _verticalDecelerationCurve.Evaluate(_verticalAccDecLerpValue);
+        lMovement *= _verticalDecelerationCurve.Evaluate(Mathf.Abs(_verticalAccDecLerpValue));
 
-        _transform.Translate(lMovement);
+        _transform.Translate(lMovement, Space.World);
     }
+    
+    void ChangeRotation()
+    {
+        float lSwingValue =_horizontalAccDecLerpValue;
+
+        Vector3 lEuler = _transform.rotation.eulerAngles;
+        lEuler.z = _swingCurve.Evaluate(lSwingValue);
+        _transform.rotation = Quaternion.Euler(lEuler);
+    }
+
+    #endregion
+
 
     void SetModuleVoidMode()
     {

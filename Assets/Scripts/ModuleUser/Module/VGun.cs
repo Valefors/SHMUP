@@ -19,8 +19,7 @@ public class VGun : Canon
         for (int i = 1; i < _canonSpawnArray.Length; i++)
         {
             Shot lShot = Instantiate(_prefabShot, _canonSpawnArray[i].position, Quaternion.identity).GetComponent<Shot>();
-            float lSpeedForThisShot = isEnemy ? _speedShotEnnemy : _speedShotPlayer;
-            lShot.SetUp(isEnemy, _canonSpawnArray[i].rotation, lSpeedForThisShot, _hitValue);
+            lShot.SetUp(isEnemy, _canonSpawnArray[i].rotation, GetSpeed(), _hitValue);
         }
         
         _canShoot = false;
