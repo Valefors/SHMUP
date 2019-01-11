@@ -53,6 +53,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.manager.isPause) return;
+
         SetModuleVoidMode();
 
         float lXmovValue = Input.GetAxisRaw(_HORIZONTAL_AXIS);
@@ -151,14 +153,14 @@ public class Player : MonoBehaviour
     public virtual void GetHit()
     {
         Shaker.instance.Shake();
-
+         
         if (_listLenght != 1)
         {
             RemoveLastModule();
         }
         else
         {
-            EventManager.TriggerEvent(EventManager.GAME_OVER_EVENT);
+            if(!GameManager.manager.isLD) EventManager.TriggerEvent(EventManager.GAME_OVER_EVENT);
             Debug.Log("This is a gameOver");
         }
     }
@@ -167,6 +169,8 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D pCol)
     {
+        if (GameManager.manager.isPause) return;
+
         Module moduleCollided = pCol.GetComponent<Module>();
         if (moduleCollided != null)
         {
