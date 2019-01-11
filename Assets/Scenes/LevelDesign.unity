@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.059354246, g: 0.10984024, b: 0.23812252, a: 1}
+  m_IndirectSpecularColor: {r: 0.059354365, g: 0.109840475, b: 0.23812267, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6441,7 +6441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad597c18ff266148ae515501fa8cd37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollingVector: {x: 0, y: -6, z: 0}
+  scrollingVector: {x: 0, y: -12, z: 0}
 --- !u!1001 &291593155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14354,7 +14354,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &501269318
 PrefabInstance:
@@ -38360,12 +38360,12 @@ PrefabInstance:
     - target: {fileID: 480005102199634978, guid: 78bd0d931007e5944807d00305ab7e57,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 480005102199634978, guid: 78bd0d931007e5944807d00305ab7e57,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.09
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 480005102199634978, guid: 78bd0d931007e5944807d00305ab7e57,
         type: 3}
@@ -38421,6 +38421,21 @@ PrefabInstance:
         type: 3}
       propertyPath: _verticalDecSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 480005102199634977, guid: 78bd0d931007e5944807d00305ab7e57,
+        type: 3}
+      propertyPath: _verticalAccSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 480005102199634977, guid: 78bd0d931007e5944807d00305ab7e57,
+        type: 3}
+      propertyPath: _horizontalAccSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 480005102199634977, guid: 78bd0d931007e5944807d00305ab7e57,
+        type: 3}
+      propertyPath: _speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78bd0d931007e5944807d00305ab7e57, type: 3}
@@ -46894,7 +46909,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1811111806 stripped
 Transform:
