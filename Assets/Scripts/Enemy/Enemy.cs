@@ -97,9 +97,13 @@ public class Enemy : MonoBehaviour
         //TO DO FACTORY
         if (_listLenght != 0)
         {
+            Module lModule = null;
+
             int randomIndex = Random.Range(0, _modulesList.Length + 1);
-            if (randomIndex == _modulesList.Length) Scrap lScrap = _scrap
-            Module lModule = _modulesList[randomIndex];
+
+            if (randomIndex == _modulesList.Length) lModule = _scrap;
+            else lModule = _modulesList[randomIndex];
+
             lModule.transform.SetParent(null); //put it in a container of all "free" module who will go down , maybe ?
             lModule.SetModeFree();
             lModule.free = true;

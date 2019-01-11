@@ -556,6 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57d722c37e8e3324fb4440a32c39cd57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scrap: {fileID: 7790807872988376404, guid: 6ed4d0541de54e144ac3ef74352c6fdb, type: 3}
   _speed: 5
   _moveLoop: 1
   _pv: 1
