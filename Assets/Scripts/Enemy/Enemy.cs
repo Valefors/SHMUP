@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
     {
         FillModuleArray();
         SetModuleActionMode();
+        EventManager.StartListening(EventManager.GAME_OVER_EVENT, GameOver);
     }
 
     void FillModuleArray()
@@ -108,5 +109,15 @@ public class Enemy : MonoBehaviour
     {
         if (GameManager.manager.isPause) return;
         Move();
+    }
+
+    void GameOver()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.StopListening(EventManager.GAME_OVER_EVENT, GameOver);
     }
 }

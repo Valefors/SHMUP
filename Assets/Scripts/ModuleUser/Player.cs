@@ -160,7 +160,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            EventManager.TriggerEvent(EventManager.GAME_OVER_EVENT);
+            if(!GameManager.manager.isLD) EventManager.TriggerEvent(EventManager.GAME_OVER_EVENT);
             Debug.Log("This is a gameOver");
         }
     }

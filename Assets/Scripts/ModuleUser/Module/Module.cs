@@ -9,8 +9,10 @@ public abstract class Module : MonoBehaviour
     public float _weight = 1f;
 
     [SerializeField]
+    private float _freeSpeedFactor = 1f;
+    [SerializeField]
     private float _freeRotationSpeed = 0.7f;
-    private Vector3 scrollingVector = Vector3.zero;
+    private Vector3 _scrollingVector = Vector3.zero;
 
     public bool free = false;
 
@@ -47,19 +49,20 @@ public abstract class Module : MonoBehaviour
 
     public virtual void DoActionFree()
     {
-        if(scrollingVector == Vector3.zero)
+        if(_scrollingVector == Vector3.zero)
         {
             SetScrollingVector();
         }
 
-        transform.Translate(scrollingVector * Time.deltaTime, Space.World);
+        transform.Translate(_scrollingVector * Time.deltaTime, Space.World);
         transform.Rotate(Vector3.forward * _freeRotationSpeed * Time.deltaTime);
     }
 
     protected virtual void SetScrollingVector()
     {
         //TO DO : Changing that to a more "error proof" method
-        scrollingVector = FindObjectOfType<ScrollingBackground>().scrollingVector;
+        _scrollingVector = FindObjectOfType<ScrollingBackground>().scrollingVector;
+        _scrollingVector *= _freeSpeedFactor;
     }
 
     protected void Update()

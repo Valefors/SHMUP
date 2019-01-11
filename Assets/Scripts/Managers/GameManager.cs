@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] int _levelToLoad = 1;
+
+    public bool isLD = false;
+
     [HideInInspector] public bool isPause {
         get {
             return _isPause;

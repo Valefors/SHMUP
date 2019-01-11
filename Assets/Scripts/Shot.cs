@@ -41,6 +41,7 @@ public class Shot : MonoBehaviour
     void Start()
     {
         _transform = GetComponent<Transform>();
+        EventManager.StartListening(EventManager.GAME_OVER_EVENT, GameOver);
     }
 
     // Update is called once per frame
@@ -92,6 +93,16 @@ public class Shot : MonoBehaviour
     private void Deactivate()
     {
         Destroy(this.gameObject);
+    }
+
+    void GameOver()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.StopListening(EventManager.GAME_OVER_EVENT, GameOver);
     }
 
 }
