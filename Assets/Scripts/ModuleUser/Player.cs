@@ -40,6 +40,11 @@ public class Player : MonoBehaviour
     [Range(0, 1)]
     private float _verticalAccDecLerpValue;
     private Vector3 _verticalLastMovement = Vector3.zero;
+    
+    [SerializeField]
+    private AnimationCurve _swingCurve;
+    [SerializeField]
+    private float _swingDegree;
 
     // Start is called before the first frame update
     private void Start()
@@ -57,6 +62,18 @@ public class Player : MonoBehaviour
 
         SetModuleVoidMode();
 
+        Move();
+
+        if (Input.GetAxisRaw("Fire1") != 0)
+        {
+            SetModuleActionMode();
+        }
+    }
+
+    #region Movement
+
+    void Move()
+    {
         float lXmovValue = Input.GetAxisRaw(_HORIZONTAL_AXIS);
         if (lXmovValue != 0)
             HorizontalMove(lXmovValue);
@@ -68,11 +85,6 @@ public class Player : MonoBehaviour
             VerticalMove(lYmovValue);
         else if (_verticalAccDecLerpValue != 0)
             VerticalSlowDown();
-
-        if (Input.GetAxisRaw("Fire1") != 0)
-        {
-            SetModuleActionMode();
-        }
     }
 
     void HorizontalMove(float lXmovValue)
@@ -90,7 +102,9 @@ public class Player : MonoBehaviour
 
         lMovement *= _horizontalAccelerationCurve.Evaluate(_horizontalAccDecLerpValue);
 
-        _transform.Translate(lMovement);
+        ChangeRotation(lMovement.x);
+
+        _transform.Translate(lMovement, Space.World);
     }
 
     void VerticalMove(float lYmovValue)
@@ -108,7 +122,7 @@ public class Player : MonoBehaviour
 
         lMovement *= _verticalAccelerationCurve.Evaluate(_verticalAccDecLerpValue);
 
-        _transform.Translate(lMovement);
+        _transform.Translate(lMovement, Space.World);
     }
 
     void HorizontalSlowDown()
@@ -119,7 +133,9 @@ public class Player : MonoBehaviour
         Vector3 lMovement = _horizontalLastMovement;
         lMovement *= _horizontalDecelerationCurve.Evaluate(_horizontalAccDecLerpValue);
 
-        _transform.Translate(lMovement);
+        _transform.Translate(lMovement, Space.World);
+
+        ChangeRotation(_horizontalLastMovement.x);
     }
 
     void VerticalSlowDown()
@@ -130,8 +146,20 @@ public class Player : MonoBehaviour
         Vector3 lMovement = _verticalLastMovement;
         lMovement *= _verticalDecelerationCurve.Evaluate(_verticalAccDecLerpValue);
 
-        _transform.Translate(lMovement);
+        _transform.Translate(lMovement, Space.World);
     }
+    
+    void ChangeRotation(float xMoveValue)
+    {
+        float lSwingValue = Mathf.Sign(xMoveValue) * _horizontalAccDecLerpValue;
+
+        Vector3 lEuler = _transform.rotation.eulerAngles;
+        lEuler.z = _swingCurve.Evaluate(lSwingValue);
+        _transform.rotation = Quaternion.Euler(lEuler);
+    }
+
+    #endregion
+
 
     void SetModuleVoidMode()
     {
