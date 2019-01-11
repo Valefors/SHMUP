@@ -95,6 +95,10 @@ public class Player : MonoBehaviour
         else if (_verticalAccDecLerpValue != 0)
             lMovement += VerticalSlowDown();
 
+        Vector2 lPoint = new Vector2(transform.position.x + lMovement.x, transform.position.y + lMovement.y);
+
+        if (SafeZone.IsOffField(lPoint)) return;
+
         _transform.Translate(lMovement, Space.World);
     }
 
