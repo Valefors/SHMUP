@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
         print(lMovement.x + "This ois here: " + _horizontalLastMovement.x + " and lerp = " + _horizontalAccelerationCurve.Evaluate(Mathf.Abs(_horizontalAccDecLerpValue)) + " lerp = " + _horizontalAccDecLerpValue + " (calculus = " + lMovement.normalized * lSpeed + ", " + Time.deltaTime + " , " + Mathf.Sign(_horizontalAccDecLerpValue));
 
         _transform.Translate(lMovement, Space.World);
-        ChangeRotation(lMovement.x);
+        ChangeRotation();
     }
     
     void VerticalMove(float lYmovValue)
@@ -135,7 +135,7 @@ public class Player : MonoBehaviour
         print("SLOW = " + lMovement.x + " lastMovement = " + _horizontalLastMovement.x + " and lerp = " + _horizontalDecelerationCurve.Evaluate(Mathf.Abs(_horizontalAccDecLerpValue)) + " lerp = " + _horizontalAccDecLerpValue);
 
         _transform.Translate(lMovement, Space.World);
-        ChangeRotation(_horizontalLastMovement.x);
+        ChangeRotation();
     }
 
     void VerticalSlowDown()
@@ -153,9 +153,9 @@ public class Player : MonoBehaviour
         _transform.Translate(lMovement, Space.World);
     }
     
-    void ChangeRotation(float xMoveValue)
+    void ChangeRotation()
     {
-        float lSwingValue = Mathf.Sign(xMoveValue) * _horizontalAccDecLerpValue;
+        float lSwingValue =_horizontalAccDecLerpValue;
 
         Vector3 lEuler = _transform.rotation.eulerAngles;
         lEuler.z = _swingCurve.Evaluate(lSwingValue);
