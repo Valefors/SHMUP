@@ -25,19 +25,24 @@ public class Test_SpawnEditor : Editor
             spawn.RotateRight();
         }
 
-        if (GUILayout.Button("Add Module 1"))
+        if (GUILayout.Button("Add Canon"))
         {
             spawn.AddModule1();
         }
 
-        if (GUILayout.Button("Add Module 2"))
+        if (GUILayout.Button("Add V-Gun"))
         {
             spawn.AddModule2();
         }
 
-        if (GUILayout.Button("Add Module 3"))
+        if (GUILayout.Button("Add Laser"))
         {
             spawn.AddModule3();
+        }
+
+        if (GUILayout.Button("Add Scrap"))
+        {
+            spawn.AddModule4();
         }
 
         if (GUILayout.Button("Remove Module"))
