@@ -64,8 +64,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
-  _shotRate: 0.5
-  _speedShot: 2
+  _freeSpeedFactor: 0.1
+  _freeRotationSpeed: 0.7
+  free: 0
+  _shotRate: 1
+  _speedShot: 5.5
+  _speedShotFactor: 3.5
+  _hitValue: 1
   _prefabShot: {fileID: 2893416602070953415, guid: 66cfab03dcf6aea409f8a11c45bf769e,
     type: 3}
   isEnemy: 1
