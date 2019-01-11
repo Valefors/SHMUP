@@ -19,6 +19,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Module[] _modulesList;
     private int _listLenght = 0;
 
+    [Header("Score")]
+    [SerializeField] private float _scoreValue = 0f;
+
     [SerializeField] [Range(0,1)] protected float _dropLoot = 0.5f;
 
     private void OnEnable()
@@ -88,6 +91,9 @@ public class Enemy : MonoBehaviour
 
         if (randomValue < _dropLoot)
             DropItem();
+
+        ScoreManager.manager.UpdateScore(_scoreValue);
+
         Destroy(this.gameObject);
     }
 
