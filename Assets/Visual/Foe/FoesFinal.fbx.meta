@@ -11,6 +11,14 @@ ModelImporter:
     100010: polySurface1
     100012: polySurface2
     100014: tilesF:polySurface1
+    100016: coque
+    100018: polySurface3
+    100020: polySurface4
+    100022: polySurface5
+    100024: polySurface6
+    100026: polySurface7
+    100028: polySurface8
+    100030: transform1
     400000: //RootNode
     400002: pCylinder1
     400004: pCylinder2
@@ -19,8 +27,20 @@ ModelImporter:
     400010: polySurface1
     400012: polySurface2
     400014: tilesF:polySurface1
+    400016: coque
+    400018: polySurface3
+    400020: polySurface4
+    400022: polySurface5
+    400024: polySurface6
+    400026: polySurface7
+    400028: polySurface8
+    400030: transform1
     2100000: lambert1
     2100002: tilesF_initialShadingGroup1
+    2100004: coque1
+    2100006: coque2
+    2100008: tiles
+    2100010: pipes
     2300000: //RootNode
     2300002: pCylinder1
     2300004: pCylinder2
@@ -29,6 +49,12 @@ ModelImporter:
     2300010: polySurface1
     2300012: polySurface2
     2300014: tilesF:polySurface1
+    2300016: polySurface3
+    2300018: polySurface4
+    2300020: polySurface5
+    2300022: polySurface6
+    2300024: polySurface7
+    2300026: polySurface8
     3300000: //RootNode
     3300002: pCylinder1
     3300004: pCylinder2
@@ -37,6 +63,12 @@ ModelImporter:
     3300010: polySurface1
     3300012: polySurface2
     3300014: tilesF:polySurface1
+    3300016: polySurface3
+    3300018: polySurface4
+    3300020: polySurface5
+    3300022: polySurface6
+    3300024: polySurface7
+    3300026: polySurface8
     4300000: pCube1
     4300002: pCylinder1
     4300004: pCylinder2
@@ -45,6 +77,12 @@ ModelImporter:
     4300010: tilesF:polySurface1
     4300012: polySurface1
     4300014: polySurface2
+    4300016: polySurface8
+    4300018: polySurface7
+    4300020: polySurface6
+    4300022: polySurface5
+    4300024: polySurface4
+    4300026: polySurface3
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
