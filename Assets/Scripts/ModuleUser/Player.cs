@@ -81,20 +81,24 @@ public class Player : MonoBehaviour
 
     void Move()
     {
+        Vector3 lMovement = Vector3.zero;
+    
         float lXmovValue = Input.GetAxisRaw(_HORIZONTAL_AXIS);
         if (lXmovValue != 0)
-            HorizontalMove(lXmovValue);
+            lMovement += HorizontalMove(lXmovValue);
         else if (_horizontalAccDecLerpValue != 0)
-            HorizontalSlowDown();
+            lMovement += HorizontalSlowDown();
 
         float lYmovValue = Input.GetAxisRaw(_VERTICAL_AXIS);
         if (lYmovValue != 0)
-            VerticalMove(lYmovValue);
+            lMovement += VerticalMove(lYmovValue);
         else if (_verticalAccDecLerpValue != 0)
-            VerticalSlowDown();
+            lMovement += VerticalSlowDown();
+
+        _transform.Translate(lMovement, Space.World);
     }
 
-    void HorizontalMove(float lXmovValue)
+    Vector3 HorizontalMove(float lXmovValue)
     {
         _horizontalAccDecLerpValue += Time.deltaTime * _horizontalAccSpeed * Mathf.Sign(lXmovValue);
         _horizontalAccDecLerpValue = Mathf.Clamp(_horizontalAccDecLerpValue, -1, 1);
@@ -108,11 +112,11 @@ public class Player : MonoBehaviour
         lMovement *= _horizontalAccelerationCurve.Evaluate(Mathf.Abs(_horizontalAccDecLerpValue));
         //print(lMovement.x + "This ois here: " + _horizontalLastMovement.x + " and lerp = " + _horizontalAccelerationCurve.Evaluate(Mathf.Abs(_horizontalAccDecLerpValue)) + " lerp = " + _horizontalAccDecLerpValue + " (calculus = " + lMovement.normalized * lSpeed + ", " + Time.deltaTime + " , " + Mathf.Sign(_horizontalAccDecLerpValue));
 
-        _transform.Translate(lMovement, Space.World);
         ChangeRotation();
+        return lMovement;
     }
-    
-    void VerticalMove(float lYmovValue)
+
+    Vector3 VerticalMove(float lYmovValue)
     {
         _verticalAccDecLerpValue += Time.deltaTime * _verticalAccSpeed * Mathf.Sign(lYmovValue);
         _verticalAccDecLerpValue = Mathf.Clamp(_verticalAccDecLerpValue, -1, 1);
@@ -125,10 +129,10 @@ public class Player : MonoBehaviour
 
         lMovement *= _verticalAccelerationCurve.Evaluate(Mathf.Abs(_verticalAccDecLerpValue));
 
-        _transform.Translate(lMovement, Space.World);
+        return lMovement;
     }
 
-    void HorizontalSlowDown()
+    Vector3 HorizontalSlowDown()
     {
         float pastLerp = _horizontalAccDecLerpValue;
         _horizontalAccDecLerpValue -= Time.deltaTime * _horizontalDecSpeed * Mathf.Sign(_horizontalAccDecLerpValue);
@@ -141,11 +145,11 @@ public class Player : MonoBehaviour
         lMovement *= _horizontalDecelerationCurve.Evaluate(Mathf.Abs(_horizontalAccDecLerpValue));
         //print("SLOW = " + lMovement.x + " lastMovement = " + _horizontalLastMovement.x + " and lerp = " + _horizontalDecelerationCurve.Evaluate(Mathf.Abs(_horizontalAccDecLerpValue)) + " lerp = " + _horizontalAccDecLerpValue);
 
-        _transform.Translate(lMovement, Space.World);
         ChangeRotation();
+        return lMovement;
     }
 
-    void VerticalSlowDown()
+    Vector3 VerticalSlowDown()
     {
         float pastLerp = _verticalAccDecLerpValue;
         _verticalAccDecLerpValue -= Time.deltaTime * _verticalDecSpeed * Mathf.Sign(_verticalAccDecLerpValue);
@@ -157,7 +161,7 @@ public class Player : MonoBehaviour
         Vector3 lMovement = _verticalLastMovement;
         lMovement *= _verticalDecelerationCurve.Evaluate(Mathf.Abs(_verticalAccDecLerpValue));
 
-        _transform.Translate(lMovement, Space.World);
+        return lMovement;
     }
     
     void ChangeRotation()
