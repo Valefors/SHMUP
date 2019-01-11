@@ -55,6 +55,7 @@ public class Shot : MonoBehaviour
             return;
         }
 
+        //print("_direction " + _direction + "_speedShot " + _speedShot + " Time.deltaTime " + Time.deltaTime + " scale : "+ Time.timeScale);
         _transform.Translate(_direction * _speedShot * Time.deltaTime);
     }
 

@@ -6,8 +6,8 @@ public class Canon : Module
 {
     [Header("Shot data")]
     [SerializeField] protected float _shotRate = 0.1f;
-    [SerializeField] protected float _speedShotEnnemy = 2f;
-    [SerializeField] protected float _speedShotPlayer = 2f;
+    [SerializeField] protected float _speedShot = 2f;
+    [SerializeField] protected float _speedShotFactor = 2f;
     [SerializeField] protected int _hitValue = 1;
 
     [SerializeField] protected GameObject _prefabShot;
@@ -33,10 +33,14 @@ public class Canon : Module
     protected virtual void Shoot()
     {
         Shot lShot = Instantiate(_prefabShot, _transform.position, Quaternion.identity).GetComponent<Shot>();
-        float lSpeedForThisShot = isEnemy ? _speedShotEnnemy : _speedShotPlayer;
-        lShot.SetUp(isEnemy, _transform.rotation, lSpeedForThisShot, _hitValue);
+        lShot.SetUp(isEnemy, _transform.rotation, GetSpeed(), _hitValue);
         _canShoot = false;
         Invoke("CanShootAgain", _shotRate);
+    }
+
+    protected float GetSpeed()
+    {
+        return (isEnemy ? _speedShot : _speedShot * _speedShotFactor);
     }
     
     protected virtual void CanShootAgain()
