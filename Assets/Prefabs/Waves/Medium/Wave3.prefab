@@ -39,20 +39,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 956891858293724807}
     m_Modifications:
-    - target: {fileID: 8744481947060628831, guid: 4087783ecd89d3941b3704a6c01ede0e,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy3Path1
-      objectReference: {fileID: 0}
     - target: {fileID: 7693444718281304442, guid: 4087783ecd89d3941b3704a6c01ede0e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 7693444718281304442, guid: 4087783ecd89d3941b3704a6c01ede0e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7693444718281304442, guid: 4087783ecd89d3941b3704a6c01ede0e,
         type: 3}
@@ -99,6 +94,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 8744481947060628831, guid: 4087783ecd89d3941b3704a6c01ede0e,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy3Path1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4087783ecd89d3941b3704a6c01ede0e, type: 3}
 --- !u!4 &7458817669690523262 stripped
@@ -114,20 +114,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 956891858293724807}
     m_Modifications:
-    - target: {fileID: 8744481947060628831, guid: 4087783ecd89d3941b3704a6c01ede0e,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy3Path1 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 7693444718281304442, guid: 4087783ecd89d3941b3704a6c01ede0e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7693444718281304442, guid: 4087783ecd89d3941b3704a6c01ede0e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7693444718281304442, guid: 4087783ecd89d3941b3704a6c01ede0e,
         type: 3}
@@ -183,6 +178,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.0000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744481947060628831, guid: 4087783ecd89d3941b3704a6c01ede0e,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy3Path1 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 9100163851075458858, guid: 4087783ecd89d3941b3704a6c01ede0e,
         type: 3}
