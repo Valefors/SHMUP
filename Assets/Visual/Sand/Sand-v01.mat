@@ -68,7 +68,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondTex:
-        m_Texture: {fileID: 2800000, guid: d662fb3709a2d7b43ae19cc6e6485f2d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8b2fa297ca212d543b097bb14c2df07e, type: 3}
         m_Scale: {x: 2, y: 400}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -78,7 +78,7 @@ Material:
     - _DstBlend: 0
     - _Emission: 0.14
     - _GlossMapScale: 1
-    - _Glossiness: 0.4
+    - _Glossiness: 0.7
     - _GlossyReflections: 1
     - _MaxDistance: 0.05
     - _Metallic: 0
