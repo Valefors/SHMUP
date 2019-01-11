@@ -68,8 +68,8 @@ MonoBehaviour:
   _freeRotationSpeed: 0.7
   free: 0
   _shotRate: 1
-  _speedShotEnnemy: 3
-  _speedShotPlayer: 6
+  _speedShot: 5.5
+  _speedShotFactor: 3.5
   _hitValue: 1
   _prefabShot: {fileID: 2893416602070953415, guid: 66cfab03dcf6aea409f8a11c45bf769e,
     type: 3}
