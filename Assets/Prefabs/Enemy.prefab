@@ -48,6 +48,7 @@ MonoBehaviour:
   - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
   - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
+  - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1 &282867638
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +97,7 @@ MonoBehaviour:
   - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
   - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
+  - {fileID: 4522602325824180810, guid: 6ed4d0541de54e144ac3ef74352c6fdb, type: 3}
 --- !u!1 &428054200
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +146,7 @@ MonoBehaviour:
   - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
   - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
+  - {fileID: 4522602325824180810, guid: 6ed4d0541de54e144ac3ef74352c6fdb, type: 3}
 --- !u!1 &487589763
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,6 +195,7 @@ MonoBehaviour:
   - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
   - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
+  - {fileID: 4522602325824180810, guid: 6ed4d0541de54e144ac3ef74352c6fdb, type: 3}
 --- !u!1 &574418727
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +244,7 @@ MonoBehaviour:
   - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
   - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
+  - {fileID: 4522602325824180810, guid: 6ed4d0541de54e144ac3ef74352c6fdb, type: 3}
 --- !u!1 &879046906
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +293,7 @@ MonoBehaviour:
   - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
   - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
+  - {fileID: 4522602325824180810, guid: 6ed4d0541de54e144ac3ef74352c6fdb, type: 3}
 --- !u!1 &1121621083
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +342,7 @@ MonoBehaviour:
   - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
   - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
+  - {fileID: 4522602325824180810, guid: 6ed4d0541de54e144ac3ef74352c6fdb, type: 3}
 --- !u!1 &1432401125
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +437,7 @@ MonoBehaviour:
   - {fileID: 4619175050824214050, guid: 2596468b58cd6e74293d14c5c2c6bafc, type: 3}
   - {fileID: 905220050, guid: d54d7e3e6157e3049aff37626e167fcb, type: 3}
   - {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
+  - {fileID: 4522602325824180810, guid: 6ed4d0541de54e144ac3ef74352c6fdb, type: 3}
 --- !u!1 &2021926621
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,31 +780,31 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8418d38d2d546f7428236020254a030b, type: 2}
-    - target: {fileID: 2300012, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7c88e68c19aedfe40848921e59b16701, type: 2}
-    - target: {fileID: 2300014, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7c88e68c19aedfe40848921e59b16701, type: 2}
-    - target: {fileID: 2300008, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8418d38d2d546f7428236020254a030b, type: 2}
-    - target: {fileID: 2300010, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7c88e68c19aedfe40848921e59b16701, type: 2}
-    - target: {fileID: 2300004, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8418d38d2d546f7428236020254a030b, type: 2}
     - target: {fileID: 2300006, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8418d38d2d546f7428236020254a030b, type: 2}
+    - target: {fileID: 2300004, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8418d38d2d546f7428236020254a030b, type: 2}
     - target: {fileID: 2300002, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8418d38d2d546f7428236020254a030b, type: 2}
+    - target: {fileID: 2300014, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c88e68c19aedfe40848921e59b16701, type: 2}
+    - target: {fileID: 2300012, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c88e68c19aedfe40848921e59b16701, type: 2}
+    - target: {fileID: 2300010, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c88e68c19aedfe40848921e59b16701, type: 2}
+    - target: {fileID: 2300008, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8418d38d2d546f7428236020254a030b, type: 2}

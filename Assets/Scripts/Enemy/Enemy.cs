@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     protected Transform _transform;
     PathFollower _pF;
     Rigidbody2D _rb;
+    [SerializeField] Scrap _scrap;
 
     [Header("Gameplay Datas")]
     [SerializeField] protected float _speed;
@@ -84,7 +85,8 @@ public class Enemy : MonoBehaviour
     private void Death()
     {
         float randomValue = Random.Range(0f,1f);
-        if(randomValue < _dropLoot)
+
+        if (randomValue < _dropLoot)
             DropItem();
         Destroy(this.gameObject);
     }
@@ -95,8 +97,8 @@ public class Enemy : MonoBehaviour
         //TO DO FACTORY
         if (_listLenght != 0)
         {
-            int randomIndex = Random.Range(0, _modulesList.Length);
-            
+            int randomIndex = Random.Range(0, _modulesList.Length + 1);
+            if (randomIndex == _modulesList.Length) Scrap lScrap = _scrap
             Module lModule = _modulesList[randomIndex];
             lModule.transform.SetParent(null); //put it in a container of all "free" module who will go down , maybe ?
             lModule.SetModeFree();
