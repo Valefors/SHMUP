@@ -11,11 +11,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser_Module
       objectReference: {fileID: 0}
-    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
-        type: 3}
-      propertyPath: _shotRate
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 635838887, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0000002528811
@@ -72,6 +67,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
+        type: 3}
+      propertyPath: _shotRate
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1001 &424960577620030448
@@ -84,11 +84,6 @@ PrefabInstance:
     - target: {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
       propertyPath: m_Name
       value: Laser_Module
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
-        type: 3}
-      propertyPath: _shotRate
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 635838887, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -146,6 +141,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
+        type: 3}
+      propertyPath: _shotRate
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1001 &1267809190405082055
@@ -158,11 +158,6 @@ PrefabInstance:
     - target: {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
       propertyPath: m_Name
       value: Laser_Module
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
-        type: 3}
-      propertyPath: _shotRate
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 635838887, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -220,6 +215,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
+        type: 3}
+      propertyPath: _shotRate
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1001 &2052389431737777442
@@ -232,7 +232,17 @@ PrefabInstance:
     - target: {fileID: 509156135489097362, guid: ef197c4c7a78a7845931ef1edd4f1338,
         type: 3}
       propertyPath: m_Name
-      value: Emeline
+      value: ACancer3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787835602005470519, guid: ef197c4c7a78a7845931ef1edd4f1338,
+        type: 3}
+      propertyPath: _speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787835602005470519, guid: ef197c4c7a78a7845931ef1edd4f1338,
+        type: 3}
+      propertyPath: _dropLoot
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1481365398431959735, guid: ef197c4c7a78a7845931ef1edd4f1338,
         type: 3}
@@ -288,11 +298,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3787835602005470519, guid: ef197c4c7a78a7845931ef1edd4f1338,
-        type: 3}
-      propertyPath: _speed
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1360472381378681068, guid: ef197c4c7a78a7845931ef1edd4f1338,
         type: 3}
@@ -370,11 +375,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser_Module
       objectReference: {fileID: 0}
-    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
-        type: 3}
-      propertyPath: _shotRate
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 635838887, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.00000047683716
@@ -431,6 +431,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
+        type: 3}
+      propertyPath: _shotRate
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1001 &6484140782131459822
@@ -443,11 +448,6 @@ PrefabInstance:
     - target: {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
       propertyPath: m_Name
       value: Laser_Module
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
-        type: 3}
-      propertyPath: _shotRate
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 635838887, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -505,6 +505,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
+        type: 3}
+      propertyPath: _shotRate
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1001 &6607712559233455655
@@ -517,11 +522,6 @@ PrefabInstance:
     - target: {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
       propertyPath: m_Name
       value: Laser_Module
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
-        type: 3}
-      propertyPath: _shotRate
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 635838887, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -579,6 +579,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
+        type: 3}
+      propertyPath: _shotRate
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1001 &7988466136934988388
@@ -591,11 +596,6 @@ PrefabInstance:
     - target: {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
       propertyPath: m_Name
       value: Laser_Module
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
-        type: 3}
-      propertyPath: _shotRate
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 635838887, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -653,6 +653,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
+        type: 3}
+      propertyPath: _shotRate
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
 --- !u!1001 &9099255737450740073
@@ -665,11 +670,6 @@ PrefabInstance:
     - target: {fileID: 635838883, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
       propertyPath: m_Name
       value: Laser_Module
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
-        type: 3}
-      propertyPath: _shotRate
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 635838887, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -726,6 +726,11 @@ PrefabInstance:
     - target: {fileID: 635838887, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946465965571379230, guid: 93a1554a25109cb48953fcc0a42af97f,
+        type: 3}
+      propertyPath: _shotRate
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93a1554a25109cb48953fcc0a42af97f, type: 3}
