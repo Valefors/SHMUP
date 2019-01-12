@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,13 +13,7 @@ public class LaserShot : MonoBehaviour
     private Transform _transform;
     [SerializeField]
     private SpriteRenderer _spriteRdr;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _transform = GetComponent<Transform>();
-        DesactiveMode();
-    }
+    
 
     public void ActiveMode()
     {
@@ -32,6 +26,7 @@ public class LaserShot : MonoBehaviour
         _isActive = false;
         _spriteRdr.gameObject.SetActive(false);
     }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -39,7 +34,7 @@ public class LaserShot : MonoBehaviour
 
         Enemy enemyColl = collision.gameObject.GetComponent<Enemy>();
 
-        if (enemyColl != null)
+        if (enemyColl != null && !_isEnemy)
         {
             enemyColl.GetHit(_hitValue, enemyColl.transform.position);
         }

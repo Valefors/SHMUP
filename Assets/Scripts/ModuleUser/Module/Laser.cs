@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,5 +42,10 @@ public class Laser : Module
     protected virtual void CanShootAgain()
     {
         _canShoot = true;
+    public override void SetModeFree()
+    {
+        _laserShot.DesactiveMode();
+        base.SetModeFree();
     }
+
 }
