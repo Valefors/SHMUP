@@ -13,10 +13,11 @@ public class LaserShot : MonoBehaviour
     private Transform _transform;
     [SerializeField]
     private SpriteRenderer _spriteRdr;
-    
 
-    public void ActiveMode()
+
+    public void ActiveMode(bool pIsEnemy)
     {
+        _isEnemy = pIsEnemy;
         _isActive = true;
         _spriteRdr.gameObject.SetActive(true);
     }

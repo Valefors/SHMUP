@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Canon : Module
+public class Canon : ShooterModule
 {
     [Header("Shot data")]
     [SerializeField] protected float _shotRate = 0.1f;
@@ -12,11 +12,6 @@ public class Canon : Module
 
     [SerializeField] protected GameObject _prefabShot;
 
-    public bool isEnemy = true;
-
-    [Header("Personal Datas")]
-    private Transform _transform;
-    protected bool _canShoot = true;
 
 
     // Start is called before the first frame update

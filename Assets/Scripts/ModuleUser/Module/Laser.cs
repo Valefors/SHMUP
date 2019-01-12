@@ -2,18 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Laser : Module
+public class Laser : ShooterModule
 {
     [Header("Gameplay Datas")]
     [SerializeField] float _shotRate = 3f;
 
     [SerializeField] protected LaserShot _laserShot;
-
-    public bool isEnemy = true;
-
-    [Header("Personal Datas")]
-    private Transform _transform;
-    protected bool _canShoot = true;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +24,7 @@ public class Laser : Module
 
     protected virtual void Fire()
     {
-        _laserShot.ActiveMode();
+        _laserShot.ActiveMode(isEnemy);
         _canShoot = false;
         Invoke("Disable", _shotRate);
     }
