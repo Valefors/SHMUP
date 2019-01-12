@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4218966869180736041}
   m_Layer: 0
-  m_Name: Wave6
+  m_Name: WaveMed6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,16 +99,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4296294989688497355, guid: 4a5e383e96d80794082d618d26c2a4bc,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4296294989688497355, guid: 4a5e383e96d80794082d618d26c2a4bc,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a5e383e96d80794082d618d26c2a4bc, type: 3}
@@ -254,21 +244,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 4296294989688497355, guid: 4a5e383e96d80794082d618d26c2a4bc,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4296294989688497355, guid: 4a5e383e96d80794082d618d26c2a4bc,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4296294989688497355, guid: 4a5e383e96d80794082d618d26c2a4bc,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a5e383e96d80794082d618d26c2a4bc, type: 3}
 --- !u!4 &77486451356980563 stripped
@@ -366,7 +341,7 @@ PrefabInstance:
     - target: {fileID: 8735792677878219733, guid: 575867f624defd74090ce54ccbce5a5d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 8735792677878219733, guid: 575867f624defd74090ce54ccbce5a5d,
         type: 3}
