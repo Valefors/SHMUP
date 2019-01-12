@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2823145970465414750}
   - component: {fileID: 8212873373454933906}
   - component: {fileID: 238045513913435003}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BigShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9215847175678080241}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8556396059660057979}
   - component: {fileID: 885313275745390991}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: _PLACEHOLDER_Sprite_Circle_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}

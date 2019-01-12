@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 635838885}
   - component: {fileID: 635838884}
   - component: {fileID: 6946465965571379230}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Laser_Module
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,9 +95,9 @@ MonoBehaviour:
   _explosionWhenDestroyed: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
     type: 3}
   free: 0
+  isEnemy: 1
   _shotRate: 3
   _laserShot: {fileID: 1098324737}
-  isEnemy: 1
 --- !u!1 &727252101
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 727252102}
   - component: {fileID: 727252103}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SquareCanon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1918834199}
   - component: {fileID: 1918834200}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,6 +274,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7637979604683794928, guid: bacf2105fa5c1984da475339efdf7d2a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7637979604683794447, guid: bacf2105fa5c1984da475339efdf7d2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -328,6 +333,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637979606152073939, guid: bacf2105fa5c1984da475339efdf7d2a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637979606136567718, guid: bacf2105fa5c1984da475339efdf7d2a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bacf2105fa5c1984da475339efdf7d2a, type: 3}

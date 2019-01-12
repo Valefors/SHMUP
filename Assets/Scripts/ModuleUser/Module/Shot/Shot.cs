@@ -29,12 +29,12 @@ public class Shot : MonoBehaviour
             this.Touch();
         }
 
-        Player playerColl = collision.gameObject.GetComponent<Player>();
+        /*Player playerColl = collision.gameObject.GetComponent<Player>();
         if (playerColl != null && _isEnemy)
         {
             playerColl.GetHit();
             this.Touch();
-        }
+        }*/
     }
     
     // Start is called before the first frame update
@@ -57,6 +57,11 @@ public class Shot : MonoBehaviour
 
         //print("_direction " + _direction + "_speedShot " + _speedShot + " Time.deltaTime " + Time.deltaTime + " scale : "+ Time.timeScale);
         _transform.Translate(_direction * _speedShot * Time.deltaTime);
+    }
+
+    public bool GetSide()
+    {
+        return _isEnemy;
     }
 
     public void SetUp(bool pIsEnemy, Quaternion pRotation, float pSpeed, int pHitValue)
@@ -86,7 +91,7 @@ public class Shot : MonoBehaviour
     }
 
 
-    private void Touch()
+    public void Touch()
     {
         Deactivate();
     }
