@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5319244075266399985}
   m_Layer: 0
-  m_Name: Wave9
+  m_Name: WaveMed9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,12 +47,12 @@ PrefabInstance:
     - target: {fileID: 8735792677878219733, guid: 575867f624defd74090ce54ccbce5a5d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8735792677878219733, guid: 575867f624defd74090ce54ccbce5a5d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 8735792677878219733, guid: 575867f624defd74090ce54ccbce5a5d,
         type: 3}
@@ -116,12 +116,12 @@ PrefabInstance:
     - target: {fileID: 8735792677878219733, guid: 575867f624defd74090ce54ccbce5a5d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8735792677878219733, guid: 575867f624defd74090ce54ccbce5a5d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 8735792677878219733, guid: 575867f624defd74090ce54ccbce5a5d,
         type: 3}
