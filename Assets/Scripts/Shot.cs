@@ -25,7 +25,7 @@ public class Shot : MonoBehaviour
         Enemy enemyColl = collision.gameObject.GetComponent<Enemy>();
         if (enemyColl != null && !_isEnemy)
         {
-            enemyColl.GetHit(_hitValue);
+            enemyColl.GetHit(_hitValue, this.transform.position);
             this.Touch();
         }
 

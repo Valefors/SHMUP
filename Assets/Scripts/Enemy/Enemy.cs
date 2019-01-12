@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     PathFollower _pF;
     Rigidbody2D _rb;
     [SerializeField] Scrap _scrap;
+    [SerializeField] GameObject _explosionWhenHit;
+    //[SerializeField] GameObject _explosionWhenDead;
 
     [Header("Gameplay Datas")]
     [SerializeField] protected float _speed;
@@ -76,11 +78,24 @@ public class Enemy : MonoBehaviour
     }
 
     #region GetDamage
-    public virtual void GetHit(int pHitValue)
+    public virtual void GetHit(int pHitValue, Vector3 impactPosition)
     {
         _pv = _pv - pHitValue;
+
+
+
         if (_pv <= 0)
             Death();
+        else
+        {
+            CreateParticleDamage(impactPosition);
+        }
+    }
+
+    void CreateParticleDamage(Vector3 impactPosition)
+    {
+        Instantiate(_explosionWhenHit, impactPosition, Quaternion.identity, null);
+        //destroy automatic on the explosion
     }
 
     #endregion
@@ -93,9 +108,10 @@ public class Enemy : MonoBehaviour
             DropItem();
 
         ScoreManager.manager.UpdateScore(_scoreValue);
-
+        CreateParticleDamage(_transform.position);
         Destroy(this.gameObject);
     }
+
 
     void DropItem()
     {

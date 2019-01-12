@@ -66,6 +66,8 @@ MonoBehaviour:
   _weight: 1
   _freeSpeedFactor: 0.1
   _freeRotationSpeed: 0.7
+  _explosionWhenDestroyed: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
+    type: 3}
   free: 0
   _shotRate: 1
   _speedShot: 5.5
