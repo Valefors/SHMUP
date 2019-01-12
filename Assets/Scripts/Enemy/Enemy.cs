@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] Scrap _scrap;
     [SerializeField] GameObject _explosionWhenHit;
     //[SerializeField] GameObject _explosionWhenDead;
+    [SerializeField] Light _ownLight;
 
     [Header("Gameplay Datas")]
     [SerializeField] protected float _speed;
@@ -108,6 +109,13 @@ public class Enemy : MonoBehaviour
 
         ScoreManager.manager.UpdateScore(_scoreValue);
         CreateParticleDamage(_transform.position);
+
+        if (_ownLight != null)
+        {
+            _ownLight.transform.SetParent(GameManager.manager.scrolling);
+            Destroy(_ownLight.gameObject, 3);
+        }
+
         Destroy(this.gameObject);
     }
 

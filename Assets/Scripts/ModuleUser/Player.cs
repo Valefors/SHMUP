@@ -248,7 +248,7 @@ public class Player : MonoBehaviour
 
     private void AddModule(Module module)
     {
-        if (module.GetComponent<Canon>() != null) module.GetComponent<Canon>().isEnemy = false;
+        if (module.GetComponent<ShooterModule>() != null) module.GetComponent<ShooterModule>().isEnemy = false;
 
         module.transform.parent = _transform;
 

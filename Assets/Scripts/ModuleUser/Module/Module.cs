@@ -65,7 +65,7 @@ public abstract class Module : MonoBehaviour
     protected virtual void SetScrollingVector()
     {
         //TO DO : Changing that to a more "error proof" method
-        _scrollingVector = FindObjectOfType<ScrollingBackground>().scrollingVector;
+        _scrollingVector = GameManager.manager.scrollingVector;
         _scrollingVector *= _freeSpeedFactor;
     }
 
