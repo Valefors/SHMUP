@@ -38,6 +38,7 @@ public class Laser : ShooterModule
     protected virtual void CanShootAgain()
     {
         _canShoot = true;
+        _laserShot.PreActiveMode();
     }
 
     public override void SetModeFree()
