@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 480005102239676291}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &412273050
 SpriteRenderer:
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b331ec740c7dc4598a568c6e17f6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 3610518293925527139}
   _shotRate: 0.1
   _modulesList:
   - {fileID: 4579411173744339998}
@@ -358,6 +359,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 480005102239676291}
+  - component: {fileID: 3610518293925527139}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -377,11 +379,31 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2179677419409660109}
+  - {fileID: 8567814216798343007}
   - {fileID: 1773282928347152604}
   - {fileID: 412273049}
   m_Father: {fileID: 480005102199634978}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3610518293925527139
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480005102239676300}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c6dc827b5d023b149b67e4e62efda206, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &481555224347373581
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +433,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 480005102199634978}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2796901013875268103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8567814216798343007}
+  m_Layer: 0
+  m_Name: Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8567814216798343007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2796901013875268103}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 480005102239676291}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3694720861808029833
 GameObject:
@@ -488,11 +540,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480005102199634978}
     m_Modifications:
-    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
-        type: 3}
-      propertyPath: m_Name
-      value: TrailSand
-      objectReference: {fileID: 0}
     - target: {fileID: 6654863258839217042, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -548,6 +595,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
+        type: 3}
+      propertyPath: m_Name
+      value: TrailSand
+      objectReference: {fileID: 0}
     - target: {fileID: 6654863258839217044, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.atime1
@@ -571,6 +623,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
       propertyPath: m_Name
       value: FoesFinal
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -602,7 +658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -667,11 +723,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480005102199634978}
     m_Modifications:
-    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
-        type: 3}
-      propertyPath: m_Name
-      value: TrailSand (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6654863258839217042, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -726,6 +777,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
+        type: 3}
+      propertyPath: m_Name
+      value: TrailSand (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6654863258839217044, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
         type: 3}

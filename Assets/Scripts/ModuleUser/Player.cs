@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     [Header("Personal Datas")]
     protected Transform _transform;
+    [SerializeField]
+    protected Animator _animator;
 
     private static string _VERTICAL_AXIS = "Vertical";
     private static string _HORIZONTAL_AXIS = "Horizontal";
@@ -218,6 +220,7 @@ public class Player : MonoBehaviour
     void GetInvicibility(bool pIsGod = false)
     {
         _isInvicible = true;
+        _animator.SetBool("Invulnerability", !pIsGod); // !pIsGod --> to avoid a flickering player when in god mode
         _invulnerabilitySprite.gameObject.SetActive(true);
         if(!pIsGod) Invoke("GetNormal", _invulnerabilityDelay);
     }
@@ -225,6 +228,7 @@ public class Player : MonoBehaviour
     void GetNormal()
     {
         _isInvicible = false;
+        _animator.SetBool("Invulnerability", false);
         _invulnerabilitySprite.gameObject.SetActive(false);
     }
 
