@@ -11,21 +11,31 @@ public class LaserShot : MonoBehaviour
 
     [Header("Personal Datas")]
     private Transform _transform;
+    private Animator _animator;
     [SerializeField]
     private SpriteRenderer _spriteRdr;
 
+    public void PreActiveMode()
+    {
+        if (_animator == null) _animator = this.gameObject.GetComponentInChildren<Animator>();
+        _animator.SetTrigger("PrepTir");
+    }
 
     public void ActiveMode(bool pIsEnemy)
     {
         _isEnemy = pIsEnemy;
         _isActive = true;
-        _spriteRdr.gameObject.SetActive(true);
+        
+        if (_animator == null) _animator = this.gameObject.GetComponentInChildren<Animator>();
+        _animator.SetBool("Attacking", true);
     }
 
     public void DesactiveMode()
     {
         _isActive = false;
-        _spriteRdr.gameObject.SetActive(false);
+
+        if (_animator == null) _animator = this.gameObject.GetComponentInChildren<Animator>();
+        _animator.SetBool("Attacking", false);
     }
     
 
