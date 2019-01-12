@@ -510,6 +510,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scrap: {fileID: 7790807872988376404, guid: 6ed4d0541de54e144ac3ef74352c6fdb, type: 3}
+  _explosionWhenHit: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
+    type: 3}
   _speed: 5
   _moveLoop: 1
   _pv: 1

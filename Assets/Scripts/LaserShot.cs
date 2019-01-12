@@ -41,7 +41,7 @@ public class LaserShot : MonoBehaviour
 
         if (enemyColl != null)
         {
-            enemyColl.GetHit(_hitValue);
+            enemyColl.GetHit(_hitValue, enemyColl.transform.position);
         }
 
         Player playerColl = collision.gameObject.GetComponent<Player>();

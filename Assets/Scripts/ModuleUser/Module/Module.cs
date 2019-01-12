@@ -14,6 +14,10 @@ public abstract class Module : MonoBehaviour
     private float _freeRotationSpeed = 0.7f;
     private Vector3 _scrollingVector = Vector3.zero;
 
+    [Header("Visual info")]
+    [SerializeField]
+    private GameObject _explosionWhenDestroyed;
+
     public bool free = false;
 
     //Fonction de l'état du cube
@@ -75,8 +79,15 @@ public abstract class Module : MonoBehaviour
     public virtual void SetDeathMode()
     {
         moduleAction = DoActionVoid;
+        CreateParticleDamage();
         transform.SetParent(null);
         Destroy(this.gameObject);
+    }
+
+    void CreateParticleDamage()
+    {
+        Instantiate(_explosionWhenDestroyed, transform.position, Quaternion.identity, null);
+        //destroy automatic on the explosion
     }
 
 }
