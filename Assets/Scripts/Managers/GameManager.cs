@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
 
     public bool isLD = false;
 
+    public Transform scrolling;
+    public Vector3 scrollingVector = new Vector3(0, -12, 0);
+
     [HideInInspector] public bool isPause {
         get {
             return _isPause;
