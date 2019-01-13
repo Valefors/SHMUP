@@ -103,8 +103,10 @@ public class Player : MonoBehaviour
 
         if (SafeZone.IsOffFieldX(lPoint.x)) lMovement.x = 0;
         if (SafeZone.IsOffFieldY(lPoint.y)) lMovement.y = 0;
-
-        _transform.Translate(lMovement, Space.World);
+        if (lMovement != Vector3.zero)
+        {
+            _transform.Translate(lMovement, Space.World);
+        }
     }
 
     Vector3 HorizontalMove(float lXmovValue)
