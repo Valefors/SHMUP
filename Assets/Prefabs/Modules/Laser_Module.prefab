@@ -96,7 +96,7 @@ MonoBehaviour:
     type: 3}
   free: 0
   isEnemy: 1
-  _shotRate: 3
+  _shotRate: 2
   _laserShot: {fileID: 1098324737}
 --- !u!1 &727252101
 GameObject:
