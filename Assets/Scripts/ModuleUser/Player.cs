@@ -99,7 +99,10 @@ public class Player : MonoBehaviour
 
         Vector2 lPoint = new Vector2(transform.position.x + lMovement.x, transform.position.y + lMovement.y);
 
-        if (SafeZone.IsOffField(lPoint)) return;
+        //if (SafeZone.IsOffField(lPoint)) return;
+
+        if (SafeZone.IsOffFieldX(lPoint.x)) lMovement.x = 0;
+        if (SafeZone.IsOffFieldY(lPoint.y)) lMovement.y = 0;
 
         _transform.Translate(lMovement, Space.World);
     }
