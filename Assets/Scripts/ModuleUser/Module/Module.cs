@@ -26,6 +26,7 @@ public abstract class Module : MonoBehaviour
 
     protected virtual void OnEnable()
     {
+        SetToTrigger(false);
         SetModeVoid();
     }
 
@@ -48,6 +49,7 @@ public abstract class Module : MonoBehaviour
 
     public virtual void SetModeFree()
     {
+        SetToTrigger(true);
         moduleAction = DoActionFree;
     }
 
@@ -88,6 +90,14 @@ public abstract class Module : MonoBehaviour
     {
         Instantiate(_explosionWhenDestroyed, transform.position, Quaternion.identity, null);
         //destroy automatic on the explosion
+    }
+    
+    public void SetToTrigger(bool pValue)
+    {
+        foreach (Collider2D coll in gameObject.GetComponents<Collider2D>())
+        {
+            coll.isTrigger = pValue;
+        }
     }
 
 }

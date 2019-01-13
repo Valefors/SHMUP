@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3689616184141322330}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 6327029292502557942}
   - component: {fileID: 4131775518543858461}
   - component: {fileID: 3317359503794441711}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5312201828735479374}
   - component: {fileID: 2098541405370548159}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: _PLACEHOLDER_Sprite_Circle_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
