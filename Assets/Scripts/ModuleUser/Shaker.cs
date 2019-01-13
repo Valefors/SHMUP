@@ -31,7 +31,6 @@ public class Shaker : MonoBehaviour
     {
         _target = GetComponent<Transform>();
         _initialPos = _target.localPosition;
-        _initialPos.
     }
 
     public void Shake()
