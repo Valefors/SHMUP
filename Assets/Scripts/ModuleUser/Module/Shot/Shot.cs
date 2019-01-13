@@ -1,12 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Shot : MonoBehaviour
 {
-    [SerializeField]
-    private SpriteRenderer _spriteRdr;
-
     [SerializeField]
     private float _speedShot = 1f;
     private bool _isEnemy = true;
@@ -17,6 +14,8 @@ public class Shot : MonoBehaviour
     int _hitValue = 1;
 
     private Transform _transform;
+    [SerializeField]
+    private Animator _animator;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -80,16 +79,8 @@ public class Shot : MonoBehaviour
 
     public void ChangeColor()
     {
-        if (_isEnemy)
-        {
-            _spriteRdr.color = Color.red;
-        }
-        else
-        {
-            _spriteRdr.color = Color.yellow;
-        }
+       _animator.SetBool("enn", _isEnemy);
     }
-
 
     public void Touch()
     {
