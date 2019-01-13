@@ -70,9 +70,9 @@ MonoBehaviour:
     type: 3}
   free: 0
   isEnemy: 1
-  _shotRate: 1
-  _speedShot: 5.5
-  _speedShotFactor: 3.5
+  _shotRate: 1.5
+  _speedShot: 4
+  _speedShotFactor: 6
   _hitValue: 1
   _prefabShot: {fileID: 2893416602070953415, guid: 66cfab03dcf6aea409f8a11c45bf769e,
     type: 3}
