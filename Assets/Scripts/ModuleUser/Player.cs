@@ -244,6 +244,18 @@ public class Player : MonoBehaviour
             if (moduleCollided.free) //need to know if there parent are still enemy (or even friend)
                 AddModule(moduleCollided);
         }
+
+        Shot shotCollided = pCol.gameObject.GetComponent<Shot>();
+        if (shotCollided != null )
+        {
+            if (shotCollided.GetSide())
+            {
+                shotCollided.Touch();
+                this.GetHit();
+            }
+        }
+
+
     }
 
     private void AddModule(Module module)
@@ -256,6 +268,7 @@ public class Player : MonoBehaviour
         //TO DO : need to make a clear feedback
         //something to make the module really go from start direction to this one
         module.transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToLookAt);
+        module.SetToTrigger(false);
         module.free = false;
 
         _modulesList.Add(module);
