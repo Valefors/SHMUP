@@ -5,9 +5,9 @@ using UnityEngine;
 public class Shaker : MonoBehaviour
 {
     [Header("Gameplay datas")]
-    [Range(0f, 2f)]
-    [SerializeField] float _intensity;
-    [Range(0f, 2f)]
+    [Range(0f, 5f)]
+    [SerializeField] float _intensityX;
+    [Range(0f, 5f)]
     [SerializeField] float _intensityY;
     [SerializeField] float _duration = 1f;
 
@@ -47,7 +47,7 @@ public class Shaker : MonoBehaviour
 
         while(Time.realtimeSinceStartup < lStartTime + _duration)
         {
-            Vector3 lRandomPoint = new Vector3(_initialPos.x + (Random.Range(-1f, 1f) * _intensity), _initialPos.y + (Random.Range(-1f, 1f) * _intensityY), _initialPos.z);
+            Vector3 lRandomPoint = new Vector3(_initialPos.x + (Random.Range(-1f, 1f) * _intensityX), _initialPos.y + (Random.Range(-1f, 1f) * _intensityY), _initialPos.z);
             _target.localPosition = lRandomPoint;
             yield return null;
         }
