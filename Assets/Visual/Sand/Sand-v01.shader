@@ -105,7 +105,7 @@
 			o.Smoothness = spec.a * _Glossiness;
 			o.Alpha = c.a;
 
-			//o.Emission = (tex2D(_SecondTex, IN.uv_MainTex)) * _Emission * (tex2D(_HeightMap, IN.uv_MainTex).rgb);
+			o.Emission = tex2D(_MainTex, IN.uv_MainTex) * _Emission;//(tex2D(_SecondTex, IN.uv_MainTex)) * _Emission * (tex2D(_HeightMap, IN.uv_MainTex).rgb);
         }
         ENDCG
     }

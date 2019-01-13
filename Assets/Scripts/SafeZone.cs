@@ -21,4 +21,16 @@ public class SafeZone : MonoBehaviour
         if (pPos.x < MIN_X || pPos.x > MAX_X || pPos.y < MIN_Y || pPos.y > MAX_Y) return true;
         return false;
     }
+
+    public static bool IsOffFieldX(float pXPos)
+    {
+        if (pXPos < MIN_X || pXPos > MAX_X) return true;
+        return false;
+    }
+
+    public static bool IsOffFieldY(float pYPos)
+    {
+        if (pYPos < MIN_Y || pYPos > MAX_Y) return true;
+        return false;
+    }
 }
