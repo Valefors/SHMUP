@@ -62,6 +62,18 @@ public class Spawn : MonoBehaviour
         _isTaken = true;
     }
 
+    public void AddModule4()
+    {
+        if (_isTaken) return;
+
+        _module = PrefabUtility.InstantiatePrefab(_modulesList[3] as GameObject) as GameObject;
+        _module.transform.position = transform.position;
+        _module.transform.rotation = transform.rotation;
+        _module.transform.parent = transform;
+        _module.transform.localScale = _modulesList[3].transform.localScale;
+        _isTaken = true;
+    }
+
     public void RemoveModule()
     {
         DestroyImmediate(_module);

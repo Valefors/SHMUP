@@ -9,6 +9,10 @@ public class Enemy : MonoBehaviour
     protected Transform _transform;
     PathFollower _pF;
     Rigidbody2D _rb;
+    [SerializeField] Scrap _scrap;
+    [SerializeField] GameObject _explosionWhenHit;
+    //[SerializeField] GameObject _explosionWhenDead;
+    [SerializeField] Light _ownLight;
 
     [Header("Gameplay Datas")]
     [SerializeField] protected float _speed;
@@ -17,6 +21,9 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private Module[] _modulesList;
     private int _listLenght = 0;
+
+    [Header("Score")]
+    [SerializeField] private float _scoreValue = 0f;
 
     [SerializeField] [Range(0,1)] protected float _dropLoot = 0.5f;
 
@@ -33,6 +40,7 @@ public class Enemy : MonoBehaviour
     {
         FillModuleArray();
         SetModuleActionMode();
+        EventManager.StartListening(EventManager.GAME_OVER_EVENT, GameOver);
     }
 
     void FillModuleArray()
@@ -65,17 +73,29 @@ public class Enemy : MonoBehaviour
             _pF.currentNode = (_pF.currentNode + 1) % _pF.nodesPosition.Count;     
         }
 
-        // TEST LD AXEL
         Quaternion saved = _pF.nodesRotation[_pF.currentNode];
         _transform.rotation = Quaternion.Lerp(_transform.rotation, saved, 0.05f);
     }
 
     #region GetDamage
-    public virtual void GetHit(int pHitValue)
+    public virtual void GetHit(int pHitValue, Vector3 impactPosition)
     {
         _pv = _pv - pHitValue;
+
+
+
         if (_pv <= 0)
             Death();
+        else
+        {
+            CreateParticleDamage(impactPosition);
+        }
+    }
+
+    void CreateParticleDamage(Vector3 impactPosition)
+    {
+        Instantiate(_explosionWhenHit, impactPosition, Quaternion.identity, null);
+        //destroy automatic on the explosion
     }
 
     #endregion
@@ -83,10 +103,22 @@ public class Enemy : MonoBehaviour
     private void Death()
     {
         float randomValue = Random.Range(0f,1f);
-        if(randomValue < _dropLoot)
+
+        if (randomValue < _dropLoot)
             DropItem();
+
+        ScoreManager.manager.UpdateScore(_scoreValue);
+        CreateParticleDamage(_transform.position);
+
+        if (_ownLight != null)
+        {
+            _ownLight.transform.SetParent(GameManager.manager.scrolling);
+            Destroy(_ownLight.gameObject, 3);
+        }
+
         Destroy(this.gameObject);
     }
+
 
     void DropItem()
     {
@@ -94,9 +126,11 @@ public class Enemy : MonoBehaviour
         //TO DO FACTORY
         if (_listLenght != 0)
         {
+ 
             int randomIndex = Random.Range(0, _modulesList.Length);
-            
+
             Module lModule = _modulesList[randomIndex];
+
             lModule.transform.SetParent(null); //put it in a container of all "free" module who will go down , maybe ?
             lModule.SetModeFree();
             lModule.free = true;
@@ -106,6 +140,17 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.manager.isPause) return;
         Move();
+    }
+
+    void GameOver()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.StopListening(EventManager.GAME_OVER_EVENT, GameOver);
     }
 }

@@ -9,7 +9,14 @@ public abstract class Module : MonoBehaviour
     public float _weight = 1f;
 
     [SerializeField]
+    private float _freeSpeedFactor = 1f;
+    [SerializeField]
     private float _freeRotationSpeed = 0.7f;
+    private Vector3 _scrollingVector = Vector3.zero;
+
+    [Header("Visual info")]
+    [SerializeField]
+    private GameObject _explosionWhenDestroyed;
 
     public bool free = false;
 
@@ -19,6 +26,7 @@ public abstract class Module : MonoBehaviour
 
     protected virtual void OnEnable()
     {
+        SetToTrigger(false);
         SetModeVoid();
     }
 
@@ -41,25 +49,55 @@ public abstract class Module : MonoBehaviour
 
     public virtual void SetModeFree()
     {
+        SetToTrigger(true);
         moduleAction = DoActionFree;
     }
 
     public virtual void DoActionFree()
     {
-        //TO DO : Go down at the speed of the scrolling + disapear after a certain point
-        transform.Rotate(Vector3.forward * _freeRotationSpeed);
+        if(_scrollingVector == Vector3.zero)
+        {
+            SetScrollingVector();
+        }
+
+        transform.Translate(_scrollingVector * Time.deltaTime, Space.World);
+        transform.Rotate(Vector3.forward * _freeRotationSpeed * Time.deltaTime);
+    }
+
+    protected virtual void SetScrollingVector()
+    {
+        //TO DO : Changing that to a more "error proof" method
+        _scrollingVector = GameManager.manager.scrollingVector;
+        _scrollingVector *= _freeSpeedFactor;
     }
 
     protected void Update()
     {
+        if (GameManager.manager.isPause) return;
+
         if (moduleAction != null) moduleAction();
     }
 
     public virtual void SetDeathMode()
     {
         moduleAction = DoActionVoid;
+        CreateParticleDamage();
         transform.SetParent(null);
         Destroy(this.gameObject);
+    }
+
+    void CreateParticleDamage()
+    {
+        Instantiate(_explosionWhenDestroyed, transform.position, Quaternion.identity, null);
+        //destroy automatic on the explosion
+    }
+    
+    public void SetToTrigger(bool pValue)
+    {
+        foreach (Collider2D coll in gameObject.GetComponents<Collider2D>())
+        {
+            coll.isTrigger = pValue;
+        }
     }
 
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 905220051}
   - component: {fileID: 2116501075790727495}
   - component: {fileID: 366470854458742938}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: VGun_Module
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,14 +64,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
+  _freeSpeedFactor: 0.1
   _freeRotationSpeed: 0.7
+  _explosionWhenDestroyed: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
+    type: 3}
   free: 0
-  _shotRate: 2
-  _speedShot: 4
+  isEnemy: 1
+  _shotRate: 1
+  _speedShot: 5.5
+  _speedShotFactor: 3.5
   _hitValue: 1
   _prefabShot: {fileID: 2893416602070953415, guid: 66cfab03dcf6aea409f8a11c45bf769e,
     type: 3}
-  isEnemy: 1
   _canonSpawnArray:
   - {fileID: 6259052044933060863}
   - {fileID: 3875628316715186006}
@@ -139,7 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3875628316715186006}
   - component: {fileID: 6459668493150825751}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SquareCanon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +223,7 @@ GameObject:
   - component: {fileID: 6259052044933060863}
   - component: {fileID: 8874413787217909948}
   - component: {fileID: 837815500103402432}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SquareCanon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4098085410414175070}
   - component: {fileID: 7582104279179684612}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SquareCanon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6134855039741756847}
   - component: {fileID: 56661078591866092}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 16485883001435607}
   - component: {fileID: 9128389930215760267}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SquareCanon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

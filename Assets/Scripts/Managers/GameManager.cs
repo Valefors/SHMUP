@@ -7,6 +7,19 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] int _levelToLoad = 1;
 
+    public bool isLD = false;
+
+    public Transform scrolling;
+    public Vector3 scrollingVector = new Vector3(0, -12, 0);
+
+    [HideInInspector] public bool isPause {
+        get {
+            return _isPause;
+        }
+    }
+
+    private bool _isPause = false;
+
     private static GameManager _manager;
     public static GameManager manager {
         get {
@@ -14,10 +27,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        if (_manager == null) _manager = this;
+
+        else if (_manager != this) Destroy(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (scrolling == null) scrolling = FindObjectOfType<ScrollingBackground>().transform;
+        EventManager.StartListening(EventManager.PAUSE_EVENT, Pause);
     }
 
     public void Play()
@@ -26,19 +47,24 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(_levelToLoad);
     }
 
-    /*private void Pause()
+    private void Pause()
     {
-        EventManager.TriggerEvent(EventManager.PAUSE_EVENT);
-    }*/
+        _isPause = true;
+    }
 
     public void Resume()
     {
-        print("here");
+        _isPause = false;
         EventManager.TriggerEvent(EventManager.RESUME_EVENT);
     }
 
     public void Quit()
     {
         Application.Quit();
+    }
+
+    void OnDisable()
+    {
+        EventManager.StopListening(EventManager.PAUSE_EVENT, Pause);
     }
 }

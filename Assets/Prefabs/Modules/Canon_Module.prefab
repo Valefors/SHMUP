@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4795492094549820520}
   - component: {fileID: 160458006062229585}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SquareCanon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4619175050824214077}
   - component: {fileID: 4999846654520275573}
   - component: {fileID: 3329485072064713141}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Canon_Module
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,14 +126,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
+  _freeSpeedFactor: 0.3
   _freeRotationSpeed: 0.7
+  _explosionWhenDestroyed: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
+    type: 3}
   free: 0
+  isEnemy: 1
   _shotRate: 0.25
-  _speedShot: 10
+  _speedShot: 6
+  _speedShotFactor: 6
   _hitValue: 1
   _prefabShot: {fileID: 2893416602070953415, guid: 66cfab03dcf6aea409f8a11c45bf769e,
     type: 3}
-  isEnemy: 1
 --- !u!58 &4999846654520275573
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -186,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4619175051328705136}
   - component: {fileID: 4619175051328705139}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
