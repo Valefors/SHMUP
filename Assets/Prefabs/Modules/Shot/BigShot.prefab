@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7bcf194deeaf894a80f4b581ac804d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spriteRdr: {fileID: 885313275745390991}
   _speedShot: 10
   _direction: {x: 0, y: 1, z: 0}
+  _animator: {fileID: 4374136644019251276}
 --- !u!58 &238045513913435003
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -104,7 +104,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508607671695251335}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5e4955752b5493a4594c7a1226fc39d2, type: 2}
   m_CullingMode: 0

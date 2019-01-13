@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +14,8 @@ public class Shot : MonoBehaviour
     int _hitValue = 1;
 
     private Transform _transform;
+    [SerializeField]
+    private Animator _animator;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -71,8 +73,15 @@ public class Shot : MonoBehaviour
         _hitValue = pHitValue;
 
         _direction = Vector3.up;
+
+        ChangeColor();
     }
-    
+
+    public void ChangeColor()
+    {
+       _animator.SetBool("enn", _isEnemy);
+    }
+
     public void Touch()
     {
         Deactivate();
