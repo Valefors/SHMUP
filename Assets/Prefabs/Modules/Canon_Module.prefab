@@ -136,7 +136,7 @@ MonoBehaviour:
   free: 0
   isEnemy: 1
   _shotRate: 0.25
-  _speedShot: 6
+  _speedShot: 8
   _speedShotFactor: 6
   _hitValue: 1
   _prefabShot: {fileID: 2893416602070953415, guid: 66cfab03dcf6aea409f8a11c45bf769e,
