@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (scrolling == null) scrolling = FindObjectOfType<ScrollingBackground>().transform;
         EventManager.StartListening(EventManager.PAUSE_EVENT, Pause);
     }
 
