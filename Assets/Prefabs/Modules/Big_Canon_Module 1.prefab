@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4394935613112324422}
   - component: {fileID: 7988027233455711179}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SquareCanon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3660795482560684907}
   - component: {fileID: 1856419628741682563}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 1258394653852203905}
   - component: {fileID: 4227499107720022872}
   - component: {fileID: 8036271110408323069}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Big_Canon_Module 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,6 +210,9 @@ MonoBehaviour:
   _freeRotationSpeed: 0.7
   _explosionWhenDestroyed: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
     type: 3}
+  _colliderOfTheModule:
+  - {fileID: 4227499107720022872}
+  - {fileID: 8036271110408323069}
   free: 0
   isEnemy: 1
   _shotRate: 2
@@ -228,7 +231,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -244,7 +247,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.4}
