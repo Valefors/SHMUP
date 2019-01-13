@@ -5,9 +5,6 @@ using UnityEngine;
 public class Shot : MonoBehaviour
 {
     [SerializeField]
-    private SpriteRenderer _spriteRdr;
-
-    [SerializeField]
     private float _speedShot = 1f;
     private bool _isEnemy = true;
 
@@ -74,23 +71,8 @@ public class Shot : MonoBehaviour
         _hitValue = pHitValue;
 
         _direction = Vector3.up;
-
-        ChangeColor();
     }
-
-    public void ChangeColor()
-    {
-        if (_isEnemy)
-        {
-            _spriteRdr.color = Color.red;
-        }
-        else
-        {
-            _spriteRdr.color = Color.yellow;
-        }
-    }
-
-
+    
     public void Touch()
     {
         Deactivate();
