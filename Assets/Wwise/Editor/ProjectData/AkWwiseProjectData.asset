@@ -181,13 +181,13 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: ba4f3c47d387e34789f00968a54a6f83
-    m_lastTime: -8586543850596778526
+    m_lastTime: -8586541359010627032
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2833e4d17ac8924f94f0cad191414be9
-    m_lastTime: -8586543589462494363
+    m_lastTime: -8586541827316896077
     List:
     - name: General
       guid: b8f5f163590846438a9805268b1eea41
@@ -535,12 +535,6 @@ MonoBehaviour:
   - /Junk
   - /Junk/Events
   - /Junk/Events/Default Work Unit
-  - /Junk/SoundBanks
-  - /Junk/SoundBanks/Default Work Unit
   - /Junk/States
-  - /Junk/States/Default Work Unit
-  - /Junk/States/Default Work Unit/Moving_state
-  - /Junk/States/Default Work Unit/vGun_state
-  - /Junk/Virtual Acoustics
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

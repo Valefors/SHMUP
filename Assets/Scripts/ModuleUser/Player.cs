@@ -65,7 +65,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G)) GetInvicibility(true);
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            GetInvicibility(true);
+        }
 
         if (GameManager.manager.isPause) return;
 
@@ -105,6 +108,7 @@ public class Player : MonoBehaviour
         if (SafeZone.IsOffFieldY(lPoint.y)) lMovement.y = 0;
         if (lMovement != Vector3.zero)
         {
+            AkSoundEngine.SetState("Moving_state", "yes");
             _transform.Translate(lMovement, Space.World);
         }
     }
@@ -149,6 +153,7 @@ public class Player : MonoBehaviour
         _horizontalAccDecLerpValue -= Time.deltaTime * _horizontalDecSpeed * Mathf.Sign(_horizontalAccDecLerpValue);
         if(Mathf.Sign(pastLerp) != Mathf.Sign(_horizontalAccDecLerpValue))
         {
+            AkSoundEngine.SetState("Moving_state", "no");
             _horizontalAccDecLerpValue = 0;
         }
 
@@ -166,6 +171,7 @@ public class Player : MonoBehaviour
         _verticalAccDecLerpValue -= Time.deltaTime * _verticalDecSpeed * Mathf.Sign(_verticalAccDecLerpValue);
         if (Mathf.Sign(pastLerp) != Mathf.Sign(_verticalAccDecLerpValue))
         {
+            AkSoundEngine.SetState("Moving_state", "no");
             _verticalAccDecLerpValue = 0;
         }
 
@@ -259,8 +265,12 @@ public class Player : MonoBehaviour
         Module moduleCollided = pCol.gameObject.GetComponent<Module>();
         if (moduleCollided != null)
         {
-            if (moduleCollided.free) //need to know if there parent are still enemy (or even friend)
+            //need to know if there parent are still enemy (or even friend)
+            if (moduleCollided.free)
+            {
+                AkSoundEngine.PostEvent("Get_module", gameObject);
                 AddModule(moduleCollided);
+            }
         }
     }
 
@@ -288,6 +298,9 @@ public class Player : MonoBehaviour
         Module lModuleToDestroy = _modulesList[_listLenght - 1];
         _modulesList.RemoveAt(_listLenght - 1);
         _listLenght--;
+
+        AkSoundEngine.PostEvent("Damaged", gameObject);
+
         lModuleToDestroy.SetDeathMode();
 
         UpdateWeight();
