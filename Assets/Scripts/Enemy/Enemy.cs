@@ -27,6 +27,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] [Range(0,1)] protected float _dropLoot = 0.5f;
 
+    private float timeSpent;
+
     private void OnEnable()
     {
         _transform = this.transform;
@@ -70,11 +72,17 @@ public class Enemy : MonoBehaviour
         else
         {
             if (_pF.currentNode + 1 == _pF.nodesPosition.Count && !_moveLoop) return;
-            _pF.currentNode = (_pF.currentNode + 1) % _pF.nodesPosition.Count;     
+
+            if (timeSpent >= _pF.nodesWaitTime[_pF.currentNode])
+            {
+                _pF.currentNode = (_pF.currentNode + 1) % _pF.nodesPosition.Count;
+                timeSpent = 0;
+            }
+            else timeSpent += Time.deltaTime;
         }
 
         Quaternion saved = _pF.nodesRotation[_pF.currentNode];
-        _transform.rotation = Quaternion.Lerp(_transform.rotation, saved, 0.05f);
+        _transform.rotation = Quaternion.Lerp(_transform.rotation, saved, 0.02f);
     }
 
     #region GetDamage
