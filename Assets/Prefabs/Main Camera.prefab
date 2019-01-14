@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8014612331121692849}
   - component: {fileID: 8014612331121692854}
   - component: {fileID: 8014612331121692853}
+  - component: {fileID: 6712354426398646902}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -165,3 +166,21 @@ MonoBehaviour:
   VerticalSpeed: 1
   Density: 0.06
   Shader: {fileID: 4800000, guid: fdac6dc07af404deba03f0e8f95edf1f, type: 3}
+--- !u!114 &6712354426398646902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8014612331121692815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c9ebc214b0141c6a6ecf1e7443f3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloomShader: {fileID: 4800000, guid: 926e8db920ab84661b115e2bdbc8199b, type: 3}
+  intensity: 2
+  iterations: 4
+  threshold: 1
+  softThreshold: 0.4
+  debug: 0
