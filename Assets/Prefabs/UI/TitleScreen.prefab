@@ -842,7 +842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5192506404543311358
 RectTransform:
   m_ObjectHideFlags: 0
@@ -918,15 +918,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3149623de4513d346a51f0e10aa32aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonOne: {fileID: 0}
-  buttonTwo: {fileID: 0}
-  buttonThree: {fileID: 0}
-  buttonFour: {fileID: 0}
+  buttonOne: {fileID: 5192506403920340197}
+  buttonTwo: {fileID: 5192506404075236619}
+  buttonThree: {fileID: 5192506404718926405}
+  buttonFour: {fileID: 5192506405034037827}
   selectionHighlightItem: {fileID: 657354790920337405}
-  positionButtonOne: {fileID: 0}
-  positionButtonTwo: {fileID: 0}
-  positionButtonThree: {fileID: 0}
-  positionButtonFour: {fileID: 0}
+  positionButtonOne: {fileID: 1003817307796357588}
+  positionButtonTwo: {fileID: 7125525123983934750}
+  positionButtonThree: {fileID: 7204009548298987420}
+  positionButtonFour: {fileID: 1182241902106456553}
 --- !u!1 &5192506404718926405
 GameObject:
   m_ObjectHideFlags: 0
