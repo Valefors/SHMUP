@@ -11,7 +11,7 @@ public class Canon : ShooterModule
     [SerializeField] protected int _hitValue = 1;
     [SerializeField] protected bool useSalve = false;
     [SerializeField] protected int _numberShotSalve;
-    [SerializeField] protected int _timeWaitSalve;
+    [SerializeField] protected float _timeWaitSalve;
 
     [SerializeField] protected GameObject _prefabShot;
 
