@@ -263,7 +263,7 @@ public class Player : MonoBehaviour
         LaserShot laserShotCollided = pCol.gameObject.GetComponent<LaserShot>();
         if (laserShotCollided != null)
         {
-            if (laserShotCollided.GetSide())
+            if (laserShotCollided.GetSide() && laserShotCollided.isActive)
             {
                 this.GetHit();
             }

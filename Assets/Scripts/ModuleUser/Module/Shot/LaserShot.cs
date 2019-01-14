@@ -7,7 +7,8 @@ public class LaserShot : MonoBehaviour
     [Header("Gameplay Datas")]
     [SerializeField] int _hitValue = 1;
     private bool _isEnemy = true;
-    bool _isActive = false;
+    [HideInInspector]
+    public bool isActive = false;
 
     [Header("Personal Datas")]
     private Transform _transform;
@@ -24,7 +25,7 @@ public class LaserShot : MonoBehaviour
     public void ActiveMode(bool pIsEnemy)
     {
         _isEnemy = pIsEnemy;
-        _isActive = true;
+        isActive = true;
         
         if (_animator == null) _animator = this.gameObject.GetComponentInChildren<Animator>();
         _animator.SetBool("Attacking", true);
@@ -32,7 +33,7 @@ public class LaserShot : MonoBehaviour
 
     public void DesactiveMode()
     {
-        _isActive = false;
+        isActive = false;
 
         if (_animator == null) _animator = this.gameObject.GetComponentInChildren<Animator>();
         _animator.SetBool("Attacking", false);
@@ -47,7 +48,7 @@ public class LaserShot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!_isActive) return;
+        if (!isActive) return;
 
         Enemy enemyColl = collision.gameObject.GetComponent<Enemy>();
 
