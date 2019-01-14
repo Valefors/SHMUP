@@ -1,0 +1,24 @@
+Event	ID	Name			Wwise Object Path	Notes
+	251412229	Shot			\Default Work Unit\Shot	
+	2030840469	Kill			\Default Work Unit\Kill	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	3892420161	NbrCanons			\Default Work Unit\NbrCanons	
+
+Effect plug-ins	ID	Name	Type				Notes
+	68438173	Wwise Compressor (Custom)	Wwise Compressor			
+	1686450799	DelayCanon	Wwise Delay			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	89547824	Bois01	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\Bois01_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Bois\Bois01		356080
+	203401469	Bois03	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\Bois03_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Bois\Bois03		449976
+	260000769	ComposanteLaser	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\ComposanteLaser_682201A8.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\ComposanteLaser		56560
+	276322362	Bois02	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\Bois02_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Bois\Bois02		426320
+	342057620	Explosion01	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\Explosion01_0396B94F.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Explosion\Explosion01		387024
+	407585590	Explosion03	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\Explosion03_51648289.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Explosion\Explosion03		305112
+	749581320	Explosion02	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\Explosion02_BA6B0D00.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Explosion\Explosion02		390640
+	780068063	CanonGrave	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\TirGun\CanonGrave_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\TirGun\CanonGrave		246672
+	785075474	CanonGraveLoin	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\CanonGraveLoin_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\TirGun\CanonGraveLoin		244664
+	797382632	CanonAigu	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\TirGun\CanonAigu_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\TirGun\CanonAigu		246660
+	848318048	Laser	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\TirGun\Laser_A47C69CD.wem		\Actor-Mixer Hierarchy\Default Work Unit\TirGun\Laser		19988
+
