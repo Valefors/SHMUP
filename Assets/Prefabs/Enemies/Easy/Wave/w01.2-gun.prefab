@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &549657805219837429
 Transform:
   m_ObjectHideFlags: 0
@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodesPosition: []
   nodesRotation: []
+  nodesWaitTime: 
   currentNode: 0
 --- !u!1 &549657806888743122
 GameObject:
@@ -127,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodesPosition: []
   nodesRotation: []
+  nodesWaitTime: 
   currentNode: 0
 --- !u!1001 &549657804885553093
 PrefabInstance:
