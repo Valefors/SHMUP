@@ -9,10 +9,16 @@ public class Canon : ShooterModule
     [SerializeField] protected float _speedShot = 2f;
     [SerializeField] protected float _speedShotFactor = 2f;
     [SerializeField] protected int _hitValue = 1;
+    [SerializeField] protected bool useSalve = false;
+    [SerializeField] protected int _numberShotSalve;
+    [SerializeField] protected int _timeWaitSalve;
 
     [SerializeField] protected GameObject _prefabShot;
 
-
+    private int countedShots=0;
+    private float waitingTime;
+    private bool isWaiting=false;
+    private bool isShooting=true;
 
     // Start is called before the first frame update
     void Start()
@@ -27,15 +33,36 @@ public class Canon : ShooterModule
 
     protected virtual void Shoot()
     {
-        Shot lShot = Instantiate(_prefabShot, _transform.position, Quaternion.identity).GetComponent<Shot>();
-        lShot.SetUp(isEnemy, _transform.rotation, GetSpeed(), _hitValue);
-        _canShoot = false;
-
-        if(!isEnemy)
+        if (!useSalve || ((isWaiting && waitingTime > _timeWaitSalve) || isShooting))
         {
-            AkSoundEngine.PostEvent("Shot", gameObject);
+            Shot lShot = Instantiate(_prefabShot, _transform.position, Quaternion.identity).GetComponent<Shot>();
+            lShot.SetUp(isEnemy, _transform.rotation, GetSpeed(), _hitValue);
+            _canShoot = false;
+
+            if (!isEnemy)
+            {
+                AkSoundEngine.PostEvent("Shot", gameObject);
+            }
+            Invoke("CanShootAgain", _shotRate);
+
+            if(useSalve)
+            {
+                countedShots++;
+                if (isWaiting)
+                {
+                    waitingTime = 0;
+                    isWaiting = false;
+                    isShooting = true;
+                }
+                if (countedShots >= _numberShotSalve && isShooting)
+                {
+                    countedShots = 0;
+                    isShooting = false;
+                    isWaiting = true;
+                }
+            }
         }
-        Invoke("CanShootAgain", _shotRate);
+        else waitingTime += Time.deltaTime;
     }
 
     protected float GetSpeed()
