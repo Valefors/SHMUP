@@ -232,11 +232,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc,
         type: 3}
-      propertyPath: _shotRate
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc,
-        type: 3}
       propertyPath: useSalve
       value: 1
       objectReference: {fileID: 0}
@@ -248,6 +243,21 @@ PrefabInstance:
     - target: {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc,
         type: 3}
       propertyPath: _timeWaitSalve
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc,
+        type: 3}
+      propertyPath: _numberShotBurst
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc,
+        type: 3}
+      propertyPath: _timeWaitBurst
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc,
+        type: 3}
+      propertyPath: useBurst
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4619175050824214076, guid: 2596468b58cd6e74293d14c5c2c6bafc,
