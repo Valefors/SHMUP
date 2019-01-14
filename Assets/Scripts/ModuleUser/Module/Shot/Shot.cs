@@ -29,12 +29,7 @@ public class Shot : MonoBehaviour
             this.Touch();
         }
 
-        /*Player playerColl = collision.gameObject.GetComponent<Player>();
-        if (playerColl != null && _isEnemy)
-        {
-            playerColl.GetHit();
-            this.Touch();
-        }*/
+        
     }
     
     // Start is called before the first frame update

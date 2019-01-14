@@ -37,7 +37,13 @@ public class LaserShot : MonoBehaviour
         if (_animator == null) _animator = this.gameObject.GetComponentInChildren<Animator>();
         _animator.SetBool("Attacking", false);
     }
-    
+
+
+    public bool GetSide()
+    {
+        return _isEnemy;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -49,11 +55,6 @@ public class LaserShot : MonoBehaviour
         {
             enemyColl.GetHit(_hitValue, enemyColl.transform.position);
         }
-
-        Player playerColl = collision.gameObject.GetComponent<Player>();
-        if (playerColl != null && _isEnemy)
-        {
-            playerColl.GetHit();
-        }
+        
     }
 }
