@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 58525041}
   - component: {fileID: 58525042}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spawn_Module_1
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -59,7 +59,7 @@ GameObject:
   m_Component:
   - component: {fileID: 282867639}
   - component: {fileID: 282867640}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spawn_Module_6
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 428054201}
   - component: {fileID: 428054202}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spawn_Module_4
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -157,7 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487589764}
   - component: {fileID: 487589765}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spawn_Module_0
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -206,7 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 574418728}
   - component: {fileID: 574418729}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spawn_Module_5
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -255,7 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 879046907}
   - component: {fileID: 879046908}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spawn_Module_3
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -304,7 +304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1121621084}
   - component: {fileID: 1121621085}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spawn_Module_2
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -353,7 +353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1593112809}
   - component: {fileID: 1593112810}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spawn_Module_7
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -401,7 +401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2021926622}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spawn_Modules
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1360472381378681068}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 3787835602005470519}
   - component: {fileID: 1385458111042732298}
   - component: {fileID: 7992169173957240099}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -512,6 +512,7 @@ MonoBehaviour:
   _scrap: {fileID: 7790807872988376404, guid: 6ed4d0541de54e144ac3ef74352c6fdb, type: 3}
   _explosionWhenHit: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
     type: 3}
+  _ownLight: {fileID: 8990251900635376954}
   _speed: 5
   _moveLoop: 1
   _pv: 1
@@ -527,7 +528,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509156135489097362}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -539,7 +540,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7992169173957240099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -576,7 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6544452683763251299}
   - component: {fileID: 8990251900635376954}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6771724646846286361}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -676,6 +677,46 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
       propertyPath: m_Name
       value: FoesFinal
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100026, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100028, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -732,6 +773,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
       propertyPath: m_LocalScale.z
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100030, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
       propertyPath: m_Materials.Array.data[0]

@@ -25,7 +25,11 @@ public class PathFollower : MonoBehaviour
         for (int i = 0; i < _pathNode.Length; i++)
         {
             nodesPosition.Add(_pathNode[i].transform.position);
-            savedRotation = _pathNode[i].transform.rotation;
+
+            Vector3 test = _pathNode[i].transform.localEulerAngles;
+            test.z += _pathNode[i].transform.parent.parent.transform.localEulerAngles.z;
+            savedRotation = Quaternion.Euler(test);
+          
             nodesRotation.Add(savedRotation);
             _pathNode[i].gameObject.SetActive(false);
         }

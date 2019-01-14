@@ -130,14 +130,17 @@ MonoBehaviour:
   _freeRotationSpeed: 0.7
   _explosionWhenDestroyed: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
     type: 3}
+  _colliderOfTheModule:
+  - {fileID: 4999846654520275573}
+  - {fileID: 3329485072064713141}
   free: 0
+  isEnemy: 1
   _shotRate: 0.25
-  _speedShot: 6
+  _speedShot: 8
   _speedShotFactor: 6
   _hitValue: 1
   _prefabShot: {fileID: 2893416602070953415, guid: 66cfab03dcf6aea409f8a11c45bf769e,
     type: 3}
-  isEnemy: 1
 --- !u!58 &4999846654520275573
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -148,7 +151,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -164,7 +167,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.4}

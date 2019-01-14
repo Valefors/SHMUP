@@ -17,6 +17,8 @@ public abstract class Module : MonoBehaviour
     [Header("Visual info")]
     [SerializeField]
     private GameObject _explosionWhenDestroyed;
+    [SerializeField]
+    private Collider2D[] _colliderOfTheModule;
 
     public bool free = false;
 
@@ -65,7 +67,7 @@ public abstract class Module : MonoBehaviour
     protected virtual void SetScrollingVector()
     {
         //TO DO : Changing that to a more "error proof" method
-        _scrollingVector = FindObjectOfType<ScrollingBackground>().scrollingVector;
+        _scrollingVector = GameManager.manager.scrollingVector;
         _scrollingVector *= _freeSpeedFactor;
     }
 
@@ -89,5 +91,6 @@ public abstract class Module : MonoBehaviour
         Instantiate(_explosionWhenDestroyed, transform.position, Quaternion.identity, null);
         //destroy automatic on the explosion
     }
+    
 
 }
