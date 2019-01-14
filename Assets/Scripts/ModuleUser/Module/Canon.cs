@@ -33,6 +33,7 @@ public class Canon : ShooterModule
 
     protected virtual void Shoot()
     {
+        if (useSalve && !isEnemy) useSalve = false;
         if (!useSalve || ((isWaiting && waitingTime > _timeWaitSalve) || isShooting))
         {
             Shot lShot = Instantiate(_prefabShot, _transform.position, Quaternion.identity).GetComponent<Shot>();
