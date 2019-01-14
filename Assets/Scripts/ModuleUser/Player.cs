@@ -99,9 +99,14 @@ public class Player : MonoBehaviour
 
         Vector2 lPoint = new Vector2(transform.position.x + lMovement.x, transform.position.y + lMovement.y);
 
-        if (SafeZone.IsOffField(lPoint)) return;
+        //if (SafeZone.IsOffField(lPoint)) return;
 
-        _transform.Translate(lMovement, Space.World);
+        if (SafeZone.IsOffFieldX(lPoint.x)) lMovement.x = 0;
+        if (SafeZone.IsOffFieldY(lPoint.y)) lMovement.y = 0;
+        if (lMovement != Vector3.zero)
+        {
+            _transform.Translate(lMovement, Space.World);
+        }
     }
 
     Vector3 HorizontalMove(float lXmovValue)
@@ -236,15 +241,6 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D pCol)
     {
-        if (GameManager.manager.isPause) return;
-
-        Module moduleCollided = pCol.GetComponent<Module>();
-        if (moduleCollided != null)
-        {
-            if (moduleCollided.free) //need to know if there parent are still enemy (or even friend)
-                AddModule(moduleCollided);
-        }
-
         Shot shotCollided = pCol.gameObject.GetComponent<Shot>();
         if (shotCollided != null )
         {
@@ -254,8 +250,18 @@ public class Player : MonoBehaviour
                 this.GetHit();
             }
         }
+    }
 
+    private void OnCollisionEnter2D(Collision2D pCol)
+    {
+        if (GameManager.manager.isPause) return;
 
+        Module moduleCollided = pCol.gameObject.GetComponent<Module>();
+        if (moduleCollided != null)
+        {
+            if (moduleCollided.free) //need to know if there parent are still enemy (or even friend)
+                AddModule(moduleCollided);
+        }
     }
 
     private void AddModule(Module module)
@@ -268,7 +274,6 @@ public class Player : MonoBehaviour
         //TO DO : need to make a clear feedback
         //something to make the module really go from start direction to this one
         module.transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToLookAt);
-        module.SetToTrigger(false);
         module.free = false;
 
         _modulesList.Add(module);

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2563889379926361147}
   m_Layer: 0
-  m_Name: WaveMed1
+  m_Name: WaveMedStart1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 6243757595533301541, guid: 84de08d0ecd210e4b9f518ead59d3923,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6243757595533301541, guid: 84de08d0ecd210e4b9f518ead59d3923,
         type: 3}

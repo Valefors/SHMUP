@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             EventManager.TriggerEvent(EventManager.PAUSE_EVENT);
         }

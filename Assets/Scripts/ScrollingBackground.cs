@@ -10,7 +10,8 @@ public class ScrollingBackground : MonoBehaviour
     public void Start()
     {
         _transform = transform;
-        scrollingVector = GameManager.manager.scrollingVector;
+        GameManager.manager.scrollingVector = scrollingVector;
+        GameManager.manager.scrolling = _transform;
     }
     // Update is called once per frame
     void Update()
