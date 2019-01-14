@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
 
     public bool isLD = false;
 
+    public Transform scrolling;
+    [HideInInspector]
+    public Vector3 scrollingVector = new Vector3(0, -12, 0);
+
     [HideInInspector] public bool isPause {
         get {
             return _isPause;
@@ -34,6 +38,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (scrolling == null) scrolling = FindObjectOfType<ScrollingBackground>().transform;
         EventManager.StartListening(EventManager.PAUSE_EVENT, Pause);
     }
 

@@ -10,16 +10,26 @@ public class Enemy : MonoBehaviour
     PathFollower _pF;
     Rigidbody2D _rb;
     [SerializeField] Scrap _scrap;
+    [SerializeField] GameObject _explosionWhenHit;
+    //[SerializeField] GameObject _explosionWhenDead;
+    [SerializeField] Light _ownLight;
 
     [Header("Gameplay Datas")]
     [SerializeField] protected float _speed;
     [SerializeField] protected bool _moveLoop = false;
     [SerializeField] int _pv = 1;
+    [SerializeField] protected float rotationSpeed;
 
     [SerializeField] private Module[] _modulesList;
     private int _listLenght = 0;
 
+    [Header("Score")]
+    [SerializeField] private float _scoreValue = 0f;
+
     [SerializeField] [Range(0,1)] protected float _dropLoot = 0.5f;
+
+    private float timeSpent;
+    
 
     private void OnEnable()
     {
@@ -64,20 +74,38 @@ public class Enemy : MonoBehaviour
         else
         {
             if (_pF.currentNode + 1 == _pF.nodesPosition.Count && !_moveLoop) return;
-            _pF.currentNode = (_pF.currentNode + 1) % _pF.nodesPosition.Count;     
+
+            if (timeSpent >= _pF.nodesWaitTime[_pF.currentNode])
+            {
+                _pF.currentNode = (_pF.currentNode + 1) % _pF.nodesPosition.Count;
+                timeSpent = 0;
+            }
+            else timeSpent += Time.deltaTime;
         }
 
-        // TEST LD AXEL
         Quaternion saved = _pF.nodesRotation[_pF.currentNode];
-        _transform.rotation = Quaternion.Lerp(_transform.rotation, saved, 0.05f);
+        _transform.rotation = Quaternion.Lerp(_transform.rotation, saved, Time.deltaTime * rotationSpeed);
     }
 
     #region GetDamage
-    public virtual void GetHit(int pHitValue)
+    public virtual void GetHit(int pHitValue, Vector3 impactPosition)
     {
         _pv = _pv - pHitValue;
+
+
+
         if (_pv <= 0)
             Death();
+        else
+        {
+            CreateParticleDamage(impactPosition);
+        }
+    }
+
+    void CreateParticleDamage(Vector3 impactPosition)
+    {
+        Instantiate(_explosionWhenHit, impactPosition, Quaternion.identity, null);
+        //destroy automatic on the explosion
     }
 
     #endregion
@@ -88,8 +116,19 @@ public class Enemy : MonoBehaviour
 
         if (randomValue < _dropLoot)
             DropItem();
+
+        ScoreManager.manager.UpdateScore(_scoreValue);
+        CreateParticleDamage(_transform.position);
+
+        if (_ownLight != null)
+        {
+            _ownLight.transform.SetParent(GameManager.manager.scrolling);
+            Destroy(_ownLight.gameObject, 3);
+        }
+
         Destroy(this.gameObject);
     }
+
 
     void DropItem()
     {

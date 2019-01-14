@@ -7,6 +7,7 @@ public class PathFollower : MonoBehaviour
     Node[] _pathNode;
     public List<Vector3> nodesPosition = new List<Vector3>();
     public List<Quaternion> nodesRotation = new List<Quaternion>();
+    public List<int> nodesWaitTime = new List<int>();
 
     public int currentNode;
 
@@ -25,8 +26,14 @@ public class PathFollower : MonoBehaviour
         for (int i = 0; i < _pathNode.Length; i++)
         {
             nodesPosition.Add(_pathNode[i].transform.position);
-            savedRotation = _pathNode[i].transform.rotation;
+
+            Vector3 test = _pathNode[i].transform.localEulerAngles;
+            test.z += _pathNode[i].transform.parent.parent.transform.localEulerAngles.z;
+            savedRotation = Quaternion.Euler(test);
+          
             nodesRotation.Add(savedRotation);
+
+            nodesWaitTime.Add(_pathNode[i].waitTime);
             _pathNode[i].gameObject.SetActive(false);
         }
     }
