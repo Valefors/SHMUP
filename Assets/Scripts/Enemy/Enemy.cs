@@ -117,6 +117,7 @@ public class Enemy : MonoBehaviour
         if (randomValue < _dropLoot)
             DropItem();
 
+        AkSoundEngine.PostEvent("Kill", gameObject);
         ScoreManager.manager.UpdateScore(_scoreValue);
         CreateParticleDamage(_transform.position);
 

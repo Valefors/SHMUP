@@ -278,6 +278,11 @@ public class Player : MonoBehaviour
     {
         if (module.GetComponent<ShooterModule>() != null) module.GetComponent<ShooterModule>().isEnemy = false;
 
+        if(module.GetComponent<VGun>() != null)
+        {
+            AkSoundEngine.SetState("vGun_state", "yes");
+        }
+
         module.transform.parent = _transform;
 
         Vector3 directionToLookAt = module.transform.position - _transform.position;
@@ -299,6 +304,10 @@ public class Player : MonoBehaviour
         _modulesList.RemoveAt(_listLenght - 1);
         _listLenght--;
 
+        if(lModuleToDestroy.GetComponent<VGun>() != null)
+        {
+            AkSoundEngine.SetState("vGun_state", "no");
+        }
         AkSoundEngine.PostEvent("Damaged", gameObject);
 
         lModuleToDestroy.SetDeathMode();
