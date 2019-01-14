@@ -12,17 +12,23 @@ public class Canon : ShooterModule
     [SerializeField] protected bool useBurst = false;
     [SerializeField] protected int _numberShotBurst;
     [SerializeField] protected float _timeWaitBurst;
+    [SerializeField] protected bool _waitBeforeShoot;
 
     [SerializeField] protected GameObject _prefabShot;
 
-    private int countedShots=0;
-    private float waitingTime;
-    private bool isWaiting=false;
-    private bool isShooting=true;
+    protected int countedShots=0;
+    protected float waitingTime;
+    protected bool isWaiting=false;
+    protected bool isShooting=true;
 
     // Start is called before the first frame update
     void Start()
     {
+        if(_waitBeforeShoot)
+        {
+            isWaiting = true;
+            isShooting = false;
+        }
         _transform = GetComponent<Transform>();
     }
 
