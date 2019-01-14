@@ -516,6 +516,7 @@ MonoBehaviour:
   _speed: 5
   _moveLoop: 1
   _pv: 1
+  rotationSpeed: 1
   _modulesList:
   - {fileID: 0}
   _scoreValue: 0

@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float _speed;
     [SerializeField] protected bool _moveLoop = false;
     [SerializeField] int _pv = 1;
+    [SerializeField] protected float rotationSpeed;
 
     [SerializeField] private Module[] _modulesList;
     private int _listLenght = 0;
@@ -28,6 +29,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] [Range(0,1)] protected float _dropLoot = 0.5f;
 
     private float timeSpent;
+    
 
     private void OnEnable()
     {
@@ -82,7 +84,7 @@ public class Enemy : MonoBehaviour
         }
 
         Quaternion saved = _pF.nodesRotation[_pF.currentNode];
-        _transform.rotation = Quaternion.Lerp(_transform.rotation, saved, 0.02f);
+        _transform.rotation = Quaternion.Lerp(_transform.rotation, saved, Time.deltaTime * rotationSpeed);
     }
 
     #region GetDamage
