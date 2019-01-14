@@ -828,38 +828,6 @@ PrefabInstance:
       propertyPath: m_BlendShapeWeights.Array.data[50]
       value: -1.3417773e-13
       objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 4ab211beb72d7d64f987477219c8636f, type: 3}
-      propertyPath: m_AABB.m_Center.x
-      value: -194.63965
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 4ab211beb72d7d64f987477219c8636f, type: 3}
-      propertyPath: m_AABB.m_Center.y
-      value: 4038.7056
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 4ab211beb72d7d64f987477219c8636f, type: 3}
-      propertyPath: m_AABB.m_Center.z
-      value: 15202.523
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 4ab211beb72d7d64f987477219c8636f, type: 3}
-      propertyPath: m_AABB.m_Extent.x
-      value: 14527.489
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 4ab211beb72d7d64f987477219c8636f, type: 3}
-      propertyPath: m_AABB.m_Extent.y
-      value: 5902.5093
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 4ab211beb72d7d64f987477219c8636f, type: 3}
-      propertyPath: m_AABB.m_Extent.z
-      value: 8595.867
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 4ab211beb72d7d64f987477219c8636f, type: 3}
-      propertyPath: m_DirtyAABB
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 4ab211beb72d7d64f987477219c8636f, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 812f0082ac605e2468b55258cd7b048f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ab211beb72d7d64f987477219c8636f, type: 3}
 --- !u!4 &539842268009937216 stripped
@@ -1003,7 +971,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.4647128e-10
       objectReference: {fileID: 0}
-    - target: {fileID: 400038, guid: 35ca3e634c3ce6d47b16e45b08560fcb, type: 3}
+    - target: {fileID: 400004, guid: 35ca3e634c3ce6d47b16e45b08560fcb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -0.8097925
       objectReference: {fileID: 0}
