@@ -45,7 +45,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -66,14 +66,20 @@ MonoBehaviour:
   _weight: 1
   _freeSpeedFactor: 0.1
   _freeRotationSpeed: 0.7
+  _explosionWhenDestroyed: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
+    type: 3}
+  _colliderOfTheModule:
+  - {fileID: 723913952572070971}
+  - {fileID: 2116501075790727495}
+  - {fileID: 366470854458742938}
   free: 0
-  _shotRate: 1
-  _speedShot: 5.5
-  _speedShotFactor: 3.5
+  isEnemy: 1
+  _shotRate: 1.5
+  _speedShot: 4
+  _speedShotFactor: 6
   _hitValue: 1
   _prefabShot: {fileID: 2893416602070953415, guid: 66cfab03dcf6aea409f8a11c45bf769e,
     type: 3}
-  isEnemy: 1
   _canonSpawnArray:
   - {fileID: 6259052044933060863}
   - {fileID: 3875628316715186006}
@@ -89,7 +95,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.35, y: 0}
@@ -115,7 +121,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.36, y: 0}

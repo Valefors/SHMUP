@@ -7,6 +7,13 @@ public class SpawnTrigger : MonoBehaviour
     [SerializeField] GameObject[] _wavesArray;
     bool _isActive = false;
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        if (transform.GetComponent<BoxCollider2D>() != null)
+            Gizmos.DrawWireCube(transform.position, transform.GetComponent<BoxCollider2D>().bounds.size);
+    }
+
     private void OnTriggerEnter2D(Collider2D pCol)
     {
         if (pCol.gameObject.tag == "Player" && !_isActive)

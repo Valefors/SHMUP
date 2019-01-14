@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ScrollingBackground : MonoBehaviour
 {
-    public Vector3 scrollingVector = new Vector3(0,-1,0);
+    public Vector3 scrollingVector;
     private Transform _transform;
 
     public void Start()
     {
         _transform = transform;
+        GameManager.manager.scrollingVector = scrollingVector;
+        GameManager.manager.scrolling = _transform;
     }
     // Update is called once per frame
     void Update()
