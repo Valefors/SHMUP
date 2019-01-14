@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="132">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Pc\Documents\ENJMIN\Shmup\SHMUP\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="133642231" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\General</ObjectPath>
+			<ShortName>General</ShortName>
+			<Path>General.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3258988170" Name="Damaged" ObjectPath="\Events\Default Work Unit\Damaged"/>
+				<Event Id="43048378" Name="Get_module" ObjectPath="\Events\Default Work Unit\Get_module"/>
+				<Event Id="2030840469" Name="Kill" ObjectPath="\Events\Default Work Unit\Kill"/>
+				<Event Id="61540611" Name="Laser_launched2" ObjectPath="\Events\Default Work Unit\Laser_launched2"/>
+				<Event Id="61540613" Name="Laser_launched4" ObjectPath="\Events\Default Work Unit\Laser_launched4"/>
+				<Event Id="107775267" Name="Laser_loading2" ObjectPath="\Events\Default Work Unit\Laser_loading2"/>
+				<Event Id="107775269" Name="Laser_loading4" ObjectPath="\Events\Default Work Unit\Laser_loading4"/>
+				<Event Id="1853467501" Name="Laser_stop" ObjectPath="\Events\Default Work Unit\Laser_stop"/>
+				<Event Id="2907331365" Name="Reached" ObjectPath="\Events\Default Work Unit\Reached"/>
+				<Event Id="251412229" Name="Shot" ObjectPath="\Events\Default Work Unit\Shot"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="43741013" Language="SFX">
+					<ShortName>InstallationModule\vissage01.wav</ShortName>
+					<Path>SFX\InstallationModule\vissage01_56D34C19.wem</Path>
+				</File>
+				<File Id="89547824" Language="SFX">
+					<ShortName>EnnemiDétruit\Bois01.wav</ShortName>
+					<Path>SFX\EnnemiDétruit\Bois01_56D34C19.wem</Path>
+				</File>
+				<File Id="91520928" Language="SFX">
+					<ShortName>JunkBlessure\Bois03.wav</ShortName>
+					<Path>SFX\JunkBlessure\Bois03_C624F882.wem</Path>
+				</File>
+				<File Id="110549905" Language="SFX">
+					<ShortName>Laser\LaserActif\Electricite.wav</ShortName>
+					<Path>SFX\Laser\LaserActif\Electricite_A17F745C.wem</Path>
+				</File>
+				<File Id="119410799" Language="SFX">
+					<ShortName>JunkBlessure\Bois01.wav</ShortName>
+					<Path>SFX\JunkBlessure\Bois01_396E36E7.wem</Path>
+				</File>
+				<File Id="171690536" Language="SFX">
+					<ShortName>Laser\LaserActif\Electricite.wav</ShortName>
+					<Path>SFX\Laser\LaserActif\Electricite_5EEA40C7.wem</Path>
+				</File>
+				<File Id="203401469" Language="SFX">
+					<ShortName>EnnemiDétruit\Bois03.wav</ShortName>
+					<Path>SFX\EnnemiDétruit\Bois03_56D34C19.wem</Path>
+				</File>
+				<File Id="260000769" Language="SFX">
+					<ShortName>EnnemiDétruit\ComposanteLaser.wav</ShortName>
+					<Path>SFX\EnnemiDétruit\ComposanteLaser_682201A8.wem</Path>
+				</File>
+				<File Id="276322362" Language="SFX">
+					<ShortName>EnnemiDétruit\Bois02.wav</ShortName>
+					<Path>SFX\EnnemiDétruit\Bois02_56D34C19.wem</Path>
+				</File>
+				<File Id="332644054" Language="SFX">
+					<ShortName>Lancement.wav</ShortName>
+					<Path>SFX\Lancement_56D34C19.wem</Path>
+				</File>
+				<File Id="333126272" Language="SFX">
+					<ShortName>Laser\Refroidissement\RefroidissementLaser.wav</ShortName>
+					<Path>SFX\Laser\Refroidissement\RefroidissementLaser_56D34C19.wem</Path>
+				</File>
+				<File Id="342057620" Language="SFX">
+					<ShortName>EnnemiDétruit\Explosion01.wav</ShortName>
+					<Path>SFX\EnnemiDétruit\Explosion01_0396B94F.wem</Path>
+				</File>
+				<File Id="352100003" Language="SFX">
+					<ShortName>InstallationModule\vissage02.wav</ShortName>
+					<Path>SFX\InstallationModule\vissage02_56D34C19.wem</Path>
+				</File>
+				<File Id="407585590" Language="SFX">
+					<ShortName>EnnemiDétruit\Explosion03.wav</ShortName>
+					<Path>SFX\EnnemiDétruit\Explosion03_51648289.wem</Path>
+				</File>
+				<File Id="421371799" Language="SFX">
+					<ShortName>JunkBlessure\Bois02.wav</ShortName>
+					<Path>SFX\JunkBlessure\Bois02_77E4AEB9.wem</Path>
+				</File>
+				<File Id="444156013" Language="SFX">
+					<ShortName>Laser\LaserActif\Boucle01.wav</ShortName>
+					<Path>SFX\Laser\LaserActif\Boucle01_52B98F53.wem</Path>
+				</File>
+				<File Id="472770388" Language="SFX">
+					<ShortName>Charge4secondes.wav</ShortName>
+					<Path>SFX\Charge4secondes_56D34C19.wem</Path>
+				</File>
+				<File Id="475733098" Language="SFX">
+					<ShortName>Laser\LaserActif\Boucle01.wav</ShortName>
+					<Path>SFX\Laser\LaserActif\Boucle01_E73015F6.wem</Path>
+				</File>
+				<File Id="548269847" Language="SFX">
+					<ShortName>JunkBlessure\Plaque.wav</ShortName>
+					<Path>SFX\JunkBlessure\Plaque_0157EB41.wem</Path>
+				</File>
+				<File Id="694896994" Language="SFX">
+					<ShortName>InstallationModule\accrochage.wav</ShortName>
+					<Path>SFX\InstallationModule\accrochage_56D34C19.wem</Path>
+				</File>
+				<File Id="717123889" Language="SFX">
+					<ShortName>Laser\LaserActif\Boucle02.wav</ShortName>
+					<Path>SFX\Laser\LaserActif\Boucle02_765DB474.wem</Path>
+				</File>
+				<File Id="718323707" Language="SFX">
+					<ShortName>LancementReverb.wav</ShortName>
+					<Path>SFX\LancementReverb_56D34C19.wem</Path>
+				</File>
+				<File Id="734061777" Language="SFX">
+					<ShortName>Laser\LaserActif\Boucle02.wav</ShortName>
+					<Path>SFX\Laser\LaserActif\Boucle02_D7D2FC91.wem</Path>
+				</File>
+				<File Id="749581320" Language="SFX">
+					<ShortName>EnnemiDétruit\Explosion02.wav</ShortName>
+					<Path>SFX\EnnemiDétruit\Explosion02_BA6B0D00.wem</Path>
+				</File>
+				<File Id="752459827" Language="SFX">
+					<ShortName>JunkBlessure\Métal.wav</ShortName>
+					<Path>SFX\JunkBlessure\Métal_B2463F5D.wem</Path>
+				</File>
+				<File Id="755684536" Language="SFX">
+					<ShortName>Charge2secondes.wav</ShortName>
+					<Path>SFX\Charge2secondes_56D34C19.wem</Path>
+				</File>
+				<File Id="780068063" Language="SFX">
+					<ShortName>TirGun\CanonGrave.wav</ShortName>
+					<Path>SFX\TirGun\CanonGrave_56D34C19.wem</Path>
+				</File>
+				<File Id="785075474" Language="SFX">
+					<ShortName>CanonGraveLoin.wav</ShortName>
+					<Path>SFX\CanonGraveLoin_56D34C19.wem</Path>
+				</File>
+				<File Id="797382632" Language="SFX">
+					<ShortName>TirGun\CanonAigu.wav</ShortName>
+					<Path>SFX\TirGun\CanonAigu_56D34C19.wem</Path>
+				</File>
+				<File Id="810651852" Language="SFX">
+					<ShortName>LargeMétal.wav</ShortName>
+					<Path>SFX\LargeMétal_56D34C19.wem</Path>
+				</File>
+				<File Id="825374637" Language="SFX">
+					<ShortName>InstallationModule\vissage03.wav</ShortName>
+					<Path>SFX\InstallationModule\vissage03_56D34C19.wem</Path>
+				</File>
+				<File Id="848318048" Language="SFX">
+					<ShortName>TirGun\Laser.wav</ShortName>
+					<Path>SFX\TirGun\Laser_A47C69CD.wem</Path>
+				</File>
+				<File Id="850007373" Language="SFX">
+					<ShortName>Touché\Choc.wav</ShortName>
+					<Path>SFX\Touché\Choc_8D98D74F.wem</Path>
+				</File>
+				<File Id="950531700" Language="SFX">
+					<ShortName>Laser\Refroidissement\ShutDownLaser.wav</ShortName>
+					<Path>SFX\Laser\Refroidissement\ShutDownLaser_56D34C19.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
