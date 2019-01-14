@@ -9,9 +9,9 @@ public class Canon : ShooterModule
     [SerializeField] protected float _speedShot = 2f;
     [SerializeField] protected float _speedShotFactor = 2f;
     [SerializeField] protected int _hitValue = 1;
-    [SerializeField] protected bool useSalve = false;
-    [SerializeField] protected int _numberShotSalve;
-    [SerializeField] protected float _timeWaitSalve;
+    [SerializeField] protected bool useBurst = false;
+    [SerializeField] protected int _numberShotBurst;
+    [SerializeField] protected float _timeWaitBurst;
 
     [SerializeField] protected GameObject _prefabShot;
 
@@ -33,8 +33,8 @@ public class Canon : ShooterModule
 
     protected virtual void Shoot()
     {
-        if (useSalve && !isEnemy) useSalve = false;
-        if (!useSalve || ((isWaiting && waitingTime > _timeWaitSalve) || isShooting))
+        if (useBurst && !isEnemy) useBurst = false;
+        if (!useBurst || ((isWaiting && waitingTime > _timeWaitBurst) || isShooting))
         {
             Shot lShot = Instantiate(_prefabShot, _transform.position, Quaternion.identity).GetComponent<Shot>();
             lShot.SetUp(isEnemy, _transform.rotation, GetSpeed(), _hitValue);
@@ -46,7 +46,7 @@ public class Canon : ShooterModule
             }
             Invoke("CanShootAgain", _shotRate);
 
-            if(useSalve)
+            if(useBurst)
             {
                 countedShots++;
                 if (isWaiting)
@@ -55,7 +55,7 @@ public class Canon : ShooterModule
                     isWaiting = false;
                     isShooting = true;
                 }
-                if (countedShots >= _numberShotSalve && isShooting)
+                if (countedShots >= _numberShotBurst && isShooting)
                 {
                     countedShots = 0;
                     isShooting = false;
