@@ -284,6 +284,12 @@ public class Player : MonoBehaviour
                 AddModule(moduleCollided);
             }
         }
+
+        Enemy enemyColl = pCol.gameObject.GetComponent<Enemy>();
+        if (enemyColl != null)
+        {
+            this.GetHit();
+        }
     }
 
     private void AddModule(Module module)

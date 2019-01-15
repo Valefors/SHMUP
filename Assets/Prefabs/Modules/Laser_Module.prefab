@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 635838887}
   - component: {fileID: 6946465965571379230}
-  - component: {fileID: 635838885}
   - component: {fileID: 635838884}
   m_Layer: 0
   m_Name: Laser_Module
@@ -47,34 +46,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4063c4c9f21c84f478471cdee38eea18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weight: 1
+  _weight: 0.9
   _freeSpeedFactor: 0.2
   _freeRotationSpeed: 0.7
   _explosionWhenDestroyed: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
     type: 3}
   _colliderOfTheModule:
-  - {fileID: 635838885}
+  - {fileID: 0}
   - {fileID: 635838884}
   free: 0
   isEnemy: 1
   _shotRate: 2
   _laserShot: {fileID: 1098324737}
---- !u!58 &635838885
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 635838883}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.25
 --- !u!61 &635838884
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -88,7 +71,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3}
+  m_Offset: {x: 0, y: 0.51232153}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -99,7 +82,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.6}
+  m_Size: {x: 0.6, y: 1.0246431}
   m_EdgeRadius: 0
 --- !u!1 &1918834198
 GameObject:
@@ -125,8 +108,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918834198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.386, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6155585515482486350}
   m_Father: {fileID: 635838887}
@@ -145,7 +128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1dc499e5030c5034396803d3ca5bbf49, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.277
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1dc499e5030c5034396803d3ca5bbf49, type: 3}
       propertyPath: m_LocalPosition.y
