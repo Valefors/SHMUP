@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodesPosition: []
   nodesRotation: []
+  nodesWaitTime: 
   currentNode: 0
 --- !u!1 &8324054417851454272
 GameObject:
@@ -88,11 +89,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2647777150536196615}
     m_Modifications:
-    - target: {fileID: 2219820947949529854, guid: 96d5463f9b0b5254ebd9367648021ee1,
-        type: 3}
-      propertyPath: m_Name
-      value: path-A-Laser
-      objectReference: {fileID: 0}
     - target: {fileID: 2219820947949529853, guid: 96d5463f9b0b5254ebd9367648021ee1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -157,6 +153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219820947949529854, guid: 96d5463f9b0b5254ebd9367648021ee1,
+        type: 3}
+      propertyPath: m_Name
+      value: path-A-Laser
       objectReference: {fileID: 0}
     - target: {fileID: 6285964462757515830, guid: 96d5463f9b0b5254ebd9367648021ee1,
         type: 3}
@@ -241,6 +242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585538451398170003, guid: fa81b27ef0249e848955214d3b89bfef,
+        type: 3}
+      propertyPath: _pv
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa81b27ef0249e848955214d3b89bfef, type: 3}
@@ -397,6 +403,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 769720785733325254, guid: 8c012b6208fedb1428b03791724199fe,
+        type: 3}
+      propertyPath: _pv
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c012b6208fedb1428b03791724199fe, type: 3}
 --- !u!4 &6428226597602076716 stripped
@@ -412,16 +423,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8324054417851454279}
     m_Modifications:
-    - target: {fileID: 2490534194461267861, guid: 69568e9bf92ca3249a34c9db8faea693,
-        type: 3}
-      propertyPath: m_Name
-      value: laser-VB
-      objectReference: {fileID: 0}
-    - target: {fileID: 2490534194461267861, guid: 69568e9bf92ca3249a34c9db8faea693,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3534789772923737008, guid: 69568e9bf92ca3249a34c9db8faea693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -476,6 +477,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490534194461267861, guid: 69568e9bf92ca3249a34c9db8faea693,
+        type: 3}
+      propertyPath: m_Name
+      value: laser-VB
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490534194461267861, guid: 69568e9bf92ca3249a34c9db8faea693,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1230007167261029424, guid: 69568e9bf92ca3249a34c9db8faea693,
+        type: 3}
+      propertyPath: _pv
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69568e9bf92ca3249a34c9db8faea693, type: 3}
@@ -567,11 +583,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6428226597602076716}
     m_Modifications:
-    - target: {fileID: 2219820947949529854, guid: 96d5463f9b0b5254ebd9367648021ee1,
-        type: 3}
-      propertyPath: m_Name
-      value: path-A-Laser
-      objectReference: {fileID: 0}
     - target: {fileID: 2219820947949529853, guid: 96d5463f9b0b5254ebd9367648021ee1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -626,6 +637,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219820947949529854, guid: 96d5463f9b0b5254ebd9367648021ee1,
+        type: 3}
+      propertyPath: m_Name
+      value: path-A-Laser
       objectReference: {fileID: 0}
     - target: {fileID: 6285964461790214408, guid: 96d5463f9b0b5254ebd9367648021ee1,
         type: 3}
