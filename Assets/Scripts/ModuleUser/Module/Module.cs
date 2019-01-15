@@ -76,7 +76,7 @@ public abstract class Module : MonoBehaviour
         if (GameManager.manager.isPause) return;
 
         if (moduleAction != null) moduleAction();
-        if (transform.position.y < -14) Destroy(gameObject);
+        if (transform.position.y < -50) Destroy(gameObject);
     }
 
     public virtual void SetDeathMode()
