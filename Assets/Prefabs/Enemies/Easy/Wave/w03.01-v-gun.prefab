@@ -1877,7 +1877,7 @@ MonoBehaviour:
   _ownLight: {fileID: 1732166406}
   _speed: 5
   _moveLoop: 1
-  _pv: 8
+  _pv: 14
   rotationSpeed: 1
   _modulesList:
   - {fileID: 0}
@@ -2152,7 +2152,7 @@ MonoBehaviour:
   _ownLight: {fileID: 295529026}
   _speed: 5
   _moveLoop: 1
-  _pv: 8
+  _pv: 14
   rotationSpeed: 1
   _modulesList:
   - {fileID: 0}
@@ -2429,12 +2429,12 @@ GameObject:
   m_Component:
   - component: {fileID: 957078510}
   m_Layer: 0
-  m_Name: w03.01-v-gun 1
+  m_Name: w03.01-v-gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &957078510
 Transform:
   m_ObjectHideFlags: 0
