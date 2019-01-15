@@ -1877,7 +1877,7 @@ MonoBehaviour:
   _ownLight: {fileID: 1732166406}
   _speed: 5
   _moveLoop: 1
-  _pv: 14
+  _pv: 10
   rotationSpeed: 1
   _modulesList:
   - {fileID: 0}
@@ -2152,7 +2152,7 @@ MonoBehaviour:
   _ownLight: {fileID: 295529026}
   _speed: 5
   _moveLoop: 1
-  _pv: 14
+  _pv: 10
   rotationSpeed: 1
   _modulesList:
   - {fileID: 0}
