@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float _speed;
     [SerializeField] protected bool _moveLoop = false;
     [SerializeField] int _pv = 1;
+    [SerializeField] protected float rotationSpeed;
 
     [SerializeField] private Module[] _modulesList;
     private int _listLenght = 0;
@@ -26,6 +27,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _scoreValue = 0f;
 
     [SerializeField] [Range(0,1)] protected float _dropLoot = 0.5f;
+
+    private float timeSpent;
+    
 
     private void OnEnable()
     {
@@ -70,11 +74,17 @@ public class Enemy : MonoBehaviour
         else
         {
             if (_pF.currentNode + 1 == _pF.nodesPosition.Count && !_moveLoop) return;
-            _pF.currentNode = (_pF.currentNode + 1) % _pF.nodesPosition.Count;     
+
+            if (timeSpent >= _pF.nodesWaitTime[_pF.currentNode])
+            {
+                _pF.currentNode = (_pF.currentNode + 1) % _pF.nodesPosition.Count;
+                timeSpent = 0;
+            }
+            else timeSpent += Time.deltaTime;
         }
 
         Quaternion saved = _pF.nodesRotation[_pF.currentNode];
-        _transform.rotation = Quaternion.Lerp(_transform.rotation, saved, 0.05f);
+        _transform.rotation = Quaternion.Lerp(_transform.rotation, saved, Time.deltaTime * rotationSpeed);
     }
 
     #region GetDamage
@@ -107,6 +117,7 @@ public class Enemy : MonoBehaviour
         if (randomValue < _dropLoot)
             DropItem();
 
+        AkSoundEngine.PostEvent("Kill", gameObject);
         ScoreManager.manager.UpdateScore(_scoreValue);
         CreateParticleDamage(_transform.position);
 

@@ -24,16 +24,12 @@ public class Shot : MonoBehaviour
         Enemy enemyColl = collision.gameObject.GetComponent<Enemy>();
         if (enemyColl != null && !_isEnemy)
         {
+            AkSoundEngine.PostEvent("Reached", gameObject);
             enemyColl.GetHit(_hitValue, this.transform.position);
             this.Touch();
         }
 
-        /*Player playerColl = collision.gameObject.GetComponent<Player>();
-        if (playerColl != null && _isEnemy)
-        {
-            playerColl.GetHit();
-            this.Touch();
-        }*/
+        
     }
     
     // Start is called before the first frame update

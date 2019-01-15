@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4585eda3c7120b46ac0d8519a8c1b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitTime: 0
 --- !u!1 &1420993129539985074
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4585eda3c7120b46ac0d8519a8c1b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitTime: 0
 --- !u!1 &1464550948254485062
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +191,7 @@ GameObject:
   - component: {fileID: 8322737871374192326}
   - component: {fileID: 3261038805600371060}
   m_Layer: 0
-  m_Name: LinearLeftToRight
+  m_Name: H-LinearLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,6 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodesPosition: []
   nodesRotation: []
+  nodesWaitTime: 
   currentNode: 0
 --- !u!1 &3984464003140892875
 GameObject:
@@ -275,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4585eda3c7120b46ac0d8519a8c1b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitTime: 0
 --- !u!1 &4246682254538056931
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4585eda3c7120b46ac0d8519a8c1b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitTime: 0
 --- !u!1 &4837657106558582330
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4585eda3c7120b46ac0d8519a8c1b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitTime: 0
 --- !u!1 &5764940999386919283
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4585eda3c7120b46ac0d8519a8c1b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitTime: 0
 --- !u!1 &7461719031831985893
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4585eda3c7120b46ac0d8519a8c1b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitTime: 0
 --- !u!1 &7936740595059745937
 GameObject:
   m_ObjectHideFlags: 0
