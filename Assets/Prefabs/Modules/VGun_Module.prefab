@@ -63,8 +63,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126c228849429804eaf225fcf5421178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weight: 1
-  _freeSpeedFactor: 0.1
+  _weight: 1.2
+  _freeSpeedFactor: 0.2
   _freeRotationSpeed: 0.7
   _explosionWhenDestroyed: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
     type: 3}
@@ -78,6 +78,9 @@ MonoBehaviour:
   _speedShot: 4
   _speedShotFactor: 6
   _hitValue: 1
+  useBurst: 0
+  _numberShotBurst: 0
+  _timeWaitBurst: 0
   _prefabShot: {fileID: 2893416602070953415, guid: 66cfab03dcf6aea409f8a11c45bf769e,
     type: 3}
   _canonSpawnArray:
@@ -326,6 +329,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6134855039741756847}
     m_Modifications:
+    - target: {fileID: 100000, guid: c0a7a098b0fbfbd428db6defc6084556, type: 3}
+      propertyPath: m_Name
+      value: weapon_vgun
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c0a7a098b0fbfbd428db6defc6084556, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -369,10 +376,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: c0a7a098b0fbfbd428db6defc6084556, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: c0a7a098b0fbfbd428db6defc6084556, type: 3}
-      propertyPath: m_Name
-      value: weapon_vgun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0a7a098b0fbfbd428db6defc6084556, type: 3}

@@ -67,7 +67,11 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            GetInvicibility(true);
+            if (_isInvicible)
+                GetInvicibility();
+            else
+                GetInvicibility(true);
+
         }
 
         if (GameManager.manager.isPause) return;
@@ -253,6 +257,14 @@ public class Player : MonoBehaviour
             if (shotCollided.GetSide())
             {
                 shotCollided.Touch();
+                this.GetHit();
+            }
+        }
+        LaserShot laserShotCollided = pCol.gameObject.GetComponent<LaserShot>();
+        if (laserShotCollided != null)
+        {
+            if (laserShotCollided.GetSide() && laserShotCollided.isActive)
+            {
                 this.GetHit();
             }
         }
