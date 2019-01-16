@@ -1,20 +1,45 @@
 fileFormatVersion: 2
-guid: 6b25b9038b78d4a55aafd1e74ffc8f0a
+guid: c0a7a098b0fbfbd428db6defc6084556
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: 'Material #33'
-    2100002: 'Material #35'
-    2100004: 'Material #34'
-    2100006: 'Material #32'
+    2100000: No Name
+    2100002: 'Material #33'
+    2100004: 'Material #35'
+    2100006: 'Material #34'
+    2100008: 'Material #32'
     2300000: //RootNode
     3300000: //RootNode
-    4300000: q
-    7400000: Take 001
-    9500000: //RootNode
-  externalObjects: {}
+    4300000: Box001
+    4300002: q
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #32'
+    second: {fileID: 2100000, guid: 3a3c270e5aabe874b956b22b17707a9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #33'
+    second: {fileID: 2100000, guid: e6d5292234f20e449b108d682df2c8ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #34'
+    second: {fileID: 2100000, guid: 6a5407734a4b16a4d8f089876106ffba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #35'
+    second: {fileID: 2100000, guid: d13f29de48be58445af6355d16fa1c6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: e4461132eb71fb94dabd3afe3d98b328, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -67,7 +92,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -94,7 +119,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

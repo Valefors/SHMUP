@@ -1,20 +1,44 @@
 fileFormatVersion: 2
-guid: 7846805adab864531bc8d6918c10840e
+guid: 1dc499e5030c5034396803d3ca5bbf49
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: 'Material #28'
-    2100002: 'Material #31'
-    2100004: 'Material #30'
-    2100006: 'Material #29'
+    2100000: No Name
+    2100002: 'Material #28'
+    2100004: 'Material #31'
+    2100006: 'Material #30'
+    2100008: 'Material #29'
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cylinder002
-    7400000: Take 001
-    9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #28'
+    second: {fileID: 2100000, guid: e6d5292234f20e449b108d682df2c8ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #29'
+    second: {fileID: 2100000, guid: 3a3c270e5aabe874b956b22b17707a9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #30'
+    second: {fileID: 2100000, guid: 6a5407734a4b16a4d8f089876106ffba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #31'
+    second: {fileID: 2100000, guid: d13f29de48be58445af6355d16fa1c6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 988c63c55ce3e804eb3b5a128cf622a7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -66,8 +90,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.0254
-    hasPreviousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -94,7 +118,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

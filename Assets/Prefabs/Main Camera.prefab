@@ -92,8 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89691ea468761a048b86d740a8574fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _intensityX: 0.5
-  _intensityY: 0.5
+  _intensityX: 0.3
+  _intensityY: 0.3
   _duration: 0.3
 --- !u!114 &8014612331121692852
 MonoBehaviour:
@@ -143,11 +143,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc17351fc38a45ca9bfb8e99cdcda5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color: {r: 0.7735849, g: 0.55364937, b: 0.24448201, a: 1}
+  Color: {r: 0.2811499, g: 0.40887755, b: 0.509434, a: 0.5686275}
   Size: 4
   HorizontalSpeed: 1
-  VerticalSpeed: 1
-  Density: 0.2
+  VerticalSpeed: 2.22
+  Density: 0.04
   Shader: {fileID: 4800000, guid: fdac6dc07af404deba03f0e8f95edf1f, type: 3}
 --- !u!114 &8014612331121692853
 MonoBehaviour:
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8014612331121692815}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bc17351fc38a45ca9bfb8e99cdcda5c, type: 3}
   m_Name: 
@@ -192,16 +192,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8014612331121692851}
     m_Modifications:
-    - target: {fileID: 3228742611630785654, guid: efd0e16df3ad349f4bf6550669f6ac4b,
-        type: 3}
-      propertyPath: m_Name
-      value: Sandair
-      objectReference: {fileID: 0}
-    - target: {fileID: 3228742611630785654, guid: efd0e16df3ad349f4bf6550669f6ac4b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3228742611630785653, guid: efd0e16df3ad349f4bf6550669f6ac4b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -271,6 +261,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3.7193704
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228742611630785654, guid: efd0e16df3ad349f4bf6550669f6ac4b,
+        type: 3}
+      propertyPath: m_Name
+      value: Sandair
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228742611630785654, guid: efd0e16df3ad349f4bf6550669f6ac4b,
+        type: 3}
+      propertyPath: m_Name
+      value: Sandair
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228742611630785654, guid: efd0e16df3ad349f4bf6550669f6ac4b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd0e16df3ad349f4bf6550669f6ac4b, type: 3}

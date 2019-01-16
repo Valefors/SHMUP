@@ -42,6 +42,8 @@ ModelImporter:
     4300002: Box001
     4300004: Box002
     4300006: Box003
+    7400000: Take 001
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1

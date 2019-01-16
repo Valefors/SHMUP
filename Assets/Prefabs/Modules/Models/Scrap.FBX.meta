@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 76746172f48da474a9ccb2adca0aef27
+guid: 53a2761014912664cb567577489d42cc
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -12,7 +12,27 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Box001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #27'
+    second: {fileID: 2100000, guid: d13f29de48be58445af6355d16fa1c6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gris
+    second: {fileID: 2100000, guid: 6a5407734a4b16a4d8f089876106ffba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gris clair
+    second: {fileID: 2100000, guid: e6d5292234f20e449b108d682df2c8ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yellow
+    second: {fileID: 2100000, guid: 3a3c270e5aabe874b956b22b17707a9b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

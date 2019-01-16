@@ -26,8 +26,8 @@ public class Laser : ShooterModule
     {
         _laserShot.ActiveMode(isEnemy);
 
-        //if (_shotRate == 2) AkSoundEngine.PostEvent("Laser_launched2", gameObject);
-        //if (_shotRate == 4) AkSoundEngine.PostEvent("Laser_launched4", gameObject);
+        if (_shotRate == 2) AkSoundEngine.PostEvent("Laser_launched2", gameObject);
+        if (_shotRate == 4) AkSoundEngine.PostEvent("Laser_launched4", gameObject);
 
         _canShoot = false;
         Invoke("Disable", _shotRate);
