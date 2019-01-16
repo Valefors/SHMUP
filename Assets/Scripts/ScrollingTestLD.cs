@@ -9,7 +9,7 @@ public class ScrollingTestLD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.manager.isPause) return;
+        if (!GameManager.manager.isPlaying) return;
         transform.position += Vector3.down * scrollingSpeed * Time.deltaTime;
     }
 }
