@@ -14,11 +14,12 @@ public abstract class Module : MonoBehaviour
     private float _freeRotationSpeed = 0.7f;
     private Vector3 _scrollingVector = Vector3.zero;
 
+    [SerializeField]
+    public bool rotateWhenPickUp = true;
+
     [Header("Visual info")]
     [SerializeField]
     private GameObject _explosionWhenDestroyed;
-    [SerializeField]
-    private Collider2D[] _colliderOfTheModule;
 
     public bool free = false;
 
@@ -73,9 +74,10 @@ public abstract class Module : MonoBehaviour
 
     protected void Update()
     {
-        if (GameManager.manager.isPause) return;
+        if (!GameManager.manager.isPlaying) return;
 
         if (moduleAction != null) moduleAction();
+        if (transform.position.y < -50) Destroy(gameObject);
     }
 
     public virtual void SetDeathMode()

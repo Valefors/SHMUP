@@ -1,8 +1,11 @@
 ﻿Shader "Custom/MySand"
 {
-    Properties
-    {
-		_Color("Color", Color) = (1,1,1,1)
+	Properties
+	{
+		_Color("Main Color", Color) = (1,1,1,1)
+		_SecColor("Second Color", Color) = (1,1,1,1)
+		_OffsetSunset("Offset sec color", Range(0,1)) = 0.3
+		_Compensation("Compens sec color", Range(0,25)) = 1
 		_Emission("Emission", Range(0,2)) = 0.5
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
 		[Normal]
@@ -62,6 +65,10 @@
 
         half _Glossiness;
 		fixed4 _Color;
+		fixed4 _SecColor;
+
+		float _OffsetSunset;
+		float _Compensation;
 
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
         // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
@@ -73,7 +80,9 @@
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
             // Albedo comes from a texture tinted by color
-            fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
+			fixed4 c = tex2D(_MainTex, IN.uv_MainTex);
+			//Bump =
+			fixed4 bump = tex2D(_BumpMap, IN.uv_BumpMap);
 
 			half2 uv2 = IN.uv_SecondTex;
 			half noiseVal = tex2D(_NoiseTex, IN.uv_MainTex).r;
@@ -90,11 +99,18 @@
 			//uv2.x = uv2.x + worldMoveX * heightVal;
 			//uv2.y = uv2.y + worldMoveY * heightVal;
 			fixed4 cNoise = tex2D(_SecondTex, uv2);
+
+			//Change color depend on normal map
+			float secColFact = clamp((bump.g - _OffsetSunset) * _Compensation, 0 , 1);
+			//Color "up" is g. if G is high, then 
+			fixed4 colResult = _Color * (1-secColFact) + _SecColor * secColFact;
+			c.rgb = c.rgb * colResult;
+			//Apply rgb 
 			c.rgb = c.rgb * (1 - cNoise.a) + _NoiseColor * cNoise.a;
+
 
 			o.Albedo = c.rgb;
 
-			fixed4 bump = tex2D(_BumpMap, IN.uv_BumpMap);
 			bump.rgb = bump.rbg * (1 - cNoise.a) + float3(0,0,1) * cNoise.a;
 			o.Normal = UnpackNormal(bump);
 

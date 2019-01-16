@@ -19,7 +19,7 @@ public class Shot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (GameManager.manager.isPause) return;
+        if (!GameManager.manager.isPlaying) return;
 
         Enemy enemyColl = collision.gameObject.GetComponent<Enemy>();
         if (enemyColl != null && !_isEnemy)
@@ -29,12 +29,7 @@ public class Shot : MonoBehaviour
             this.Touch();
         }
 
-        /*Player playerColl = collision.gameObject.GetComponent<Player>();
-        if (playerColl != null && _isEnemy)
-        {
-            playerColl.GetHit();
-            this.Touch();
-        }*/
+        
     }
     
     // Start is called before the first frame update
@@ -47,7 +42,7 @@ public class Shot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.manager.isPause) return;
+        if (!GameManager.manager.isPlaying) return;
 
         if (SafeZone.IsOffField(_transform.position))
         {

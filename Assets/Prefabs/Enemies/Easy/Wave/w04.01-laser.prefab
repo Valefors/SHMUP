@@ -109,6 +109,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8585538451398170003, guid: fa81b27ef0249e848955214d3b89bfef,
+        type: 3}
+      propertyPath: _pv
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa81b27ef0249e848955214d3b89bfef, type: 3}
 --- !u!4 &4014670382418012592 stripped
@@ -124,11 +129,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4014670382418012592}
     m_Modifications:
-    - target: {fileID: 2219820947949529854, guid: 96d5463f9b0b5254ebd9367648021ee1,
-        type: 3}
-      propertyPath: m_Name
-      value: path-A-Laser (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2219820947949529853, guid: 96d5463f9b0b5254ebd9367648021ee1,
         type: 3}
       propertyPath: m_RootOrder
@@ -159,6 +159,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.00000038743013
       objectReference: {fileID: 0}
+    - target: {fileID: 2219820947949529854, guid: 96d5463f9b0b5254ebd9367648021ee1,
+        type: 3}
+      propertyPath: m_Name
+      value: path-A-Laser (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6285964461790214408, guid: 96d5463f9b0b5254ebd9367648021ee1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -188,11 +193,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6957156908194349512}
     m_Modifications:
-    - target: {fileID: 6675187798213246207, guid: 9d908bab958165e4a87c0ba6d6e0c0d5,
-        type: 3}
-      propertyPath: m_Name
-      value: laser-L-gun
-      objectReference: {fileID: 0}
     - target: {fileID: 5709782411976112346, guid: 9d908bab958165e4a87c0ba6d6e0c0d5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -248,10 +248,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 6675187798213246207, guid: 9d908bab958165e4a87c0ba6d6e0c0d5,
+        type: 3}
+      propertyPath: m_Name
+      value: laser-L-gun
+      objectReference: {fileID: 0}
     - target: {fileID: 8008241574902325082, guid: 9d908bab958165e4a87c0ba6d6e0c0d5,
         type: 3}
       propertyPath: _pv
-      value: 3
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8008241574902325082, guid: 9d908bab958165e4a87c0ba6d6e0c0d5,
         type: 3}

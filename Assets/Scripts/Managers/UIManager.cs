@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] RectTransform _gameOverScreen;
     [SerializeField] RectTransform _pauseScreen;
+
+    [Header("Leaderboard")]
+    [SerializeField] Text _localScore;
 
     private static UIManager _manager;
     public static UIManager manager {
@@ -51,6 +55,7 @@ public class UIManager : MonoBehaviour
     void GameOver()
     {
         _gameOverScreen.gameObject.SetActive(true);
+        _localScore.text = ScoreManager.manager.score.ToString();
     }
 
     private void Update()

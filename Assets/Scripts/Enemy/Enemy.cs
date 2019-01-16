@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     Rigidbody2D _rb;
     [SerializeField] Scrap _scrap;
     [SerializeField] GameObject _explosionWhenHit;
-    //[SerializeField] GameObject _explosionWhenDead;
+    [SerializeField] GameObject _explosionWhenDead;
     [SerializeField] Light _ownLight;
 
     [Header("Gameplay Datas")]
@@ -108,6 +108,12 @@ public class Enemy : MonoBehaviour
         //destroy automatic on the explosion
     }
 
+    void CreateParticleDeath(Vector3 impactPosition)
+    {
+        Instantiate(_explosionWhenDead, impactPosition, Quaternion.identity, null);
+        //destroy automatic on the explosion
+    }
+
     #endregion
 
     private void Death()
@@ -119,7 +125,7 @@ public class Enemy : MonoBehaviour
 
         AkSoundEngine.PostEvent("Kill", gameObject);
         ScoreManager.manager.UpdateScore(_scoreValue);
-        CreateParticleDamage(_transform.position);
+        CreateParticleDeath(_transform.position);
 
         if (_ownLight != null)
         {
@@ -151,7 +157,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.manager.isPause) return;
+        if (!GameManager.manager.isPlaying) return;
         Move();
     }
 
