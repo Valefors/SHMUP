@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     {
         EventManager.StartListening(EventManager.GAME_OVER_EVENT, GameOver);
         EventManager.StartListening(EventManager.PAUSE_EVENT, Pause);
+        _isPlaying = true;
     }
 
     public void Play()
