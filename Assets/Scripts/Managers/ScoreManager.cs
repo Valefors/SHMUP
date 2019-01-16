@@ -22,9 +22,25 @@ public class ScoreManager : MonoBehaviour
         else if (_manager != this) Destroy(gameObject);
     }
 
+    public void Start()
+    {
+        EventManager.StartListening(EventManager.PLAY_EVENT, ResetScore);
+    }
+
     public void UpdateScore(float pValue)
     {
         _score += pValue;
         print(score);
     }
+
+    void ResetScore()
+    {
+        _score = 0;
+    }
+
+    public void OnDisable()
+    {
+        EventManager.StopListening(EventManager.PLAY_EVENT, ResetScore);
+    }
+
 }

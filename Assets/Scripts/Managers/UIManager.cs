@@ -10,6 +10,13 @@ public class UIManager : MonoBehaviour
 
     [Header("Leaderboard")]
     [SerializeField] Text _localScore;
+    [Header("- Scores")]
+    [SerializeField] Text[] _scoreTextArray;
+    [Header("- Names")]
+    [SerializeField] Text[] _nameTextArray;
+    [Header("Enter Name")]
+    public InputField localPlayerName;
+    [SerializeField] Button _sendButton;
 
     private static UIManager _manager;
     public static UIManager manager {
@@ -32,9 +39,11 @@ public class UIManager : MonoBehaviour
         EventManager.StartListening(EventManager.RESUME_EVENT, Resume);
         EventManager.StartListening(EventManager.PAUSE_EVENT, Pause);
         EventManager.StartListening(EventManager.PLAY_EVENT, Play);
+        EventManager.StartListening(EventManager.SEND_SCORE_EVENT, UpdateUI);
 
         _gameOverScreen.gameObject.SetActive(false);
         _pauseScreen.gameObject.SetActive(false);
+        _sendButton.interactable = false;
     }
 
     public void Play()
@@ -54,9 +63,34 @@ public class UIManager : MonoBehaviour
 
     void GameOver()
     {
+        UpdateUI();
         _gameOverScreen.gameObject.SetActive(true);
         _localScore.text = ScoreManager.manager.score.ToString();
     }
+
+    #region Leaderboard
+
+    public void OnClickTextField()
+    {
+        if (localPlayerName.text != "") _sendButton.interactable = true;
+        else _sendButton.interactable = false;
+    }
+
+    public void OnClickSendName()
+    {
+        EventManager.TriggerEvent(EventManager.SEND_NAME_EVENT);
+    }
+
+    void UpdateUI()
+    {
+        for (int i = 0; i < Leaderboard.scoreList.Count; i++)
+        {
+            _nameTextArray[i].text = Leaderboard.scoreList[i].name;
+            _scoreTextArray[i].text = Leaderboard.scoreList[i].score.ToString();
+        }
+    }
+
+    #endregion
 
     private void Update()
     {
@@ -64,7 +98,6 @@ public class UIManager : MonoBehaviour
         {
             EventManager.TriggerEvent(EventManager.PAUSE_EVENT);
         }
-
     }
 
     void OnDisable()
@@ -73,5 +106,6 @@ public class UIManager : MonoBehaviour
         EventManager.StopListening(EventManager.PAUSE_EVENT, Pause);
         EventManager.StopListening(EventManager.RESUME_EVENT, Resume);
         EventManager.StopListening(EventManager.PLAY_EVENT, Play);
+        EventManager.StopListening(EventManager.SEND_SCORE_EVENT, UpdateUI);
     }
 }
