@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
 
         }
 
-        if (GameManager.manager.isPause) return;
+        if (!GameManager.manager.isPlaying) return;
 
         SetModuleVoidMode();
 
@@ -284,7 +284,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D pCol)
     {
-        if (GameManager.manager.isPause) return;
+        if (!GameManager.manager.isPlaying) return;
 
         Module moduleCollided = pCol.gameObject.GetComponent<Module>();
         if (moduleCollided != null)
