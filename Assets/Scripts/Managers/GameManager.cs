@@ -13,13 +13,13 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public Vector3 scrollingVector = new Vector3(0, -12, 0);
 
-    [HideInInspector] public bool isPause {
+    [HideInInspector] public bool isPlaying {
         get {
-            return _isPause;
+            return _isPlaying;
         }
     }
 
-    private bool _isPause = false;
+    private bool _isPlaying = false;
 
     private static GameManager _manager;
     public static GameManager manager {
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (scrolling == null) scrolling = FindObjectOfType<ScrollingBackground>().transform;
+        EventManager.StartListening(EventManager.GAME_OVER_EVENT, GameOver);
         EventManager.StartListening(EventManager.PAUSE_EVENT, Pause);
     }
 
@@ -46,17 +46,28 @@ public class GameManager : MonoBehaviour
     {
         EventManager.TriggerEvent(EventManager.PLAY_EVENT);
         SceneManager.LoadScene(_levelToLoad);
+        _isPlaying = true;
     }
 
     private void Pause()
     {
-        _isPause = true;
+        _isPlaying = false;
     }
 
     public void Resume()
     {
-        _isPause = false;
+        _isPlaying = true;
         EventManager.TriggerEvent(EventManager.RESUME_EVENT);
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene(_levelToLoad - 1);
+    }
+
+    public void GameOver()
+    {
+        _isPlaying = false;
     }
 
     public void Quit()

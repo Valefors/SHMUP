@@ -73,7 +73,7 @@ public abstract class Module : MonoBehaviour
 
     protected void Update()
     {
-        if (GameManager.manager.isPause) return;
+        if (!GameManager.manager.isPlaying) return;
 
         if (moduleAction != null) moduleAction();
         if (transform.position.y < -50) Destroy(gameObject);
