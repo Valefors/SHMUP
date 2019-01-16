@@ -134,7 +134,27 @@ ModelImporter:
     4300048: Sphere003
     7400000: Take 001
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bois
+    second: {fileID: 2100000, guid: d5cb34c4f772c544ea5fa41cc1728546, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #2'
+    second: {fileID: 2100000, guid: dc7bfc56a0da43c409c9945d45d510bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 4d4b0db1a42c0114d868c2d6520a4f44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: junk
+    second: {fileID: 2100000, guid: d586d9b5dbda9d34aa714075755efea6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
