@@ -181,13 +181,13 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: ba4f3c47d387e34789f00968a54a6f83
-    m_lastTime: -8586541359010627032
+    m_lastTime: -8586539635215815101
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2833e4d17ac8924f94f0cad191414be9
-    m_lastTime: -8586541827316896077
+    m_lastTime: -8586539640757218001
     List:
     - name: General
       guid: b8f5f163590846438a9805268b1eea41
@@ -202,7 +202,7 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: e3d62635ae2c1d409c4f0d3563842048
-    m_lastTime: -8586542039379139957
+    m_lastTime: -8586540054416520611
     List:
     - name: Damaged
       guid: 5ec9335031110c4d8f57e61f7907c0c0
@@ -297,6 +297,18 @@ MonoBehaviour:
       - ElementName: Laser_stop
         ObjectType: 3
       Path: Default Work Unit\Laser_stop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Music
+      guid: 2a43116c9c2a1d4ab724a406ea84f24d
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 3
+      Path: Default Work Unit\Music
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -535,6 +547,9 @@ MonoBehaviour:
   - /Junk
   - /Junk/Events
   - /Junk/Events/Default Work Unit
+  - /Junk/SoundBanks
+  - /Junk/SoundBanks/Default Work Unit
   - /Junk/States
+  - /Junk/States/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
