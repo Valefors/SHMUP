@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scrap: {fileID: 7790807872988376404, guid: 6ed4d0541de54e144ac3ef74352c6fdb, type: 3}
-  _explosionWhenHit: {fileID: 4049463604890411720, guid: a088adbdb94f40b4890dc0d0d4158620,
+  _explosionWhenHit: {fileID: 318658041164066152, guid: e6fc3b431a5480145aa9c788e31f376f,
     type: 3}
   _explosionWhenDead: {fileID: 8216606441287394681, guid: 722653e6086ad7b40b96e038e32e595b,
     type: 3}
