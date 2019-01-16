@@ -169,6 +169,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   _invulnerabilitySprite: {fileID: 412273050}
   _invulnerabilityDelay: 1
+  _numberModuleDecreaserInvulnerability: 0
+  _invunerabilityPercentageDecrease: 0
   _horizontalAccelerationCurve:
     serializedVersion: 2
     m_Curve:
@@ -856,6 +858,10 @@ PrefabInstance:
       propertyPath: m_DirtyAABB
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 4ab211beb72d7d64f987477219c8636f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 812f0082ac605e2468b55258cd7b048f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ab211beb72d7d64f987477219c8636f, type: 3}
 --- !u!4 &539842268009937216 stripped
@@ -871,16 +877,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480005102199634978}
     m_Modifications:
-    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
-        type: 3}
-      propertyPath: m_Name
-      value: TrailSand
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6654863258839217042, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -935,6 +931,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
+        type: 3}
+      propertyPath: m_Name
+      value: TrailSand
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
         type: 3}
@@ -1268,16 +1274,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480005102199634978}
     m_Modifications:
-    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
-        type: 3}
-      propertyPath: m_Name
-      value: TrailSand (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6654863258839217042, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1343,6 +1339,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
+        type: 3}
+      propertyPath: m_Name
+      value: TrailSand (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6654863258839217044, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
         type: 3}
       propertyPath: ShapeModule.m_Rotation.y
@@ -1387,16 +1393,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc,
-        type: 3}
-      propertyPath: isEnemy
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc,
-        type: 3}
-      propertyPath: _shotRate
-      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4619175050824214076, guid: 2596468b58cd6e74293d14c5c2c6bafc,
         type: 3}
@@ -1452,6 +1448,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc,
+        type: 3}
+      propertyPath: isEnemy
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc,
+        type: 3}
+      propertyPath: _shotRate
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4619175051328705137, guid: 2596468b58cd6e74293d14c5c2c6bafc,
         type: 3}
