@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (scrolling == null) scrolling = FindObjectOfType<ScrollingBackground>().transform;
         EventManager.StartListening(EventManager.PAUSE_EVENT, Pause);
     }
 
@@ -74,7 +73,6 @@ public class GameManager : MonoBehaviour
     [ExecuteInEditMode]
     void Update()
     {
-        print("Play");
         if (!UnityEditor.EditorApplication.isPlaying)
         {
             Vector3[] bounds = SafeZone.Bounds(-2);
