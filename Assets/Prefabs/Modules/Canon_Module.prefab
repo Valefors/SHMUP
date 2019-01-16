@@ -80,11 +80,8 @@ MonoBehaviour:
   _freeSpeedFactor: 0.3
   _freeRotationSpeed: 0.7
   rotateWhenPickUp: 1
-  _explosionWhenDestroyed: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
+  _explosionWhenDestroyed: {fileID: 318658041164066152, guid: e6fc3b431a5480145aa9c788e31f376f,
     type: 3}
-  _colliderOfTheModule:
-  - {fileID: 0}
-  - {fileID: 3329485072064713141}
   free: 0
   isEnemy: 1
   _shotRate: 0.3
@@ -161,6 +158,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4619175051328705136}
     m_Modifications:
+    - target: {fileID: 100010, guid: e8864726a744984498cab5451767de30, type: 3}
+      propertyPath: m_Name
+      value: Weapon_Gun
+      objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: e8864726a744984498cab5451767de30, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -216,10 +217,6 @@ PrefabInstance:
     - target: {fileID: 400010, guid: e8864726a744984498cab5451767de30, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: e8864726a744984498cab5451767de30, type: 3}
-      propertyPath: m_Name
-      value: Weapon_Gun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8864726a744984498cab5451767de30, type: 3}

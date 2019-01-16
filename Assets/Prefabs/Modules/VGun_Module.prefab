@@ -50,7 +50,7 @@ MonoBehaviour:
   _freeSpeedFactor: 0.2
   _freeRotationSpeed: 0.7
   rotateWhenPickUp: 1
-  _explosionWhenDestroyed: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
+  _explosionWhenDestroyed: {fileID: 318658041164066152, guid: e6fc3b431a5480145aa9c788e31f376f,
     type: 3}
   free: 0
   isEnemy: 1
