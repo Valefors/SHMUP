@@ -30,7 +30,9 @@ public class Player : MonoBehaviour
 
     [Header("Invulnerability")]
     [SerializeField] SpriteRenderer _invulnerabilitySprite;
-    [SerializeField] int _invulnerabilityDelay;
+    [SerializeField] float _invulnerabilityDelay;
+    [SerializeField] int _numberModuleDecreaserInvulnerability;
+    [SerializeField] int _invunerabilityPercentageDecrease;
 
     [HideInInspector] [SerializeField] private AnimationCurve _horizontalAccelerationCurve;
     [HideInInspector] [SerializeField] private AnimationCurve _horizontalDecelerationCurve;
@@ -53,9 +55,16 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _swingDegree;
 
+    private float saveInvulnerableDelay;
+    private float percentage;
+
     // Start is called before the first frame update
     private void Start()
     {
+        AkSoundEngine.PostEvent("Music", gameObject);
+
+        saveInvulnerableDelay = _invulnerabilityDelay;
+        percentage = (saveInvulnerableDelay * _invunerabilityPercentageDecrease) / 100;
         _transform = this.transform;
         _listLenght = _modulesList.Count;
 
@@ -65,6 +74,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_listLenght-1 >= _numberModuleDecreaserInvulnerability) _invulnerabilityDelay = saveInvulnerableDelay - (percentage * _listLenght) + percentage;
+        else _invulnerabilityDelay = saveInvulnerableDelay;
+
         if (Input.GetKeyDown(KeyCode.G))
         {
             if (_isInvicible)
@@ -284,6 +296,12 @@ public class Player : MonoBehaviour
                 AddModule(moduleCollided);
             }
         }
+
+        Enemy enemyColl = pCol.gameObject.GetComponent<Enemy>();
+        if (enemyColl != null)
+        {
+            this.GetHit();
+        }
     }
 
     private void AddModule(Module module)
@@ -297,10 +315,13 @@ public class Player : MonoBehaviour
 
         module.transform.parent = _transform;
 
-        Vector3 directionToLookAt = module.transform.position - _transform.position;
-        //TO DO : need to make a clear feedback
-        //something to make the module really go from start direction to this one
-        module.transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToLookAt);
+        if (module.rotateWhenPickUp)
+        {
+            Vector3 directionToLookAt = module.transform.position - _transform.position;
+            //TO DO : need to make a clear feedback
+            //something to make the module really go from start direction to this one
+            module.transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToLookAt);
+        }
         module.free = false;
 
         _modulesList.Add(module);

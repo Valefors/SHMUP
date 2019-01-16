@@ -14,11 +14,12 @@ public abstract class Module : MonoBehaviour
     private float _freeRotationSpeed = 0.7f;
     private Vector3 _scrollingVector = Vector3.zero;
 
+    [SerializeField]
+    public bool rotateWhenPickUp = true;
+
     [Header("Visual info")]
     [SerializeField]
     private GameObject _explosionWhenDestroyed;
-    [SerializeField]
-    private Collider2D[] _colliderOfTheModule;
 
     public bool free = false;
 
