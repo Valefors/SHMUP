@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected bool _moveLoop = false;
     [SerializeField] int _pv = 1;
     [SerializeField] protected float rotationSpeed;
+    [SerializeField] protected bool _boss = false;
 
     [SerializeField] private Module[] _modulesList;
     private int _listLenght = 0;
@@ -118,6 +119,12 @@ public class Enemy : MonoBehaviour
 
     private void Death()
     {
+        if (_boss)
+        {
+            if (!GameManager.manager.isLD) EventManager.TriggerEvent(EventManager.GAME_OVER_EVENT);
+        }
+
+
         float randomValue = Random.Range(0f,1f);
 
         if (randomValue < _dropLoot)
