@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89691ea468761a048b86d740a8574fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _intensityX: 1
+  _intensityX: 0.5
   _intensityY: 0.5
   _duration: 0.3
 --- !u!114 &8014612331121692852

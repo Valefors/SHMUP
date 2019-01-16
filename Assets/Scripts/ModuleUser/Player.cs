@@ -30,7 +30,9 @@ public class Player : MonoBehaviour
 
     [Header("Invulnerability")]
     [SerializeField] SpriteRenderer _invulnerabilitySprite;
-    [SerializeField] int _invulnerabilityDelay;
+    [SerializeField] float _invulnerabilityDelay;
+    [SerializeField] int _numberModuleDecreaserInvulnerability;
+    [SerializeField] int _invunerabilityPercentageDecrease;
 
     [HideInInspector] [SerializeField] private AnimationCurve _horizontalAccelerationCurve;
     [HideInInspector] [SerializeField] private AnimationCurve _horizontalDecelerationCurve;
@@ -53,9 +55,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _swingDegree;
 
+    private float saveInvulnerableDelay;
+    private float percentage;
+
     // Start is called before the first frame update
     private void Start()
     {
+        saveInvulnerableDelay = _invulnerabilityDelay;
+        percentage = (saveInvulnerableDelay * _invunerabilityPercentageDecrease) / 100;
         _transform = this.transform;
         _listLenght = _modulesList.Count;
 
@@ -65,6 +72,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_listLenght-1 >= _numberModuleDecreaserInvulnerability) _invulnerabilityDelay = saveInvulnerableDelay - (percentage * _listLenght) + percentage;
+        else _invulnerabilityDelay = saveInvulnerableDelay;
+
         if (Input.GetKeyDown(KeyCode.G))
         {
             if (_isInvicible)
