@@ -1,37 +1,20 @@
 fileFormatVersion: 2
-guid: e8864726a744984498cab5451767de30
+guid: 03369ca497680c749960aa45fa0796cc
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Box001
-    100002: group
-    100004: group1
-    100006: pCylinder2
-    100008: pCylinder3
-    100010: //RootNode
-    400000: Box001
-    400002: group
-    400004: group1
-    400006: pCylinder2
-    400008: pCylinder3
-    400010: //RootNode
-    2100000: lambert1
-    2300000: Box001
-    2300002: pCylinder2
-    2300004: pCylinder3
-    3300000: Box001
-    3300002: pCylinder2
-    3300004: pCylinder3
-    4300000: Box001
-    4300002: pCylinder2
-    4300004: pCylinder3
+    100000: //RootNode
+    400000: //RootNode
+    2100000: 'Material #28'
+    2100002: 'Material #31'
+    2100004: 'Material #30'
+    2100006: 'Material #29'
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cylinder002
+    7400000: Take 001
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: b2d8a288e9447724494dc7eb5b812b52, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -83,7 +66,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
+    previousCalculatedGlobalScale: 0.0254
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

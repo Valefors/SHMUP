@@ -4,11 +4,44 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Box001
+    100004: Box002
+    100006: Box003
+    100008: pCube1
     400000: //RootNode
+    400002: Box001
+    400004: Box002
+    400006: Box003
+    400008: pCube1
     2100000: lambert1
+    2100002: building 2
+    2100004: Building 1
+    2100006: lumJaune
+    2100008: lumRose
+    2100010: lumVert
+    2100012: lumRouge
+    2100014: lumBleu
+    2100016: 'Material #132'
+    2100018: 'Material #129'
+    2100020: 'Material #134'
+    2100022: 'Material #133'
+    2100024: 'Material #135'
+    2100026: 'Material #128'
+    2100028: 'Material #136'
     2300000: //RootNode
+    2300002: Box001
+    2300004: Box002
+    2300006: Box003
+    2300008: pCube1
     3300000: //RootNode
+    3300002: Box001
+    3300004: Box002
+    3300006: Box003
+    3300008: pCube1
     4300000: pCube1
+    4300002: Box001
+    4300004: Box002
+    4300006: Box003
   externalObjects: {}
   materials:
     importMaterials: 1
