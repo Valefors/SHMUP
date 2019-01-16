@@ -84,7 +84,27 @@ ModelImporter:
     4300024: polySurface4
     4300026: polySurface3
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: coque1
+    second: {fileID: 2100000, guid: e00337107c482174fbfc1e1f4e0dccba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: coque2
+    second: {fileID: 2100000, guid: 5387ff5700a1a374c93b20d091046677, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pipes
+    second: {fileID: 2100000, guid: a684014bc39d8ff4b837d67f2c659f80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiles
+    second: {fileID: 2100000, guid: 16f262b423001f84dae7f3038c3ae0c9, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
