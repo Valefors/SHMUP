@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[ExecuteInEditMode]
 public class GameManager : MonoBehaviour
 {
     [SerializeField] int _levelToLoad = 1;
@@ -68,4 +69,22 @@ public class GameManager : MonoBehaviour
     {
         EventManager.StopListening(EventManager.PAUSE_EVENT, Pause);
     }
+
+#if UNITY_EDITOR
+    [ExecuteInEditMode]
+    void Update()
+    {
+        print("Play");
+        if (!UnityEditor.EditorApplication.isPlaying)
+        {
+            Vector3[] bounds = SafeZone.Bounds(-2);
+
+            Debug.DrawLine(bounds[0], bounds[1], Color.green);
+            Debug.DrawLine(bounds[0], bounds[3], Color.green);
+            Debug.DrawLine(bounds[2], bounds[1], Color.green);
+            Debug.DrawLine(bounds[2], bounds[3], Color.green);
+        }
+
+    }
+#endif
 }
