@@ -44,7 +44,77 @@ ModelImporter:
     4300006: Box003
     7400000: Take 001
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Building 1
+    second: {fileID: 2100000, guid: c87a3d3ed50be094f9198d43358ef191, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #128'
+    second: {fileID: 2100000, guid: 3a6dbce59cc024ea0a297c431ae22e67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #129'
+    second: {fileID: 2100000, guid: 55f4d27a11075254da86c58b61e312f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #132'
+    second: {fileID: 2100000, guid: 7dc77eb2c04337d4184b403d72dfd952, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #133'
+    second: {fileID: 2100000, guid: a902f2fee6b354ebc971f9ce638a588f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #134'
+    second: {fileID: 2100000, guid: dbd195f371566c44a9079fce1fbf9747, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #135'
+    second: {fileID: 2100000, guid: 312b0ac3306d3c34aba8c06a76873865, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #136'
+    second: {fileID: 2100000, guid: 5de7e3f21674245fa8998d63e05844ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: building 2
+    second: {fileID: 2100000, guid: 36759e3489b137d4ca7a9e9db9b7c96f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lumBleu
+    second: {fileID: 2100000, guid: 0127f4bf13b3f7441bf0e1039ef0bcb8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lumJaune
+    second: {fileID: 2100000, guid: 1ba96f61389aa9646a99f6daffc37177, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lumRose
+    second: {fileID: 2100000, guid: a1d2a94201db29444bb56e183daf5f8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lumRouge
+    second: {fileID: 2100000, guid: 2cbe22afab1e2be4a9ef4ad7c42c2ae9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lumVert
+    second: {fileID: 2100000, guid: 49cfdca6cda98dc4c84a00f37e583622, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
