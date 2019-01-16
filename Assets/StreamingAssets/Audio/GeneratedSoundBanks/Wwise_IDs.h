@@ -21,6 +21,7 @@ namespace AK
         static const AkUniqueID LASER_LOADING2 = 107775267U;
         static const AkUniqueID LASER_LOADING4 = 107775269U;
         static const AkUniqueID LASER_STOP = 1853467501U;
+        static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID REACHED = 2907331365U;
         static const AkUniqueID SHOT = 251412229U;
     } // namespace EVENTS

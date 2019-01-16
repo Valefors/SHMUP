@@ -9,6 +9,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2030840469	Kill			\Default Work Unit\Kill	
 	2907331365	Reached			\Default Work Unit\Reached	
 	3258988170	Damaged			\Default Work Unit\Damaged	
+	3991942870	Music			\Default Work Unit\Music	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	3730680495	vGun_state			\Default Work Unit\vGun_state	
@@ -34,13 +35,14 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	89547824	Bois01	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\Bois01_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Bois\Bois01		356080
 	91520928	Bois03	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\JunkBlessure\Bois03_C624F882.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Bois\Bois03		165328
 	110549905	Electricite	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\Laser\LaserActif\Electricite_A17F745C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif2\Electricite		385476
+	117732274	OddsAndEnds	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\OddsAndEnds_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\OddsAndEnds		55222924
 	119410799	Bois01	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\JunkBlessure\Bois01_396E36E7.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Bois\Bois01		133960
 	171690536	Electricite	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\Laser\LaserActif\Electricite_5EEA40C7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif4\Electricite		769632
 	203401469	Bois03	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\Bois03_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Bois\Bois03		449976
 	260000769	ComposanteLaser	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\ComposanteLaser_682201A8.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\ComposanteLaser		56560
 	276322362	Bois02	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\Bois02_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Bois\Bois02		426320
 	332644054	Lancement	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\Lancement_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LancementLaser\Lancement		578956
-	333126272	RefroidissementLaser	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\Laser\Refroidissement\RefroidissementLaser_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\Refroidissement\RefroidissementLaser		867044
+	333126272	RefroidissementLaser	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\Laser\Refroidissement\RefroidissementLaser_B8C9E534.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\Refroidissement\RefroidissementLaser		407888
 	342057620	Explosion01	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\Explosion01_0396B94F.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Explosion\Explosion01		387024
 	352100003	vissage02	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\InstallationModule\vissage02_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\InstallationModule\Vissage\vissage02		259564
 	407585590	Explosion03	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\Explosion03_51648289.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Explosion\Explosion03		305112
@@ -51,7 +53,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	548269847	Plaque	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\JunkBlessure\Plaque_0157EB41.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Plaque		440668
 	694896994	accrochage	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\InstallationModule\accrochage_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\InstallationModule\accrochage		297228
 	717123889	Boucle02	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\Laser\LaserActif\Boucle02_765DB474.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif2\Boucle02		386072
-	718323707	LancementReverb	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\LancementReverb_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LancementLaser\LancementReverb		313116
 	734061777	Boucle02	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\Laser\LaserActif\Boucle02_D7D2FC91.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif4\Boucle02		769584
 	749581320	Explosion02	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\Explosion02_BA6B0D00.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Explosion\Explosion02		390640
 	752459827	Métal	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\JunkBlessure\Métal_B2463F5D.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Métal		366408
