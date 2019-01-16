@@ -7,6 +7,7 @@ public class PathFollower : MonoBehaviour
     Node[] _pathNode;
     public List<Vector3> nodesPosition = new List<Vector3>();
     public List<Quaternion> nodesRotation = new List<Quaternion>();
+    public List<int> nodesWaitTime = new List<int>();
 
     public int currentNode;
 
@@ -31,6 +32,8 @@ public class PathFollower : MonoBehaviour
             savedRotation = Quaternion.Euler(test);
           
             nodesRotation.Add(savedRotation);
+
+            nodesWaitTime.Add(_pathNode[i].waitTime);
             _pathNode[i].gameObject.SetActive(false);
         }
     }

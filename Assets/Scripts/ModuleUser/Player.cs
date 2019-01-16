@@ -30,7 +30,9 @@ public class Player : MonoBehaviour
 
     [Header("Invulnerability")]
     [SerializeField] SpriteRenderer _invulnerabilitySprite;
-    [SerializeField] int _invulnerabilityDelay;
+    [SerializeField] float _invulnerabilityDelay;
+    [SerializeField] int _numberModuleDecreaserInvulnerability;
+    [SerializeField] int _invunerabilityPercentageDecrease;
 
     [HideInInspector] [SerializeField] private AnimationCurve _horizontalAccelerationCurve;
     [HideInInspector] [SerializeField] private AnimationCurve _horizontalDecelerationCurve;
@@ -53,9 +55,16 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _swingDegree;
 
+    private float saveInvulnerableDelay;
+    private float percentage;
+
     // Start is called before the first frame update
     private void Start()
     {
+        AkSoundEngine.PostEvent("Music", gameObject);
+
+        saveInvulnerableDelay = _invulnerabilityDelay;
+        percentage = (saveInvulnerableDelay * _invunerabilityPercentageDecrease) / 100;
         _transform = this.transform;
         _listLenght = _modulesList.Count;
 
@@ -65,9 +74,19 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G)) GetInvicibility(true);
+        if (_listLenght-1 >= _numberModuleDecreaserInvulnerability) _invulnerabilityDelay = saveInvulnerableDelay - (percentage * _listLenght) + percentage;
+        else _invulnerabilityDelay = saveInvulnerableDelay;
 
-        if (GameManager.manager.isPause) return;
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            if (_isInvicible)
+                GetInvicibility();
+            else
+                GetInvicibility(true);
+
+        }
+
+        if (!GameManager.manager.isPlaying) return;
 
         SetModuleVoidMode();
 
@@ -105,6 +124,7 @@ public class Player : MonoBehaviour
         if (SafeZone.IsOffFieldY(lPoint.y)) lMovement.y = 0;
         if (lMovement != Vector3.zero)
         {
+            AkSoundEngine.SetState("Moving_state", "yes");
             _transform.Translate(lMovement, Space.World);
         }
     }
@@ -149,6 +169,7 @@ public class Player : MonoBehaviour
         _horizontalAccDecLerpValue -= Time.deltaTime * _horizontalDecSpeed * Mathf.Sign(_horizontalAccDecLerpValue);
         if(Mathf.Sign(pastLerp) != Mathf.Sign(_horizontalAccDecLerpValue))
         {
+            AkSoundEngine.SetState("Moving_state", "no");
             _horizontalAccDecLerpValue = 0;
         }
 
@@ -166,6 +187,7 @@ public class Player : MonoBehaviour
         _verticalAccDecLerpValue -= Time.deltaTime * _verticalDecSpeed * Mathf.Sign(_verticalAccDecLerpValue);
         if (Mathf.Sign(pastLerp) != Mathf.Sign(_verticalAccDecLerpValue))
         {
+            AkSoundEngine.SetState("Moving_state", "no");
             _verticalAccDecLerpValue = 0;
         }
 
@@ -250,17 +272,35 @@ public class Player : MonoBehaviour
                 this.GetHit();
             }
         }
+        LaserShot laserShotCollided = pCol.gameObject.GetComponent<LaserShot>();
+        if (laserShotCollided != null)
+        {
+            if (laserShotCollided.GetSide() && laserShotCollided.isActive)
+            {
+                this.GetHit();
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D pCol)
     {
-        if (GameManager.manager.isPause) return;
+        if (!GameManager.manager.isPlaying) return;
 
         Module moduleCollided = pCol.gameObject.GetComponent<Module>();
         if (moduleCollided != null)
         {
-            if (moduleCollided.free) //need to know if there parent are still enemy (or even friend)
+            //need to know if there parent are still enemy (or even friend)
+            if (moduleCollided.free)
+            {
+                AkSoundEngine.PostEvent("Get_module", gameObject);
                 AddModule(moduleCollided);
+            }
+        }
+
+        Enemy enemyColl = pCol.gameObject.GetComponent<Enemy>();
+        if (enemyColl != null)
+        {
+            this.GetHit();
         }
     }
 
@@ -268,12 +308,20 @@ public class Player : MonoBehaviour
     {
         if (module.GetComponent<ShooterModule>() != null) module.GetComponent<ShooterModule>().isEnemy = false;
 
+        if(module.GetComponent<VGun>() != null)
+        {
+            AkSoundEngine.SetState("vGun_state", "yes");
+        }
+
         module.transform.parent = _transform;
 
-        Vector3 directionToLookAt = module.transform.position - _transform.position;
-        //TO DO : need to make a clear feedback
-        //something to make the module really go from start direction to this one
-        module.transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToLookAt);
+        if (module.rotateWhenPickUp)
+        {
+            Vector3 directionToLookAt = module.transform.position - _transform.position;
+            //TO DO : need to make a clear feedback
+            //something to make the module really go from start direction to this one
+            module.transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToLookAt);
+        }
         module.free = false;
 
         _modulesList.Add(module);
@@ -288,6 +336,13 @@ public class Player : MonoBehaviour
         Module lModuleToDestroy = _modulesList[_listLenght - 1];
         _modulesList.RemoveAt(_listLenght - 1);
         _listLenght--;
+
+        if(lModuleToDestroy.GetComponent<VGun>() != null)
+        {
+            AkSoundEngine.SetState("vGun_state", "no");
+        }
+        AkSoundEngine.PostEvent("Damaged", gameObject);
+
         lModuleToDestroy.SetDeathMode();
 
         UpdateWeight();

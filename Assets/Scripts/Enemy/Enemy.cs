@@ -11,13 +11,15 @@ public class Enemy : MonoBehaviour
     Rigidbody2D _rb;
     [SerializeField] Scrap _scrap;
     [SerializeField] GameObject _explosionWhenHit;
-    //[SerializeField] GameObject _explosionWhenDead;
+    [SerializeField] GameObject _explosionWhenDead;
     [SerializeField] Light _ownLight;
 
     [Header("Gameplay Datas")]
     [SerializeField] protected float _speed;
     [SerializeField] protected bool _moveLoop = false;
     [SerializeField] int _pv = 1;
+    [SerializeField] protected float rotationSpeed;
+    [SerializeField] protected bool _boss = false;
 
     [SerializeField] private Module[] _modulesList;
     private int _listLenght = 0;
@@ -26,6 +28,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _scoreValue = 0f;
 
     [SerializeField] [Range(0,1)] protected float _dropLoot = 0.5f;
+
+    private float timeSpent;
+    
 
     private void OnEnable()
     {
@@ -70,11 +75,17 @@ public class Enemy : MonoBehaviour
         else
         {
             if (_pF.currentNode + 1 == _pF.nodesPosition.Count && !_moveLoop) return;
-            _pF.currentNode = (_pF.currentNode + 1) % _pF.nodesPosition.Count;     
+
+            if (timeSpent >= _pF.nodesWaitTime[_pF.currentNode])
+            {
+                _pF.currentNode = (_pF.currentNode + 1) % _pF.nodesPosition.Count;
+                timeSpent = 0;
+            }
+            else timeSpent += Time.deltaTime;
         }
 
         Quaternion saved = _pF.nodesRotation[_pF.currentNode];
-        _transform.rotation = Quaternion.Lerp(_transform.rotation, saved, 0.05f);
+        _transform.rotation = Quaternion.Lerp(_transform.rotation, saved, Time.deltaTime * rotationSpeed);
     }
 
     #region GetDamage
@@ -98,17 +109,30 @@ public class Enemy : MonoBehaviour
         //destroy automatic on the explosion
     }
 
+    void CreateParticleDeath(Vector3 impactPosition)
+    {
+        Instantiate(_explosionWhenDead, impactPosition, Quaternion.identity, null);
+        //destroy automatic on the explosion
+    }
+
     #endregion
 
     private void Death()
     {
+        if (_boss)
+        {
+            if (!GameManager.manager.isLD) EventManager.TriggerEvent(EventManager.GAME_OVER_EVENT);
+        }
+
+
         float randomValue = Random.Range(0f,1f);
 
         if (randomValue < _dropLoot)
             DropItem();
 
+        AkSoundEngine.PostEvent("Kill", gameObject);
         ScoreManager.manager.UpdateScore(_scoreValue);
-        CreateParticleDamage(_transform.position);
+        CreateParticleDeath(_transform.position);
 
         if (_ownLight != null)
         {
@@ -140,7 +164,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.manager.isPause) return;
+        if (!GameManager.manager.isPlaying) return;
         Move();
     }
 
