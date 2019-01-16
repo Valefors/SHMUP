@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7790807872988376404}
   - component: {fileID: 8774394411750311164}
   - component: {fileID: 4949183825062873407}
+  - component: {fileID: 624928717029042590}
   m_Layer: 0
   m_Name: Scrap_Module
   m_TagString: Untagged
@@ -49,6 +50,7 @@ MonoBehaviour:
   _weight: 0.5
   _freeSpeedFactor: 0.4
   _freeRotationSpeed: 0.7
+  rotateWhenPickUp: 0
   _explosionWhenDestroyed: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
     type: 3}
   _colliderOfTheModule:
@@ -67,7 +69,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06165439, y: -0.025984406}
+  m_Offset: {x: 0, y: -0.09966469}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -78,7 +80,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.73391294, y: 0.8311002}
+  m_Size: {x: 0.70704705, y: 0.46579504}
   m_EdgeRadius: 0
 --- !u!61 &4949183825062873407
 BoxCollider2D:
@@ -93,7 +95,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5224393, y: -0.012992263}
+  m_Offset: {x: -0.015, y: 0.42129153}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -104,7 +106,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4223963, y: 0.14250922}
+  m_Size: {x: 0.10256094, y: 0.5185183}
+  m_EdgeRadius: 0
+--- !u!61 &624928717029042590
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522602325824180810}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.465, y: 0.09119141}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.20249224, y: 0.03493142}
   m_EdgeRadius: 0
 --- !u!1 &4522602327406355993
 GameObject:
@@ -144,13 +172,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4522602327406355992}
     m_Modifications:
-    - target: {fileID: 100000, guid: 53a2761014912664cb567577489d42cc, type: 3}
-      propertyPath: m_Name
-      value: Scrap
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53a2761014912664cb567577489d42cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.08271708
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53a2761014912664cb567577489d42cc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -199,6 +223,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 53a2761014912664cb567577489d42cc, type: 3}
       propertyPath: m_LocalScale.y
       value: 6.666666
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53a2761014912664cb567577489d42cc, type: 3}
+      propertyPath: m_Name
+      value: Scrap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53a2761014912664cb567577489d42cc, type: 3}

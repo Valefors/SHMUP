@@ -10,7 +10,9 @@ public class VGun : Canon
     void Start()
     {
         Transform _firstChild = transform.GetChild(0).transform;
-        _canonSpawnArray = _firstChild.GetComponentsInChildren<Transform>();
+        //Obsolete 
+        if(_canonSpawnArray == null)
+            _canonSpawnArray = _firstChild.GetComponentsInChildren<Transform>();
     }
 
     protected override void Shoot()
@@ -19,7 +21,7 @@ public class VGun : Canon
         if (useBurst && !isEnemy) useBurst = false;
         if (!useBurst || ((isWaiting && waitingTime > _timeWaitBurst) || isShooting))
         {
-            for (int i = 1; i < _canonSpawnArray.Length; i++)
+            for (int i = 0; i < _canonSpawnArray.Length; i++)
             {
                 Shot lShot = Instantiate(_prefabShot, _canonSpawnArray[i].position, Quaternion.identity).GetComponent<Shot>();
                 lShot.SetUp(isEnemy, _canonSpawnArray[i].rotation, GetSpeed(), _hitValue);

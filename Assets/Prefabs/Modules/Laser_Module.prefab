@@ -49,6 +49,7 @@ MonoBehaviour:
   _weight: 0.6
   _freeSpeedFactor: 0.2
   _freeRotationSpeed: 0.7
+  rotateWhenPickUp: 1
   _explosionWhenDestroyed: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
     type: 3}
   _colliderOfTheModule:
@@ -71,7 +72,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.51232153}
+  m_Offset: {x: 0.014274955, y: 0.341029}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -82,7 +83,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 1.0246431}
+  m_Size: {x: 0.5371902, y: 0.682058}
   m_EdgeRadius: 0
 --- !u!1 &1918834198
 GameObject:
@@ -197,21 +198,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 635838887}
     m_Modifications:
-    - target: {fileID: 7637979604683794928, guid: bacf2105fa5c1984da475339efdf7d2a,
-        type: 3}
-      propertyPath: m_Name
-      value: Laser
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637979604683794928, guid: bacf2105fa5c1984da475339efdf7d2a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637979604683794928, guid: bacf2105fa5c1984da475339efdf7d2a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 7637979604683794447, guid: bacf2105fa5c1984da475339efdf7d2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -266,6 +252,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637979604683794928, guid: bacf2105fa5c1984da475339efdf7d2a,
+        type: 3}
+      propertyPath: m_Name
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637979604683794928, guid: bacf2105fa5c1984da475339efdf7d2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637979604683794928, guid: bacf2105fa5c1984da475339efdf7d2a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7637979606152073939, guid: bacf2105fa5c1984da475339efdf7d2a,
         type: 3}
