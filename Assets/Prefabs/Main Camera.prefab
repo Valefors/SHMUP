@@ -92,8 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89691ea468761a048b86d740a8574fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _intensityX: 0.5
-  _intensityY: 0.5
+  _intensityX: 0.3
+  _intensityY: 0.3
   _duration: 0.3
 --- !u!114 &8014612331121692852
 MonoBehaviour:
@@ -192,16 +192,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8014612331121692851}
     m_Modifications:
-    - target: {fileID: 3228742611630785654, guid: efd0e16df3ad349f4bf6550669f6ac4b,
-        type: 3}
-      propertyPath: m_Name
-      value: Sandair
-      objectReference: {fileID: 0}
-    - target: {fileID: 3228742611630785654, guid: efd0e16df3ad349f4bf6550669f6ac4b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3228742611630785653, guid: efd0e16df3ad349f4bf6550669f6ac4b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -271,6 +261,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3.7193704
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228742611630785654, guid: efd0e16df3ad349f4bf6550669f6ac4b,
+        type: 3}
+      propertyPath: m_Name
+      value: Sandair
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228742611630785654, guid: efd0e16df3ad349f4bf6550669f6ac4b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd0e16df3ad349f4bf6550669f6ac4b, type: 3}
