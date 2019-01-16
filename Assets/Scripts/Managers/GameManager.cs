@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [ExecuteInEditMode]
 public class GameManager : MonoBehaviour
@@ -10,9 +11,12 @@ public class GameManager : MonoBehaviour
 
     public bool isLD = false;
 
-    public Transform scrolling;
-    [HideInInspector]
-    public Vector3 scrollingVector = new Vector3(0, -12, 0);
+    [HideInInspector] public Transform scrolling;
+    [HideInInspector] public Vector3 scrollingVector = new Vector3(0, -12, 0);
+
+    //TEST
+    [SerializeField] RectTransform _loadingScreen;
+    [SerializeField] Slider _slider;
 
     [HideInInspector] public bool isPlaying {
         get {
@@ -46,8 +50,30 @@ public class GameManager : MonoBehaviour
 
     public void Play()
     {
+        StartCoroutine(LoadAsynchronously(_levelToLoad));
+    }
+
+    IEnumerator LoadAsynchronously(int pSceneIndex)
+    {
+        AsyncOperation lOperation = SceneManager.LoadSceneAsync(pSceneIndex);
+
+        _loadingScreen.gameObject.SetActive(true);
+
+        while (!lOperation.isDone)
+        {
+            float lProgress = Mathf.Clamp01(lOperation.progress / 0.9f);
+            _slider.value = lProgress;
+            
+            yield return null;
+        }
+
+        _loadingScreen.gameObject.SetActive(false);
+        if(pSceneIndex == _levelToLoad) LaunchGame();
+    }
+
+    public void LaunchGame()
+    {
         EventManager.TriggerEvent(EventManager.PLAY_EVENT);
-        SceneManager.LoadScene(_levelToLoad);
         _isPlaying = true;
     }
 
@@ -64,7 +90,7 @@ public class GameManager : MonoBehaviour
 
     public void Menu()
     {
-        SceneManager.LoadScene(_levelToLoad - 1);
+        StartCoroutine(LoadAsynchronously(_levelToLoad - 1));
     }
 
     public void GameOver()

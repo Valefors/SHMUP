@@ -51,10 +51,8 @@ MonoBehaviour:
   _freeSpeedFactor: 0.4
   _freeRotationSpeed: 0.7
   rotateWhenPickUp: 0
-  _explosionWhenDestroyed: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
+  _explosionWhenDestroyed: {fileID: 318658041164066152, guid: e6fc3b431a5480145aa9c788e31f376f,
     type: 3}
-  _colliderOfTheModule:
-  - {fileID: 0}
   free: 0
 --- !u!61 &8774394411750311164
 BoxCollider2D:
@@ -172,6 +170,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4522602327406355992}
     m_Modifications:
+    - target: {fileID: 100000, guid: 53a2761014912664cb567577489d42cc, type: 3}
+      propertyPath: m_Name
+      value: Scrap
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53a2761014912664cb567577489d42cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -223,10 +225,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 53a2761014912664cb567577489d42cc, type: 3}
       propertyPath: m_LocalScale.y
       value: 6.666666
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 53a2761014912664cb567577489d42cc, type: 3}
-      propertyPath: m_Name
-      value: Scrap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53a2761014912664cb567577489d42cc, type: 3}
