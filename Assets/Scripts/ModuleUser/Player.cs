@@ -61,6 +61,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        AkSoundEngine.PostEvent("Music", gameObject);
+
         saveInvulnerableDelay = _invulnerabilityDelay;
         percentage = (saveInvulnerableDelay * _invunerabilityPercentageDecrease) / 100;
         _transform = this.transform;
