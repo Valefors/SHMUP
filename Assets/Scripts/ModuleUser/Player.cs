@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     protected Transform _transform;
     [SerializeField]
     protected Animator _animator;
+    [SerializeField]
+    protected Animator _flameAnimator;
 
     private static string _VERTICAL_AXIS = "Vertical";
     private static string _HORIZONTAL_AXIS = "Horizontal";
@@ -124,6 +126,9 @@ public class Player : MonoBehaviour
             lMovement += VerticalSlowDown();
 
         Vector2 lPoint = new Vector2(transform.position.x + lMovement.x, transform.position.y + lMovement.y);
+        
+        _flameAnimator.SetFloat("Vertical", _verticalAccDecLerpValue);
+        _flameAnimator.SetFloat("Horizontal", _horizontalAccDecLerpValue);
 
         //if (SafeZone.IsOffField(lPoint)) return;
 
