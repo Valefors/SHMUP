@@ -23,7 +23,6 @@ public abstract class Module : MonoBehaviour
 
     public bool free = false;
 
-    //Fonction de l'état du cube
     public delegate void DelAction();
     DelAction moduleAction;
 
