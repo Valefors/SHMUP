@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 0.8
   _freeSpeedFactor: 0.2
-  _freeRotationSpeed: 0.7
+  _freeRotationSpeed: 10
   rotateWhenPickUp: 1
   _explosionWhenDestroyed: {fileID: 318658041164066152, guid: e6fc3b431a5480145aa9c788e31f376f,
     type: 3}
