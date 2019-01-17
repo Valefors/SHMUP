@@ -5,6 +5,8 @@ using UnityEngine;
 public class SpawnTrigger : MonoBehaviour
 {
     [SerializeField] GameObject[] _wavesArray;
+    [SerializeField] bool _isSkippable;
+    [SerializeField] int _numberOfEnemiesMax;
     bool _isActive = false;
 
     void OnDrawGizmos()
@@ -27,7 +29,13 @@ public class SpawnTrigger : MonoBehaviour
     {
         for (int i = 0; i < _wavesArray.Length; i++)
         {
-            Instantiate(_wavesArray[i]);
+            if (!_isSkippable || CanLaunch()) Instantiate(_wavesArray[i]);
         }
+    }
+
+    bool CanLaunch()
+    {
+        if (GameManager.manager.enemiesAlive >= _numberOfEnemiesMax) return false;
+        return true;
     }
 }

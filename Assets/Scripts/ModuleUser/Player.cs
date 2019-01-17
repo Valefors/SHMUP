@@ -59,9 +59,16 @@ public class Player : MonoBehaviour
     private float percentage;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        Camera.main.GetComponentInChildren<ParticleSystem>().Simulate(1);
+        Camera.main.GetComponentInChildren<ParticleSystem>().Play();
+    }
+
     private void Start()
     {
         AkSoundEngine.PostEvent("Music", gameObject);
+        
 
         saveInvulnerableDelay = _invulnerabilityDelay;
         percentage = (saveInvulnerableDelay * _invunerabilityPercentageDecrease) / 100;
