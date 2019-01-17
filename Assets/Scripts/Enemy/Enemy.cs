@@ -98,10 +98,10 @@ public class Enemy : MonoBehaviour
 
         if (_pv <= 0)
             Death();
-        else
-        {
+       // else
+       // {
             CreateParticleDamage(impactPosition);
-        }
+       // }
     }
 
     void CreateParticleDamage(Vector3 impactPosition)
