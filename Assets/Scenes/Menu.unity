@@ -552,6 +552,7 @@ GameObject:
   - component: {fileID: 647281989}
   - component: {fileID: 647281988}
   - component: {fileID: 647281992}
+  - component: {fileID: 647281993}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -656,6 +657,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84f57650e029404cb1e48c772695d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &647281993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647281987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37c820d65813df46a44eca4df6e1ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &736170730 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2113892110, guid: 860a24b0bb1b12740aa34adbf6e5f011,
@@ -705,6 +718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameOverScreen: {fileID: 1584660624}
   _pauseScreen: {fileID: 1816508781}
+  _titleScreen: {fileID: 1765263347}
   _localScore: {fileID: 5493438446308639058}
   _scoreTextArray:
   - {fileID: 1072197673}
@@ -836,6 +850,7 @@ GameObject:
   - component: {fileID: 1072104298}
   - component: {fileID: 1072104300}
   - component: {fileID: 1072104299}
+  - component: {fileID: 1072104301}
   m_Layer: 0
   m_Name: Leaderboard
   m_TagString: Untagged
@@ -882,6 +897,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MAX_LEADERBOARDS: 5
+--- !u!114 &1072104301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072104297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdad6ab1fb5d5a64bb745907333f8a75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1072197673 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4796017479116077451, guid: 046b6294d6c408c41b34a2716df79c56,
@@ -1101,6 +1128,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c84f57650e029404cb1e48c772695d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1389690056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389690051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5132c9073324c804ea74073caed30802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1413305638

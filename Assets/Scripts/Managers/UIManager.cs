@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] RectTransform _gameOverScreen;
     [SerializeField] RectTransform _pauseScreen;
+    [SerializeField] RectTransform _titleScreen;
 
     [Header("Leaderboard")]
     [SerializeField] Text _localScore;
@@ -39,6 +40,7 @@ public class UIManager : MonoBehaviour
         EventManager.StartListening(EventManager.RESUME_EVENT, Resume);
         EventManager.StartListening(EventManager.PAUSE_EVENT, Pause);
         EventManager.StartListening(EventManager.PLAY_EVENT, Play);
+        EventManager.StartListening(EventManager.MENU_EVENT, Menu);
         EventManager.StartListening(EventManager.SEND_SCORE_EVENT, UpdateUI);
 
         _gameOverScreen.gameObject.SetActive(false);
@@ -69,6 +71,13 @@ public class UIManager : MonoBehaviour
         _gameOverScreen.gameObject.SetActive(true);
         StartCoroutine(StaticFunctions.FadeIn(result => _gameOverScreen.GetComponent<CanvasGroup>().alpha = result, 0.5f));
         _localScore.text = ScoreManager.manager.score.ToString();
+    }
+
+    void Menu()
+    {
+        _gameOverScreen.gameObject.SetActive(false);
+        _pauseScreen.gameObject.SetActive(false);
+        _titleScreen.gameObject.SetActive(true);
     }
 
     #region Leaderboard
@@ -109,6 +118,7 @@ public class UIManager : MonoBehaviour
         EventManager.StopListening(EventManager.PAUSE_EVENT, Pause);
         EventManager.StopListening(EventManager.RESUME_EVENT, Resume);
         EventManager.StopListening(EventManager.PLAY_EVENT, Play);
+        EventManager.StopListening(EventManager.MENU_EVENT, Menu);
         EventManager.StopListening(EventManager.SEND_SCORE_EVENT, UpdateUI);
     }
 }

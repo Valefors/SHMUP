@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour
     public void Menu()
     {
         StartCoroutine(LoadAsynchronously(_levelToLoad - 1));
+        EventManager.TriggerEvent(EventManager.MENU_EVENT);
     }
 
     public void GameOver()
