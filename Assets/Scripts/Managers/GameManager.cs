@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public int enemiesAlive=0;
+
     private void Awake()
     {
         if (_manager == null) _manager = this;
