@@ -48,23 +48,26 @@ public class UIManager : MonoBehaviour
 
     public void Play()
     {
+        StartCoroutine(StaticFunctions.FadeOut(result => _gameOverScreen.GetComponent<CanvasGroup>().alpha = result, 0.5f));
         _gameOverScreen.gameObject.SetActive(false);
     }
 
     private void Pause()
     {
         _pauseScreen.gameObject.SetActive(true);
+        StartCoroutine(StaticFunctions.FadeIn(result => _pauseScreen.GetComponent<CanvasGroup>().alpha = result, 0.5f));
     }
 
     private void Resume()
     {
-        _pauseScreen.gameObject.SetActive(false);
+        StartCoroutine(StaticFunctions.FadeOut(result => _pauseScreen.GetComponent<CanvasGroup>().alpha = result, 0.2f, () => _pauseScreen.gameObject.SetActive(false)));
     }
 
     void GameOver()
     {
         UpdateUI();
         _gameOverScreen.gameObject.SetActive(true);
+        StartCoroutine(StaticFunctions.FadeIn(result => _gameOverScreen.GetComponent<CanvasGroup>().alpha = result, 0.5f));
         _localScore.text = ScoreManager.manager.score.ToString();
     }
 
