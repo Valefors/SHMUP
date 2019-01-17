@@ -20,6 +20,8 @@ public abstract class Module : MonoBehaviour
     [Header("Visual info")]
     [SerializeField]
     private GameObject _explosionWhenDestroyed;
+    [SerializeField]
+    private Animator _animator;
 
     public bool free = false;
 
@@ -92,6 +94,10 @@ public abstract class Module : MonoBehaviour
         Instantiate(_explosionWhenDestroyed, transform.position, Quaternion.identity, null);
         //destroy automatic on the explosion
     }
-    
+
+    public void ModuleClignote(bool turnOn)
+    {
+        _animator.SetBool("Invulnerability", turnOn);
+    }
 
 }

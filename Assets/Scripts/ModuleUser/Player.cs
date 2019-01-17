@@ -260,6 +260,8 @@ public class Player : MonoBehaviour
     {
         _isInvicible = true;
         _animator.SetBool("Invulnerability", !pIsGod); // !pIsGod --> to avoid a flickering player when in god mode
+        foreach (Module mod in _modulesList)
+            mod.ModuleClignote(!pIsGod);
         _invulnerabilitySprite.gameObject.SetActive(true);
         if(!pIsGod) Invoke("GetNormal", _invulnerabilityDelay);
     }
@@ -268,6 +270,8 @@ public class Player : MonoBehaviour
     {
         _isInvicible = false;
         _animator.SetBool("Invulnerability", false);
+        foreach (Module mod in _modulesList)
+            mod.ModuleClignote(false);
         _invulnerabilitySprite.gameObject.SetActive(false);
     }
 

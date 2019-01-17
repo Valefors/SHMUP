@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8774394411750311164}
   - component: {fileID: 4949183825062873407}
   - component: {fileID: 624928717029042590}
+  - component: {fileID: 5402549212051430275}
   m_Layer: 0
   m_Name: Scrap_Module
   m_TagString: Untagged
@@ -49,10 +50,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 0.5
   _freeSpeedFactor: 0.5
-  _freeRotationSpeed: 0.7
+  _freeRotationSpeed: 45
   rotateWhenPickUp: 0
   _explosionWhenDestroyed: {fileID: 318658041164066152, guid: e6fc3b431a5480145aa9c788e31f376f,
     type: 3}
+  _animator: {fileID: 5402549212051430275}
   free: 0
 --- !u!61 &8774394411750311164
 BoxCollider2D:
@@ -132,6 +134,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.20249224, y: 0.03493142}
   m_EdgeRadius: 0
+--- !u!95 &5402549212051430275
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522602325824180810}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd2e92831919c1743bfd1c36bea22a1b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4522602327406355993
 GameObject:
   m_ObjectHideFlags: 0
