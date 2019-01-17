@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 0.5
-  _freeSpeedFactor: 0.4
+  _freeSpeedFactor: 0.5
   _freeRotationSpeed: 0.7
   rotateWhenPickUp: 0
   _explosionWhenDestroyed: {fileID: 318658041164066152, guid: e6fc3b431a5480145aa9c788e31f376f,
@@ -226,6 +226,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 6.666666
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 53a2761014912664cb567577489d42cc, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: d13f29de48be58445af6355d16fa1c6b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53a2761014912664cb567577489d42cc, type: 3}
 --- !u!4 &8875949169134254504 stripped

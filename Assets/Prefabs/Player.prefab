@@ -107,7 +107,7 @@ Transform:
   m_GameObject: {fileID: 480005102199634988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 4579411173744339999}
   - {fileID: 480005102239676291}
@@ -133,7 +133,7 @@ MonoBehaviour:
   _shotRate: 0.2
   _modulesList:
   - {fileID: 4579411173744339998}
-  _speed: 8
+  _speed: 11
   _speedWeightCurve:
     serializedVersion: 2
     m_Curve:
@@ -169,8 +169,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   _invulnerabilitySprite: {fileID: 412273050}
   _invulnerabilityDelay: 2
-  _numberModuleDecreaserInvulnerability: 6
-  _invunerabilityPercentageDecrease: 8
+  _numberModuleDecreaserInvulnerability: 5
+  _invunerabilityPercentageDecrease: 7
   _horizontalAccelerationCurve:
     serializedVersion: 2
     m_Curve:
@@ -220,7 +220,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _horizontalAccSpeed: 8
-  _horizontalDecSpeed: 2
+  _horizontalDecSpeed: 3
   _verticalAccelerationCurve:
     serializedVersion: 2
     m_Curve:
@@ -270,7 +270,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _verticalAccSpeed: 8
-  _verticalDecSpeed: 2
+  _verticalDecSpeed: 3
   _swingCurve:
     serializedVersion: 2
     m_Curve:
@@ -508,8 +508,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 1, g: 0.89104843, b: 0, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 0.9684055, b: 0.7122642, a: 1}
+  m_Intensity: 0.7
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -877,16 +877,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 480005102199634978}
     m_Modifications:
-    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
-        type: 3}
-      propertyPath: m_Name
-      value: TrailSand
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
         type: 3}
       propertyPath: m_Name
@@ -1284,16 +1274,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
-        type: 3}
-      propertyPath: m_Name
-      value: TrailSand (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654863258839217041, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6654863258839217042, guid: a0b65346d5b833c4183c4f0a0a8cdc07,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1449,6 +1429,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4619175050824214076, guid: 2596468b58cd6e74293d14c5c2c6bafc,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619175050824214076, guid: 2596468b58cd6e74293d14c5c2c6bafc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619175050824214076, guid: 2596468b58cd6e74293d14c5c2c6bafc,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc,
         type: 3}
       propertyPath: isEnemy
@@ -1457,7 +1452,7 @@ PrefabInstance:
     - target: {fileID: 4619175050824214077, guid: 2596468b58cd6e74293d14c5c2c6bafc,
         type: 3}
       propertyPath: _shotRate
-      value: 0.2
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 4619175051328705137, guid: 2596468b58cd6e74293d14c5c2c6bafc,
         type: 3}
