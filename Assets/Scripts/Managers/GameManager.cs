@@ -70,7 +70,8 @@ public class GameManager : MonoBehaviour
         }
 
         _loadingScreen.gameObject.SetActive(false);
-        if(pSceneIndex == _levelToLoad) LaunchGame();
+
+        if (pSceneIndex == _levelToLoad) LaunchGame();
     }
 
     public void LaunchGame()
