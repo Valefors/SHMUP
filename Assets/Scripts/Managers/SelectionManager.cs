@@ -30,10 +30,26 @@ public class SelectionManager : MonoBehaviour
     delegate void DelAction();
     DelAction selectionUpdate;
 
+    private static SelectionManager _manager;
+    public static SelectionManager manager {
+        get {
+            return _manager;
+        }
+    }
+
+    private void Awake()
+    {
+        if (_manager == null) _manager = this;
+
+        else if (_manager != this) Destroy(gameObject);
+    }
+
     void Start()
     {
         EventManager.StartListening(EventManager.GAME_OVER_EVENT,SetModeGameOver);
         EventManager.StartListening(EventManager.PAUSE_EVENT, SetModePause);
+        EventManager.StartListening(EventManager.MENU_EVENT, SetModeMenu);
+
         SetModeMenu();
     }
 
@@ -100,5 +116,6 @@ public class SelectionManager : MonoBehaviour
     {
         EventManager.StopListening(EventManager.GAME_OVER_EVENT, SetModeGameOver);
         EventManager.StopListening(EventManager.PAUSE_EVENT, SetModePause);
+        EventManager.StopListening(EventManager.MENU_EVENT, SetModeMenu);
     }
 }

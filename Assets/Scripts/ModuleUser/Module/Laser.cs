@@ -36,15 +36,20 @@ public class Laser : ShooterModule
     protected virtual void Disable()
     {
         _laserShot.DesactiveMode();
+        Invoke("Preparation", _shotRate-1);
         Invoke("CanShootAgain", _shotRate);
+        if (_shotRate == 2) AkSoundEngine.PostEvent("Laser_loading2", gameObject);
+        if (_shotRate == 4) AkSoundEngine.PostEvent("Laser_loading4", gameObject);
+    }
+
+    protected void Preparation()
+    {
+        _laserShot.PreActiveMode();
     }
 
     protected virtual void CanShootAgain()
     {
         _canShoot = true;
-        _laserShot.PreActiveMode();
-        if (_shotRate == 2) AkSoundEngine.PostEvent("Laser_loading2", gameObject);
-        if (_shotRate == 4) AkSoundEngine.PostEvent("Laser_loading4", gameObject);
     }
 
     public override void SetModeFree()

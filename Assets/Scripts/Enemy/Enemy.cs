@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
 
     private void OnEnable()
     {
+        GameManager.manager.enemiesAlive++;
         _transform = this.transform;
 
         _rb = GetComponent<Rigidbody2D>();
@@ -139,6 +140,8 @@ public class Enemy : MonoBehaviour
             _ownLight.transform.SetParent(GameManager.manager.scrolling);
             Destroy(_ownLight.gameObject, 3);
         }
+
+        GameManager.manager.enemiesAlive--;
 
         Destroy(this.gameObject);
     }

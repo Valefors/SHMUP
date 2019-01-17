@@ -11,6 +11,7 @@ public class EventManager : MonoBehaviour
     public static string PLAY_EVENT = "play";
     public static string SEND_NAME_EVENT = "sendName";
     public static string SEND_SCORE_EVENT = "sendScore";
+    public static string MENU_EVENT = "menu";
 
     private Dictionary<string, UnityEvent> eventDictionary;
 

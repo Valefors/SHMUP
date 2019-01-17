@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public int enemiesAlive=0;
+
     private void Awake()
     {
         if (_manager == null) _manager = this;
@@ -68,7 +70,8 @@ public class GameManager : MonoBehaviour
         }
 
         _loadingScreen.gameObject.SetActive(false);
-        if(pSceneIndex == _levelToLoad) LaunchGame();
+
+        if (pSceneIndex == _levelToLoad) LaunchGame();
     }
 
     public void LaunchGame()
@@ -91,6 +94,7 @@ public class GameManager : MonoBehaviour
     public void Menu()
     {
         StartCoroutine(LoadAsynchronously(_levelToLoad - 1));
+        EventManager.TriggerEvent(EventManager.MENU_EVENT);
     }
 
     public void GameOver()
