@@ -374,4 +374,10 @@ public class Player : MonoBehaviour
         _weight = lNewWeight;
     }
 
+    public void DefeatedBoss()
+    {
+        //Go To A Point, stop shooting. Screenshot after a while
+    }
+
+
 }

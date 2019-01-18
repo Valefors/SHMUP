@@ -122,15 +122,21 @@ public class Enemy : MonoBehaviour
     {
         if (_boss)
         {
-            if (!GameManager.manager.isLD) EventManager.TriggerEvent(EventManager.GAME_OVER_EVENT);
+            BossDeath();
         }
+        else
+        {
+            float randomValue = Random.Range(0f, 1f);
 
+            if (randomValue < _dropLoot)
+                DropItem();
 
-        float randomValue = Random.Range(0f,1f);
+            TrueDeath();
+        }
+    }
 
-        if (randomValue < _dropLoot)
-            DropItem();
-
+    void TrueDeath()
+    {
         AkSoundEngine.PostEvent("Kill", gameObject);
         ScoreManager.manager.UpdateScore(_scoreValue);
         CreateParticleDeath(_transform.position);
@@ -144,6 +150,29 @@ public class Enemy : MonoBehaviour
         GameManager.manager.enemiesAlive--;
 
         Destroy(this.gameObject);
+    }
+
+    void BossDeath()
+    {
+        Shaker.instance.FinalShake();
+
+        GetComponentInChildren<Animator>().SetTrigger("Death");
+
+        //Stop shooting. Move to a point (fixe);
+        //+ call Player.DefeatedBoss();
+        //Screen goes white
+
+        //Wait a while then 
+        StartCoroutine(WaitForEndBossDeathAnimation());
+    }
+
+    IEnumerator WaitForEndBossDeathAnimation()
+    {
+        yield return new WaitForSeconds(5f);
+
+        if (!GameManager.manager.isLD) EventManager.TriggerEvent(EventManager.GAME_OVER_EVENT);
+
+        TrueDeath();
     }
 
 
