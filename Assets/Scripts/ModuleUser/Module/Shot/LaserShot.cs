@@ -16,6 +16,12 @@ public class LaserShot : MonoBehaviour
     [SerializeField]
     private SpriteRenderer _spriteRdr;
 
+    public void ResetAnim()
+    {
+        if (_animator == null) _animator = this.gameObject.GetComponentInChildren<Animator>();
+        _animator.SetTrigger("Reset");
+    }
+    
     public void PreActiveMode()
     {
         if (_animator == null) _animator = this.gameObject.GetComponentInChildren<Animator>();
