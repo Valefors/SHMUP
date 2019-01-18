@@ -71,7 +71,8 @@ public class SelectionManager : MonoBehaviour
         }
     }
 
-    void SetModeMenu()
+    //System D "public"
+    public void SetModeMenu()
     {
         EventSystem.current.firstSelectedGameObject = _menuButtonsAray[0];
         EventSystem.current.SetSelectedGameObject(_menuButtonsAray[0]);
