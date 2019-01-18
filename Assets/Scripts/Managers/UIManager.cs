@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -17,7 +18,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] Text[] _nameTextArray;
     [Header("Enter Name")]
     public InputField localPlayerName;
+
     [SerializeField] Button _sendButton;
+
+    [Header("Leaderboard Menu")]
+    [Header("- Scores")]
+    [SerializeField] Text[] _scoreMenuTextArray;
+    [Header("- Names")]
+    [SerializeField] Text[] _nameMenuTextArray;
+
+    [Header("FIRST BUTTON SELECTION")]
+    [SerializeField] Button _creditsButton;
+    [SerializeField] Button _leaderboardButton;
 
     private static UIManager _manager;
     public static UIManager manager {
@@ -80,6 +92,29 @@ public class UIManager : MonoBehaviour
         _titleScreen.gameObject.SetActive(true);
     }
 
+    public void OnClickBack()
+    {
+        SelectionManager.manager.SetModeMenu();
+    }
+
+    public void OnClickLeaderBoard()
+    {
+        EventSystem.current.firstSelectedGameObject = _leaderboardButton.gameObject;
+        EventSystem.current.SetSelectedGameObject(_leaderboardButton.gameObject);
+
+        for (int i = 0; i < Leaderboard.scoreList.Count; i++)
+        {
+            _nameMenuTextArray[i].text = Leaderboard.scoreList[i].name;
+            _scoreMenuTextArray[i].text = Leaderboard.scoreList[i].score.ToString();
+        }
+    }
+
+    public void OnClickCredits()
+    {
+        EventSystem.current.firstSelectedGameObject = _creditsButton.gameObject;
+        EventSystem.current.SetSelectedGameObject(_creditsButton.gameObject);
+    }
+
     #region Leaderboard
 
     public void OnClickTextField()
@@ -106,7 +141,8 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+      //  if (Input.GetKeyDown(KeyCode.Escape))
+      if(Input.GetButtonDown("Cancel"))
         {
             EventManager.TriggerEvent(EventManager.PAUSE_EVENT);
         }

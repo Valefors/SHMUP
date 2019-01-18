@@ -7,6 +7,9 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 public class GameManager : MonoBehaviour
 {
+    [Header("PAUSE GAME FEEL")]
+    [SerializeField] float _pauseValue = 0.15f;
+
     [SerializeField] int _levelToLoad = 1;
 
     public bool isLD = false;
@@ -100,6 +103,19 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         _isPlaying = false;
+    }
+
+    public void PauseFeel()
+    {
+       StartCoroutine(PauseCoroutine());
+    }
+
+    private IEnumerator PauseCoroutine()
+    {
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(_pauseValue);
+        Time.timeScale = 1;
+        yield return null;
     }
 
     public void Quit()
