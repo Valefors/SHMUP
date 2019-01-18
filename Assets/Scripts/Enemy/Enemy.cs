@@ -157,8 +157,11 @@ public class Enemy : MonoBehaviour
     {
         Shaker.instance.FinalShake();
 
+        _pF = null;
+
         GetComponentInChildren<Animator>().SetTrigger("Death");
 
+        FindObjectOfType<Player>().DefeatedBoss();
         //Stop shooting. Move to a point (fixe);
         //+ call Player.DefeatedBoss();
         //Screen goes white
@@ -167,9 +170,24 @@ public class Enemy : MonoBehaviour
         StartCoroutine(WaitForEndBossDeathAnimation());
     }
 
+    IEnumerator GoToPoint(Vector3 pointToGo, float timeToDoIt, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        float lLerp = 0;
+        Vector3 startPos = _transform.position;
+        while (lLerp < 1)
+        {
+            lLerp += Time.deltaTime / timeToDoIt;
+            _transform.position = Vector3.Lerp(startPos, pointToGo, lLerp);
+            yield return new WaitForSeconds(0.01f);
+        }
+        _transform.position = pointToGo;
+    }
+
+
     IEnumerator WaitForEndBossDeathAnimation()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(8f);
 
         if (!GameManager.manager.isLD) EventManager.TriggerEvent(EventManager.GAME_OVER_EVENT);
 

@@ -11,6 +11,8 @@ public class PathFollower : MonoBehaviour
 
     public int currentNode;
 
+    public bool draw = true;
+
     static Vector3 _currentPositionHolder;
 
     private void Start()
@@ -50,6 +52,7 @@ public class PathFollower : MonoBehaviour
 
     private void Update()
     {
-        DrawLine();
+        if(draw)
+            DrawLine();
     }
 }

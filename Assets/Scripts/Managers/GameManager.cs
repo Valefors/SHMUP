@@ -105,6 +105,11 @@ public class GameManager : MonoBehaviour
         _isPlaying = false;
     }
 
+    public void BossDefeated()
+    {
+        _isPlaying = false;
+    }
+
     public void PauseFeel()
     {
        StartCoroutine(PauseCoroutine());
