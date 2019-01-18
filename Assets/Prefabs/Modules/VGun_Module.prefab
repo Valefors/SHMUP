@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 917282331905797703}
   - component: {fileID: 905220051}
   - component: {fileID: 6840503414416530373}
+  - component: {fileID: 587278014921821528}
   m_Layer: 0
   m_Name: VGun_Module
   m_TagString: Untagged
@@ -48,10 +49,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 0.9
   _freeSpeedFactor: 0.2
-  _freeRotationSpeed: 0.7
+  _freeRotationSpeed: 15
   rotateWhenPickUp: 1
   _explosionWhenDestroyed: {fileID: 318658041164066152, guid: e6fc3b431a5480145aa9c788e31f376f,
     type: 3}
+  _animator: {fileID: 587278014921821528}
   free: 0
   isEnemy: 1
   _shotRate: 1.5
@@ -95,6 +97,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9535963, y: 0.6374247}
   m_EdgeRadius: 0
+--- !u!95 &587278014921821528
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905220050}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd2e92831919c1743bfd1c36bea22a1b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &487523820072821130
 GameObject:
   m_ObjectHideFlags: 0
