@@ -113,6 +113,7 @@ public class Enemy : MonoBehaviour
     void CreateParticleDeath(Vector3 impactPosition)
     {
         Instantiate(_explosionWhenDead, impactPosition, Quaternion.identity, null);
+        GameManager.manager.PauseFeel();
         //destroy automatic on the explosion
     }
 
