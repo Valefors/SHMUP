@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -69,6 +70,11 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+
+        GameManager.manager.BossHealthBar = GameObject.FindGameObjectWithTag("Finish").GetComponent<Slider>();
+        GameManager.manager.fill = GameManager.manager.BossHealthBar.GetComponentsInChildren<Image>()[1];
+        
+        GameManager.manager.BossHealthBar.gameObject.SetActive(false);
         AkSoundEngine.PostEvent("Music", gameObject);
         
 
