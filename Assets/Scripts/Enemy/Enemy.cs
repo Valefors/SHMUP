@@ -113,6 +113,7 @@ public class Enemy : MonoBehaviour
     void CreateParticleDeath(Vector3 impactPosition)
     {
         Instantiate(_explosionWhenDead, impactPosition, Quaternion.identity, null);
+        GameManager.manager.PauseFeel();
         //destroy automatic on the explosion
     }
 
@@ -122,15 +123,21 @@ public class Enemy : MonoBehaviour
     {
         if (_boss)
         {
-            if (!GameManager.manager.isLD) EventManager.TriggerEvent(EventManager.GAME_OVER_EVENT);
+            BossDeath();
         }
+        else
+        {
+            float randomValue = Random.Range(0f, 1f);
 
+            if (randomValue < _dropLoot)
+                DropItem();
 
-        float randomValue = Random.Range(0f,1f);
+            TrueDeath();
+        }
+    }
 
-        if (randomValue < _dropLoot)
-            DropItem();
-
+    void TrueDeath()
+    {
         AkSoundEngine.PostEvent("Kill", gameObject);
         ScoreManager.manager.UpdateScore(_scoreValue);
         CreateParticleDeath(_transform.position);
@@ -144,6 +151,47 @@ public class Enemy : MonoBehaviour
         GameManager.manager.enemiesAlive--;
 
         Destroy(this.gameObject);
+    }
+
+    void BossDeath()
+    {
+        Shaker.instance.FinalShake();
+
+        _pF = null;
+
+        GetComponentInChildren<Animator>().SetTrigger("Death");
+
+        FindObjectOfType<Player>().DefeatedBoss();
+        //Stop shooting. Move to a point (fixe);
+        //+ call Player.DefeatedBoss();
+        //Screen goes white
+
+        //Wait a while then 
+        StartCoroutine(WaitForEndBossDeathAnimation());
+    }
+
+    IEnumerator GoToPoint(Vector3 pointToGo, float timeToDoIt, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        float lLerp = 0;
+        Vector3 startPos = _transform.position;
+        while (lLerp < 1)
+        {
+            lLerp += Time.deltaTime / timeToDoIt;
+            _transform.position = Vector3.Lerp(startPos, pointToGo, lLerp);
+            yield return new WaitForSeconds(0.01f);
+        }
+        _transform.position = pointToGo;
+    }
+
+
+    IEnumerator WaitForEndBossDeathAnimation()
+    {
+        yield return new WaitForSeconds(8f);
+
+        if (!GameManager.manager.isLD) EventManager.TriggerEvent(EventManager.GAME_OVER_EVENT);
+
+        TrueDeath();
     }
 
 

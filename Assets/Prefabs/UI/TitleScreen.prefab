@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -170, y: 90}
+  m_AnchoredPosition: {x: -170, y: 97}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7719415358475253605
@@ -167,7 +167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003817307796357588}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -170, y: 90, z: 0}
+  m_LocalPosition: {x: -170, y: 97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3303478935352315583}
@@ -682,7 +682,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d1db28578907f554591c179fa0f4ebb9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7269d5be544b7134f981adfb19108bb3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -718,7 +718,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 720d3b46c3bb79341afc113e00e9f927,
+    m_HighlightedSprite: {fileID: 21300000, guid: 5ce7f560cd50e364b85d6a10d3a8693a,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -790,8 +790,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 10.2, y: -202.7}
-  m_SizeDelta: {x: 1818.3, y: 377.6}
+  m_AnchoredPosition: {x: 0, y: -202.7}
+  m_SizeDelta: {x: 1920, y: 377.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5192506404115808426
 CanvasRenderer:
@@ -822,7 +822,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e63a720b29dfe6349a7914b74c478ac8, type: 3}
+    m_Font: {fileID: 12800000, guid: f2bcdaaa941b17245b891905252eb65f, type: 3}
     m_FontSize: 240
     m_FontStyle: 1
     m_BestFit: 0
@@ -834,7 +834,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Odds and Ends
+  m_Text: Junkraft
 --- !u!1 &5192506404543311359
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,14 +900,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: bd423a4fc06a67244867f8da4eedf917, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a1abf9f53f92ed84fa70ce249a811b55, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

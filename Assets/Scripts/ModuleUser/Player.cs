@@ -92,7 +92,6 @@ public class Player : MonoBehaviour
                 GetInvicibility();
             else
                 GetInvicibility(true);
-
         }
 
         if (!GameManager.manager.isPlaying) return;
@@ -373,5 +372,28 @@ public class Player : MonoBehaviour
         }
         _weight = lNewWeight;
     }
+
+    public void DefeatedBoss()
+    {
+        GameManager.manager.BossDefeated();
+        StartCoroutine(GoToPoint(new Vector3(0,-8,0), 3,0));
+        StartCoroutine(GoToPoint(new Vector3(0, 16, 0), 1, 6));
+        //Go To A Point, stop shooting. Screenshot after a while
+    }
+
+    IEnumerator GoToPoint(Vector3 pointToGo, float timeToDoIt, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        float lLerp = 0;
+        Vector3 startPos = _transform.position;
+        while (lLerp < 1)
+        {
+            lLerp += Time.deltaTime / timeToDoIt;
+            _transform.position = Vector3.Lerp(startPos, pointToGo, lLerp);
+            yield return new WaitForSeconds(0.01f);
+        }
+        _transform.position = pointToGo;
+    }
+
 
 }

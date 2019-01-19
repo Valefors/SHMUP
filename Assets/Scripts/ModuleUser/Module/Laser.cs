@@ -43,6 +43,12 @@ public class Laser : ShooterModule
         if (_shotRate == 4) AkSoundEngine.PostEvent("Laser_loading4", gameObject);
     }
 
+    public override void DoActionFree()
+    {
+        _laserShot.ResetAnim();
+        base.DoActionFree();
+    }
+
     protected void Preparation()
     {
         _laserShot.PreActiveMode();
