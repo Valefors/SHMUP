@@ -877,7 +877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 181fd1ccb90d3ae49a61c711cedec88c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pauseValue: 0.15
+  _pauseValue: 0.1
   _levelToLoad: 1
   BossHealthBar: {fileID: 0}
   isLD: 0
