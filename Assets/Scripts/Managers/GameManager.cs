@@ -8,9 +8,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [Header("PAUSE GAME FEEL")]
-    [SerializeField] float _pauseValue = 0.15f;
+    [SerializeField] float _pauseValue = 0.12f;
 
     [SerializeField] int _levelToLoad = 1;
+
+    [SerializeField] public Slider BossHealthBar;
 
     public bool isLD = false;
 
@@ -37,6 +39,10 @@ public class GameManager : MonoBehaviour
     }
 
     public int enemiesAlive=0;
+    public bool hasFilled = false;
+    bool startFill = false;
+    int bossMaxHealth;
+    public Image fill;
 
     private void Awake()
     {
@@ -52,6 +58,28 @@ public class GameManager : MonoBehaviour
         EventManager.StartListening(EventManager.PAUSE_EVENT, Pause);
         _isPlaying = true;
     }
+
+    public void UpdateBossHealth(int newHealth)
+    {
+        BossHealthBar.value = newHealth;
+        Color c = new Color(fill.color.r, fill.color.g, fill.color.b);
+        c.g = (newHealth*0.005f);
+        fill.color = c;
+    }
+
+    public void EnableBossHealthBar(int maxHealth)
+    {
+        BossHealthBar.gameObject.SetActive(true);
+        BossHealthBar.value = 0;
+        BossHealthBar.maxValue = maxHealth;
+        bossMaxHealth = maxHealth;
+        startFill = true;
+    }
+
+    public void DisableBossHealthBar()
+    {
+        BossHealthBar.gameObject.SetActive(false);
+    }   
 
     public void Play()
     {
@@ -103,10 +131,13 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         _isPlaying = false;
+        enemiesAlive = 0;
+        hasFilled = false;
     }
 
     public void BossDefeated()
     {
+        DisableBossHealthBar();
         _isPlaying = false;
     }
 
@@ -133,6 +164,20 @@ public class GameManager : MonoBehaviour
         EventManager.StopListening(EventManager.PAUSE_EVENT, Pause);
     }
 
+    private void FixedUpdate()
+    {
+        if ((startFill && !hasFilled) && BossHealthBar.value < bossMaxHealth)
+        {
+            BossHealthBar.value += Time.deltaTime * 100;
+        }
+        else if ((startFill && !hasFilled) && BossHealthBar.value >= bossMaxHealth)
+        {
+            BossHealthBar.value = bossMaxHealth;
+            hasFilled = true;
+            startFill = false;
+        }
+    }
+
 #if UNITY_EDITOR
     [ExecuteInEditMode]
     void Update()
@@ -146,7 +191,6 @@ public class GameManager : MonoBehaviour
             Debug.DrawLine(bounds[2], bounds[1], Color.green);
             Debug.DrawLine(bounds[2], bounds[3], Color.green);
         }
-
     }
 #endif
 }
