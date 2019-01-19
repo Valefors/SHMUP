@@ -1029,7 +1029,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '#1 EMELINATOR'
+  m_Text: '#1'
 --- !u!1 &1670632326764871219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,7 +1484,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '#3 COFFEE NAZI'
+  m_Text: '#3'
 --- !u!1 &5043304361077973218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,7 +1563,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '#2 RETARDED'
+  m_Text: '#2'
 --- !u!1 &5723181951682308661
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,7 +2235,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '#4 ESCERGO'
+  m_Text: '#4'
 --- !u!1 &7537440833171241918
 GameObject:
   m_ObjectHideFlags: 0
