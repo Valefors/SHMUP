@@ -29,13 +29,14 @@ public class SpawnTrigger : MonoBehaviour
     {
         for (int i = 0; i < _wavesArray.Length; i++)
         {
-            if (!_isSkippable || CanLaunch()) Instantiate(_wavesArray[i]);
+            if (!_isSkippable || CanLaunch(_wavesArray[i])) Instantiate(_wavesArray[i]);
         }
     }
 
-    bool CanLaunch()
+    bool CanLaunch(GameObject wave)
     {
-        if (GameManager.manager.enemiesAlive >= _numberOfEnemiesMax) return false;
+        int enemiesInWave = wave.GetComponentsInChildren<Enemy>().Length;
+        if (GameManager.manager.enemiesAlive+enemiesInWave > _numberOfEnemiesMax) return false;
         return true;
     }
 }

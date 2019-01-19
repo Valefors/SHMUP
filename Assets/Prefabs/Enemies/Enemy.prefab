@@ -515,6 +515,10 @@ MonoBehaviour:
   _explosionWhenDead: {fileID: 8216606441287394681, guid: 722653e6086ad7b40b96e038e32e595b,
     type: 3}
   _ownLight: {fileID: 8990251900635376954}
+  sail1: {fileID: 6588050636299444498}
+  sail2: {fileID: 6588050636299444496}
+  sail3: {fileID: 6588050636299444510}
+  baseSailMaterial: {fileID: 2100000, guid: 16f262b423001f84dae7f3038c3ae0c9, type: 2}
   _speed: 5
   _moveLoop: 1
   _pv: 1
@@ -808,6 +812,24 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8418d38d2d546f7428236020254a030b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+--- !u!23 &6588050636299444510 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300024, guid: 55d39b7f90ee4264b98b277c2855c1c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6588050636297288038}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6588050636299444496 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300022, guid: 55d39b7f90ee4264b98b277c2855c1c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6588050636297288038}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6588050636299444498 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300020, guid: 55d39b7f90ee4264b98b277c2855c1c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6588050636297288038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6588050636297675750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 55d39b7f90ee4264b98b277c2855c1c6,
