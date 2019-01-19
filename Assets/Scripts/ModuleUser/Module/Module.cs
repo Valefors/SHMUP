@@ -50,7 +50,6 @@ public abstract class Module : MonoBehaviour
     {
         _lightMesh = _canonObject.GetComponent<MeshRenderer>();
         Material[] tempList = _lightMesh.materials;
-        Debug.Log("Taille des matériaux:" + tempList.Length);
         
         mainI = 3;
         switch(moduleType)
@@ -126,10 +125,10 @@ public abstract class Module : MonoBehaviour
         if(free)
         {
             //_mainLightMaterial.EnableKeyword("_EMISSION");
-            _mainLightMaterial.SetColor("_EmissionColor", _mainLightMaterial.color* 1.5f);
+            _mainLightMaterial.SetColor("_EmissionColor", _mainLightMaterial.color* 1.4f);
             _mainLightMaterial.globalIlluminationFlags = MaterialGlobalIlluminationFlags.RealtimeEmissive;
 
-            _secLightMaterial.SetColor("_EmissionColor", _secLightMaterial.color* 1.4f);
+            _secLightMaterial.SetColor("_EmissionColor", _secLightMaterial.color* 1.2f);
             _secLightMaterial.globalIlluminationFlags = MaterialGlobalIlluminationFlags.RealtimeEmissive;
         }
        else
