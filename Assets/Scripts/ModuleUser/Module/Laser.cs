@@ -14,6 +14,7 @@ public class Laser : ShooterModule
     // Start is called before the first frame update
     void Start()
     {
+        moduleType = 2;
         _transform = GetComponent<Transform>();
     }
 

@@ -24,6 +24,7 @@ public class Canon : ShooterModule
     // Start is called before the first frame update
     void Start()
     {
+        moduleType = 1;
         if(_waitBeforeShoot)
         {
             isWaiting = true;

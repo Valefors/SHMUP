@@ -47,13 +47,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4063c4c9f21c84f478471cdee38eea18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weight: 0.8
+  _weight: 0.7
   _freeSpeedFactor: 0.2
   _freeRotationSpeed: 10
   rotateWhenPickUp: 1
   _explosionWhenDestroyed: {fileID: 318658041164066152, guid: e6fc3b431a5480145aa9c788e31f376f,
     type: 3}
   _animator: {fileID: 434878097999596067}
+  _canonObject: {fileID: 6155585515481991790}
+  _freeLight: {fileID: 2100000, guid: 2f27b1b7bac689742a01dfa026987e50, type: 2}
+  _freeRedLight: {fileID: 2100000, guid: 3bd90239d2b02374f9d54348f351e5bc, type: 2}
   free: 0
   isEnemy: 1
   _shotRate: 2
@@ -201,8 +204,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 1dc499e5030c5034396803d3ca5bbf49, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: e4f3c6e8398edda4b9804daebfb632d2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dc499e5030c5034396803d3ca5bbf49, type: 3}
+--- !u!1 &6155585515481991790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 1dc499e5030c5034396803d3ca5bbf49,
+    type: 3}
+  m_PrefabInstance: {fileID: 6155585515482090702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6155585515482486350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1dc499e5030c5034396803d3ca5bbf49,

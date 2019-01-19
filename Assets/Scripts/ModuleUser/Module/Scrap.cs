@@ -9,4 +9,9 @@ public class Scrap : Module
     {
         return;
     }
+
+    private void Start()
+    {
+        moduleType = 3;
+    }
 }

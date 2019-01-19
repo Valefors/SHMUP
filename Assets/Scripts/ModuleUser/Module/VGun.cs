@@ -9,6 +9,7 @@ public class VGun : Canon
 
     void Start()
     {
+        moduleType = 4;
         Transform _firstChild = transform.GetChild(0).transform;
         //Obsolete 
         if(_canonSpawnArray == null)
