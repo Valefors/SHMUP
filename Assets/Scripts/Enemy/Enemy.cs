@@ -46,35 +46,35 @@ public class Enemy : MonoBehaviour
         baseColor = new Color(sailColor.r, sailColor.g, sailColor.b, 1);
         if(maxHP <=3)
         {
-            baseColor.g = 0.8f;
+            baseColor.g = 0.7f;
             div = 3;
         }
         else if(maxHP <=6)
         {
-            baseColor.g = 0.7f;
+            baseColor.g = 0.6f;
             div = 6;
         }
         else if (maxHP <= 12)
         {
-            baseColor.g = 0.6f;
+            baseColor.g = 0.5f;
             div = 12;
         }
         else if (maxHP <= 18)
         {
-            baseColor.g = 0.5f;
-            baseColor.b = 0.6f;
+            baseColor.g = 0.4f;
+            baseColor.b = 0.5f;
             div = 18;
         }
         else if (maxHP <= 30)
         {
-            baseColor.g = 0.4f;
-            baseColor.b = 0.5f;
+            baseColor.g = 0.3f;
+            baseColor.b = 0.4f;
             div = 30;
         }
         else if (maxHP <= 50)
         {
-            baseColor.g = 0.2f;
-            baseColor.b = 0.3f;
+            baseColor.g = 0.1f;
+            baseColor.b = 0.2f;
             div = 50;
         }
         else if (maxHP <= 200)
@@ -280,10 +280,8 @@ public class Enemy : MonoBehaviour
 
     private void LifeSail()
     {
-        Debug.Log("couleur:" + sailColor);
-        Debug.Log("div:" + div);
-        sailColor.g = (baseColor.g + ((maxHP- _pv) / div));
-        sailColor.b = (baseColor.b + ((maxHP - _pv) / div));
+        sailColor.g = (baseColor.g + ((maxHP- _pv) / maxHP));
+        sailColor.b = (baseColor.b + ((maxHP - _pv) / maxHP));
         if(maxHP==200)sailColor.r = (baseColor.r + ((maxHP - _pv) / div));
 
         sail1.material.SetColor("_Color", sailColor);
