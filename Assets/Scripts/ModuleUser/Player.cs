@@ -70,7 +70,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-
         GameManager.manager.BossHealthBar = GameObject.FindGameObjectWithTag("Finish").GetComponent<Slider>();
         GameManager.manager.fill = GameManager.manager.BossHealthBar.GetComponentsInChildren<Image>()[1];
         
