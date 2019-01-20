@@ -35,7 +35,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	89547824	Bois01	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\Bois01_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Bois\Bois01		356080
 	91520928	Bois03	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\JunkBlessure\Bois03_C624F882.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Bois\Bois03		165328
 	110549905	Electricite	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\Laser\LaserActif\Electricite_A17F745C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif2\Electricite		385476
-	117732274	OddsAndEnds	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\OddsAndEnds_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Music\OddsAndEnds		55222924
 	119410799	Bois01	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\JunkBlessure\Bois01_396E36E7.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Bois\Bois01		133960
 	171690536	Electricite	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\Laser\LaserActif\Electricite_5EEA40C7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif4\Electricite		769632
 	203401469	Bois03	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\Bois03_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Bois\Bois03		449976
@@ -47,6 +46,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	352100003	vissage02	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\InstallationModule\vissage02_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\InstallationModule\Vissage\vissage02		259564
 	407585590	Explosion03	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\EnnemiDétruit\Explosion03_51648289.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Explosion\Explosion03		305112
 	421371799	Bois02	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\JunkBlessure\Bois02_77E4AEB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Bois\Bois02		128128
+	438973287	OddsAndEnds	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\OddsAndEnds_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\New Music Playlist Container\OddsAndEnds\OddsAndEnds		55222924
 	444156013	Boucle01	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\Laser\LaserActif\Boucle01_52B98F53.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif2\Boucle01		471624
 	472770388	Charge4secondes	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\Charge4secondes_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\ChargeLaser\Charge4secondes		948512
 	475733098	Boucle01	C:\Users\Pc\Documents\WwiseProjects\Shmup\Junk\.cache\Windows\SFX\Laser\LaserActif\Boucle01_E73015F6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif4\Boucle01		853232
