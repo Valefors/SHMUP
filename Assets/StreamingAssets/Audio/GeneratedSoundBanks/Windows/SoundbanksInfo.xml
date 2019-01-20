@@ -45,10 +45,6 @@
 					<ShortName>Laser\LaserActif\Electricite.wav</ShortName>
 					<Path>SFX\Laser\LaserActif\Electricite_A17F745C.wem</Path>
 				</File>
-				<File Id="117732274" Language="SFX">
-					<ShortName>OddsAndEnds.wav</ShortName>
-					<Path>SFX\OddsAndEnds_56D34C19.wem</Path>
-				</File>
 				<File Id="119410799" Language="SFX">
 					<ShortName>JunkBlessure\Bois01.wav</ShortName>
 					<Path>SFX\JunkBlessure\Bois01_396E36E7.wem</Path>
@@ -92,6 +88,10 @@
 				<File Id="421371799" Language="SFX">
 					<ShortName>JunkBlessure\Bois02.wav</ShortName>
 					<Path>SFX\JunkBlessure\Bois02_77E4AEB9.wem</Path>
+				</File>
+				<File Id="438973287" Language="SFX">
+					<ShortName>OddsAndEnds.wav</ShortName>
+					<Path>SFX\OddsAndEnds_8956FC97.wem</Path>
 				</File>
 				<File Id="444156013" Language="SFX">
 					<ShortName>Laser\LaserActif\Boucle01.wav</ShortName>
