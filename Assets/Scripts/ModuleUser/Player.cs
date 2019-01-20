@@ -70,9 +70,12 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        Image[] tempList = null;
         GameManager.manager.BossHealthBar = GameObject.FindGameObjectWithTag("Finish").GetComponent<Slider>();
-        GameManager.manager.fill = GameManager.manager.BossHealthBar.GetComponentsInChildren<Image>()[1];
-        
+        if (GameManager.manager.BossHealthBar != null) tempList=GameManager.manager.BossHealthBar.GetComponentsInChildren<Image>();
+        if(tempList!= null && tempList.Length>=2) GameManager.manager.fill = tempList[1];
+
+
         GameManager.manager.BossHealthBar.gameObject.SetActive(false);
         AkSoundEngine.PostEvent("Music", gameObject);
         
