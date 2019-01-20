@@ -171,7 +171,7 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
       //  if (Input.GetKeyDown(KeyCode.Escape))
-      if(Input.GetButtonDown("Cancel") && !_titleScreen.gameObject.activeInHierarchy && !_gameOverScreen.gameObject.activeInHierarchy)
+      if(Input.GetButtonDown("Cancel") && !_titleScreen.gameObject.activeInHierarchy && !_gameOverScreen.gameObject.activeInHierarchy && !_tutorialScreen.gameObject.activeInHierarchy)
         {
             EventManager.TriggerEvent(EventManager.PAUSE_EVENT);
         }
