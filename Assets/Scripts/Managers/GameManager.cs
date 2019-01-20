@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
     {
         EventManager.StartListening(EventManager.GAME_OVER_EVENT, GameOver);
         EventManager.StartListening(EventManager.PAUSE_EVENT, Pause);
+        EventManager.StartListening(EventManager.END_TUTORIAL_EVENT, EndTutorial);
+
         _isPlaying = true;
     }
 
@@ -108,6 +110,17 @@ public class GameManager : MonoBehaviour
     public void LaunchGame()
     {
         EventManager.TriggerEvent(EventManager.PLAY_EVENT);
+        Tutorial();
+    }
+
+    void Tutorial()
+    {
+        _isPlaying = false;
+        EventManager.TriggerEvent(EventManager.TUTORIAL_EVENT);
+    }
+
+    void EndTutorial()
+    {
         _isPlaying = true;
     }
 
@@ -162,6 +175,8 @@ public class GameManager : MonoBehaviour
     void OnDisable()
     {
         EventManager.StopListening(EventManager.PAUSE_EVENT, Pause);
+        EventManager.StopListening(EventManager.GAME_OVER_EVENT, GameOver);
+        EventManager.StopListening(EventManager.END_TUTORIAL_EVENT, EndTutorial);
     }
 
     private void FixedUpdate()

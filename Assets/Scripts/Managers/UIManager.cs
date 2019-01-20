@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] RectTransform _gameOverScreen;
     [SerializeField] RectTransform _pauseScreen;
     [SerializeField] RectTransform _titleScreen;
+    [SerializeField] RectTransform _tutorialScreen;
 
     [Header("Leaderboard")]
     [SerializeField] Text _localScore;
@@ -30,6 +31,7 @@ public class UIManager : MonoBehaviour
     [Header("FIRST BUTTON SELECTION")]
     [SerializeField] Button _creditsButton;
     [SerializeField] Button _leaderboardButton;
+    [SerializeField] Button _tutorialButton;
 
     private static UIManager _manager;
     public static UIManager manager {
@@ -54,6 +56,7 @@ public class UIManager : MonoBehaviour
         EventManager.StartListening(EventManager.PLAY_EVENT, Play);
         EventManager.StartListening(EventManager.MENU_EVENT, Menu);
         EventManager.StartListening(EventManager.SEND_SCORE_EVENT, UpdateUI);
+        EventManager.StartListening(EventManager.TUTORIAL_EVENT, Tutorial);
 
         _gameOverScreen.gameObject.SetActive(false);
         _pauseScreen.gameObject.SetActive(false);
@@ -64,17 +67,41 @@ public class UIManager : MonoBehaviour
     {
         StartCoroutine(StaticFunctions.FadeOut(result => _gameOverScreen.GetComponent<CanvasGroup>().alpha = result, 0.5f));
         _gameOverScreen.gameObject.SetActive(false);
+        Cursor.visible = false;
+    }
+
+    void Tutorial()
+    {
+        EventSystem.current.firstSelectedGameObject = _tutorialButton.gameObject;
+        EventSystem.current.SetSelectedGameObject(_tutorialButton.gameObject);
+
+        StartCoroutine(StaticFunctions.FadeIn(result => _tutorialScreen.GetComponent<CanvasGroup>().alpha = result, 0.1f));
+        _tutorialScreen.gameObject.SetActive(true);
+
+        Cursor.visible = true;
+    }
+
+    public void OnClickEndTutorial()
+    {
+        StartCoroutine(StaticFunctions.FadeOut(result => _tutorialScreen.GetComponent<CanvasGroup>().alpha = result, 0.5f));
+        _tutorialScreen.gameObject.SetActive(false);
+
+        Cursor.visible = false;
+
+        EventManager.TriggerEvent(EventManager.END_TUTORIAL_EVENT);
     }
 
     private void Pause()
     {
         _pauseScreen.gameObject.SetActive(true);
         StartCoroutine(StaticFunctions.FadeIn(result => _pauseScreen.GetComponent<CanvasGroup>().alpha = result, 0.5f));
+        Cursor.visible = true;
     }
 
     private void Resume()
     {
         StartCoroutine(StaticFunctions.FadeOut(result => _pauseScreen.GetComponent<CanvasGroup>().alpha = result, 0.2f, () => _pauseScreen.gameObject.SetActive(false)));
+        Cursor.visible = false;
     }
 
     void GameOver()
@@ -83,6 +110,7 @@ public class UIManager : MonoBehaviour
         _gameOverScreen.gameObject.SetActive(true);
         StartCoroutine(StaticFunctions.FadeIn(result => _gameOverScreen.GetComponent<CanvasGroup>().alpha = result, 0.5f));
         _localScore.text = ScoreManager.manager.score.ToString();
+        Cursor.visible = true;
     }
 
     void Menu()
@@ -90,6 +118,8 @@ public class UIManager : MonoBehaviour
         _gameOverScreen.gameObject.SetActive(false);
         _pauseScreen.gameObject.SetActive(false);
         _titleScreen.gameObject.SetActive(true);
+
+        Cursor.visible = true;
     }
 
     public void OnClickBack()
@@ -156,5 +186,6 @@ public class UIManager : MonoBehaviour
         EventManager.StopListening(EventManager.PLAY_EVENT, Play);
         EventManager.StopListening(EventManager.MENU_EVENT, Menu);
         EventManager.StopListening(EventManager.SEND_SCORE_EVENT, UpdateUI);
+        EventManager.StopListening(EventManager.TUTORIAL_EVENT, Tutorial);
     }
 }
