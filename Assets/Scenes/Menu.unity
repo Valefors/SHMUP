@@ -742,30 +742,12 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &690353042 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5357678730253748605, guid: abd17f8d249c4024297b0befaca8afe6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1773002254}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &690353043 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5357678730253748604, guid: abd17f8d249c4024297b0befaca8afe6,
     type: 3}
   m_PrefabInstance: {fileID: 1773002254}
   m_PrefabAsset: {fileID: 0}
---- !u!225 &690353046
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690353042}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!114 &694753760 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2406071730012853672, guid: ef55ec0f7859fad4d8fb81a9c56b3af2,
@@ -1706,21 +1688,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5357678730009913345, guid: abd17f8d249c4024297b0befaca8afe6,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5357678730009913345, guid: abd17f8d249c4024297b0befaca8afe6,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnClickEndTutorial
-      objectReference: {fileID: 0}
-    - target: {fileID: 5357678730009913345, guid: abd17f8d249c4024297b0befaca8afe6,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5357678730009913345, guid: abd17f8d249c4024297b0befaca8afe6,
         type: 3}
@@ -2757,7 +2724,7 @@ PrefabInstance:
     - target: {fileID: 5192506404115808427, guid: 93afe008dabe97841a14d6c57c5482d8,
         type: 3}
       propertyPath: m_Text
-      value: Junkcraft
+      value: Junkraft
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93afe008dabe97841a14d6c57c5482d8, type: 3}
