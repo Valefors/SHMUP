@@ -75,7 +75,7 @@ public class UIManager : MonoBehaviour
         EventSystem.current.firstSelectedGameObject = _tutorialButton.gameObject;
         EventSystem.current.SetSelectedGameObject(_tutorialButton.gameObject);
 
-        StartCoroutine(StaticFunctions.FadeIn(result => _tutorialScreen.GetComponent<CanvasGroup>().alpha = result, 0.1f));
+        StartCoroutine(StaticFunctions.FadeIn(result => _tutorialScreen.GetComponent<CanvasGroup>().alpha = result, 0.2f));
         _tutorialScreen.gameObject.SetActive(true);
 
         Cursor.visible = true;
@@ -83,8 +83,7 @@ public class UIManager : MonoBehaviour
 
     public void OnClickEndTutorial()
     {
-        StartCoroutine(StaticFunctions.FadeOut(result => _tutorialScreen.GetComponent<CanvasGroup>().alpha = result, 0.5f));
-        _tutorialScreen.gameObject.SetActive(false);
+        StartCoroutine(StaticFunctions.FadeOut(result => _tutorialScreen.GetComponent<CanvasGroup>().alpha = result, 0.5f, () => _tutorialScreen.gameObject.SetActive(false)));
 
         Cursor.visible = false;
 
