@@ -390,7 +390,7 @@ public class Player : MonoBehaviour
     {
         GameManager.manager.BossDefeated();
         StartCoroutine(GoToPoint(new Vector3(0,-8,0), 3,0));
-        StartCoroutine(Photo(8.5f));
+        StartCoroutine(Photo(7.9f));
         StartCoroutine(GoToPoint(new Vector3(0, 16, 0), 1, 9));
         //Go To A Point, stop shooting. Screenshot after a while
     }
@@ -430,7 +430,7 @@ public class Player : MonoBehaviour
     {
         int lStartX = 1 * Screen.width / 4;
         int lStartY = 0;
-        int lWidth = 5 * Screen.width / 12;
+        int lWidth = 1 * Screen.width / 2;
         int lHeight = 5 * Screen.height / 8;
         Texture2D lTex = new Texture2D(lWidth, lHeight, TextureFormat.RGB24, false);
 
@@ -444,7 +444,7 @@ public class Player : MonoBehaviour
         DestroyImmediate(lTex);
 
 
-        string lPath = Application.dataPath + "SavedScreen.png";
+        string lPath = Application.dataPath + "FinalJunkScreenshot.png";
         System.IO.File.WriteAllBytes(lPath, bytes);
         Debug.Log("File saved at : " + lPath);
     }
