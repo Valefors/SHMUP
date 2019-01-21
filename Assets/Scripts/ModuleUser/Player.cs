@@ -101,6 +101,11 @@ public class Player : MonoBehaviour
             else
                 GetInvicibility(true);
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            StartCoroutine(Photo(0.1f));
+        }
+
 
         if (!GameManager.manager.isPlaying) return;
 
@@ -385,6 +390,7 @@ public class Player : MonoBehaviour
     {
         GameManager.manager.BossDefeated();
         StartCoroutine(GoToPoint(new Vector3(0,-8,0), 3,0));
+        StartCoroutine(Photo(8.5f));
         StartCoroutine(GoToPoint(new Vector3(0, 16, 0), 1, 9));
         //Go To A Point, stop shooting. Screenshot after a while
     }
@@ -412,5 +418,35 @@ public class Player : MonoBehaviour
         _transform.position = pointToGo;
     }
 
+    IEnumerator Photo(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        yield return new WaitForEndOfFrame();
+        TakePhoto();
+    }
+    
+    public void TakePhoto()
+    {
+        int lStartX = 1 * Screen.width / 4;
+        int lStartY = 0;
+        int lWidth = 5 * Screen.width / 12;
+        int lHeight = 5 * Screen.height / 8;
+        Texture2D lTex = new Texture2D(lWidth, lHeight, TextureFormat.RGB24, false);
+
+        Rect lRect = new Rect(lStartX, lStartY, lWidth, lHeight);
+
+        print(lRect + " lRect | " + lTex.height + " he --- wid " + lTex.width);
+        lTex.ReadPixels(lRect, 0, 0, false);
+        lTex.Apply();
+
+        var bytes = lTex.EncodeToPNG();
+        DestroyImmediate(lTex);
+
+
+        string lPath = Application.dataPath + "SavedScreen.png";
+        System.IO.File.WriteAllBytes(lPath, bytes);
+        Debug.Log("File saved at : " + lPath);
+    }
 
 }
