@@ -385,7 +385,7 @@ public class Player : MonoBehaviour
     {
         GameManager.manager.BossDefeated();
         StartCoroutine(GoToPoint(new Vector3(0,-8,0), 3,0));
-        StartCoroutine(GoToPoint(new Vector3(0, 16, 0), 1, 6));
+        StartCoroutine(GoToPoint(new Vector3(0, 16, 0), 1, 9));
         //Go To A Point, stop shooting. Screenshot after a while
     }
 

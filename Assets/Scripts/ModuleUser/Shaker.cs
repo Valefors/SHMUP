@@ -19,9 +19,10 @@ public class Shaker : MonoBehaviour
     [SerializeField] float _littleDuration = 1f;
 
     [Header("Final shake")]
-    [SerializeField] private float _finalShakeDuration;
+    [SerializeField] private float _finalShakeDuration = 5;
     [SerializeField] private AnimationCurve _finalShakeX;
     [SerializeField] private AnimationCurve _finalShakeY;
+    public Animator _FXCameraAnimator;
 
 
     bool _isShaking = false;
@@ -93,6 +94,7 @@ public class Shaker : MonoBehaviour
     public void FinalShake()
     {
         StartCoroutine(DoFinalShake());
+        _FXCameraAnimator.SetTrigger("Flash");
     }
 
     IEnumerator DoFinalShake()
