@@ -219,11 +219,11 @@ public class Enemy : MonoBehaviour
         GetComponentInChildren<Animator>().SetTrigger("Death");
 
         FindObjectOfType<Player>().DefeatedBoss();
-        //Stop shooting. Move to a point (fixe);
-        //+ call Player.DefeatedBoss();
-        //Screen goes white
+        foreach (Shot shot in FindObjectsOfType<Shot>())
+        {
+            shot.Touch();
+        }
 
-        //Wait a while then 
         StartCoroutine(WaitForEndBossDeathAnimation());
     }
 

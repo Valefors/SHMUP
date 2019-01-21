@@ -394,6 +394,15 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(delay);
         float lLerp = 0;
         Vector3 startPos = _transform.position;
+
+        _flameAnimator.SetFloat("Vertical", 0);
+        _flameAnimator.SetFloat("Horizontal", 0);
+
+        _horizontalAccDecLerpValue = 0;
+        _verticalAccDecLerpValue = 0;
+        ChangeRotation();
+
+
         while (lLerp < 1)
         {
             lLerp += Time.deltaTime / timeToDoIt;

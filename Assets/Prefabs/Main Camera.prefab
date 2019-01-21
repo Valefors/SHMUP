@@ -265,6 +265,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _FXCameraAnimator: {fileID: 8475099110925236784}
 --- !u!114 &8014612331121692852
 MonoBehaviour:
   m_ObjectHideFlags: 0
