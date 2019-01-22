@@ -9,6 +9,9 @@ public class SpawnTrigger : MonoBehaviour
     [SerializeField] int _numberOfEnemiesMax;
     bool _isActive = false;
 
+    [Tooltip("-1 if it's didn't change music part, the index of the part else")]
+    [SerializeField] int _musicPartChange = -1;
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
@@ -21,6 +24,8 @@ public class SpawnTrigger : MonoBehaviour
         if (pCol.gameObject.tag == "Player" && !_isActive)
         {
             LaunchWaves();
+            if (_musicPartChange != -1)
+                AkSoundEngine.PostEvent("Music<" + _musicPartChange.ToString() + ">", gameObject);
             _isActive = true;
         }
     }

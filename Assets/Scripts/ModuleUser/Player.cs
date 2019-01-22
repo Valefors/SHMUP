@@ -264,6 +264,7 @@ public class Player : MonoBehaviour
         else
         {
             if(!GameManager.manager.isLD) EventManager.TriggerEvent(EventManager.GAME_OVER_EVENT);
+            AkSoundEngine.PostEvent("Death", gameObject);
             Debug.Log("This is a gameOver");
         }
     }
@@ -384,6 +385,8 @@ public class Player : MonoBehaviour
             lNewWeight += lModule._weight;
         }
         _weight = lNewWeight;
+
+        AkSoundEngine.SetRTPCValue("Number_modules", _listLenght, gameObject);
     }
 
     public void DefeatedBoss()
