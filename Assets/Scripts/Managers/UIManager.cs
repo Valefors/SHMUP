@@ -65,6 +65,8 @@ public class UIManager : MonoBehaviour
 
     public void Play()
     {
+        AkSoundEngine.PostEvent("Valid", gameObject);
+
         StartCoroutine(StaticFunctions.FadeOut(result => _gameOverScreen.GetComponent<CanvasGroup>().alpha = result, 0.5f));
         _gameOverScreen.gameObject.SetActive(false);
         Cursor.visible = false;
@@ -83,6 +85,8 @@ public class UIManager : MonoBehaviour
 
     public void OnClickEndTutorial()
     {
+        AkSoundEngine.PostEvent("Valid", gameObject);
+
         StartCoroutine(StaticFunctions.FadeOut(result => _tutorialScreen.GetComponent<CanvasGroup>().alpha = result, 0.5f, () => _tutorialScreen.gameObject.SetActive(false)));
 
         Cursor.visible = false;
@@ -99,6 +103,8 @@ public class UIManager : MonoBehaviour
 
     private void Resume()
     {
+        AkSoundEngine.PostEvent("Valid", gameObject);
+
         StartCoroutine(StaticFunctions.FadeOut(result => _pauseScreen.GetComponent<CanvasGroup>().alpha = result, 0.2f, () => _pauseScreen.gameObject.SetActive(false)));
         Cursor.visible = false;
     }
@@ -123,11 +129,14 @@ public class UIManager : MonoBehaviour
 
     public void OnClickBack()
     {
+        AkSoundEngine.PostEvent("Back", gameObject);
         SelectionManager.manager.SetModeMenu();
     }
 
     public void OnClickLeaderBoard()
     {
+        AkSoundEngine.PostEvent("Valid", gameObject);
+
         EventSystem.current.firstSelectedGameObject = _leaderboardButton.gameObject;
         EventSystem.current.SetSelectedGameObject(_leaderboardButton.gameObject);
 
@@ -140,6 +149,8 @@ public class UIManager : MonoBehaviour
 
     public void OnClickCredits()
     {
+        AkSoundEngine.PostEvent("Valid", gameObject);
+
         EventSystem.current.firstSelectedGameObject = _creditsButton.gameObject;
         EventSystem.current.SetSelectedGameObject(_creditsButton.gameObject);
     }
@@ -154,6 +165,8 @@ public class UIManager : MonoBehaviour
 
     public void OnClickSendName()
     {
+        AkSoundEngine.PostEvent("Valid", gameObject);
+
         EventManager.TriggerEvent(EventManager.SEND_NAME_EVENT);
     }
 

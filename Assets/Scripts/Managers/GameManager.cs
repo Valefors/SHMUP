@@ -85,6 +85,9 @@ public class GameManager : MonoBehaviour
 
     public void Play()
     {
+        //Avoid the launching of the sound if we are in the menu
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneAt(_levelToLoad)) AkSoundEngine.PostEvent("Replay", gameObject); 
+
         StartCoroutine(LoadAsynchronously(_levelToLoad));
     }
 
@@ -137,6 +140,8 @@ public class GameManager : MonoBehaviour
 
     public void Menu()
     {
+        AkSoundEngine.PostEvent("Menu", gameObject);
+
         StartCoroutine(LoadAsynchronously(_levelToLoad - 1));
         EventManager.TriggerEvent(EventManager.MENU_EVENT);
     }

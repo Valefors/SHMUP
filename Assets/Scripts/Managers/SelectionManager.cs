@@ -66,6 +66,7 @@ public class SelectionManager : MonoBehaviour
         {
             if (_pauseButtonsArray[i] == EventSystem.current.currentSelectedGameObject)
             {
+                AkSoundEngine.PostEvent("Select", gameObject);
                 _pauseSelectionHighlightItem.transform.position = _pausePositionsButtonsArray[i].transform.position;
             }
         }
@@ -85,6 +86,7 @@ public class SelectionManager : MonoBehaviour
         {
             if (_menuButtonsAray[i] == EventSystem.current.currentSelectedGameObject)
             {
+                AkSoundEngine.PostEvent("Select", gameObject);
                 _menuSelectionHighlightItem.transform.position = _menuPositionsButtonsAray[i].transform.position;
             }
         }
@@ -103,6 +105,7 @@ public class SelectionManager : MonoBehaviour
         {
             if (_gameOverButtonsArray[i] == EventSystem.current.currentSelectedGameObject)
             {
+                AkSoundEngine.PostEvent("Select", gameObject);
                 _gameOverSelectionHighlightItem.transform.position = _gameOverPositionsButtonsArray[i].transform.position;
             }
         }
