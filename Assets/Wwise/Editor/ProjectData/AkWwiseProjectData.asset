@@ -473,8 +473,42 @@ MonoBehaviour:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: dacc6df10f7544419cdc4fd2be8577f2
-    m_lastTime: -8586542243526290481
+    m_lastTime: -8586533510230738947
     List:
+    - name: Level_state
+      guid: ce4f057488f2024cb722f5dc09231e76
+      id: 453242039
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level_state
+        ObjectType: 9
+      Path: Default Work Unit\Level_state
+      values:
+      - name: Level01
+        guid: fc8e15995639634d908c78231efedadf
+        id: 3152323980
+        PathAndIcons:
+        - ElementName: Level01
+          ObjectType: 8
+      - name: Level02
+        guid: e09ef9b3a8f5f54f9bdea53b0fe47f47
+        id: 3152323983
+        PathAndIcons:
+        - ElementName: Level02
+          ObjectType: 8
+      - name: Level03
+        guid: c06d2aa533c7a14d99277bfbb427b922
+        id: 3152323982
+        PathAndIcons:
+        - ElementName: Level03
+          ObjectType: 8
+      - name: None
+        guid: 1fd934d7667644409ab67b87cd1dd32b
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
     - name: Moving_state
       guid: 7c262b6e519292479e2ba0c8f95631f2
       id: 2357501141
