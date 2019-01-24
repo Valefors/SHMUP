@@ -44,14 +44,15 @@ public class Shot : MonoBehaviour
     {
         if (!GameManager.manager.isPlaying) return;
 
-        if (SafeZone.IsOffField(_transform.position))
+       /* if (SafeZone.IsOffField(_transform.position))
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
             return;
-        }
+        }*/
 
         //print("_direction " + _direction + "_speedShot " + _speedShot + " Time.deltaTime " + Time.deltaTime + " scale : "+ Time.timeScale);
         _transform.Translate(_direction * _speedShot * Time.deltaTime);
+        Destroy(gameObject, 2);
     }
 
     public bool GetSide()
@@ -64,11 +65,15 @@ public class Shot : MonoBehaviour
         if(_transform == null) _transform = GetComponent<Transform>(); //Weird error
 
         _isEnemy = pIsEnemy;
+       /* pRotation.w = 0;
+        pRotation.y = 90f * Mathf.Deg2Rad;
+        pRotation.x=0;*/
         _transform.rotation = pRotation;
-        _speedShot = pSpeed;
-        _hitValue = pHitValue;
 
-        _direction = Vector3.up;
+        //_speedShot = pSpeed;
+        //_hitValue = pHitValue;
+
+        //_direction = Vector3.up;
 
         ChangeColor();
     }

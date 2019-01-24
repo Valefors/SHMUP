@@ -45,7 +45,7 @@ public class Canon : ShooterModule
         {
             Shot lShot = Instantiate(_prefabShot, _transform.position, Quaternion.identity).GetComponent<Shot>();
             lShot.SetUp(isEnemy, _transform.rotation, GetSpeed(), _hitValue);
-            _canShoot = false;
+            //_canShoot = false;
 
             if (!isEnemy)
             {

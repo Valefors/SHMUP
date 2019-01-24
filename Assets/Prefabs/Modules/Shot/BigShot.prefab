@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedShot: 10
-  _direction: {x: 0, y: 1, z: 0}
+  _direction: {x: 0, y: 0, z: 1}
   _animator: {fileID: 4374136644019251276}
 --- !u!58 &238045513913435003
 CircleCollider2D:
