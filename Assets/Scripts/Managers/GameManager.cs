@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemiesAlive = 0;
         EventManager.StartListening(EventManager.GAME_OVER_EVENT, GameOver);
         EventManager.StartListening(EventManager.PAUSE_EVENT, Pause);
         EventManager.StartListening(EventManager.END_TUTORIAL_EVENT, EndTutorial);

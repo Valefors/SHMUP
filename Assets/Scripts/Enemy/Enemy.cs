@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour
         }
 
 
-        GameManager.manager.enemiesAlive++;
+        if(GameManager.manager !=null) GameManager.manager.enemiesAlive++;
         _transform = this.transform;
 
         _rb = GetComponent<Rigidbody2D>();

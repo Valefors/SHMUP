@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SafeZone
 {
-    static float MAX_X = 12f;
-    static float MAX_Y = 8f;
-    static float MIN_X = -12f;
-    static float MIN_Y = -9f;
+    [SerializeField] static float MAX_X = 12f;
+    [SerializeField] static float MAX_Y = 8f;
+    [SerializeField] static float MIN_X = -12f;
+    [SerializeField] static float MIN_Y = -9f;
 
     /*
          static float MAX_X = 10f;

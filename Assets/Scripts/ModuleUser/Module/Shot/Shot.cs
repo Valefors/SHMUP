@@ -46,7 +46,7 @@ public class Shot : MonoBehaviour
 
         if (SafeZone.IsOffField(_transform.position))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             return;
         }
 
