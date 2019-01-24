@@ -55,8 +55,8 @@ MonoBehaviour:
     type: 3}
   _animator: {fileID: 434878097999596067}
   _canonObject: {fileID: 6155585515481991790}
-  _freeLight: {fileID: 2100000, guid: 2f27b1b7bac689742a01dfa026987e50, type: 2}
-  _freeRedLight: {fileID: 2100000, guid: 3bd90239d2b02374f9d54348f351e5bc, type: 2}
+  _freeLight: {fileID: 0}
+  _freeRedLight: {fileID: 0}
   free: 0
   isEnemy: 1
   _shotRate: 2
@@ -229,21 +229,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 635838887}
     m_Modifications:
-    - target: {fileID: 7637979604683794928, guid: bacf2105fa5c1984da475339efdf7d2a,
-        type: 3}
-      propertyPath: m_Name
-      value: Laser
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637979604683794928, guid: bacf2105fa5c1984da475339efdf7d2a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637979604683794928, guid: bacf2105fa5c1984da475339efdf7d2a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 7637979604683794447, guid: bacf2105fa5c1984da475339efdf7d2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,6 +283,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637979606136567717, guid: bacf2105fa5c1984da475339efdf7d2a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637979606136567717, guid: bacf2105fa5c1984da475339efdf7d2a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637979606136567717, guid: bacf2105fa5c1984da475339efdf7d2a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637979604683794928, guid: bacf2105fa5c1984da475339efdf7d2a,
+        type: 3}
+      propertyPath: m_Name
+      value: Laser
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637979604683794928, guid: bacf2105fa5c1984da475339efdf7d2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637979604683794928, guid: bacf2105fa5c1984da475339efdf7d2a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7637979606152073939, guid: bacf2105fa5c1984da475339efdf7d2a,
         type: 3}
