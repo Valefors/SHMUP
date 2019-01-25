@@ -9,6 +9,7 @@ public class CameraTraveling : MonoBehaviour
     Rigidbody rb;
     public bool isCollapseTrigger=false;
     float spentTime = 0;
+    public float acceleration;
     public float timeToWait;
     public float timeToPush;
     public bool isActor=false;
@@ -34,11 +35,11 @@ public class CameraTraveling : MonoBehaviour
     {
         if(isActor)
         {
-            for (int i = 0; i < temp.Length; i++)
+          /*  for (int i = 0; i < temp.Length; i++)
             {
                 temp[i].Simulate(1);
-                temp[i].Play();
-            }
+              //  temp[i].Play();
+            }*/
         }
         if (!isCollapseTrigger)
         {
@@ -52,6 +53,7 @@ public class CameraTraveling : MonoBehaviour
             {
                 Vector3 newCoord = new Vector3(transform.position.x + speed, transform.position.y, transform.position.z);
                 transform.SetPositionAndRotation(newCoord, transform.rotation);
+                speed += acceleration;
             }
         }
     }
