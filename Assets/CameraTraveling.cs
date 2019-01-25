@@ -42,7 +42,7 @@ public class CameraTraveling : MonoBehaviour
         }
         if (!isCollapseTrigger)
         {
-            Vector3 newCoord = new Vector3(transform.position.x, transform.position.y, transform.position.z + speed);
+            Vector3 newCoord = new Vector3(transform.position.x, transform.position.y, transform.position.z + (speed*Time.deltaTime));
             transform.SetPositionAndRotation(newCoord, transform.rotation);
         }
         else

@@ -467,7 +467,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88825131}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1257,6 +1257,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WwiseGlobal
       objectReference: {fileID: 0}
+    - target: {fileID: 5065281699542848805, guid: f6f9c1be90e824a4d96b84df63fb2ca2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5065281699542848807, guid: f6f9c1be90e824a4d96b84df63fb2ca2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1322,6 +1327,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5065281699542848808, guid: f6f9c1be90e824a4d96b84df63fb2ca2,
+        type: 3}
+      propertyPath: triggerList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6f9c1be90e824a4d96b84df63fb2ca2, type: 3}
 --- !u!4 &365023987 stripped
@@ -1371,7 +1381,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370707443}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1451,7 +1461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04579c9c608c0e14bb7c9632476da169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
+  speed: 0.5
   isCollapseTrigger: 1
   timeToWait: 21
   timeToPush: 5
@@ -1678,6 +1688,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 717442138}
     m_Modifications:
+    - target: {fileID: 4713602982640423625, guid: 279032d516af574449cb6017ecda31e9,
+        type: 3}
+      propertyPath: m_Name
+      value: ATwoFrontVGun
+      objectReference: {fileID: 0}
     - target: {fileID: 5977450734489130732, guid: 279032d516af574449cb6017ecda31e9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1732,11 +1747,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4713602982640423625, guid: 279032d516af574449cb6017ecda31e9,
-        type: 3}
-      propertyPath: m_Name
-      value: ATwoFrontVGun
       objectReference: {fileID: 0}
     - target: {fileID: 4942267550005700472, guid: 279032d516af574449cb6017ecda31e9,
         type: 3}
@@ -2727,7 +2737,7 @@ PrefabInstance:
     - target: {fileID: 6633288064544777987, guid: e17bb04e260c6da478baf1ef2ffaa5cd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 689.6
+      value: 687.68
       objectReference: {fileID: 0}
     - target: {fileID: 6633288064544777987, guid: e17bb04e260c6da478baf1ef2ffaa5cd,
         type: 3}
@@ -2807,7 +2817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04579c9c608c0e14bb7c9632476da169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 20
   isCollapseTrigger: 0
   timeToWait: 0
   timeToPush: 0
@@ -4256,7 +4266,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183658541}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4878,7 +4888,7 @@ PrefabInstance:
     - target: {fileID: 7393889055290101509, guid: aef06d5b78a4270478bb0e39cadd2267,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 731.22
+      value: 725.5
       objectReference: {fileID: 0}
     - target: {fileID: 7393889055290101509, guid: aef06d5b78a4270478bb0e39cadd2267,
         type: 3}
@@ -5166,7 +5176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04579c9c608c0e14bb7c9632476da169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
+  speed: 0.5
   isCollapseTrigger: 1
   timeToWait: 22
   timeToPush: 5
@@ -5207,7 +5217,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380812167}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5492,7 +5502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04579c9c608c0e14bb7c9632476da169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
+  speed: 10
   isCollapseTrigger: 0
   timeToWait: 0
   timeToPush: 0
@@ -7038,7 +7048,7 @@ PrefabInstance:
     - target: {fileID: 3228742611630785652, guid: efd0e16df3ad349f4bf6550669f6ac4b,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 1000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 3228742611630785652, guid: efd0e16df3ad349f4bf6550669f6ac4b,
         type: 3}
@@ -7215,7 +7225,7 @@ PrefabInstance:
     - target: {fileID: 3351601165181784941, guid: 6a5094b2026918749a4562a2becbac4b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 699.39
+      value: 697
       objectReference: {fileID: 0}
     - target: {fileID: 3351601165181784941, guid: 6a5094b2026918749a4562a2becbac4b,
         type: 3}
@@ -7235,27 +7245,27 @@ PrefabInstance:
     - target: {fileID: 3351601165181784941, guid: 6a5094b2026918749a4562a2becbac4b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.0000000372529
       objectReference: {fileID: 0}
     - target: {fileID: 3351601165181784941, guid: 6a5094b2026918749a4562a2becbac4b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.35836798
+      value: 0.18017928
       objectReference: {fileID: 0}
     - target: {fileID: 3351601165181784941, guid: 6a5094b2026918749a4562a2becbac4b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.93358046
+      value: 0.9836338
       objectReference: {fileID: 0}
     - target: {fileID: 3351601165181784941, guid: 6a5094b2026918749a4562a2becbac4b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.84
+      value: -17.9
       objectReference: {fileID: 0}
     - target: {fileID: 3351601165181784941, guid: 6a5094b2026918749a4562a2becbac4b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 42
+      value: 20.76
       objectReference: {fileID: 0}
     - target: {fileID: 7385296399568476936, guid: 6a5094b2026918749a4562a2becbac4b,
         type: 3}
@@ -7464,7 +7474,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892537384}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -7510,7 +7520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892537384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.05, y: 19.81, z: 699.09}
+  m_LocalPosition: {x: -25.35, y: 19.81, z: 697.09}
   m_LocalScale: {x: 1.5942035, y: 1.5942035, z: 1.5942035}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7840,7 +7850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04579c9c608c0e14bb7c9632476da169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.01
+  speed: 0.6
   isCollapseTrigger: 0
   timeToWait: 0
   timeToPush: 0
@@ -8612,6 +8622,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 717442138}
     m_Modifications:
+    - target: {fileID: 460927331454632023, guid: dca43a29615df7a4890ca8970b7cf9c8,
+        type: 3}
+      propertyPath: m_Name
+      value: ASideTwoLasersVGun
+      objectReference: {fileID: 0}
     - target: {fileID: 1584059542159819890, guid: dca43a29615df7a4890ca8970b7cf9c8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8666,11 +8681,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 460927331454632023, guid: dca43a29615df7a4890ca8970b7cf9c8,
-        type: 3}
-      propertyPath: m_Name
-      value: ASideTwoLasersVGun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dca43a29615df7a4890ca8970b7cf9c8, type: 3}
