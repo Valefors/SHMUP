@@ -21,7 +21,7 @@ Material:
     m_TexEnvs:
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 963e545e2c1e27e4d99290acb2aeb420, type: 3}
-        m_Scale: {x: 1.2, y: 300}
+        m_Scale: {x: 25, y: 50}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
@@ -45,8 +45,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: c0cc89468dd082046824968a1ce6253d, type: 3}
-        m_Scale: {x: 2, y: 300}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 30, y: 60}
+        m_Offset: {x: 20, y: 0}
     - _Metallic:
         m_Texture: {fileID: 2800000, guid: a662c495ccef9eb4d83eb97a3f24ffdb, type: 3}
         m_Scale: {x: 1.5, y: 30}
