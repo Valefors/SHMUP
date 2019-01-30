@@ -33,6 +33,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] Button _leaderboardButton;
     [SerializeField] Button _tutorialButton;
 
+    public int currentSelectedIndex = 0;
+
     private static UIManager _manager;
     public static UIManager manager {
         get {
@@ -98,6 +100,8 @@ public class UIManager : MonoBehaviour
     {
         _pauseScreen.gameObject.SetActive(true);
         StartCoroutine(StaticFunctions.FadeIn(result => _pauseScreen.GetComponent<CanvasGroup>().alpha = result, 0.5f));
+
+        currentSelectedIndex = 0;
         Cursor.visible = true;
     }
 
@@ -115,6 +119,8 @@ public class UIManager : MonoBehaviour
         _gameOverScreen.gameObject.SetActive(true);
         StartCoroutine(StaticFunctions.FadeIn(result => _gameOverScreen.GetComponent<CanvasGroup>().alpha = result, 0.5f));
         _localScore.text = ScoreManager.manager.score.ToString();
+
+        currentSelectedIndex = 0;
         Cursor.visible = true;
     }
 
@@ -123,6 +129,8 @@ public class UIManager : MonoBehaviour
         _gameOverScreen.gameObject.SetActive(false);
         _pauseScreen.gameObject.SetActive(false);
         _titleScreen.gameObject.SetActive(true);
+
+        currentSelectedIndex = 0;
 
         Cursor.visible = true;
     }

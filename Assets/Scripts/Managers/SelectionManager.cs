@@ -66,7 +66,12 @@ public class SelectionManager : MonoBehaviour
         {
             if (_pauseButtonsArray[i] == EventSystem.current.currentSelectedGameObject)
             {
-                AkSoundEngine.PostEvent("Select", gameObject);
+                if (i != UIManager.manager.currentSelectedIndex)
+                {
+                    AkSoundEngine.PostEvent("Select", gameObject);
+                    UIManager.manager.currentSelectedIndex = i;
+                }
+
                 _pauseSelectionHighlightItem.transform.position = _pausePositionsButtonsArray[i].transform.position;
             }
         }
@@ -86,9 +91,15 @@ public class SelectionManager : MonoBehaviour
         {
             if (_menuButtonsAray[i] == EventSystem.current.currentSelectedGameObject)
             {
-                AkSoundEngine.PostEvent("Select", gameObject);
+                if (i != UIManager.manager.currentSelectedIndex)
+                {
+                    AkSoundEngine.PostEvent("Select", gameObject);
+                    UIManager.manager.currentSelectedIndex = i;
+                }
+
                 _menuSelectionHighlightItem.transform.position = _menuPositionsButtonsAray[i].transform.position;
             }
+
         }
     }
 
@@ -105,7 +116,12 @@ public class SelectionManager : MonoBehaviour
         {
             if (_gameOverButtonsArray[i] == EventSystem.current.currentSelectedGameObject)
             {
-                AkSoundEngine.PostEvent("Select", gameObject);
+                if (i != UIManager.manager.currentSelectedIndex)
+                {
+                    AkSoundEngine.PostEvent("Select", gameObject);
+                    UIManager.manager.currentSelectedIndex = i;
+                }
+
                 _gameOverSelectionHighlightItem.transform.position = _gameOverPositionsButtonsArray[i].transform.position;
             }
         }
