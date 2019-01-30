@@ -187,7 +187,7 @@ MonoBehaviour:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2833e4d17ac8924f94f0cad191414be9
-    m_lastTime: -8586539494132979858
+    m_lastTime: -8586527152006291016
     List:
     - name: General
       guid: b8f5f163590846438a9805268b1eea41
@@ -202,7 +202,7 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: e3d62635ae2c1d409c4f0d3563842048
-    m_lastTime: -8586536141467723987
+    m_lastTime: -8586527151422450245
     List:
     - name: Damaged
       guid: 5ec9335031110c4d8f57e61f7907c0c0
@@ -301,7 +301,7 @@ MonoBehaviour:
       maxDuration: 0
       minDuration: 0
     - name: Music
-      guid: 2a43116c9c2a1d4ab724a406ea84f24d
+      guid: 569463d53780eb4482aacdf270be4847
       id: 3991942870
       PathAndIcons:
       - ElementName: Default Work Unit
@@ -324,6 +324,30 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Replay
+      guid: 87d32c11fbb2d540b0154bd7abfe3e84
+      id: 2842388664
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Replay
+        ObjectType: 3
+      Path: Default Work Unit\Replay
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Select
+      guid: b99ba09310517a47bbfec24316df7cb2
+      id: 1432588725
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Select
+        ObjectType: 3
+      Path: Default Work Unit\Select
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Shot
       guid: 11be1803345e5e45ae0c5a17bddfee88
       id: 251412229
@@ -333,6 +357,30 @@ MonoBehaviour:
       - ElementName: Shot
         ObjectType: 3
       Path: Default Work Unit\Shot
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Start
+      guid: f2e0e0387b830345afdb682390ec958a
+      id: 1281810935
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Start
+        ObjectType: 3
+      Path: Default Work Unit\Start
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Valid
+      guid: e98c3d24077baa419f24d647e471f08d
+      id: 1156419497
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Valid
+        ObjectType: 3
+      Path: Default Work Unit\Valid
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -473,7 +521,7 @@ MonoBehaviour:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: dacc6df10f7544419cdc4fd2be8577f2
-    m_lastTime: -8586533510230738947
+    m_lastTime: -8586530853333503003
     List:
     - name: Level_state
       guid: ce4f057488f2024cb722f5dc09231e76
@@ -485,23 +533,23 @@ MonoBehaviour:
         ObjectType: 9
       Path: Default Work Unit\Level_state
       values:
-      - name: Level01
+      - name: Music1
         guid: fc8e15995639634d908c78231efedadf
-        id: 3152323980
+        id: 1730564819
         PathAndIcons:
-        - ElementName: Level01
+        - ElementName: Music1
           ObjectType: 8
-      - name: Level02
+      - name: Music2
         guid: e09ef9b3a8f5f54f9bdea53b0fe47f47
-        id: 3152323983
+        id: 1730564816
         PathAndIcons:
-        - ElementName: Level02
+        - ElementName: Music2
           ObjectType: 8
-      - name: Level03
+      - name: Music3
         guid: c06d2aa533c7a14d99277bfbb427b922
-        id: 3152323982
+        id: 1730564817
         PathAndIcons:
-        - ElementName: Level03
+        - ElementName: Music3
           ObjectType: 8
       - name: None
         guid: 1fd934d7667644409ab67b87cd1dd32b
@@ -581,9 +629,5 @@ MonoBehaviour:
   - /Junk
   - /Junk/Events
   - /Junk/Events/Default Work Unit
-  - /Junk/SoundBanks
-  - /Junk/SoundBanks/Default Work Unit
-  - /Junk/States
-  - /Junk/States/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

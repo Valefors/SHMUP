@@ -23,11 +23,26 @@ namespace AK
         static const AkUniqueID LASER_STOP = 1853467501U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID REACHED = 2907331365U;
+        static const AkUniqueID SELECT = 1432588725U;
         static const AkUniqueID SHOT = 251412229U;
+        static const AkUniqueID START = 1281810935U;
+        static const AkUniqueID VALID = 1156419497U;
     } // namespace EVENTS
 
     namespace STATES
     {
+        namespace LEVEL_STATE
+        {
+            static const AkUniqueID GROUP = 453242039U;
+
+            namespace STATE
+            {
+                static const AkUniqueID MUSIC1 = 1730564819U;
+                static const AkUniqueID MUSIC2 = 1730564816U;
+                static const AkUniqueID MUSIC3 = 1730564817U;
+            } // namespace STATE
+        } // namespace LEVEL_STATE
+
         namespace MOVING_STATE
         {
             static const AkUniqueID GROUP = 2357501141U;

@@ -63,6 +63,8 @@ public class UIManager : MonoBehaviour
         _gameOverScreen.gameObject.SetActive(false);
         _pauseScreen.gameObject.SetActive(false);
         _sendButton.interactable = false;
+
+        Menu();
     }
 
     public void Play()

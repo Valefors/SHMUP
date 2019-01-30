@@ -25,7 +25,7 @@ public class SpawnTrigger : MonoBehaviour
         {
             LaunchWaves();
             if (_musicPartChange != -1)
-                AkSoundEngine.PostEvent("Music<" + _musicPartChange.ToString() + ">", gameObject);
+                AkSoundEngine.SetState("Level_State", "Music" + _musicPartChange.ToString());
             _isActive = true;
         }
     }
