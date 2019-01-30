@@ -126,6 +126,8 @@ public class UIManager : MonoBehaviour
 
     void Menu()
     {
+        AkSoundEngine.PostEvent("Start", gameObject);
+
         _gameOverScreen.gameObject.SetActive(false);
         _pauseScreen.gameObject.SetActive(false);
         _titleScreen.gameObject.SetActive(true);
