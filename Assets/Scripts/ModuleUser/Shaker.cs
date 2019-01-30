@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class Shaker : MonoBehaviour
 {
-    [Header("Gameplay datas")]
+    [Header("Player hit shake")]
     [Range(0f, 5f)]
     [SerializeField] float _intensityX;
     [Range(0f, 5f)]
     [SerializeField] float _intensityY;
     [SerializeField] float _duration = 1f;
+
+    [Header("Ennemy killed")]
+    [Range(0f, 5f)]
+    [SerializeField] float _littleIntensityX;
+    [Range(0f, 5f)]
+    [SerializeField] float _littleIntensityY;
+    [SerializeField] float _littleDuration = 1f;
+
+    [Header("Final shake")]
+    [SerializeField] private float _finalShakeDuration = 5;
+    [SerializeField] private AnimationCurve _finalShakeX;
+    [SerializeField] private AnimationCurve _finalShakeY;
+    public Animator _FXCameraAnimator;
+
 
     bool _isShaking = false;
 
@@ -48,6 +62,55 @@ public class Shaker : MonoBehaviour
         while(Time.realtimeSinceStartup < lStartTime + _duration)
         {
             Vector3 lRandomPoint = new Vector3(_initialPos.x + (Random.Range(-1f, 1f) * _intensityX), _initialPos.y + (Random.Range(-1f, 1f) * _intensityY), _initialPos.z);
+            _target.localPosition = lRandomPoint;
+            yield return null;
+        }
+
+        _target.localPosition = _initialPos;
+        _isShaking = false;
+    }
+
+    public void LittleShake()
+    {
+        if (!_isShaking) StartCoroutine(DoLittleShake());
+    }
+
+    IEnumerator DoLittleShake()
+    {
+        _isShaking = true;
+        float lStartTime = Time.realtimeSinceStartup;
+
+        while (Time.realtimeSinceStartup < lStartTime + _littleDuration)
+        {
+            Vector3 lRandomPoint = new Vector3(_initialPos.x + (Random.Range(-1f, 1f) * _littleIntensityX), _initialPos.y + (Random.Range(-1f, 1f) * _littleIntensityY), _initialPos.z);
+            _target.localPosition = lRandomPoint;
+            yield return null;
+        }
+
+        _target.localPosition = _initialPos;
+        _isShaking = false;
+    }
+
+    public void FinalShake()
+    {
+        StartCoroutine(DoFinalShake());
+        _FXCameraAnimator.SetTrigger("Flash");
+    }
+
+    IEnumerator DoFinalShake()
+    {
+        _isShaking = true;
+        float lStartTime = Time.realtimeSinceStartup;
+        float finishTime = lStartTime + _finalShakeDuration;
+
+        while (Time.realtimeSinceStartup < finishTime)
+        {
+            Vector2 lIntensity = Vector2.zero;
+            float lerpCustomValue = (finishTime - Time.realtimeSinceStartup) / _finalShakeDuration;
+            //Debug.Log("Lerp value : " + lerpCustomValue);
+            lIntensity.x = _finalShakeX.Evaluate(lerpCustomValue);
+            lIntensity.y = _finalShakeY.Evaluate(lerpCustomValue); 
+             Vector3 lRandomPoint = new Vector3(_initialPos.x + (Random.Range(-1f, 1f) * lIntensity.x), _initialPos.y + (Random.Range(-1f, 1f) * lIntensity.y), _initialPos.z);
             _target.localPosition = lRandomPoint;
             yield return null;
         }

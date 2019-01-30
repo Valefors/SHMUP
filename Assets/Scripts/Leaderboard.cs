@@ -4,24 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Leaderboard : MonoBehaviour
-{
-    [Header("Test Roll Dice")]
-    [SerializeField] Text _scoreText;
-    int _localScore = 0;
+{ 
     PlayerScore _localPlayer;
-    int _localIndex = 0;
 
-    [Header("Scores UI")]
-    [SerializeField] Text[] _scoreTextArray;
-    [Header("Names UI")]
-    [SerializeField] Text[] _nameTextArray;
-
-    [Space(5)]
-    [Header("Enter Name")]
-    [SerializeField] InputField _localPlayerName;
-    [SerializeField] Button _sendButton;
-
-    [SerializeField] int MAX_LEADERBOARDS = 3;
+    [SerializeField] int MAX_LEADERBOARDS = 5;
 
     public struct PlayerScore
     {
@@ -35,26 +21,18 @@ public class Leaderboard : MonoBehaviour
         }
     }
 
-    public List<PlayerScore> scoreList = new List<PlayerScore>();
+    public static List<PlayerScore> scoreList = new List<PlayerScore>();
 
     // Update is called once per frame
     void Start()
     {
        InitializeScoreList();
-       UpdateUI();
-
-        _sendButton.interactable = false;
+       EventManager.StartListening(EventManager.SEND_NAME_EVENT, NameEnter);
     }
 
-    public void OnClickTextField()
+    public void NameEnter()
     {
-        if (_localPlayerName.text != "") _sendButton.interactable = true;
-        else _sendButton.interactable = false;
-    }
-
-    public void OnClickUpdateLeaderBoard()
-    {
-        _localPlayer = new PlayerScore(_localPlayerName.text, _localScore);
+        _localPlayer = new PlayerScore(UIManager.manager.localPlayerName.text, ScoreManager.manager.score);
         CheckIfHighScore();
     }
 
@@ -73,14 +51,6 @@ public class Leaderboard : MonoBehaviour
 
     void InitializeScoreList()
     {
-        /*PlayerScore lPlayerOne = new PlayerScore("Emelinator", 999);
-        PlayerScore lPlayerTwo = new PlayerScore("RetardedCat", 2);
-        PlayerScore lPlayerThree = new PlayerScore("Escergo", 1);
-
-        scoreList.Add(lPlayerOne);
-        scoreList.Add(lPlayerTwo);
-        scoreList.Add(lPlayerThree);*/
-
         for (int i = 0; i < PlayerPrefs.GetInt("ScoreCount", 0); i++)
         {
             PlayerScore lPlayer = new PlayerScore(PlayerPrefs.GetString("Name" + i), PlayerPrefs.GetFloat("Score" + i));
@@ -90,76 +60,68 @@ public class Leaderboard : MonoBehaviour
         //SetPlayerPrefsLeaderBoard();
     }
 
-    void UpdateUI()
-    {
-        //PlayerPrefs.SetInt("ScoreCount", scoreList.Count);
-        _sendButton.interactable = false;
-
-        for (int i = 0; i < scoreList.Count; i++)
-        {
-            _nameTextArray[i].text = scoreList[i].name;
-            _scoreTextArray[i].text = scoreList[i].score.ToString();
-        }
-    }
-
-    /*void UpdateUI()
-    {
-        for(int i = 0; i < scoreList.Count; i++)
-        {
-            _nameTextArray[i].text = PlayerPrefs.GetString("Name" + i);
-            _scoreTextArray[i].text = PlayerPrefs.GetFloat("Score" + i).ToString();
-        }
-    }*/
-
     void CheckIfHighScore()
     {
-        if (scoreList.Count != 0)
-        {
-            if (scoreList.Count < MAX_LEADERBOARDS) scoreList.Add(_localPlayer);
-            print(scoreList.Count);
-            for (int i = 0; i < scoreList.Count; i++)
+        bool lIsInHighScore = false;
+
+        if(scoreList.Count < MAX_LEADERBOARDS) { 
+
+            if (scoreList.Count == 0)
             {
-                if (_localPlayer.score > scoreList[i].score)
+                scoreList.Add(_localPlayer);
+
+                UpdateLeaderBoard();
+
+                return;
+            }
+
+            else
+            {
+                for (int i = 0; i < scoreList.Count; i++)
                 {
-                    _localIndex = i;
+                    if (_localPlayer.score > scoreList[i].score)
+                    {
+                        lIsInHighScore = true;
+                        scoreList.Insert(i, _localPlayer);
+
+                        UpdateLeaderBoard();
+
+                        return;
+                    }
+                }
+
+                if(!lIsInHighScore)
+                {
+                    scoreList.Add(_localPlayer);
+
                     UpdateLeaderBoard();
+
+                    lIsInHighScore = false;
                     return;
                 }
             }
         }
 
-        else AddScore();
+        else { 
+            for (int i = 0; i < scoreList.Count; i++)
+            {
+                if (_localPlayer.score > scoreList[i].score)
+                {
+                    scoreList.Insert(i, _localPlayer);
+                    scoreList.RemoveAt(scoreList.Count - 1);
+
+                    UpdateLeaderBoard();
+
+                    return;
+                }
+            }
+        }
     }
 
     void UpdateLeaderBoard()
     {
-        int lMaxValue;
-
-        if (scoreList.Count < MAX_LEADERBOARDS) lMaxValue = scoreList.Count;
-        else lMaxValue = MAX_LEADERBOARDS;
-
-        for(int i =_localIndex; i < lMaxValue - 1; i++)
-        {
-            scoreList[i + 1] = scoreList[i];
-        }
-
-        scoreList[_localIndex] = _localPlayer;
-
         SetPlayerPrefsLeaderBoard();
-        UpdateUI();
-    }
-
-    void AddScore()
-    {
-        scoreList.Add(_localPlayer);
-        SetPlayerPrefsLeaderBoard();
-        UpdateUI();
-    }
-
-    public void RollDice()
-    {
-        _localScore = Random.Range(1, 7);
-        _scoreText.text = _localScore.ToString();
+        EventManager.TriggerEvent(EventManager.SEND_SCORE_EVENT);
     }
 
     public void Reset()
@@ -172,5 +134,10 @@ public class Leaderboard : MonoBehaviour
         }
 
         PlayerPrefs.DeleteKey("ScoreCount");
+    }
+
+    private void OnDisable()
+    {
+        EventManager.StopListening(EventManager.SEND_NAME_EVENT, NameEnter);
     }
 }

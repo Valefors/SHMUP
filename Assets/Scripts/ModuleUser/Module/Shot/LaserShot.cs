@@ -7,7 +7,8 @@ public class LaserShot : MonoBehaviour
     [Header("Gameplay Datas")]
     [SerializeField] int _hitValue = 1;
     private bool _isEnemy = true;
-    bool _isActive = false;
+    [HideInInspector]
+    public bool isActive = false;
 
     [Header("Personal Datas")]
     private Transform _transform;
@@ -15,6 +16,12 @@ public class LaserShot : MonoBehaviour
     [SerializeField]
     private SpriteRenderer _spriteRdr;
 
+    public void ResetAnim()
+    {
+        if (_animator == null) _animator = this.gameObject.GetComponentInChildren<Animator>();
+        _animator.SetTrigger("Reset");
+    }
+    
     public void PreActiveMode()
     {
         if (_animator == null) _animator = this.gameObject.GetComponentInChildren<Animator>();
@@ -24,7 +31,7 @@ public class LaserShot : MonoBehaviour
     public void ActiveMode(bool pIsEnemy)
     {
         _isEnemy = pIsEnemy;
-        _isActive = true;
+        isActive = true;
         
         if (_animator == null) _animator = this.gameObject.GetComponentInChildren<Animator>();
         _animator.SetBool("Attacking", true);
@@ -32,16 +39,22 @@ public class LaserShot : MonoBehaviour
 
     public void DesactiveMode()
     {
-        _isActive = false;
+        isActive = false;
 
         if (_animator == null) _animator = this.gameObject.GetComponentInChildren<Animator>();
         _animator.SetBool("Attacking", false);
     }
-    
+
+
+    public bool GetSide()
+    {
+        return _isEnemy;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!_isActive) return;
+        if (!isActive) return;
 
         Enemy enemyColl = collision.gameObject.GetComponent<Enemy>();
 
@@ -49,11 +62,6 @@ public class LaserShot : MonoBehaviour
         {
             enemyColl.GetHit(_hitValue, enemyColl.transform.position);
         }
-
-        Player playerColl = collision.gameObject.GetComponent<Player>();
-        if (playerColl != null && _isEnemy)
-        {
-            playerColl.GetHit();
-        }
+        
     }
 }

@@ -10,7 +10,12 @@ ModelImporter:
     7400000: Take 001
     9500000: //RootNode
     13700000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Voile
+    second: {fileID: 2100000, guid: 046eb5af606530646a2b11f1f1f95675, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

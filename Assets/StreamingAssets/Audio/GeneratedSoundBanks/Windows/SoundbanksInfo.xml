@@ -24,6 +24,7 @@
 				<Event Id="107775267" Name="Laser_loading2" ObjectPath="\Events\Default Work Unit\Laser_loading2"/>
 				<Event Id="107775269" Name="Laser_loading4" ObjectPath="\Events\Default Work Unit\Laser_loading4"/>
 				<Event Id="1853467501" Name="Laser_stop" ObjectPath="\Events\Default Work Unit\Laser_stop"/>
+				<Event Id="3991942870" Name="Music" ObjectPath="\Events\Default Work Unit\Music"/>
 				<Event Id="2907331365" Name="Reached" ObjectPath="\Events\Default Work Unit\Reached"/>
 				<Event Id="251412229" Name="Shot" ObjectPath="\Events\Default Work Unit\Shot"/>
 			</IncludedEvents>
@@ -70,7 +71,7 @@
 				</File>
 				<File Id="333126272" Language="SFX">
 					<ShortName>Laser\Refroidissement\RefroidissementLaser.wav</ShortName>
-					<Path>SFX\Laser\Refroidissement\RefroidissementLaser_56D34C19.wem</Path>
+					<Path>SFX\Laser\Refroidissement\RefroidissementLaser_B8C9E534.wem</Path>
 				</File>
 				<File Id="342057620" Language="SFX">
 					<ShortName>EnnemiDétruit\Explosion01.wav</ShortName>
@@ -87,6 +88,10 @@
 				<File Id="421371799" Language="SFX">
 					<ShortName>JunkBlessure\Bois02.wav</ShortName>
 					<Path>SFX\JunkBlessure\Bois02_77E4AEB9.wem</Path>
+				</File>
+				<File Id="438973287" Language="SFX">
+					<ShortName>OddsAndEnds.wav</ShortName>
+					<Path>SFX\OddsAndEnds_8956FC97.wem</Path>
 				</File>
 				<File Id="444156013" Language="SFX">
 					<ShortName>Laser\LaserActif\Boucle01.wav</ShortName>
@@ -111,10 +116,6 @@
 				<File Id="717123889" Language="SFX">
 					<ShortName>Laser\LaserActif\Boucle02.wav</ShortName>
 					<Path>SFX\Laser\LaserActif\Boucle02_765DB474.wem</Path>
-				</File>
-				<File Id="718323707" Language="SFX">
-					<ShortName>LancementReverb.wav</ShortName>
-					<Path>SFX\LancementReverb_56D34C19.wem</Path>
 				</File>
 				<File Id="734061777" Language="SFX">
 					<ShortName>Laser\LaserActif\Boucle02.wav</ShortName>

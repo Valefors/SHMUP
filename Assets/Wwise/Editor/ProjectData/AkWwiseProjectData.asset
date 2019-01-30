@@ -181,13 +181,13 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: ba4f3c47d387e34789f00968a54a6f83
-    m_lastTime: -8586541359010627032
+    m_lastTime: -8586538397198121755
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2833e4d17ac8924f94f0cad191414be9
-    m_lastTime: -8586541827316896077
+    m_lastTime: -8586539494132979858
     List:
     - name: General
       guid: b8f5f163590846438a9805268b1eea41
@@ -202,7 +202,7 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: e3d62635ae2c1d409c4f0d3563842048
-    m_lastTime: -8586542039379139957
+    m_lastTime: -8586536141467723987
     List:
     - name: Damaged
       guid: 5ec9335031110c4d8f57e61f7907c0c0
@@ -300,6 +300,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Music
+      guid: 2a43116c9c2a1d4ab724a406ea84f24d
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 3
+      Path: Default Work Unit\Music
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Reached
       guid: dca931a6f1e5f64991dcd8a4da818169
       id: 2907331365
@@ -328,7 +340,7 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: c6a5da06dc03904c82d9b4d0291e23c5
-    m_lastTime: -8586542243526001046
+    m_lastTime: -8586538423869464537
     List:
     - name: Number_canons
       guid: 0c83b47157d8d84bb1ed8a81b525906a
@@ -461,8 +473,42 @@ MonoBehaviour:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: dacc6df10f7544419cdc4fd2be8577f2
-    m_lastTime: -8586542243526290481
+    m_lastTime: -8586533510230738947
     List:
+    - name: Level_state
+      guid: ce4f057488f2024cb722f5dc09231e76
+      id: 453242039
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Level_state
+        ObjectType: 9
+      Path: Default Work Unit\Level_state
+      values:
+      - name: Level01
+        guid: fc8e15995639634d908c78231efedadf
+        id: 3152323980
+        PathAndIcons:
+        - ElementName: Level01
+          ObjectType: 8
+      - name: Level02
+        guid: e09ef9b3a8f5f54f9bdea53b0fe47f47
+        id: 3152323983
+        PathAndIcons:
+        - ElementName: Level02
+          ObjectType: 8
+      - name: Level03
+        guid: c06d2aa533c7a14d99277bfbb427b922
+        id: 3152323982
+        PathAndIcons:
+        - ElementName: Level03
+          ObjectType: 8
+      - name: None
+        guid: 1fd934d7667644409ab67b87cd1dd32b
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
     - name: Moving_state
       guid: 7c262b6e519292479e2ba0c8f95631f2
       id: 2357501141
@@ -535,6 +581,9 @@ MonoBehaviour:
   - /Junk
   - /Junk/Events
   - /Junk/Events/Default Work Unit
+  - /Junk/SoundBanks
+  - /Junk/SoundBanks/Default Work Unit
   - /Junk/States
+  - /Junk/States/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

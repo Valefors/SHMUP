@@ -14,6 +14,7 @@ public class Laser : ShooterModule
     // Start is called before the first frame update
     void Start()
     {
+        moduleType = 2;
         _transform = GetComponent<Transform>();
     }
 
@@ -25,6 +26,10 @@ public class Laser : ShooterModule
     protected virtual void Fire()
     {
         _laserShot.ActiveMode(isEnemy);
+
+        if (_shotRate == 2) AkSoundEngine.PostEvent("Laser_launched2", gameObject);
+        if (_shotRate == 4) AkSoundEngine.PostEvent("Laser_launched4", gameObject);
+
         _canShoot = false;
         Invoke("Disable", _shotRate);
     }
@@ -32,13 +37,26 @@ public class Laser : ShooterModule
     protected virtual void Disable()
     {
         _laserShot.DesactiveMode();
+        Invoke("Preparation", _shotRate-1);
         Invoke("CanShootAgain", _shotRate);
+        if (_shotRate == 2) AkSoundEngine.PostEvent("Laser_loading2", gameObject);
+        if (_shotRate == 4) AkSoundEngine.PostEvent("Laser_loading4", gameObject);
+    }
+
+    public override void DoActionFree()
+    {
+        _laserShot.ResetAnim();
+        base.DoActionFree();
+    }
+
+    protected void Preparation()
+    {
+        _laserShot.PreActiveMode();
     }
 
     protected virtual void CanShootAgain()
     {
         _canShoot = true;
-        _laserShot.PreActiveMode();
     }
 
     public override void SetModeFree()
