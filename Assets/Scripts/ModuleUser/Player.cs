@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
 
 
         GameManager.manager.BossHealthBar.gameObject.SetActive(false);
-        AkSoundEngine.PostEvent("Music", gameObject);
+        AkSoundEngine.PostEvent(AkSoundEngine.AKEventName.Music, gameObject);
         
 
         saveInvulnerableDelay = _invulnerabilityDelay;
@@ -321,7 +321,7 @@ public class Player : MonoBehaviour
             //need to know if there parent are still enemy (or even friend)
             if (moduleCollided.free)
             {
-                AkSoundEngine.PostEvent("Get_module", gameObject);
+                AkSoundEngine.PostEvent(AkSoundEngine.AKEventName.Get_module, gameObject);
                 AddModule(moduleCollided);
             }
         }
@@ -370,7 +370,7 @@ public class Player : MonoBehaviour
         {
             AkSoundEngine.SetState("vGun_state", "no");
         }
-        AkSoundEngine.PostEvent("Damaged", gameObject);
+        AkSoundEngine.PostEvent(AkSoundEngine.AKEventName.Damaged, gameObject);
 
         lModuleToDestroy.SetDeathMode();
 
