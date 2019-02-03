@@ -5,6 +5,7 @@ State Group	ID	Name			Wwise Object Path	Notes
 
 State	ID	Name	State Group			Notes
 	0	None	Level_state			
+	916671257	Nope	Level_state			
 	1730564816	Music2	Level_state			
 	1730564817	Music3	Level_state			
 	1730564819	Music1	Level_state			
@@ -35,6 +36,8 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	646625284	HUD			\Default Work Unit\Master Audio Bus\HUD	
 	985987111	Motion Factory Bus			\Default Work Unit\Motion Factory Bus	
 	2530157555	Environnement			\Default Work Unit\Master Audio Bus\Environnement	
+	2981377429	Ambiance			\Default Work Unit\Master Audio Bus\Ambiance	
+	3321711160	Vent			\Default Work Unit\Master Audio Bus\Vent	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 

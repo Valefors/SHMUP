@@ -16,7 +16,9 @@
 			<ShortName>General</ShortName>
 			<Path>General.bnk</Path>
 			<IncludedEvents>
+				<Event Id="4177466310" Name="Boss_explosion" ObjectPath="\Events\Default Work Unit\Boss_explosion"/>
 				<Event Id="3258988170" Name="Damaged" ObjectPath="\Events\Default Work Unit\Damaged"/>
+				<Event Id="779278001" Name="Death" ObjectPath="\Events\Default Work Unit\Death"/>
 				<Event Id="43048378" Name="Get_module" ObjectPath="\Events\Default Work Unit\Get_module"/>
 				<Event Id="2030840469" Name="Kill" ObjectPath="\Events\Default Work Unit\Kill"/>
 				<Event Id="61540611" Name="Laser_launched2" ObjectPath="\Events\Default Work Unit\Laser_launched2"/>
@@ -24,8 +26,10 @@
 				<Event Id="107775267" Name="Laser_loading2" ObjectPath="\Events\Default Work Unit\Laser_loading2"/>
 				<Event Id="107775269" Name="Laser_loading4" ObjectPath="\Events\Default Work Unit\Laser_loading4"/>
 				<Event Id="1853467501" Name="Laser_stop" ObjectPath="\Events\Default Work Unit\Laser_stop"/>
+				<Event Id="2607556080" Name="Menu" ObjectPath="\Events\Default Work Unit\Menu" MaxAttenuation="0.000000"/>
 				<Event Id="3991942870" Name="Music" ObjectPath="\Events\Default Work Unit\Music"/>
 				<Event Id="2907331365" Name="Reached" ObjectPath="\Events\Default Work Unit\Reached"/>
+				<Event Id="2842388664" Name="Replay" ObjectPath="\Events\Default Work Unit\Replay" MaxAttenuation="0.000000"/>
 				<Event Id="1432588725" Name="Select" ObjectPath="\Events\Default Work Unit\Select"/>
 				<Event Id="251412229" Name="Shot" ObjectPath="\Events\Default Work Unit\Shot"/>
 				<Event Id="1281810935" Name="Start" ObjectPath="\Events\Default Work Unit\Start"/>
@@ -44,9 +48,17 @@
 					<ShortName>EnnemiDétruit\Bois01.wav</ShortName>
 					<Path>SFX\EnnemiDétruit\Bois01_56D34C19.wem</Path>
 				</File>
+				<File Id="91158053" Language="SFX">
+					<ShortName>Vent.wav</ShortName>
+					<Path>SFX\Vent_6D0378DB.wem</Path>
+				</File>
 				<File Id="91520928" Language="SFX">
 					<ShortName>JunkBlessure\Bois03.wav</ShortName>
 					<Path>SFX\JunkBlessure\Bois03_C624F882.wem</Path>
+				</File>
+				<File Id="93605454" Language="SFX">
+					<ShortName>Tourne1.wav</ShortName>
+					<Path>SFX\Tourne1_8956FC97.wem</Path>
 				</File>
 				<File Id="110549905" Language="SFX">
 					<ShortName>Laser\LaserActif\Electricite.wav</ShortName>
@@ -56,9 +68,17 @@
 					<ShortName>JunkBlessure\Bois01.wav</ShortName>
 					<Path>SFX\JunkBlessure\Bois01_396E36E7.wem</Path>
 				</File>
+				<File Id="140737767" Language="SFX">
+					<ShortName>Donf.wav</ShortName>
+					<Path>SFX\Donf_8956FC97.wem</Path>
+				</File>
 				<File Id="171690536" Language="SFX">
 					<ShortName>Laser\LaserActif\Electricite.wav</ShortName>
 					<Path>SFX\Laser\LaserActif\Electricite_5EEA40C7.wem</Path>
+				</File>
+				<File Id="173879259" Language="SFX">
+					<ShortName>Tourne2.wav</ShortName>
+					<Path>SFX\Tourne2_8956FC97.wem</Path>
 				</File>
 				<File Id="193742178" Language="SFX">
 					<ShortName>Pont2.wav</ShortName>
@@ -75,10 +95,6 @@
 				<File Id="260000769" Language="SFX">
 					<ShortName>EnnemiDétruit\ComposanteLaser.wav</ShortName>
 					<Path>SFX\EnnemiDétruit\ComposanteLaser_682201A8.wem</Path>
-				</File>
-				<File Id="269801861" Language="SFX">
-					<ShortName>SynthDoubleFont.wav</ShortName>
-					<Path>SFX\SynthDoubleFont_8956FC97.wem</Path>
 				</File>
 				<File Id="276322362" Language="SFX">
 					<ShortName>EnnemiDétruit\Bois02.wav</ShortName>
@@ -100,17 +116,9 @@
 					<ShortName>EnnemiDétruit\Explosion01.wav</ShortName>
 					<Path>SFX\EnnemiDétruit\Explosion01_0396B94F.wem</Path>
 				</File>
-				<File Id="344004510" Language="SFX">
-					<ShortName>Tourne1.wav</ShortName>
-					<Path>SFX\Tourne1_8956FC97.wem</Path>
-				</File>
 				<File Id="352100003" Language="SFX">
 					<ShortName>InstallationModule\vissage02.wav</ShortName>
 					<Path>SFX\InstallationModule\vissage02_56D34C19.wem</Path>
-				</File>
-				<File Id="391628417" Language="SFX">
-					<ShortName>SynthKotoTourne.wav</ShortName>
-					<Path>SFX\SynthKotoTourne_8956FC97.wem</Path>
 				</File>
 				<File Id="395497538" Language="SFX">
 					<ShortName>Pont3.wav</ShortName>
@@ -124,17 +132,21 @@
 					<ShortName>JunkBlessure\Bois02.wav</ShortName>
 					<Path>SFX\JunkBlessure\Bois02_77E4AEB9.wem</Path>
 				</File>
+				<File Id="422810402" Language="SFX">
+					<ShortName>SynthKotoIntro.wav</ShortName>
+					<Path>SFX\SynthKotoIntro_8956FC97.wem</Path>
+				</File>
 				<File Id="444156013" Language="SFX">
 					<ShortName>Laser\LaserActif\Boucle01.wav</ShortName>
 					<Path>SFX\Laser\LaserActif\Boucle01_52B98F53.wem</Path>
 				</File>
-				<File Id="468776389" Language="SFX">
-					<ShortName>EndSynthéKoto.wav</ShortName>
-					<Path>SFX\EndSynthéKoto_8956FC97.wem</Path>
-				</File>
 				<File Id="472770388" Language="SFX">
 					<ShortName>Charge4secondes.wav</ShortName>
 					<Path>SFX\Charge4secondes_56D34C19.wem</Path>
+				</File>
+				<File Id="473158767" Language="SFX">
+					<ShortName>TourneSimple.wav</ShortName>
+					<Path>SFX\TourneSimple_8956FC97.wem</Path>
 				</File>
 				<File Id="475041080" Language="SFX">
 					<ShortName>Select.wav</ShortName>
@@ -144,6 +156,10 @@
 					<ShortName>Laser\LaserActif\Boucle01.wav</ShortName>
 					<Path>SFX\Laser\LaserActif\Boucle01_E73015F6.wem</Path>
 				</File>
+				<File Id="483739461" Language="SFX">
+					<ShortName>SynthDoubleFont.wav</ShortName>
+					<Path>SFX\SynthDoubleFont_8956FC97.wem</Path>
+				</File>
 				<File Id="531300360" Language="SFX">
 					<ShortName>SynthTourne.wav</ShortName>
 					<Path>SFX\SynthTourne_8956FC97.wem</Path>
@@ -152,37 +168,33 @@
 					<ShortName>JunkBlessure\Plaque.wav</ShortName>
 					<Path>SFX\JunkBlessure\Plaque_0157EB41.wem</Path>
 				</File>
-				<File Id="563621004" Language="SFX">
-					<ShortName>Tourne2.wav</ShortName>
-					<Path>SFX\Tourne2_8956FC97.wem</Path>
-				</File>
-				<File Id="585344410" Language="SFX">
-					<ShortName>SynthKotoIntro.wav</ShortName>
-					<Path>SFX\SynthKotoIntro_8956FC97.wem</Path>
-				</File>
 				<File Id="587333990" Language="SFX">
 					<ShortName>Intro.wav</ShortName>
 					<Path>SFX\Intro_8956FC97.wem</Path>
+				</File>
+				<File Id="605902394" Language="SFX">
+					<ShortName>EndSynthéKoto.wav</ShortName>
+					<Path>SFX\EndSynthéKoto_8956FC97.wem</Path>
+				</File>
+				<File Id="619212287" Language="SFX">
+					<ShortName>SynthSimple.wav</ShortName>
+					<Path>SFX\SynthSimple_8956FC97.wem</Path>
 				</File>
 				<File Id="694896994" Language="SFX">
 					<ShortName>InstallationModule\accrochage.wav</ShortName>
 					<Path>SFX\InstallationModule\accrochage_56D34C19.wem</Path>
 				</File>
-				<File Id="707836433" Language="SFX">
-					<ShortName>EndSynthéKoto2.wav</ShortName>
-					<Path>SFX\EndSynthéKoto2_8956FC97.wem</Path>
-				</File>
 				<File Id="717123889" Language="SFX">
 					<ShortName>Laser\LaserActif\Boucle02.wav</ShortName>
 					<Path>SFX\Laser\LaserActif\Boucle02_765DB474.wem</Path>
 				</File>
-				<File Id="728702675" Language="SFX">
-					<ShortName>Donf.wav</ShortName>
-					<Path>SFX\Donf_8956FC97.wem</Path>
-				</File>
 				<File Id="734061777" Language="SFX">
 					<ShortName>Laser\LaserActif\Boucle02.wav</ShortName>
 					<Path>SFX\Laser\LaserActif\Boucle02_D7D2FC91.wem</Path>
+				</File>
+				<File Id="739811204" Language="SFX">
+					<ShortName>EndSynthéKoto2.wav</ShortName>
+					<Path>SFX\EndSynthéKoto2_8956FC97.wem</Path>
 				</File>
 				<File Id="749581320" Language="SFX">
 					<ShortName>EnnemiDétruit\Explosion02.wav</ShortName>
@@ -216,17 +228,13 @@
 					<ShortName>LargeMétal.wav</ShortName>
 					<Path>SFX\LargeMétal_56D34C19.wem</Path>
 				</File>
-				<File Id="823639095" Language="SFX">
-					<ShortName>DonfEnd.wav</ShortName>
-					<Path>SFX\DonfEnd_8956FC97.wem</Path>
-				</File>
 				<File Id="825374637" Language="SFX">
 					<ShortName>InstallationModule\vissage03.wav</ShortName>
 					<Path>SFX\InstallationModule\vissage03_56D34C19.wem</Path>
 				</File>
-				<File Id="846001965" Language="SFX">
-					<ShortName>SynthSimple.wav</ShortName>
-					<Path>SFX\SynthSimple_8956FC97.wem</Path>
+				<File Id="840538807" Language="SFX">
+					<ShortName>SynthKotoTourne.wav</ShortName>
+					<Path>SFX\SynthKotoTourne_8956FC97.wem</Path>
 				</File>
 				<File Id="848318048" Language="SFX">
 					<ShortName>TirGun\Laser.wav</ShortName>
@@ -236,25 +244,29 @@
 					<ShortName>Touché\Choc.wav</ShortName>
 					<Path>SFX\Touché\Choc_8D98D74F.wem</Path>
 				</File>
-				<File Id="850161284" Language="SFX">
-					<ShortName>Ambiance.wav</ShortName>
-					<Path>SFX\Ambiance_56D34C19.wem</Path>
-				</File>
 				<File Id="852126931" Language="SFX">
 					<ShortName>Pont1.wav</ShortName>
 					<Path>SFX\Pont1_8956FC97.wem</Path>
+				</File>
+				<File Id="874515223" Language="SFX">
+					<ShortName>Ambiance02.wav</ShortName>
+					<Path>SFX\Ambiance02_8956FC97.wem</Path>
 				</File>
 				<File Id="950531700" Language="SFX">
 					<ShortName>Laser\Refroidissement\ShutDownLaser.wav</ShortName>
 					<Path>SFX\Laser\Refroidissement\ShutDownLaser_56D34C19.wem</Path>
 				</File>
+				<File Id="960378184" Language="SFX">
+					<ShortName>BossExplosion.wav</ShortName>
+					<Path>SFX\BossExplosion_56D34C19.wem</Path>
+				</File>
 				<File Id="1017444176" Language="SFX">
 					<ShortName>Valid.wav</ShortName>
 					<Path>SFX\Valid_56D34C19.wem</Path>
 				</File>
-				<File Id="1051156327" Language="SFX">
-					<ShortName>TourneSimple.wav</ShortName>
-					<Path>SFX\TourneSimple_8956FC97.wem</Path>
+				<File Id="1021412706" Language="SFX">
+					<ShortName>DonfEnd.wav</ShortName>
+					<Path>SFX\DonfEnd_8956FC97.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

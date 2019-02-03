@@ -1,0 +1,102 @@
+Event	ID	Name			Wwise Object Path	Notes
+	43048378	Get_module			\Default Work Unit\Get_module	
+	61540611	Laser_launched2			\Default Work Unit\Laser_launched2	
+	61540613	Laser_launched4			\Default Work Unit\Laser_launched4	
+	107775267	Laser_loading2			\Default Work Unit\Laser_loading2	
+	107775269	Laser_loading4			\Default Work Unit\Laser_loading4	
+	251412229	Shot			\Default Work Unit\Shot	
+	779278001	Death			\Default Work Unit\Death	
+	1156419497	Valid			\Default Work Unit\Valid	
+	1281810935	Start			\Default Work Unit\Start	
+	1432588725	Select			\Default Work Unit\Select	
+	1853467501	Laser_stop			\Default Work Unit\Laser_stop	
+	2030840469	Kill			\Default Work Unit\Kill	
+	2607556080	Menu			\Default Work Unit\Menu	
+	2842388664	Replay			\Default Work Unit\Replay	
+	2907331365	Reached			\Default Work Unit\Reached	
+	3258988170	Damaged			\Default Work Unit\Damaged	
+	3991942870	Music			\Default Work Unit\Music	
+	4177466310	Boss_explosion			\Default Work Unit\Boss_explosion	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	3730680495	vGun_state			\Default Work Unit\vGun_state	
+
+State	ID	Name	State Group			Notes
+	0	None	vGun_state			
+	979470758	yes	vGun_state			
+	1668749452	no	vGun_state			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	970583507	yes	vGun_state	\Actor-Mixer Hierarchy\Default Work Unit\TirGun\CanonGrave		
+	974160930	yes	vGun_state	\Actor-Mixer Hierarchy\Default Work Unit\TirGun\CanonGraveLoin		
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	777057825	Number_canons			\Default Work Unit\Number_canons	
+
+Effect plug-ins	ID	Name	Type				Notes
+	68438173	Wwise Compressor (Custom)	Wwise Compressor			
+	1686450799	DelayCanon	Wwise Delay			
+	3164629247	Holy	Wwise RoomVerb			
+	3395979371	Straight_Delay	Wwise Stereo Delay			
+	3604890626	High_Pass_60Hz	Wwise Parametric EQ			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	11617417	KotoTourne	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\KotoTourne_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\KotoTourne\KotoTourne		1828636
+	43741013	vissage01	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\InstallationModule\vissage01_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\InstallationModule\Vissage\vissage01		294368
+	89547824	Bois01	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\EnnemiDétruit\Bois01_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Bois\Bois01		356080
+	91158053	Vent	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Vent_6D0378DB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Vent\Vent		11424600
+	91520928	Bois03	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\JunkBlessure\Bois03_C624F882.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Bois\Bois03		165328
+	93605454	Tourne1	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Tourne1_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level02\Tourne1\Tourne1		1828636
+	110549905	Electricite	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Laser\LaserActif\Electricite_A17F745C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif2\Electricite		385476
+	119410799	Bois01	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\JunkBlessure\Bois01_396E36E7.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Bois\Bois01		133960
+	140737767	Donf	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Donf_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level03\Donf\Donf		3291496
+	171690536	Electricite	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Laser\LaserActif\Electricite_5EEA40C7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif4\Electricite		769632
+	173879259	Tourne2	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Tourne2_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level02\Tourne2\Tourne2		1828636
+	193742178	Pont2	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Pont2_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\Pont2\Pont2		1828636
+	197797950	Métal	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\JunkBlessure\Métal_B2463F5D.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Métal		366408
+	203401469	Bois03	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\EnnemiDétruit\Bois03_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Bois\Bois03		449976
+	223396702	Tourne2b	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Tourne2b_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\Tourne2b\Tourne2b		1828636
+	260000769	ComposanteLaser	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\EnnemiDétruit\ComposanteLaser_682201A8.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\ComposanteLaser		56560
+	274619659	Plaque	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\JunkBlessure\Plaque_0157EB41.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Plaque		440668
+	276322362	Bois02	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\EnnemiDétruit\Bois02_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Bois\Bois02		426320
+	288781905	PercuKoto	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\PercuKoto_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\PercuKoto\PercuKoto		1828636
+	328718951	LargeMétal	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\LargeMétal_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\LargeMétal		251616
+	332644054	Lancement	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Lancement_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LancementLaser\Lancement		578956
+	333126272	RefroidissementLaser	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Laser\Refroidissement\RefroidissementLaser_B8C9E534.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\Refroidissement\RefroidissementLaser		407888
+	342057620	Explosion01	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\EnnemiDétruit\Explosion01_0396B94F.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Explosion\Explosion01		387024
+	352100003	vissage02	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\InstallationModule\vissage02_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\InstallationModule\Vissage\vissage02		259564
+	395497538	Pont3	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Pont3_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\Pont3\Pont3		1828636
+	407585590	Explosion03	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\EnnemiDétruit\Explosion03_51648289.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Explosion\Explosion03		305112
+	421371799	Bois02	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\JunkBlessure\Bois02_77E4AEB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Bois\Bois02		128128
+	422810402	SynthKotoIntro	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\SynthKotoIntro_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level02\SynthKotoIntro\SynthKotoIntro		1828636
+	444156013	Boucle01	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Laser\LaserActif\Boucle01_52B98F53.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif2\Boucle01		471624
+	472770388	Charge4secondes	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Charge4secondes_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\ChargeLaser\Charge4secondes		948512
+	473158767	TourneSimple	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\TourneSimple_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level02\TourneSimple\TourneSimple		1828636
+	475041080	Select	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Select_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interface\Select		48752
+	483739461	SynthDoubleFont	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\SynthDoubleFont_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level02\SynthDoubleFond\SynthDoubleFont		3291496
+	531300360	SynthTourne	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\SynthTourne_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\SynthTourne\SynthTourne		1828636
+	587333990	Intro	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Intro_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\Intro\Intro		1097208
+	594472526	Boucle01	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Laser\LaserActif\Boucle01_E73015F6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif4\Boucle01		853232
+	605902394	EndSynthéKoto	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\EndSynthéKoto_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level03\EndSynthéKoto\EndSynthéKoto		3291496
+	619212287	SynthSimple	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\SynthSimple_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level02\SynthSimple\SynthSimple		3291496
+	694896994	accrochage	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\InstallationModule\accrochage_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\InstallationModule\accrochage		297228
+	717123889	Boucle02	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Laser\LaserActif\Boucle02_765DB474.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif2\Boucle02		386072
+	734061777	Boucle02	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Laser\LaserActif\Boucle02_D7D2FC91.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif4\Boucle02		769584
+	739811204	EndSynthéKoto2	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\EndSynthéKoto2_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level03\EndSynthéKoto2\EndSynthéKoto2		3291496
+	749581320	Explosion02	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\EnnemiDétruit\Explosion02_BA6B0D00.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Explosion\Explosion02		390640
+	755684536	Charge2secondes	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Charge2secondes_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\ChargeLaser\Charge2secondes		601808
+	780068063	CanonGrave	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\TirGun\CanonGrave_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\TirGun\CanonGrave		246672
+	785075474	CanonGraveLoin	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\CanonGraveLoin_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\TirGun\CanonGraveLoin		244664
+	795880828	SynthDouble	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\SynthDouble_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\SynthDouble\SynthDouble		3291496
+	797382632	CanonAigu	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\TirGun\CanonAigu_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\TirGun\CanonAigu		246660
+	825374637	vissage03	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\InstallationModule\vissage03_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\InstallationModule\Vissage\vissage03		229824
+	840538807	SynthKotoTourne	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\SynthKotoTourne_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level03\SynthKotoTourne\SynthKotoTourne		3291496
+	848318048	Laser	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\TirGun\Laser_A47C69CD.wem		\Actor-Mixer Hierarchy\Default Work Unit\TirGun\Laser		19988
+	850007373	Choc	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Touché\Choc_8D98D74F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Touché\Choc		85168
+	852126931	Pont1	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Pont1_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\Pont1\Pont1		1828636
+	874515223	Ambiance02	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Ambiance02_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Ambiance\Ambiance\Ambiance02		12434352
+	950531700	ShutDownLaser	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Laser\Refroidissement\ShutDownLaser_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\Refroidissement\ShutDownLaser		646504
+	960378184	BossExplosion	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\BossExplosion_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\BossExplosion\BossExplosion		1609928
+	1017444176	Valid	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\Valid_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interface\Valid		384484
+	1021412706	DonfEnd	D:\Documents\WwiseProjects\Shmup\Junk\.cache\Mac\SFX\DonfEnd_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level03\DonfEnd\DonfEnd		2925780
+
