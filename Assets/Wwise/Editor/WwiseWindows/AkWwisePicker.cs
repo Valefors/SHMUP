@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 //////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2014 Audiokinetic Inc. / All Rights Reserved
@@ -38,6 +38,7 @@ public class AkWwisePicker : UnityEditor.EditorWindow
 
 			if (UnityEngine.GUILayout.Button("Generate SoundBanks", UnityEngine.GUILayout.Width(200)))
 			{
+				EventEnumCreator.RefreshEnumNameEvent(); //AUTOMATIC ADDITION BY THE SCRIPT NAMED : EventEnumCreator.cs (function Init() )
 				if (AkUtilities.IsSoundbankGenerationAvailable())
 				{
 					AkUtilities.GenerateSoundbanks();
@@ -96,3 +97,4 @@ public class AkWwisePicker : UnityEditor.EditorWindow
 	}
 }
 #endif
+

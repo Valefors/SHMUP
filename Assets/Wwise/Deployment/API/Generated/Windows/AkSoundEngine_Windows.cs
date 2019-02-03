@@ -11,6 +11,30 @@
 
 
 public partial class AkSoundEngine {
+  //AUTOMATIC ADDITION BY THE SCRIPT NAMED : EventEnumCreator.cs (function CreateEventEnum() )
+  public enum AKEventName {
+        Damaged,
+        Get_module,
+        Kill,
+        Laser_launched2,
+        Laser_launched4,
+        Laser_loading2,
+        Laser_loading4,
+        Laser_stop,
+        Music,
+        Reached,
+        Shot,
+    }
+    
+  public static string eventEnumToString(AKEventName in_EventName) {
+        return in_EventName.ToString();
+  }
+  
+  public static uint PostEvent(AKEventName in_EnumEventName, UnityEngine.GameObject in_gameObjectID) {
+        string local_EventNameStr = eventEnumToString(in_EnumEventName);
+        return AkSoundEngine.PostEvent(local_EventNameStr, in_gameObjectID);
+  }
+  //END OF ADDITION 
   public static uint AK_SOUNDBANK_VERSION { get { return AkSoundEnginePINVOKE.CSharp_AK_SOUNDBANK_VERSION_get(); } 
   }
 
