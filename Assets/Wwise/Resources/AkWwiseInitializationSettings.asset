@@ -18,7 +18,8 @@ MonoBehaviour:
   PlatformSettingsList:
   - {fileID: 11400000, guid: e3c7f6416219ea949b8cc7d2218ef25b, type: 2}
   - {fileID: 11400000, guid: 925dad99b0cd79e43b29b2c091305edd, type: 2}
-  InvalidReferencePlatforms: []
+  InvalidReferencePlatforms:
+  - Android
   UserSettings:
     m_BasePath: Audio\GeneratedSoundBanks
     m_StartupLanguage: English(US)

@@ -16,12 +16,12 @@ MonoBehaviour:
   - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 90e3a8157af5ec46922456e1dd67309e
-    m_lastTime: -8586523926149576097
+    m_lastTime: -8586505143598033202
     List: []
   - PhysicalPath: Virtual Acoustics\Factory Reflect Acoustic Textures.wwu
     ParentPhysicalPath: 
     guid: 6b663d46a83ca54f8b4a5fef12b883f6
-    m_lastTime: -8586523926150454001
+    m_lastTime: -8586505143603000148
     List:
     - name: Acoustic_Banner
       guid: f2532d2fccda8e408b8898b1b52a26d6
@@ -181,13 +181,13 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: ba4f3c47d387e34789f00968a54a6f83
-    m_lastTime: -8586523926153280968
+    m_lastTime: -8586505133496825000
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 2833e4d17ac8924f94f0cad191414be9
-    m_lastTime: -8586523926151361681
+    m_lastTime: -8586505133500084846
     List:
     - name: General
       guid: b8f5f163590846438a9805268b1eea41
@@ -202,20 +202,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: e3d62635ae2c1d409c4f0d3563842048
-    m_lastTime: -8586523926150890481
+    m_lastTime: -8586505116507249006
     List:
-    - name: Boss_explosion
-      guid: f0599a38a58bd84c8686efcfef724e89
-      id: 4177466310
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Boss_explosion
-        ObjectType: 3
-      Path: Default Work Unit\Boss_explosion
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
     - name: Damaged
       guid: 5ec9335031110c4d8f57e61f7907c0c0
       id: 3258988170
@@ -225,18 +213,6 @@ MonoBehaviour:
       - ElementName: Damaged
         ObjectType: 3
       Path: Default Work Unit\Damaged
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: Death
-      guid: a8fb7ce2ddf4824d9a12339cf2713fc8
-      id: 779278001
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Death
-        ObjectType: 3
-      Path: Default Work Unit\Death
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -321,18 +297,6 @@ MonoBehaviour:
       - ElementName: Laser_stop
         ObjectType: 3
       Path: Default Work Unit\Laser_stop
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: Menu
-      guid: 0158ee173ac6a744ac16865e612410e6
-      id: 2607556080
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Menu
-        ObjectType: 3
-      Path: Default Work Unit\Menu
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -424,7 +388,7 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: c6a5da06dc03904c82d9b4d0291e23c5
-    m_lastTime: -8586523926151654089
+    m_lastTime: -8586505143595714627
     List:
     - name: Number_canons
       guid: 0c83b47157d8d84bb1ed8a81b525906a
@@ -438,7 +402,7 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Factory Motion.wwu
     ParentPhysicalPath: 
     guid: 225213d7dbd1d042adc0930743567776
-    m_lastTime: -8586523926152641376
+    m_lastTime: -8586505143592996314
     List:
     - name: Playback_Rate
       guid: e37e38283ac11643b9c3db5c521624af
@@ -461,7 +425,7 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Factory SoundSeed Air Game Syncs.wwu
     ParentPhysicalPath: 
     guid: 5577163b42fb8b4598bf96f557afb3b9
-    m_lastTime: -8586523926151540250
+    m_lastTime: -8586505143596044458
     List:
     - name: SS_Air_Fear
       guid: 59062ef746431c4ea1b1dab46a05101e
@@ -557,7 +521,7 @@ MonoBehaviour:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: dacc6df10f7544419cdc4fd2be8577f2
-    m_lastTime: -8586523926151723772
+    m_lastTime: -8586505143590527876
     List:
     - name: Level_state
       guid: ce4f057488f2024cb722f5dc09231e76
@@ -592,12 +556,6 @@ MonoBehaviour:
         id: 748895195
         PathAndIcons:
         - ElementName: None
-          ObjectType: 8
-      - name: Nope
-        guid: 06eff552a7e09b409a762ddb6446dda4
-        id: 916671257
-        PathAndIcons:
-        - ElementName: Nope
           ObjectType: 8
     - name: Moving_state
       guid: 7c262b6e519292479e2ba0c8f95631f2
@@ -659,17 +617,21 @@ MonoBehaviour:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 9cf5beef8db821498e0d7223dd315ad1
-    m_lastTime: -8586523926152006496
+    m_lastTime: -8586505143591397342
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 20c3ce9929896c4094277995753dd2ed
-    m_lastTime: -8586523926150002639
+    m_lastTime: -8586505143604379281
     List: []
   ExpandedItems:
   - /Junk
   - /Junk/Events
   - /Junk/Events/Default Work Unit
+  - /Junk/SoundBanks
+  - /Junk/SoundBanks/Default Work Unit
+  - /Junk/States
+  - /Junk/States/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

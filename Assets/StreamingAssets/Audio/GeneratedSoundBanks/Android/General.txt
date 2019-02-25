@@ -1,0 +1,93 @@
+Event	ID	Name			Wwise Object Path	Notes
+	43048378	Get_module			\Default Work Unit\Get_module	
+	61540611	Laser_launched2			\Default Work Unit\Laser_launched2	
+	61540613	Laser_launched4			\Default Work Unit\Laser_launched4	
+	107775267	Laser_loading2			\Default Work Unit\Laser_loading2	
+	107775269	Laser_loading4			\Default Work Unit\Laser_loading4	
+	251412229	Shot			\Default Work Unit\Shot	
+	1156419497	Valid			\Default Work Unit\Valid	
+	1281810935	Start			\Default Work Unit\Start	
+	1432588725	Select			\Default Work Unit\Select	
+	1853467501	Laser_stop			\Default Work Unit\Laser_stop	
+	2030840469	Kill			\Default Work Unit\Kill	
+	2907331365	Reached			\Default Work Unit\Reached	
+	3258988170	Damaged			\Default Work Unit\Damaged	
+	3991942870	Music			\Default Work Unit\Music	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	3730680495	vGun_state			\Default Work Unit\vGun_state	
+
+State	ID	Name	State Group			Notes
+	0	None	vGun_state			
+	979470758	yes	vGun_state			
+	1668749452	no	vGun_state			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	970583507	yes	vGun_state	\Actor-Mixer Hierarchy\Default Work Unit\TirGun\CanonGrave		
+	974160930	yes	vGun_state	\Actor-Mixer Hierarchy\Default Work Unit\TirGun\CanonGraveLoin		
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	777057825	Number_canons			\Default Work Unit\Number_canons	
+
+Effect plug-ins	ID	Name	Type				Notes
+	68438173	Wwise Compressor (Custom)	Wwise Compressor			
+	1686450799	DelayCanon	Wwise Delay			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	11617417	KotoTourne	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\KotoTourne_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\KotoTourne\KotoTourne		1828636
+	43741013	vissage01	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\InstallationModule\vissage01_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\InstallationModule\Vissage\vissage01		294368
+	89547824	Bois01	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\EnnemiDétruit\Bois01_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Bois\Bois01		356080
+	91520928	Bois03	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\JunkBlessure\Bois03_C624F882.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Bois\Bois03		165328
+	110549905	Electricite	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Laser\LaserActif\Electricite_A17F745C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif2\Electricite		385476
+	119410799	Bois01	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\JunkBlessure\Bois01_396E36E7.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Bois\Bois01		133960
+	154327596	Tourne2	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Tourne2_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\Tourne2\Tourne2		1828636
+	171690536	Electricite	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Laser\LaserActif\Electricite_5EEA40C7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif4\Electricite		769632
+	193742178	Pont2	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Pont2_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\Pont2\Pont2		1828636
+	203401469	Bois03	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\EnnemiDétruit\Bois03_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Bois\Bois03		449976
+	223396702	Tourne2b	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Tourne2b_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\Tourne2b\Tourne2b		1828636
+	223825696	TourneSimple	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\TourneSimple_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\TourneSimple\TourneSimple		1828636
+	260000769	ComposanteLaser	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\EnnemiDétruit\ComposanteLaser_682201A8.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\ComposanteLaser		56560
+	269801861	SynthDoubleFont	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\SynthDoubleFont_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level02\SynthDoubleFond\SynthDoubleFont		3291496
+	276322362	Bois02	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\EnnemiDétruit\Bois02_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Bois\Bois02		426320
+	288781905	PercuKoto	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\PercuKoto_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\PercuKoto\PercuKoto		1828636
+	290677336	Ambiance	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Ambiance_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Ambiance\Ambiance\Ambiance		15725780
+	332644054	Lancement	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Lancement_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LancementLaser\Lancement		578956
+	333126272	RefroidissementLaser	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Laser\Refroidissement\RefroidissementLaser_B8C9E534.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\Refroidissement\RefroidissementLaser		407888
+	342057620	Explosion01	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\EnnemiDétruit\Explosion01_0396B94F.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Explosion\Explosion01		387024
+	344004510	Tourne1	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Tourne1_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\Tourne1\Tourne1		1828636
+	352100003	vissage02	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\InstallationModule\vissage02_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\InstallationModule\Vissage\vissage02		259564
+	391628417	SynthKotoTourne	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\SynthKotoTourne_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level03\SynthKotoTourne\SynthKotoTourne		3291496
+	395497538	Pont3	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Pont3_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\Pont3\Pont3		1828636
+	407585590	Explosion03	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\EnnemiDétruit\Explosion03_51648289.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Explosion\Explosion03		305112
+	421371799	Bois02	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\JunkBlessure\Bois02_77E4AEB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Bois\Bois02		128128
+	444156013	Boucle01	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Laser\LaserActif\Boucle01_52B98F53.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif2\Boucle01		471624
+	468776389	EndSynthéKoto	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\EndSynthéKoto_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level03\EndSynthéKoto\EndSynthéKoto		3291496
+	472770388	Charge4secondes	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Charge4secondes_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\ChargeLaser\Charge4secondes		948512
+	475041080	Select	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Select_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interface\Select		48752
+	531300360	SynthTourne	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\SynthTourne_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\SynthTourne\SynthTourne		1828636
+	548269847	Plaque	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\JunkBlessure\Plaque_0157EB41.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Plaque		440668
+	585344410	SynthKotoIntro	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\SynthKotoIntro_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level02\SynthKotoIntro\SynthKotoIntro		1828636
+	587333990	Intro	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Intro_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\Intro\Intro		1097208
+	594472526	Boucle01	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Laser\LaserActif\Boucle01_E73015F6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif4\Boucle01		853232
+	694896994	accrochage	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\InstallationModule\accrochage_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\InstallationModule\accrochage		297228
+	707836433	EndSynthéKoto2	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\EndSynthéKoto2_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level03\EndSynthéKoto2\EndSynthéKoto2		3291496
+	717123889	Boucle02	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Laser\LaserActif\Boucle02_765DB474.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif2\Boucle02		386072
+	728702675	Donf	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Donf_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level03\Donf\Donf		3291496
+	734061777	Boucle02	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Laser\LaserActif\Boucle02_D7D2FC91.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\LaserActif4\Boucle02		769584
+	749581320	Explosion02	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\EnnemiDétruit\Explosion02_BA6B0D00.wem		\Actor-Mixer Hierarchy\Default Work Unit\EnnemiDétruit\Explosion\Explosion02		390640
+	752459827	Métal	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\JunkBlessure\Métal_B2463F5D.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\Métal		366408
+	755684536	Charge2secondes	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Charge2secondes_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\ChargeLaser\Charge2secondes		601808
+	780068063	CanonGrave	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\TirGun\CanonGrave_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\TirGun\CanonGrave		246672
+	785075474	CanonGraveLoin	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\CanonGraveLoin_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\TirGun\CanonGraveLoin		244664
+	795880828	SynthDouble	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\SynthDouble_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\SynthDouble\SynthDouble		3291496
+	797382632	CanonAigu	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\TirGun\CanonAigu_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\TirGun\CanonAigu		246660
+	810651852	LargeMétal	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\LargeMétal_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\JunkBlessure\LargeMétal		251616
+	812449425	SynthSimple	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\SynthSimple_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\SynthSimple\SynthSimple		3291496
+	823639095	DonfEnd	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\DonfEnd_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level03\DonfEnd\DonfEnd		2925780
+	825374637	vissage03	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\InstallationModule\vissage03_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\InstallationModule\Vissage\vissage03		229824
+	848318048	Laser	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\TirGun\Laser_A47C69CD.wem		\Actor-Mixer Hierarchy\Default Work Unit\TirGun\Laser		19988
+	850007373	Choc	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Touché\Choc_8D98D74F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Touché\Choc		85168
+	852126931	Pont1	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Pont1_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Level_Music\Level01\Pont1\Pont1		1828636
+	950531700	ShutDownLaser	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Laser\Refroidissement\ShutDownLaser_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Laser\Refroidissement\ShutDownLaser		646504
+	1017444176	Valid	H:\Shmup\WwiseProject\Shmup\Junk\.cache\Android\SFX\Valid_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interface\Valid		384484
+
