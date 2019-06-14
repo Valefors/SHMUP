@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Player : MonoBehaviour
     protected Transform _transform;
     [SerializeField]
     protected Animator _animator;
+    [SerializeField]
+    protected Animator _flameAnimator;
 
     private static string _VERTICAL_AXIS = "Vertical";
     private static string _HORIZONTAL_AXIS = "Horizontal";
@@ -30,7 +33,9 @@ public class Player : MonoBehaviour
 
     [Header("Invulnerability")]
     [SerializeField] SpriteRenderer _invulnerabilitySprite;
-    [SerializeField] int _invulnerabilityDelay;
+    [SerializeField] float _invulnerabilityDelay;
+    [SerializeField] int _numberModuleDecreaserInvulnerability;
+    [SerializeField] int _invunerabilityPercentageDecrease;
 
     [HideInInspector] [SerializeField] private AnimationCurve _horizontalAccelerationCurve;
     [HideInInspector] [SerializeField] private AnimationCurve _horizontalDecelerationCurve;
@@ -53,9 +58,30 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _swingDegree;
 
+    private float saveInvulnerableDelay;
+    private float percentage;
+
     // Start is called before the first frame update
+    private void Awake()
+    {
+        Camera.main.GetComponentInChildren<ParticleSystem>().Simulate(1);
+        Camera.main.GetComponentInChildren<ParticleSystem>().Play();
+    }
+
     private void Start()
     {
+        Image[] tempList = null;
+        GameManager.manager.BossHealthBar = GameObject.FindGameObjectWithTag("Finish").GetComponent<Slider>();
+        if (GameManager.manager.BossHealthBar != null) tempList=GameManager.manager.BossHealthBar.GetComponentsInChildren<Image>();
+        if(tempList!= null && tempList.Length>=2) GameManager.manager.fill = tempList[1];
+
+
+        GameManager.manager.BossHealthBar.gameObject.SetActive(false);
+        AkSoundEngine.PostEvent("Music", gameObject);
+        
+
+        saveInvulnerableDelay = _invulnerabilityDelay;
+        percentage = (saveInvulnerableDelay * _invunerabilityPercentageDecrease) / 100;
         _transform = this.transform;
         _listLenght = _modulesList.Count;
 
@@ -65,9 +91,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G)) GetInvicibility(true);
+        if (_listLenght-1 >= _numberModuleDecreaserInvulnerability) _invulnerabilityDelay = saveInvulnerableDelay - (percentage * _listLenght) + percentage;
+        else _invulnerabilityDelay = saveInvulnerableDelay;
 
-        if (GameManager.manager.isPause) return;
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            if (_isInvicible)
+                GetInvicibility();
+            else
+                GetInvicibility(true);
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            StartCoroutine(Photo(0.1f));
+        }
+
+
+        if (!GameManager.manager.isPlaying) return;
 
         SetModuleVoidMode();
 
@@ -98,6 +138,9 @@ public class Player : MonoBehaviour
             lMovement += VerticalSlowDown();
 
         Vector2 lPoint = new Vector2(transform.position.x + lMovement.x, transform.position.y + lMovement.y);
+        
+        _flameAnimator.SetFloat("Vertical", _verticalAccDecLerpValue);
+        _flameAnimator.SetFloat("Horizontal", _horizontalAccDecLerpValue);
 
         //if (SafeZone.IsOffField(lPoint)) return;
 
@@ -105,6 +148,7 @@ public class Player : MonoBehaviour
         if (SafeZone.IsOffFieldY(lPoint.y)) lMovement.y = 0;
         if (lMovement != Vector3.zero)
         {
+            AkSoundEngine.SetState("Moving_state", "yes");
             _transform.Translate(lMovement, Space.World);
         }
     }
@@ -149,6 +193,7 @@ public class Player : MonoBehaviour
         _horizontalAccDecLerpValue -= Time.deltaTime * _horizontalDecSpeed * Mathf.Sign(_horizontalAccDecLerpValue);
         if(Mathf.Sign(pastLerp) != Mathf.Sign(_horizontalAccDecLerpValue))
         {
+            AkSoundEngine.SetState("Moving_state", "no");
             _horizontalAccDecLerpValue = 0;
         }
 
@@ -166,6 +211,7 @@ public class Player : MonoBehaviour
         _verticalAccDecLerpValue -= Time.deltaTime * _verticalDecSpeed * Mathf.Sign(_verticalAccDecLerpValue);
         if (Mathf.Sign(pastLerp) != Mathf.Sign(_verticalAccDecLerpValue))
         {
+            AkSoundEngine.SetState("Moving_state", "no");
             _verticalAccDecLerpValue = 0;
         }
 
@@ -218,6 +264,7 @@ public class Player : MonoBehaviour
         else
         {
             if(!GameManager.manager.isLD) EventManager.TriggerEvent(EventManager.GAME_OVER_EVENT);
+            AkSoundEngine.PostEvent("Death", gameObject);
             Debug.Log("This is a gameOver");
         }
     }
@@ -226,6 +273,8 @@ public class Player : MonoBehaviour
     {
         _isInvicible = true;
         _animator.SetBool("Invulnerability", !pIsGod); // !pIsGod --> to avoid a flickering player when in god mode
+        foreach (Module mod in _modulesList)
+            mod.ModuleClignote(!pIsGod);
         _invulnerabilitySprite.gameObject.SetActive(true);
         if(!pIsGod) Invoke("GetNormal", _invulnerabilityDelay);
     }
@@ -234,6 +283,8 @@ public class Player : MonoBehaviour
     {
         _isInvicible = false;
         _animator.SetBool("Invulnerability", false);
+        foreach (Module mod in _modulesList)
+            mod.ModuleClignote(false);
         _invulnerabilitySprite.gameObject.SetActive(false);
     }
 
@@ -250,17 +301,35 @@ public class Player : MonoBehaviour
                 this.GetHit();
             }
         }
+        LaserShot laserShotCollided = pCol.gameObject.GetComponent<LaserShot>();
+        if (laserShotCollided != null)
+        {
+            if (laserShotCollided.GetSide() && laserShotCollided.isActive)
+            {
+                this.GetHit();
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D pCol)
     {
-        if (GameManager.manager.isPause) return;
+        if (!GameManager.manager.isPlaying) return;
 
         Module moduleCollided = pCol.gameObject.GetComponent<Module>();
         if (moduleCollided != null)
         {
-            if (moduleCollided.free) //need to know if there parent are still enemy (or even friend)
+            //need to know if there parent are still enemy (or even friend)
+            if (moduleCollided.free)
+            {
+                AkSoundEngine.PostEvent("Get_module", gameObject);
                 AddModule(moduleCollided);
+            }
+        }
+
+        Enemy enemyColl = pCol.gameObject.GetComponent<Enemy>();
+        if (enemyColl != null)
+        {
+            this.GetHit();
         }
     }
 
@@ -268,12 +337,20 @@ public class Player : MonoBehaviour
     {
         if (module.GetComponent<ShooterModule>() != null) module.GetComponent<ShooterModule>().isEnemy = false;
 
+        if(module.GetComponent<VGun>() != null)
+        {
+            AkSoundEngine.SetState("vGun_state", "yes");
+        }
+
         module.transform.parent = _transform;
 
-        Vector3 directionToLookAt = module.transform.position - _transform.position;
-        //TO DO : need to make a clear feedback
-        //something to make the module really go from start direction to this one
-        module.transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToLookAt);
+        if (module.rotateWhenPickUp)
+        {
+            Vector3 directionToLookAt = module.transform.position - _transform.position;
+            //TO DO : need to make a clear feedback
+            //something to make the module really go from start direction to this one
+            module.transform.rotation = Quaternion.LookRotation(Vector3.forward, directionToLookAt);
+        }
         module.free = false;
 
         _modulesList.Add(module);
@@ -288,6 +365,13 @@ public class Player : MonoBehaviour
         Module lModuleToDestroy = _modulesList[_listLenght - 1];
         _modulesList.RemoveAt(_listLenght - 1);
         _listLenght--;
+
+        if(lModuleToDestroy.GetComponent<VGun>() != null)
+        {
+            AkSoundEngine.SetState("vGun_state", "no");
+        }
+        AkSoundEngine.PostEvent("Damaged", gameObject);
+
         lModuleToDestroy.SetDeathMode();
 
         UpdateWeight();
@@ -301,6 +385,71 @@ public class Player : MonoBehaviour
             lNewWeight += lModule._weight;
         }
         _weight = lNewWeight;
+
+        AkSoundEngine.SetRTPCValue("Number_modules", _listLenght, gameObject);
+    }
+
+    public void DefeatedBoss()
+    {
+        GameManager.manager.BossDefeated();
+        StartCoroutine(GoToPoint(new Vector3(0,-8,0), 3,0));
+        StartCoroutine(Photo(7.9f));
+        StartCoroutine(GoToPoint(new Vector3(0, 16, 0), 1, 9));
+        //Go To A Point, stop shooting. Screenshot after a while
+    }
+
+    IEnumerator GoToPoint(Vector3 pointToGo, float timeToDoIt, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        float lLerp = 0;
+        Vector3 startPos = _transform.position;
+
+        _flameAnimator.SetFloat("Vertical", 0);
+        _flameAnimator.SetFloat("Horizontal", 0);
+
+        _horizontalAccDecLerpValue = 0;
+        _verticalAccDecLerpValue = 0;
+        ChangeRotation();
+
+
+        while (lLerp < 1)
+        {
+            lLerp += Time.deltaTime / timeToDoIt;
+            _transform.position = Vector3.Lerp(startPos, pointToGo, lLerp);
+            yield return new WaitForSeconds(0.01f);
+        }
+        _transform.position = pointToGo;
+    }
+
+    IEnumerator Photo(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        yield return new WaitForEndOfFrame();
+        TakePhoto();
+    }
+    
+    public void TakePhoto()
+    {
+        int lStartX = 1 * Screen.width / 4;
+        int lStartY = 0;
+        int lWidth = 1 * Screen.width / 2;
+        int lHeight = 5 * Screen.height / 8;
+        Texture2D lTex = new Texture2D(lWidth, lHeight, TextureFormat.RGB24, false);
+
+        Rect lRect = new Rect(lStartX, lStartY, lWidth, lHeight);
+
+        print(lRect + " lRect | " + lTex.height + " he --- wid " + lTex.width);
+        lTex.ReadPixels(lRect, 0, 0, false);
+        lTex.Apply();
+
+        var bytes = lTex.EncodeToPNG();
+        DestroyImmediate(lTex);
+
+
+        string lPath = Application.dataPath + "FinalJunkScreenshot.png";
+        System.IO.File.WriteAllBytes(lPath, bytes);
+        Debug.Log("File saved at : " + lPath);
     }
 
 }

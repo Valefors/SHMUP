@@ -16,7 +16,7 @@ public class ScrollingBackground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.manager.isPause) return;
+        if (!GameManager.manager.isPlaying) return;
         Vector3 lMovement = scrollingVector * Time.deltaTime;
         _transform.Translate(lMovement);
     }

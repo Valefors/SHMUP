@@ -123,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428054200}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.65, z: 0}
+  m_LocalPosition: {x: -0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2021926622}
@@ -172,7 +172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487589763}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.65, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2021926622}
@@ -319,7 +319,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121621083}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalPosition: {x: 1.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2021926622}
@@ -510,12 +510,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scrap: {fileID: 7790807872988376404, guid: 6ed4d0541de54e144ac3ef74352c6fdb, type: 3}
-  _explosionWhenHit: {fileID: 7436923443901081151, guid: 0a939a8c0d021e249beb678757c0a6b8,
+  _explosionWhenHit: {fileID: 318658041164066152, guid: e6fc3b431a5480145aa9c788e31f376f,
+    type: 3}
+  _explosionWhenDead: {fileID: 8216606441287394681, guid: 722653e6086ad7b40b96e038e32e595b,
     type: 3}
   _ownLight: {fileID: 8990251900635376954}
+  sail1: {fileID: 6588050636299444498}
+  sail2: {fileID: 6588050636299444496}
+  sail3: {fileID: 6588050636299444510}
+  baseSailMaterial: {fileID: 2100000, guid: 16f262b423001f84dae7f3038c3ae0c9, type: 2}
   _speed: 5
   _moveLoop: 1
   _pv: 1
+  rotationSpeed: 1
+  _boss: 0
   _modulesList:
   - {fileID: 0}
   _scoreValue: 0
@@ -608,8 +616,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 1, g: 0.5615012, b: 0, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.9811321, g: 0.86526924, b: 0.71733713, a: 1}
+  m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -804,6 +812,24 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8418d38d2d546f7428236020254a030b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55d39b7f90ee4264b98b277c2855c1c6, type: 3}
+--- !u!23 &6588050636299444510 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300024, guid: 55d39b7f90ee4264b98b277c2855c1c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6588050636297288038}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6588050636299444496 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300022, guid: 55d39b7f90ee4264b98b277c2855c1c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6588050636297288038}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6588050636299444498 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300020, guid: 55d39b7f90ee4264b98b277c2855c1c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6588050636297288038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6588050636297675750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 55d39b7f90ee4264b98b277c2855c1c6,

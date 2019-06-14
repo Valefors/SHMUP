@@ -9,20 +9,45 @@ public class VGun : Canon
 
     void Start()
     {
+        moduleType = 4;
         Transform _firstChild = transform.GetChild(0).transform;
-        _canonSpawnArray = _firstChild.GetComponentsInChildren<Transform>();
+        //Obsolete 
+        if(_canonSpawnArray == null)
+            _canonSpawnArray = _firstChild.GetComponentsInChildren<Transform>();
     }
 
     protected override void Shoot()
     {
         //TO-DO: Problem with the array, take the transform of the first child
-        for (int i = 1; i < _canonSpawnArray.Length; i++)
+        if (useBurst && !isEnemy) useBurst = false;
+        if (!useBurst || ((isWaiting && waitingTime > _timeWaitBurst) || isShooting))
         {
-            Shot lShot = Instantiate(_prefabShot, _canonSpawnArray[i].position, Quaternion.identity).GetComponent<Shot>();
-            lShot.SetUp(isEnemy, _canonSpawnArray[i].rotation, GetSpeed(), _hitValue);
+            for (int i = 0; i < _canonSpawnArray.Length; i++)
+            {
+                Shot lShot = Instantiate(_prefabShot, _canonSpawnArray[i].position, Quaternion.identity).GetComponent<Shot>();
+                lShot.SetUp(isEnemy, _canonSpawnArray[i].rotation, GetSpeed(), _hitValue);
+            }
+
+            _canShoot = false;
+            Invoke("CanShootAgain", _shotRate);
+
+            if (useBurst)
+            {
+                countedShots++;
+                if (isWaiting)
+                {
+                    waitingTime = 0;
+                    isWaiting = false;
+                    isShooting = true;
+                }
+                if (countedShots >= _numberShotBurst && isShooting)
+                {
+                    countedShots = 0;
+                    isShooting = false;
+                    isWaiting = true;
+                }
+            }
         }
-        
-        _canShoot = false;
-        Invoke("CanShootAgain", _shotRate);
+        else waitingTime += Time.deltaTime;
     }
 }

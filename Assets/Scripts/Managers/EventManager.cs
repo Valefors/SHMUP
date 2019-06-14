@@ -9,6 +9,11 @@ public class EventManager : MonoBehaviour
     public static string PAUSE_EVENT = "pause";
     public static string RESUME_EVENT = "resume";
     public static string PLAY_EVENT = "play";
+    public static string SEND_NAME_EVENT = "sendName";
+    public static string SEND_SCORE_EVENT = "sendScore";
+    public static string MENU_EVENT = "menu";
+    public static string TUTORIAL_EVENT = "tutorial";
+    public static string END_TUTORIAL_EVENT = "endTutorial";
 
     private Dictionary<string, UnityEvent> eventDictionary;
 
