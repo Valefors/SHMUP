@@ -125,13 +125,13 @@ public class Player : MonoBehaviour
     {
         Vector3 lMovement = Vector3.zero;
     
-        float lXmovValue = Input.GetAxisRaw(_HORIZONTAL_AXIS);
+        float lXmovValue = Input.GetAxis(_HORIZONTAL_AXIS);
         if (lXmovValue != 0)
             lMovement += HorizontalMove(lXmovValue);
         else if (_horizontalAccDecLerpValue != 0)
             lMovement += HorizontalSlowDown();
 
-        float lYmovValue = Input.GetAxisRaw(_VERTICAL_AXIS);
+        float lYmovValue = Input.GetAxis(_VERTICAL_AXIS);
         if (lYmovValue != 0)
             lMovement += VerticalMove(lYmovValue);
         else if (_verticalAccDecLerpValue != 0)
@@ -155,13 +155,15 @@ public class Player : MonoBehaviour
 
     Vector3 HorizontalMove(float lXmovValue)
     {
-        _horizontalAccDecLerpValue += Time.deltaTime * _horizontalAccSpeed * Mathf.Sign(lXmovValue);
+        //_horizontalAccDecLerpValue += Time.deltaTime * _horizontalAccSpeed * Mathf.Sign(lXmovValue);
+        _horizontalAccDecLerpValue += Time.deltaTime * _horizontalAccSpeed * lXmovValue;
         _horizontalAccDecLerpValue = Mathf.Clamp(_horizontalAccDecLerpValue, -1, 1);
 
         Vector3 lMovement = new Vector3(Mathf.Abs(lXmovValue), 0, 0);
         float lSpeed = _speedWeightCurve.Evaluate(_weight) * _speed;
-        lMovement = lMovement.normalized * lSpeed * Time.deltaTime * Mathf.Sign(_horizontalAccDecLerpValue);
-        
+        //lMovement = lMovement.normalized * lSpeed * Time.deltaTime * Mathf.Sign(_horizontalAccDecLerpValue);
+        lMovement = lMovement.normalized * lSpeed * Time.deltaTime * _horizontalAccDecLerpValue * Mathf.Abs(lXmovValue);
+
         _horizontalLastMovement = lMovement;
 
         lMovement *= _horizontalAccelerationCurve.Evaluate(Mathf.Abs(_horizontalAccDecLerpValue));
@@ -173,12 +175,14 @@ public class Player : MonoBehaviour
 
     Vector3 VerticalMove(float lYmovValue)
     {
-        _verticalAccDecLerpValue += Time.deltaTime * _verticalAccSpeed * Mathf.Sign(lYmovValue);
+        //_verticalAccDecLerpValue += Time.deltaTime * _verticalAccSpeed * Mathf.Sign(lYmovValue);
+        _verticalAccDecLerpValue += Time.deltaTime * _verticalAccSpeed * lYmovValue;
         _verticalAccDecLerpValue = Mathf.Clamp(_verticalAccDecLerpValue, -1, 1);
 
         Vector3 lMovement = new Vector3(0, Mathf.Abs(lYmovValue), 0);
         float lSpeed = _speedWeightCurve.Evaluate(_weight) * _speed;
-        lMovement = lMovement.normalized * lSpeed * Time.deltaTime * Mathf.Sign(_verticalAccDecLerpValue);
+        //lMovement = lMovement.normalized * lSpeed * Time.deltaTime * Mathf.Sign(_verticalAccDecLerpValue);
+        lMovement = lMovement.normalized * lSpeed * Time.deltaTime * _verticalAccDecLerpValue * Mathf.Abs(lYmovValue);
 
         _verticalLastMovement = lMovement;
 

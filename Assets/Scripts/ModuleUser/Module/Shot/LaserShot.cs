@@ -16,6 +16,9 @@ public class LaserShot : MonoBehaviour
     [SerializeField]
     private SpriteRenderer _spriteRdr;
 
+    private bool isWaiting = false;
+    private float count=0;
+
     public void ResetAnim()
     {
         if (_animator == null) _animator = this.gameObject.GetComponentInChildren<Animator>();
@@ -52,16 +55,30 @@ public class LaserShot : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (!isActive) return;
 
         Enemy enemyColl = collision.gameObject.GetComponent<Enemy>();
 
-        if (enemyColl != null && !_isEnemy)
+        if (enemyColl != null && !_isEnemy && !isWaiting)
         {
             enemyColl.GetHit(_hitValue, enemyColl.transform.position);
+            isWaiting = true;
         }
         
+    }
+
+    private void Update()
+    {
+        if(isWaiting)
+        {
+            count += Time.deltaTime;
+            if (count >= 0.3f)
+            {
+                isWaiting = false;
+                count = 0;
+            }
+        }
     }
 }
